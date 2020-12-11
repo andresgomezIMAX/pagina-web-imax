@@ -6,112 +6,124 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.menu-bar {
+  display: none;
+}
+
 header {
-  height: 50px;
-  border: 2px solid saddlebrown;
+  width: 100%;
   background: #A1A39E;
-  opacity: .5;
-  color: white;
+}
+
+header nav {
+  margin-right: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-header .btn-menu {
-  display: none;
-}
-
-header label {
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-}
-
-header .menu ul {
-  background: #A1A39E;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+header nav ul {
   list-style: none;
 }
 
-header .menu ul ul {
-  display: none;
-  width: 11%;
+header nav ul li {
+  display: inline-block;
+  position: relative;
 }
 
-header .menu a {
-  display: block;
-  padding: 11px 30px;
-  text-decoration: none;
+header nav ul li a {
   color: white;
-}
-
-header .menu a span {
-  margin-left: 10px;
-}
-
-header .menu a:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-header .menu ul li:hover ul {
   display: block;
-  position: absolute;
+  text-decoration: none;
+  padding: 20px;
 }
 
-@media (max-width: 768px) {
-  header label {
+header nav ul li :hover {
+  background: olive;
+}
+
+header nav ul li :hover .children {
+  display: block;
+}
+
+header nav ul li:hover .children {
+  display: block;
+}
+
+header nav ul li .children {
+  display: none;
+  background: violet;
+  position: absolute;
+  width: 140%;
+  z-index: 1000;
+}
+
+header nav ul li .children li {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+header nav ul li .children li a {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding-top: 80px;
+  }
+  .menu-bar {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: blueviolet;
+  }
+  .menu-bar .bt-menu {
+    display: block;
+    padding: 20px;
+    color: white;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .menu-bar .iconMenu {
+    float: right;
+    font-size: 40px;
+  }
+  header nav {
+    width: 80%;
+    height: calc(100% - 80px);
+    position: fixed;
+    right: 100%;
+    margin: 0;
+    overflow: scroll;
+  }
+  header nav ul li {
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  header nav ul li a {
     display: block;
   }
-  header .menu ul ul {
+  header nav ul li .children {
     width: 100%;
+    position: relative;
   }
-  .menu {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+  header nav ul li .children li a {
+    margin-left: 20px;
   }
-  .menu ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-  }
-  .menu a span {
-    position: absolute;
-    right: 10px;
-  }
-  .menu ul ul {
-    background: rgba(0, 0, 0, 0.9);
-  }
-  .menu ul ul a {
-    padding: 15px 40px;
-  }
-  .menu ul li:hover ul {
+  header nav li:hover .children {
     display: none;
-    position: static;
-  }
-  .btn-menu:checked ~ .menu {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
   }
 }
 
 .slider {
-  width: 95%;
+  width: 100%;
   margin: auto;
   overflow: hidden;
 }
