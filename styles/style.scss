@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header{
+    height: 50px;
+    border: 2px solid saddlebrown;
+    background: #A1A39E;
+    opacity: .5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .btn-menu{
+        display: none;
+    }
+
+    label{
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+    }
+
+    .menu ul{
+        background: #A1A39E;
+        display: flex;
+        list-style: none;
+   
+
+       
+
+        ul{
+            display: none;
+            width: 11%;
+        }
+    }
+    
+
+    .menu a{
+        display: block;
+        padding: 11px 30px;
+        text-decoration: none;
+        color: white;
+
+        span{
+            margin-left: 10px;
+        }
+
+       
+    }
+
+    .menu a:hover{
+        background: rgba(0,0,0, 0.3);
+    }
+
+    .menu ul li:hover ul {
+        display: block;
+        position: absolute;
+    }
+    
+}
+
+
+@media (max-width: 768px) {
+    header label {
+        display: block;
+    }
+
+    header .menu ul ul {
+        width: 100%;
+    }
+
+    .menu{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s;
+
+        ul{
+            flex-direction: column;
+            width: 100%;
+            
+          
+        }
+
+        a span{
+            position: absolute;
+            right: 10px;
+        }
+
+
+        ul ul {
+            background: rgba(0,0,0,0.9);
+
+            a{
+                padding: 15px 40px;
+            }
+        }
+
+
+
+
+    }
+
+    .menu ul li:hover ul {
+        display: none;
+        position: static;
+ 
+        // width: 60%;
+        // position: absolute;
+        
+    }
+
+
+    .btn-menu:checked ~ .menu {
+        transform: translateX(0%);
+    }
+
+
+}
+
+// galeria de fotos del home -----------------------------------------------------------------------------
+
+.slider{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+
+    ul{
+        display: flex;
+        padding: 0%;
+        width: 400%;
+
+        animation: cambio 20s infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in;
+    }
+
+    li{
+        list-style: none;
+        width: 100%;
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@keyframes cambio {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    100% {margin-left: -300%;}
+
+}
