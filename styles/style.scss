@@ -84,7 +84,7 @@ header{
 @media screen and (max-width: 800px) {
 
     body{
-        padding-top: 80px;
+        padding-top: 60px;
     }
 
     .menu-bar{
@@ -96,17 +96,19 @@ header{
 
         .bt-menu{
             display: block;
-            padding: 20px;
+            padding: 12px;
             color: white;
             overflow: hidden;
             font-size: 25px;
             font-weight: bold;
             text-decoration: none;
+            // background-image: url(../assets/logo.png);
+            // background-repeat: no-repeat;
         }
 
         .iconMenu{
             float: right;
-            font-size: 40px;
+            font-size: 30px;
 
         }
     }
@@ -116,7 +118,7 @@ header{
     }
     header nav{
         width: 80%;
-        height: calc(100% - 80px);
+        height: calc(100% - 60px);
         position: fixed;
         right: 100%;
         margin: 0;
