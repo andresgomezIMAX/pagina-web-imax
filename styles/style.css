@@ -126,6 +126,9 @@ header nav ul li .children li a {
   header nav li:hover .children {
     display: none;
   }
+  .logo {
+    display: none;
+  }
 }
 
 .slider {

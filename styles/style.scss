@@ -12,6 +12,7 @@
 
 header{
     width: 100%;
+    
     // background: #A1A39E ;
 
     nav{
@@ -138,6 +139,10 @@ header{
         li:hover .children{
             display: none;
         }
+    }
+
+    .logo{
+        display: none;
     }
 }
 
