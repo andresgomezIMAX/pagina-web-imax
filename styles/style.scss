@@ -12,16 +12,16 @@
 
 header{
     width: 100%;
-    
+    margin: 10px 0;
     // background: #A1A39E ;
 
     nav{
         background: #A1A39E;
-        border: 1px solid orange;
+        // border: 1px solid orange;
         z-index: 1000;
         max-width: 100%;
         width: 100%;
-        
+        height: 50px;
         // margin: 0 20% auto;
 
 
@@ -39,17 +39,22 @@ header{
                     color: white;
                     display: block;
                     text-decoration: none;
-                    padding: 20px;
+                    padding: 12px 30px;
                 }
 
                 :hover {
-                    background: olive;   
+                    background: rgb(95, 102, 105);   
                     
                     .children{
                         display: block;
                     }
                 }
             }
+        }
+
+        .logo{
+            margin-left: 2%;
+           
         }
     }
 
@@ -59,7 +64,7 @@ header{
 
     nav ul li .children{
         display: none;
-        background: violet;
+        background: #A1A39E;
         position: absolute;
         width: 140%;
         z-index: 1000;
@@ -87,7 +92,7 @@ header{
         width: 100%;
         position: fixed;
         top: 0;
-        background: blueviolet;
+        background: #5cbcdf;
 
         .bt-menu{
             display: block;
@@ -106,6 +111,9 @@ header{
         }
     }
 
+    header {
+        margin: 0;
+    }
     header nav{
         width: 80%;
         height: calc(100% - 80px);
