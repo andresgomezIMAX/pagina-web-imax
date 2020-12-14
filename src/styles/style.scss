@@ -156,41 +156,104 @@ header{
         font-weight: bold;
     }
 
-    .box-btn{
+    .box-services{
         display: flex;
-
-        .div-servicios{
-            margin: 2em 4em;
-                :hover{
-                    transform: scale(1.1);
-                    transition: 0.5;  
-                }
-
-                .btn-imagen{
-                    // background-image:url(../assets/tasaciones.png);
-                    // background-repeat:no-repeat;
-                    // height:100px;
-                    // width:100px;
-                    // background-position:center;
-                    // padding: 10px;
-                    width: 70%;
-                    border-radius: 50%;
-                    border: 1px solid orange;
-                    cursor: pointer;
-                    // outline: none;
-                    box-shadow: 3px 10px 17px 3px rgba(0,0,0,0.75);
-                
-                    :hover{
-                        background: rgb(95, 102, 105);   
-                    }
-                  }         
-        }
-
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+        padding: 1% 5%;
         
+
+        .box-btn{
+            width: 22%;
+    
+            .div-servicios{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 2%;
+                    :hover{
+                        transform: scale(1.1);
+                        transition: 0.5;  
+                    }
+    
+                    .btn-imagen{
+                        // background-image:url(../assets/tasaciones.png);
+                        // background-repeat:no-repeat;
+                        // height:100px;
+                        // width:100px;
+                        // background-position:center;
+                        // padding: 10px;
+                        width: 80%;
+                        margin-bottom: 15px;
+                        border-radius: 50%;
+                        border: 1px solid orange;
+                        cursor: pointer;
+                        outline: none;
+                        box-shadow: 3px 10px 17px 3px rgba(0,0,0,0.75);
+                    
+                        :hover{
+                            background: rgb(95, 102, 105);   
+                        }
+                      }         
+            }
+    
+            
+        }
+    }
+
+   
+}
+
+// section servicios -----------------------------------------------------------------------------
+
+.clientes{
+    padding: 2%;
+    p{
+        color: #009AD2;
+        font-size: 195%;
+        font-weight: bold; 
+    }
+    .box-clientes{
+        display: flex;
+        justify-content: center;
     }
 }
 
+// section footer -----------------------------------------------------------------------------
+.footerPage{
+    background: #81D2E3;
+    padding-top: 2% ;
 
+    .fooFirst{
+        display: flex;
+        flex-direction: row;
+            .boxLogo{
+                width: 35%;
+            padding: 5% 6%;
+            }
+            .boxContacto{
+                width: 40%;
+            }
+            .boxRedes{
+                width: 25%;
+            }
+    }
+
+    .fooSecond{
+        background: #25b0cc;
+        .copy{
+            margin-left: 40%;
+            font-weight: bold;
+            font-size: 12px;
+            background: #25b0cc;
+        }
+    }
+    
+
+    
+}
 
 
 
