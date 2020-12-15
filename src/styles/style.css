@@ -55,6 +55,7 @@ header nav ul li :hover .children {
 
 header nav .logo {
   margin-left: 2%;
+  width: 13%;
 }
 
 header nav ul li:hover .children {
@@ -174,6 +175,12 @@ header nav ul li .children li a {
   font-family: 'Courgette', cursive;
 }
 
+.portada {
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+}
+
 .servicios {
   background: #F1FAFB;
   padding: 2%;
@@ -227,7 +234,7 @@ header nav ul li .children li a {
 }
 
 .servicios .box-services .box-btn .div-servicios .btn-imagen {
-  width: 80%;
+  width: 75%;
   margin-bottom: 15px;
   border-radius: 50%;
   border: 1px solid orange;
@@ -258,6 +265,86 @@ header nav ul li .children li a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.nosotros {
+  padding: 1% 0;
+}
+
+.nosotros .box-nosotros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1% 4% 1% 2%;
+}
+
+.nosotros .box-nosotros .img-nosotros {
+  width: 50%;
+  padding-left: 2%;
+}
+
+.nosotros .box-nosotros .descripcion {
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nosotros .box-nosotros .descripcion h2 {
+  color: #009AD2;
+}
+
+.staff {
+  padding: 2%;
+}
+
+.staff .portada-staff h2 {
+  margin-left: 40%;
+}
+
+.staff h2 {
+  color: #009AD2;
+}
+
+.staff .box-staff1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.staff .box-staff2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.staff .descrip-staff {
+  width: 50%;
+  padding: 0 2%;
+}
+
+.staff .descrip-staff h2 {
+  margin-left: 25%;
 }
 
 .footerPage {
@@ -293,7 +380,7 @@ header nav ul li .children li a {
 }
 
 .footerPage .fooSecond .copy {
-  margin-left: 40%;
+  margin-left: 35%;
   font-weight: bold;
   font-size: 12px;
   background: #25b0cc;
@@ -302,6 +389,9 @@ header nav ul li .children li a {
 @media screen and (max-width: 800px) {
   body {
     padding-top: 60px;
+  }
+  body .title {
+    font-size: 135%;
   }
   .menu-bar {
     display: block;
@@ -359,6 +449,56 @@ header nav ul li .children li a {
   }
   .lema p {
     font-size: 18px;
+  }
+  .servicios .title {
+    font-size: 135%;
+  }
+  .servicios .box-services {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .servicios .box-services .box-btn {
+    width: 80%;
+    margin: 2% 0;
+  }
+  .servicios .box-services .box-btn .div-servicios .btn-imagen {
+    width: 60%;
+  }
+  .box-clientes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 50%;
+  }
+  .footerPage .fooFirst {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 15px;
+    padding: 5% 12%;
+  }
+  .footerPage .fooFirst .boxContacto {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .footerPage .fooFirst .boxRedes {
+    width: 100%;
+  }
+  .footerPage .fooSecond .copy {
+    margin-left: 12%;
   }
 }
 /*# sourceMappingURL=style.css.map */

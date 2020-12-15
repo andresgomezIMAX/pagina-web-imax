@@ -54,6 +54,7 @@ header{
 
         .logo{
             margin-left: 2%;
+            width: 13%;
            
         }
     }
@@ -146,6 +147,13 @@ header{
 
 // section servicios -----------------------------------------------------------------------------
 
+.portada{
+     background-repeat:no-repeat;
+                        // height:100px;
+                        width:100%;
+                        background-position:center;
+                       
+}
 .servicios{
     background: #F1FAFB;
     padding: 2%;
@@ -185,7 +193,7 @@ header{
                         // width:100px;
                         // background-position:center;
                         // padding: 10px;
-                        width: 80%;
+                        width: 75%;
                         margin-bottom: 15px;
                         border-radius: 50%;
                         border: 1px solid orange;
@@ -206,7 +214,7 @@ header{
    
 }
 
-// section servicios -----------------------------------------------------------------------------
+// section clientes -----------------------------------------------------------------------------
 
 .clientes{
     padding: 2%;
@@ -220,6 +228,67 @@ header{
         justify-content: center;
     }
 }
+
+// section nosotros -----------------------------------------------------------------------------
+
+.nosotros {
+    padding: 1% 0;
+.box-nosotros{
+    display: flex;
+    flex-direction: row; 
+    padding: 1% 4% 1% 2%;
+
+    .img-nosotros{
+        width: 50%;
+        padding-left: 2%;
+        
+    }
+
+    .descripcion{
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        h2{
+            color: #009AD2;
+        }
+    }
+}
+}
+
+// section footer -----------------------------------------------------------------------------
+
+.staff{
+    padding: 2%;
+
+    .portada-staff h2{
+        margin-left: 40%;
+    }
+
+    h2{
+        color: #009AD2;
+    }
+    .box-staff1{
+        display: flex;
+        justify-content: flex-start;
+        }
+
+    .box-staff2{
+        display: flex;
+        justify-content: flex-end;
+        }
+}
+
+.staff .descrip-staff{
+    width: 50%;
+    padding: 0 2%;
+    h2{
+        margin-left: 25%;
+    }
+}
+
 
 // section footer -----------------------------------------------------------------------------
 .footerPage{
@@ -244,7 +313,7 @@ header{
     .fooSecond{
         background: #25b0cc;
         .copy{
-            margin-left: 40%;
+            margin-left: 35%;
             font-weight: bold;
             font-size: 12px;
             background: #25b0cc;
@@ -266,6 +335,10 @@ header{
 
     body{
         padding-top: 60px;
+
+        .title{
+            font-size: 135%;
+        }
     }
 
     .menu-bar{
@@ -340,6 +413,46 @@ header{
     .lema p{
         font-size: 18px;
       
+    }
+
+    .servicios .title {
+        font-size: 135%;
+    }
+    .servicios .box-services{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .box-btn{
+            width: 80%;
+            margin: 2% 0;
+
+            .div-servicios .btn-imagen{
+                width: 60%;
+            }
+        }
+    }
+
+    .box-clientes{
+        flex-direction: column;
+        height: 50%;
+    }
+
+    .footerPage .fooFirst{
+        flex-direction: column;
+        align-items: center;
+        font-size: 15px;
+        padding: 5% 12%;
+        .boxContacto{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .boxRedes{
+            width: 100%;
+        }
+    }
+    .footerPage .fooSecond .copy {
+        margin-left: 12%;
     }
 
 }
