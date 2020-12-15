@@ -19,7 +19,7 @@ export default () => {
             
         </section>
 
-        <section class="servicios">
+        <section class="servicios" >
             <p class="title">Nuestros Servicios</p>
             <div class="box-services">
                 <div class="box-btn">
@@ -77,7 +77,7 @@ export default () => {
         </section>
         
         <section class="clientes">
-            <p>Nuestros Clientes</p>
+            <p class="title">Nuestros Clientes</p>
             <div class="box-clientes">
                 <img src="../assets/client1.jpg">
                 <img src="../assets/client2.jpg">
