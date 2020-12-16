@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+  padding: 0 5%;
 }
 
 .menu-bar {
@@ -62,7 +63,7 @@ header nav ul li :hover .children {
 }
 
 header nav .logo {
-  margin-left: 2%;
+  margin-left: 5%;
   width: 14%;
 }
 
@@ -242,12 +243,12 @@ header nav ul li .children li a {
   transition: 0.5;
 }
 
-.servicios .box-services .box-btn .div-servicios .cta, .servicios .box-services .box-btn .div-servicios .cta1, .servicios .box-services .box-btn .div-servicios .cta2, .servicios .box-services .box-btn .div-servicios .cta3, .servicios .box-services .box-btn .div-servicios .cta4, .servicios .box-services .box-btn .div-servicios .cta5, .servicios .box-services .box-btn .div-servicios .cta6 {
+.servicios .box-services .box-btn .div-servicios .cta {
   width: 95%;
 }
 
-.servicios .box-services .box-btn .div-servicios .cta .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta1 .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta2 .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta3 .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta4 .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta5 .btn-imagen, .servicios .box-services .box-btn .div-servicios .cta6 .btn-imagen {
-  width: 75%;
+.servicios .box-services .box-btn .div-servicios .cta .btn-imagen {
+  width: 70%;
   margin-bottom: 15px;
   border-radius: 50%;
   border: 1px solid orange;
@@ -257,7 +258,7 @@ header nav ul li .children li a {
           box-shadow: 3px 10px 17px 3px rgba(0, 0, 0, 0.75);
 }
 
-.servicios .box-services .box-btn .div-servicios .cta .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta1 .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta2 .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta3 .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta4 .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta5 .btn-imagen :hover, .servicios .box-services .box-btn .div-servicios .cta6 .btn-imagen :hover {
+.servicios .box-services .box-btn .div-servicios .cta .btn-imagen :hover {
   background: #5f6669;
 }
 

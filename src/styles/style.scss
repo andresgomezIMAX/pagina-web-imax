@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
+    padding: 0 5%;
 }
 
 .menu-bar{
@@ -61,7 +62,7 @@ header{
         }
 
         .logo{
-            margin-left: 2%;
+            margin-left: 5%;
             width: 14%;
            
         }
@@ -195,10 +196,10 @@ header{
                         transition: 0.5;  
                     }
 
-                    .cta, .cta1, .cta2, .cta3, .cta4, .cta5, .cta6{
+                    .cta{
                         width: 95%;
                         .btn-imagen{
-                            width: 75%;
+                            width: 70%;
                             margin-bottom: 15px;
                             border-radius: 50%;
                             border: 1px solid orange;

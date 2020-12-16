@@ -4,10 +4,10 @@ export default () => {
     <div class="slider">
         <ul>
             
-            <li><img src="../assets/_home-slide-1.jpg"></li>
-            <li><img src="../assets/home-slide-2.jpg"></li>
-            <li><img src="../assets/_home-slide-3.jpg"></li>
             <li><img src="../assets/home-slide-1.jpg"></li>
+            <li><img src="../assets/gerencia-slide-2.jpg"></li>
+            <li><img src="../assets/niff.jpg"></li>
+            <li><img src="../assets/monitoreo.jpg"></li>
         </ul>
     </div>
     </section>
