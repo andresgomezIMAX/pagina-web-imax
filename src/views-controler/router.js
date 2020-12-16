@@ -13,6 +13,7 @@ const changeView = (hash) => {
        case '#/nosotros': 
        case '#/staff': 
        case '#/servicios':
+       case '#/contacto':
             { return sectionMain.appendChild(components[id]()); } 
    
        default:
