@@ -5,6 +5,12 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+#container{
+    background-image: url(../../assets/imax-background.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
 
 .menu-bar{
     display: none;
@@ -154,6 +160,7 @@ header{
                         // height:100px;
                         width:100%;
                         background-position:center;
+                        padding-top: 5%;
                        
 }
 .servicios{
@@ -227,8 +234,8 @@ header{
         align-items: center;
 
         .modal{
-            width: 40%;
-            height: 50%;
+            width: 55%;
+            height: 65%;
             background:  linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
             // overflow: hidden;
             text-align: center;
@@ -239,9 +246,11 @@ header{
             transition: transform 0.8s;
             transform: translateY(0%);
             border-radius: 10px;
+            padding: 10px;
 
             img{
                 width: 50%;
+                margin-left: 25%;
             }
 
         .close{
@@ -289,11 +298,16 @@ header{
 .box-nosotros{
     display: flex;
     flex-direction: row; 
-    padding: 1% 4% 1% 2%;
+    padding: 4% 4% 0% 2%;
 
-    .img-nosotros{
+    .img-nosotros, .img-nosotros1{
         width: 50%;
         padding-left: 2%;
+        
+    }
+
+    .img-nosotros2{
+        display: none;
         
     }
 
@@ -311,7 +325,8 @@ header{
 }
 }
 
-// section footer -----------------------------------------------------------------------------
+
+// section staff -----------------------------------------------------------------------------
 
 .staff{
     padding: 2%;
@@ -340,6 +355,95 @@ header{
     h2{
         margin-left: 25%;
     }
+}
+
+
+// section contacto -----------------------------------------------------------------------------
+
+.contacto{
+    padding-top: 2%;
+    img{
+        width: 90%;
+        height: 60vh;
+        padding-left: 10%;
+    padding-top: 4%;
+
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        
+    
+
+        .title{
+            color: #009AD2;
+            font-size: 195%;
+            font-weight: bold;
+            margin: 1%  0  1% 40%;
+        }
+
+        p{
+            margin-left: 15%; 
+        }
+
+        .box-form{
+            
+            width: 100%;
+            padding: 2% 10%;
+
+            .ident{
+                margin: 10px;
+                width: 47%;
+                height: 45px;
+                background: rgba(91, 169, 189, 0.24);
+                padding: 5px;
+                border: none;
+                outline: none;
+            }
+
+            .asunto{
+                margin: 10px;
+                width: 96%;
+                height: 45px;
+                background: rgba(91, 169, 189, 0.24);
+                padding: 5px;
+                border: none;
+                outline: none;
+            }
+            .mensaje{
+                margin: 10px;
+                width: 96%;
+                height: 300px;
+                background: rgba(91, 169, 189, 0.24);
+                padding: 5px;
+                border: none;
+                outline: none;
+                padding: 1%; 
+                margin-bottom: 20px;
+                text-shadow: -1px 2px 4px rgb(117, 116, 116);
+            }
+
+            .sendMsj{
+                background: #009AD2;
+                color: white;
+                width: 20%;
+                margin-left: 40%;
+                height: 45px;
+                border: 0;
+                outline: none;
+                cursor: pointer;     
+            }
+
+            .sendMsj:hover {
+                transform: scale(1.1);
+            transition: 0.5;
+            font-weight: bold; 
+            }
+        }
+    }
+
+   
 }
 
 
@@ -516,10 +620,26 @@ header{
 
         img{
             width: 100%;
+            margin-left: 0;
         }
 
         .modal-textos{
             font-size: 15px;
+        }
+    }
+
+    .nosotros .box-nosotros{
+        flex-direction: column;
+
+        .descripcion{
+            font-size: 15px;
+        }
+        .img-nosotros, .img-nosotros2 {
+            width: 100%;
+        }
+
+        .img-nosotros1 {
+            display: none;
         }
     }
 
