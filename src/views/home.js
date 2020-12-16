@@ -75,15 +75,17 @@ export default () => {
         </div>
         <div class="modal-container">
             <div class="modal modal-close">
-                <p class="close">X</p>
-                <img src="../assets/home-big.jpg">
-                <div class="modal-textos">
-                    <h2> titulo</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error obcaecati animi ipsum doloremque 
-                        molestias nesciunt est ea veniam ut enim consequuntur esse, neque repellendus fugit illum aperiam quo ducimus?</p>
-                </div>
+            <p class="close">X</p>
+            <img src="../assets/home-big.jpg">
+            <div class="modal-textos">
+                <h2> titulo1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error obcaecati animi ipsum doloremque 
+                    molestias nesciunt est ea veniam ut enim consequuntur esse, neque repellendus fugit illum aperiam quo ducimus?</p>
+            </div>
             </div>
         </div>
+
+        
        
     </section>
 
@@ -119,8 +121,8 @@ export default () => {
             modalC.style.visibility = "visible";
             modal.classList.toggle("modal-close");
         })
-    })
-  
+    });
+    
 
     cerrar.addEventListener("click", () => {
         modal.classList.toggle("modal-close");
