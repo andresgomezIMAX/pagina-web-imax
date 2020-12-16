@@ -98,18 +98,29 @@ export default () => {
     const sectionElem = document.createElement('div');
     sectionElem.innerHTML = viewHome;
 
-    const abrir = sectionElem.querySelector(".cta");
+    const abrir = sectionElem.querySelectorAll(".cta")[0];
+    const abrir1 = sectionElem.querySelectorAll(".cta")[1];
+    const abrir2 = sectionElem.querySelectorAll(".cta")[2];
+    const abrir3 = sectionElem.querySelectorAll(".cta")[3];
+    const abrir4 = sectionElem.querySelectorAll(".cta")[4];
+    const abrir5 = sectionElem.querySelectorAll(".cta")[5];
+    const abrir6 = sectionElem.querySelectorAll(".cta")[6];
+
+    const array = [abrir, abrir1, abrir2, abrir3, abrir4, abrir5, abrir6]
+
     let cerrar = sectionElem.querySelector(".close");
     let modal = sectionElem.querySelector(".modal");
     let modalC = sectionElem.querySelector(".modal-container");
 
- 
-    abrir.addEventListener("click", (e) => {
-        e.preventDefault();
-        modalC.style.opacity = "1";
-        modalC.style.visibility = "visible";
-        modal.classList.toggle("modal-close");
+    array.forEach((abrir) => {
+        abrir.addEventListener("click", (e) => {
+            e.preventDefault();
+            modalC.style.opacity = "1";
+            modalC.style.visibility = "visible";
+            modal.classList.toggle("modal-close");
+        })
     })
+  
 
     cerrar.addEventListener("click", () => {
         modal.classList.toggle("modal-close");
