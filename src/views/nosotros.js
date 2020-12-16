@@ -21,7 +21,7 @@ export default () => {
     </div> 
 
     <div class="box-nosotros">
-        <img class="img-nosotros" src="../assets/mision.jpg">
+        <img class="img-nosotros1" src="../assets/mision.jpg">
         <div class="descripcion">
             <h2>MISIóN</h2> <br>
             <p>Asumir la necesidad del cliente como propia para brindarle 
@@ -32,7 +32,7 @@ export default () => {
             clientes ofreciéndoles soluciones integrales que lideren el 
             mercado inmobiliario.</p>
         </div>
-           
+        <img class="img-nosotros2" src="../assets/mision.jpg">
     </div>
 
     <div class="box-nosotros">
@@ -57,6 +57,8 @@ export default () => {
 
         const sectionElem = document.createElement('div');
         sectionElem.innerHTML = viewSomos;
+
+        
 
         return sectionElem;
 }
