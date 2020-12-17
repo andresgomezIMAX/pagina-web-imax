@@ -1,5 +1,22 @@
 export default () => {
     const viewSomos = `
+    <section class="course-banner">
+     <img src="../assets/video.png">
+       <div class="circle-overlay">
+         <div class="gs-banner-content">
+            <div>
+                <p>Te invitamos a que conozcas <br> un poco mas de IMAX, 
+                 a travéz <br>  de nuestro video institucional. <br>  Click aquí ------------------------> </p>
+            </div>
+         </div>
+         <div class="play-button-container"> 
+          <a aria-label="Play course trailer" class="circle-play-button" href="https://www.youtube.com/watch?v=1rOcl7dSavM&list=PLXj3lpE2ZUuDnk07H9D6kKBKvG-MCbBKu&index=1" class="cta">
+          <div class="circle"> <i class="fas fa-play"></i> </div>
+          </a>
+         </div>
+          
+       </div>
+    </section>
    
     <section class="nosotros">
     <div class="box-nosotros">
@@ -23,11 +40,11 @@ export default () => {
     <div class="box-nosotros">
         <img class="img-nosotros1" src="../assets/mision.jpg">
         <div class="descripcion">
-            <h2>MISIóN</h2> <br>
+            <h2>MISION</h2> <br>
             <p>Asumir la necesidad del cliente como propia para brindarle 
             la mejor solución enfocados en la optimización de los recursos
             de nuestras unidades de negocio.</p>
-            <h2>VISIóN</h2> <br>
+            <h2>VISION</h2> <br>
             <p>Convertirnos en el aliado estratégico de cada uno de nuestros 
             clientes ofreciéndoles soluciones integrales que lideren el 
             mercado inmobiliario.</p>
