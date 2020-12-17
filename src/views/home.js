@@ -3,10 +3,9 @@ export default () => {
     <section>
     <div class="slider">
         <ul>
-            
+            <li><img src="../assets/construction-site.jpg"></li>
             <li><img src="../assets/home-slide-1.jpg"></li>
-            <li><img src="../assets/gerencia-slide-2.jpg"></li>
-            <li><img src="../assets/niff.jpg"></li>
+            <li><img src="../assets/home-slide-3.jpg"></li>
             <li><img src="../assets/monitoreo.jpg"></li>
         </ul>
     </div>
@@ -87,13 +86,29 @@ export default () => {
 
     </section>
 
+    <section class="informacion">
+        <p class="title">Datos IMAX</p>
+        <div class="box-info">
+            <p>Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras:</p>
+            <img src="../assets/info.png">
+        </div>
+    </section>
+
+    
+
     <section class="clientes">
         <p class="title">Nuestros Clientes</p>
         <div class="box-clientes">
             <img src="../assets/client1.jpg">
             <img src="../assets/client2.jpg">
         </div>
+        <div class="box-clientes">
+            <img src="../assets/client3.jpg">
+            <img src="../assets/client4.jpg">
+        </div>
     </section>
+
+
     <div class="contenedorSubir" >
         <div class="botonSubir">
             <img src="../assets/flecha-arriba.png" alt="subir">
