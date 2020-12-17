@@ -6,7 +6,7 @@ export default () => {
          <div class="gs-banner-content">
             <div>
                 <p>Te invitamos a que conozcas <br> un poco mas de IMAX, 
-                 a travéz <br>  de nuestro video institucional. <br>  Click aquí ------------------------> </p>
+                 a travéz <br>  de nuestro video institucional. <br>  <br>  Click aquí: </p>
             </div>
          </div>
          <div class="play-button-container"> 
