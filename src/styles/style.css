@@ -332,6 +332,104 @@ header nav ul li .children li a {
           transform: translateY(-200%);
 }
 
+.informacion {
+  padding: 2%;
+  background: #b5bdc08f;
+}
+
+.informacion .title {
+  color: #009AD2;
+  font-size: 195%;
+  font-weight: bold;
+}
+
+.informacion .box-info {
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.informacion .box-info img {
+  width: 90%;
+  padding: 2% 5% 2% 9%;
+}
+
+.course-banner img {
+  width: 100%;
+  height: 550px;
+  padding-top: 4%;
+}
+
+.course-banner .circle-overlay {
+  -webkit-box-shadow: 0 20px 30px 0 rgba(8, 33, 53, 0.1);
+  box-shadow: 0 20px 30px 0 rgba(8, 33, 53, 0.1);
+  background-color: #9bafb8;
+  border-radius: 100%;
+  bottom: calc((25vw - (100vh - 72px)) / 2 * -1);
+  width: 35vw;
+  height: 35vw;
+  right: 59vw;
+  position: absolute;
+  z-index: 60;
+  -webkit-box-shadow: -15px -1px 24px 8px #d9d5d9;
+  box-shadow: -15px -1px 24px 8px #d9d5d9;
+}
+
+.course-banner .circle-overlay .gs-banner-content {
+  position: relative;
+  z-index: 70;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: unset;
+  right: calc(-18vw + 160px);
+  top: 35%;
+  left: 12%;
+}
+
+.course-banner .circle-overlay .gs-banner-content p {
+  font-size: 25px;
+}
+
+.course-banner .circle-overlay .play-button-container {
+  position: relative;
+  top: 21%;
+}
+
+.course-banner .circle-overlay .play-button-container .circle-play-button {
+  display: block;
+  left: 93%;
+  position: relative;
+  width: 64px;
+  z-index: 100;
+}
+
+.course-banner .circle-overlay .play-button-container .circle-play-button .circle {
+  width: 64px;
+  height: 64px;
+  background-color: #2ac5da;
+  border-radius: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.course-banner .circle-overlay .play-button-container .circle-play-button i {
+  font-size: 21px;
+  color: #fff;
+  margin-top: 23px;
+  margin-left: 24px;
+}
+
 .clientes {
   padding: 2%;
 }
