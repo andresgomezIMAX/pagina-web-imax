@@ -37,7 +37,6 @@ export default () => {
             <div class="box-btn">
                 <div class="div-servicios">
                     <a href="#" class="cta"><input type="image" src="../assets/monitoreo.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
                     <p>Monitoreo de Obras</p>
                 </div>
             </div>

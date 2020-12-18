@@ -1,22 +1,29 @@
 export default () => {
-    const viewSomos = `
+  const viewSomos = `
     <section class="course-banner">
-     <img src="../assets/video.png">
-       <div class="circle-overlay">
-         <div class="gs-banner-content">
-            <div>
-                <p>Te invitamos a que conozcas <br> un poco mas de IMAX, 
-                 a travéz <br>  de nuestro video institucional. <br>  <br>  Click aquí: </p>
-            </div>
-         </div>
-         <div class="play-button-container"> 
-          <a aria-label="Play course trailer" class="circle-play-button" href="https://www.youtube.com/watch?v=1rOcl7dSavM&list=PLXj3lpE2ZUuDnk07H9D6kKBKvG-MCbBKu&index=1" class="cta">
-          <div class="circle"> <i class="fas fa-play"></i> </div>
-          </a>
-         </div>
-          
-       </div>
+      <img src="../assets/video.png">
+      <div class="circle-overlay">
+        <div class="gs-banner-content">
+          <div>
+              <p>Te invitamos a que conozcas <br> un poco mas de IMAX, 
+                a travéz <br>  de nuestro video institucional. <br>  <br>  Click aquí: </p>
+          </div>
+        </div>
+        <div class="play-button-container"> 
+        <a aria-label="Play course trailer" class="circle-play-button" href="#">
+        <div class="circle"> <i class="fas fa-play"></i> </div>
+        </a>
+        </div>
+      </div>
+
+      <div class="modal-container-video">
+        <div class="modalVideo modal-closeVideo">
+          <p class="closeVideo">X</p>
+          <iframe src="https://www.youtube.com/embed/1rOcl7dSavM" controls load clase="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
     </section>
+    
    
     <section class="nosotros">
     <div class="box-nosotros">
@@ -76,23 +83,58 @@ export default () => {
 </div> 
 </div> `
 
-        const sectionElem = document.createElement('div');
-        sectionElem.innerHTML = viewSomos;
+  const sectionElem = document.createElement('div');
+  sectionElem.innerHTML = viewSomos;
 
-        window.onscroll = () => {
-            // console.log(document.documentElement.scrollTop);
-            if (document.documentElement.scrollTop > 100) {
-              sectionElem.querySelector('.contenedorSubir').classList.add('show');
-            } else {
-              sectionElem.querySelector('.contenedorSubir').classList.remove('show');
-            }
-          };
-          sectionElem.querySelector('.contenedorSubir').addEventListener('click', () => {
-            window.scrollTo({
-              top: 0, // para que suba - inicio
-              behavior: 'smooth', // para que le de un efecto suave al subir
-            });
-          });
+  const abrirModal = sectionElem.querySelectorAll(".circle-play-button")[0];
+  const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
+  const modalVideo = sectionElem.querySelectorAll(".modalVideo")[0];
+  const modalCvideo = sectionElem.querySelectorAll(".modal-container-video")[0];
+  const video = sectionElem.querySelectorAll(".video")[0];
 
-        return sectionElem;
+
+
+  abrirModal.addEventListener("click", (e) => {
+    e.preventDefault();
+    modalCvideo.style.opacity = "1";
+    modalCvideo.style.visibility = "visible";
+    modalVideo.classList.toggle("modal-closeVideo");
+  })
+
+
+
+  cerrarModal.addEventListener("click", () => {
+    modalVideo.classList.toggle("modal-closeVideo");
+      modalCvideo.style.opacity = "0";
+      modalCvideo.style.visibility = "hidden";
+      video.src = "";
+      console.log('ssssss'+ video.src)
+  });
+
+  window.addEventListener("click", (e) => {
+    console.log(e.target)
+    if (e.target == modalCvideo) {
+      modalVideo.classList.toggle("modal-closeVideo");
+        modalCvideo.style.opacity = "0";
+        modalCvideo.style.visibility = "hidden";
+    }
+  })
+
+
+  window.onscroll = () => {
+    // console.log(document.documentElement.scrollTop);
+    if (document.documentElement.scrollTop > 100) {
+      sectionElem.querySelector('.contenedorSubir').classList.add('show');
+    } else {
+      sectionElem.querySelector('.contenedorSubir').classList.remove('show');
+    }
+  };
+  sectionElem.querySelector('.contenedorSubir').addEventListener('click', () => {
+    window.scrollTo({
+      top: 0, // para que suba - inicio
+      behavior: 'smooth', // para que le de un efecto suave al subir
+    });
+  });
+
+  return sectionElem;
 }
