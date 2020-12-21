@@ -5,8 +5,8 @@ export default () => {
       <div class="circle-overlay">
         <div class="gs-banner-content">
           <div>
-              <p>Te invitamos a que conozcas <br> un poco mas de IMAX, 
-                a travéz <br>  de nuestro video institucional. <br>  <br>  Click aquí: </p>
+              <p>Te invitamos a que conozcas <br> mas de IMAX, 
+                a travéz de <br> nuestro video institucional. <br>  <br>  <br>Click aquí: </p>
           </div>
         </div>
         <div class="play-button-container"> 
