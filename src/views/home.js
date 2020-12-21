@@ -1,7 +1,7 @@
 export default () => {
     const viewHome = `
     <section>
-    <div class="slider">
+    <div class="slider-fotos">
         <ul>
             <li><img src="../assets/construction-site.jpg"></li>
             <li><img src="../assets/home-slide-1.jpg"></li>
@@ -87,11 +87,32 @@ export default () => {
 
     <section class="informacion">
         <p class="title">Datos IMAX</p>
-        <div class="box-info">
-            <p>Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras:</p>
-            <img src="../assets/info.png">
-        </div>
+        <p class="text-desc">Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras<p>
+      <ul class="slider">
+            <li>
+                <input type="radio" id="sbutton1"  name="sradio" checked >
+                <label for="sbutton1"></label>
+                <img src="../assets/info.png">
+            </li>
+            <li>
+                <input type="radio" id="sbutton2"  name="sradio">
+                <label for="sbutton2"></label>
+                <img src="../assets/info2.jpg">
+            </li>
+            <li>
+                <input type="radio" id="sbutton3"  name="sradio">
+                <label for="sbutton3"></label>
+                <img src="../assets/info.png">
+            </li>
+            <li>
+                <input type="radio" id="sbutton4"  name="sradio">
+                <label for="sbutton4"></label>
+                <img src="../assets/info2.jpg">
+            </li>
+      </ul>
     </section>
+
+
 
     
 
@@ -120,6 +141,7 @@ export default () => {
     sectionElem.innerHTML = viewHome;
 
     const abrir = sectionElem.querySelectorAll(".cta")[0];
+    
     const abrir1 = sectionElem.querySelectorAll(".cta")[1];
     const abrir2 = sectionElem.querySelectorAll(".cta")[2];
     const abrir3 = sectionElem.querySelectorAll(".cta")[3];
@@ -162,8 +184,8 @@ export default () => {
                 modalC.style.visibility = "hidden";
             }, 900)
         }
-    })
-    
+    });
+
     window.onscroll = () => {
         // console.log(document.documentElement.scrollTop);
         if (document.documentElement.scrollTop > 100) {
