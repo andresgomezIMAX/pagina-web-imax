@@ -97,17 +97,17 @@ export default () => {
             <li>
                 <input type="radio" id="sbutton2"  name="sradio">
                 <label for="sbutton2"></label>
-                <img src="../assets/info2.jpg">
+                <img src="../assets/info3.png">
             </li>
             <li>
                 <input type="radio" id="sbutton3"  name="sradio">
                 <label for="sbutton3"></label>
-                <img src="../assets/info.png">
+                <img src="../assets/info2.jpg">
             </li>
             <li>
                 <input type="radio" id="sbutton4"  name="sradio">
                 <label for="sbutton4"></label>
-                <img src="../assets/info2.jpg">
+                <img src="../assets/info.png">
             </li>
       </ul>
     </section>

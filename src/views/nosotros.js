@@ -107,7 +107,7 @@ export default () => {
     modalVideo.classList.toggle("modal-closeVideo");
       modalCvideo.style.opacity = "0";
       modalCvideo.style.visibility = "hidden";
-      video.src = "";
+      modalVideo.src = none;
       console.log('ssssss'+ video.src)
   });
 

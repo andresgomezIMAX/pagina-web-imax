@@ -7,7 +7,7 @@
 }
 
 body{
-    background:rgb(79, 133, 150);
+    background:	#28b1dc;
 }
 
 #container {
@@ -172,6 +172,8 @@ header {
     width: 100%;
     // height: 120px;
     background: #fff;
+    // border-top: 5px solid #676767;
+    border: 5px solid #676767;
 
 
     p {
@@ -312,7 +314,7 @@ header {
 
 .informacion{
     background: #d9e3e4;
-    height: 85vh;
+    height: 95vh;
 
         .title {
             color: #009AD2;
@@ -340,7 +342,7 @@ header {
     align-items: flex-end;
 
     box-shadow: 0 0 0 10px white,
-                0 0 0 15px;
+                0 0 0 12px;
 
     img{
         position: absolute;
@@ -554,7 +556,7 @@ header {
 .contenedorSubir {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    right: 0px;
     width: 60px;
     height: 60px;
     z-index: -1;
@@ -564,6 +566,7 @@ header {
     width: 0px;
     height: 0px;
     background: #A1A39E;
+    border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
     transition: .2s;
@@ -621,7 +624,7 @@ header {
     padding: 1% 0;
     background: #f1f1f1;
 
-    .box-nosotros {
+    .box-nosotros{
         display: flex;
         flex-direction: row;
         padding: 4% 4% 0% 2%;
@@ -650,6 +653,8 @@ header {
             }
         }
     }
+
+   
 }
 
 
@@ -783,7 +788,7 @@ header {
 
 // section footer -----------------------------------------------------------------------------
 .footerPage {
-    background: #A1A39E;;
+    background:#a5a59e;
     padding-top: 2%;
     margin: 0 8%;
 
@@ -811,13 +816,13 @@ header {
     }
 
     .fooSecond {
-        background: #81D2E3;
+        background: #a5a59e;
 
         .copy {
             margin-left: 35%;
             font-weight: bold;
             font-size: 12px;
-            background: #81D2E3;
+            background: #a5a59e;
         }
     }
 

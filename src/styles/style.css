@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #4f8596;
+  background: #28b1dc;
 }
 
 #container {
@@ -178,6 +178,7 @@ header nav ul li .children li a {
 .lema {
   width: 100%;
   background: #fff;
+  border: 5px solid #676767;
 }
 
 .lema p {
@@ -336,7 +337,7 @@ header nav ul li .children li a {
 
 .informacion {
   background: #d9e3e4;
-  height: 85vh;
+  height: 95vh;
 }
 
 .informacion .title {
@@ -367,8 +368,8 @@ header nav ul li .children li a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 15px;
-          box-shadow: 0 0 0 10px white, 0 0 0 15px;
+  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 12px;
+          box-shadow: 0 0 0 10px white, 0 0 0 12px;
 }
 
 .slider img {
@@ -586,7 +587,7 @@ header nav ul li .children li a {
 .contenedorSubir {
   position: fixed;
   bottom: 40px;
-  right: 40px;
+  right: 0px;
   width: 60px;
   height: 60px;
   z-index: -1;
@@ -596,6 +597,7 @@ header nav ul li .children li a {
   width: 0px;
   height: 0px;
   background: #A1A39E;
+  border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: .2s;
@@ -843,7 +845,7 @@ header nav ul li .children li a {
 }
 
 .footerPage {
-  background: #A1A39E;
+  background: #a5a59e;
   padding-top: 2%;
   margin: 0 8%;
 }
@@ -876,14 +878,14 @@ header nav ul li .children li a {
 }
 
 .footerPage .fooSecond {
-  background: #81D2E3;
+  background: #a5a59e;
 }
 
 .footerPage .fooSecond .copy {
   margin-left: 35%;
   font-weight: bold;
   font-size: 12px;
-  background: #81D2E3;
+  background: #a5a59e;
 }
 
 @media screen and (max-width: 800px) {
