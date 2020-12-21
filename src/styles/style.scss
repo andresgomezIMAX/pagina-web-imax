@@ -173,7 +173,7 @@ header {
     // height: 120px;
     background: #fff;
     // border-top: 5px solid #676767;
-    border: 5px solid #676767;
+    // border: 5px solid #676767;
 
 
     p {
@@ -565,7 +565,7 @@ header {
 .botonSubir {
     width: 0px;
     height: 0px;
-    background: #A1A39E;
+    background: #eaecec;
     border: 2px solid black;
     border-radius: 50%;
     cursor: pointer;
@@ -675,17 +675,20 @@ header {
     .box-staff1 {
         display: flex;
         justify-content: flex-start;
+        
     }
 
     .box-staff2 {
         display: flex;
         justify-content: flex-end;
+      
     }
 }
 
 .staff .descrip-staff {
     width: 50%;
-    padding: 0 2%;
+    padding: 2%;
+    background:#c4c4c2;
 
     h2 {
         margin-left: 25%;

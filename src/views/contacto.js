@@ -2,7 +2,7 @@ export default () => {
     const viewContacto = `
    
     <section class="contacto">
-        <img src="../assets/contactanos.jpg">
+        <img src="../assets/viabilidad.jpg">
     
         <div class="form">
             <h2 class="title">CONTACTANOS</h2>
