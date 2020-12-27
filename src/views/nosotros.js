@@ -19,7 +19,7 @@ export default () => {
       <div class="modal-container-video">
         <div class="modalVideo modal-closeVideo">
           <p class="closeVideo">X</p>
-          <iframe src="https://www.youtube.com/embed/1rOcl7dSavM" controls load clase="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/1rOcl7dSavM" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -91,6 +91,7 @@ export default () => {
   const modalVideo = sectionElem.querySelectorAll(".modalVideo")[0];
   const modalCvideo = sectionElem.querySelectorAll(".modal-container-video")[0];
   const video = sectionElem.querySelectorAll(".video")[0];
+  console.log('jajajaaj' + video.src)
 
 
 
@@ -107,8 +108,7 @@ export default () => {
     modalVideo.classList.toggle("modal-closeVideo");
       modalCvideo.style.opacity = "0";
       modalCvideo.style.visibility = "hidden";
-      modalVideo.src = none;
-      console.log('ssssss'+ video.src)
+      
   });
 
   window.addEventListener("click", (e) => {
@@ -117,6 +117,7 @@ export default () => {
       modalVideo.classList.toggle("modal-closeVideo");
         modalCvideo.style.opacity = "0";
         modalCvideo.style.visibility = "hidden";
+        
     }
   })
 
