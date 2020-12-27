@@ -10,6 +10,12 @@ export default () => {
         </ul>
     </div>
     </section>
+    <div class="contenedorVideo">
+        <div class="pantallaVideo modal-closeVideo">
+          <p class="closeVideo">X</p>
+          <iframe src="https://www.youtube.com/embed/1rOcl7dSavM" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
     <section >
         <div class="lema">
             <p>Nos caracterizamos por ser una empresa que brinda a sus clientes 
@@ -164,7 +170,6 @@ export default () => {
         })
     });
     
-
     cerrar.addEventListener("click", () => {
         modal.classList.toggle("modal-close");
 
@@ -185,6 +190,28 @@ export default () => {
             }, 900)
         }
     });
+
+    const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
+    const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
+    const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
+    const video = sectionElem.querySelectorAll(".video")[0];
+
+    cerrarModal.addEventListener("click", () => {
+        modalVideo.classList.toggle("modal-closeVideo");
+          modalCvideo.style.opacity = "0";
+          modalCvideo.style.visibility = "hidden";
+          video.src = "";
+      });
+
+   window.addEventListener("click", (e) => {
+    console.log(e.target)
+    if (e.target == modalCvideo) {
+      modalVideo.classList.toggle("modal-closeVideo");
+        modalCvideo.style.opacity = "0";
+        modalCvideo.style.visibility = "hidden";
+        video.src = "";
+    }
+  })
 
     window.onscroll = () => {
         // console.log(document.documentElement.scrollTop);
