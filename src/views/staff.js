@@ -3,26 +3,25 @@ export default () => {
     <section class="staff" >
         <div class="box-staff">
             <div class="portada-staff">
-                
                 <img class="portada" src="../assets/staff.jpg">
             </div>
         </div>
-        <h2>NUESTRO STAFF</h2>
+        <h2 class="tittle">NUESTRO STAFF</h2>
         <div class="box-staff1">
             <div class="descrip-staff">
                 <h2>Max Alfaro - Gerencia</h2>
                 <img class="portada" src="../assets/staff/Max Alfaro - Gerencia.jpg">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
             <div class="descrip-staff">
                 <h2>Maurice Calmet - EVP</h2>
                 <img class="portada" src="../assets/staff/Maurice Calmet - EVP.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
             <div class="descrip-staff">
                 <h2>Marcela Mendoza - GDP</h2>
                 <img class="portada" src="../assets/staff/Marcela Mendoza - GDP.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
         </div>
 
@@ -33,17 +32,17 @@ export default () => {
             <div class="descrip-staff">
                 <h2>Patricia Valdivia - EMP</h2>
                 <img class="portada" src="../assets/staff/Patricia Valdivia - EMP.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
             <div class="descrip-staff">
                 <h2>Manuel Farje - GEC</h2>
                 <img class="portada" src="../assets/staff/Manuel Farje - GEC.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
             <div class="descrip-staff">
                 <h2>Elena Alfaro - ADH</h2>
                 <img class="portada" src="../assets/staff/Elena Alfaro - ADH.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
         </div>
 
@@ -52,18 +51,18 @@ export default () => {
             <div class="descrip-staff">
                 <h2>Andrés Gómez - GSO e IAD</h2>
                 <img class="portada" src="../assets/staff/Andrés Gómez - GSO e IAD.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div>
             <div class="descrip-staff">
                     <h2>Claudia Coronel - TAS</h2>
                     <img class="portada" src="../assets/staff/Claudia Coronel - TAS.png">
-                    <button>Ver más</button>
+                    <button class="btn-mas">Ver más</button>
             </div>
 
             <div class="descrip-staff">
                 <h2>Enrique Alaba - Marketing</h2>
                 <img class="portada" src="../assets/staff/Enrique Alaba - Marketing.png">
-                <button>Ver más</button>
+                <button class="btn-mas">Ver más</button>
             </div> 
             
         </div>

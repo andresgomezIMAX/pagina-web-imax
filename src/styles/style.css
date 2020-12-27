@@ -577,12 +577,10 @@
   background: #F1FAFB;
 }
 
-.staff .portada-staff h2 {
-  margin-left: 40%;
-}
-
-.staff h2 {
+.staff .tittle {
   color: #009AD2;
+  margin-left: 40%;
+  padding: 2%;
 }
 
 .staff .box-staff1 {
@@ -594,19 +592,45 @@
           justify-content: flex-start;
 }
 
-.staff .descrip-staff {
+.staff .box-staff1 .descrip-staff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
+  height: 60vh;
   padding: 2%;
   background: #c4c4c2;
   margin: 2%;
+  border-radius: 12px;
 }
 
-.staff .descrip-staff h2 {
-  margin-left: 25%;
+.staff .box-staff1 .descrip-staff h2 {
+  color: #009AD2;
+  font-size: 120%;
+  padding: 2%;
 }
 
-.staff .descrip-staff img {
-  width: 40%;
+.staff .box-staff1 .descrip-staff img {
+  width: 90%;
+}
+
+.staff .box-staff1 .descrip-staff .btn-mas {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 15px;
+  background-color: #3a7388;
+  height: 40px;
+  width: 50%;
+  border-radius: 9px;
+  border: 0;
 }
 
 .contacto {
