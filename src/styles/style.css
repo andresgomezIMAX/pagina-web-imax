@@ -597,7 +597,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
-  height: 60vh;
   padding: 2%;
   background: #c4c4c2;
   margin: 2%;
@@ -624,6 +623,29 @@
   width: 50%;
   border-radius: 9px;
   border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.staff .box-staff1 .descrip-staff .btn-mas:hover {
+  background: #009AD2;
+}
+
+.staff .box-staff1 .descrip-staff .descripcion {
+  display: none;
+  background: #8fc6cf;
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.staff .box-staff1 .descrip-staff .descripcion .closeVideo {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 88%;
+  margin-right: 9%;
+  color: rgba(0, 67, 122, 0.945);
+  font-weight: bold;
 }
 
 .contacto {
