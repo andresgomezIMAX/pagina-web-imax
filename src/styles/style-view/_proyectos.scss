@@ -1,0 +1,32 @@
+.portada {
+    background-repeat: no-repeat;
+    // height:100px;
+    width: 100%;
+    background-position: center;
+    padding-top: 5%;
+
+}
+
+.container-mapa{
+    background:  #d9e3e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title{
+        color: #009AD2;
+        padding: 2%;
+    }
+
+    .box-mapa{
+        margin: 0 1% 4% 1%;
+        border-radius: 15px;
+        width: 90%;
+        height: 400px;
+        .mapa{
+            width: 80%;
+            height: 100%;
+            margin-left: 10%;
+        }
+    }
+}
