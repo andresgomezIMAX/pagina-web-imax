@@ -1,9 +1,59 @@
 export default () => {
     const viewProyectos = `
+
+    <section class="container-proyectos">
+        <h2 class="title">Conoce nuestros proyectos</h2>
+        <div class="box-proyectos"> 
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+            <div class="card-proyecto">
+                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <div class="info-proyecto">
+                    <h3>Proyecto Miraflores</h3>
+                    <p>Miraflores-Lima</p>
+                </div>
+            </div>
+        </div>
+      
+    </section>
+
     <img class="portada" src="../assets/portada-servicios.jpg">
     
     <section class="container-mapa">
-        <h2 class="title">Conoce nuestros proyectos</h2>
+        <h2 class="title">Ubica nuestros proyectos en todo el Perú</h2>
         <div class="box-mapa">
             <iframe class="mapa" src="https://www.google.com/maps/d/u/0/embed?mid=1_984ZeY0DhQLvXHhvTHkvvNU0IBlj3io" ></iframe>
         </div>
