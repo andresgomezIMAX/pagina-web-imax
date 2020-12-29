@@ -128,13 +128,6 @@
   font-family: 'Courgette', cursive;
 }
 
-.portada {
-  background-repeat: no-repeat;
-  width: 100%;
-  background-position: center;
-  padding-top: 5%;
-}
-
 .servicios {
   background: #F1FAFB;
   padding: 2%;
@@ -720,6 +713,45 @@
   -webkit-transition: 0.5;
   transition: 0.5;
   font-weight: bold;
+}
+
+.portada {
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: center;
+  padding-top: 5%;
+}
+
+.container-mapa {
+  background: #d9e3e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-mapa .title {
+  color: #009AD2;
+  padding: 2%;
+}
+
+.container-mapa .box-mapa {
+  margin: 0 1% 4% 1%;
+  border-radius: 15px;
+  width: 90%;
+  height: 400px;
+}
+
+.container-mapa .box-mapa .mapa {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
 }
 
 * {
