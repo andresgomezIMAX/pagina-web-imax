@@ -22,14 +22,15 @@
         justify-content: center;
 
         .card-proyecto{
-            width: 28%;
+            width: 25%;
             height: 60vh;
-            border: 2px solid black; 
-            margin: 1% 2%;
+            margin: 2%;
+  
 
             img{
                 width: 100%;
                 height: 45vh;
+                border-radius: 15px 15px 0 0;
             }
 
             .info-proyecto{
@@ -40,6 +41,11 @@
                 align-items: center;
                 justify-content: center;
             }
+        }
+
+        .card-proyecto:hover {
+            transform: scale(1.1);
+            transition: 0.5;
         }
     }
 }
@@ -65,7 +71,7 @@
             width: 80%;
             height: 100%;
             margin-left: 10%;
-            border: 2px solid black; 
+            border: 2px solid rgb(25, 142, 196); 
             border-radius: 15px;
         }
     }

@@ -91,6 +91,9 @@ export default () => {
 
     </section>
 
+    <canvas class="myChart" id="myChart" width="400" height="400"></canvas>
+ 
+
     <section class="informacion">
         <p class="title">Datos IMAX</p>
         <p class="text-desc">Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras<p>
@@ -172,7 +175,6 @@ export default () => {
     
     cerrar.addEventListener("click", () => {
         modal.classList.toggle("modal-close");
-
         setTimeout(() => {
             modalC.style.opacity = "0";
             modalC.style.visibility = "hidden";
@@ -190,6 +192,8 @@ export default () => {
             }, 900)
         }
     });
+
+    // Para ver el video
 
     const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
     const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
@@ -211,7 +215,15 @@ export default () => {
         modalCvideo.style.visibility = "hidden";
         video.src = "";
     }
-  })
+    });
+
+
+    const ctx = document.querySelector(".myChart");
+    console.log('hola ' + ctx)
+    
+
+    
+
 
     window.onscroll = () => {
         // console.log(document.documentElement.scrollTop);

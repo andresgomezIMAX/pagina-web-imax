@@ -50,7 +50,6 @@ export default () => {
       
     </section>
 
-    <img class="portada" src="../assets/portada-servicios.jpg">
     
     <section class="container-mapa">
         <h2 class="title">Ubica nuestros proyectos en todo el Perú</h2>

@@ -12,35 +12,25 @@ export default () => {
                 <h2>Max Alfaro - Gerencia</h2>
                 <img class="portada" src="../assets/staff/Max Alfaro - Gerencia.jpg">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion modal-closeDescrip"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                <div class="descrip-container">
+                    <div class="descripcion modal-closeDescrip"> 
+                        <p class="closeDescrip">X</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
+                        repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
+                        debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
+                    </div>
+                </div>    
             </div>
             <div class="descrip-staff">
                 <h2>Maurice Calmet - EVP</h2>
                 <img class="portada" src="../assets/staff/Maurice Calmet - EVP.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
-                
             </div>
             <div class="descrip-staff">
                 <h2>Marcela Mendoza - GDP</h2>
                 <img class="portada" src="../assets/staff/Marcela Mendoza - GDP.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+
             </div>
         </div>
 
@@ -52,34 +42,19 @@ export default () => {
                 <h2>Patricia Valdivia - EMP</h2>
                 <img class="portada" src="../assets/staff/Patricia Valdivia - EMP.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                
             </div>
             <div class="descrip-staff">
                 <h2>Manuel Farje - GEC</h2>
                 <img class="portada" src="../assets/staff/Manuel Farje - GEC.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                
             </div>
             <div class="descrip-staff">
                 <h2>Elena Alfaro - ADH</h2>
                 <img class="portada" src="../assets/staff/Elena Alfaro - ADH.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                
             </div>
         </div>
 
@@ -89,35 +64,20 @@ export default () => {
                 <h2>Andrés Gómez - GSO e IAD</h2>
                 <img class="portada" src="../assets/staff/Andrés Gómez - GSO e IAD.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                
             </div>
             <div class="descrip-staff">
                     <h2>Claudia Coronel - TAS</h2>
                     <img class="portada" src="../assets/staff/Claudia Coronel - TAS.png">
                     <button class="btn-mas">Ver más</button>
-                    <div class="descripcion"> 
-                    <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                    
             </div>
 
             <div class="descrip-staff">
                 <h2>Enrique Alaba - Marketing</h2>
                 <img class="portada" src="../assets/staff/Enrique Alaba - Marketing.png">
                 <button class="btn-mas">Ver más</button>
-                <div class="descripcion"> 
-                <p class="closeVideo">X</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis 
-                repudiandae ut doloribus ad at quibusdam nisi veniam omnis nam, aspernatur 
-                debitis nemo. Alias cum nostrum atque, officiis incidunt quia corporis</p>
-                </div>
+                
             </div> 
             
         </div>
@@ -137,20 +97,25 @@ export default () => {
         
     const btnMas = sectionElem.querySelectorAll(".btn-mas")[0];
     // const btnMas1 = sectionElem.querySelectorAll(".btn-mas")[1];
+    const cerrarDescrip = sectionElem.querySelectorAll(".closeDescrip")[0];
     const descripcion = sectionElem.querySelectorAll(".descripcion")[0];
-    const cerrarDescrip = sectionElem.querySelectorAll(".closeVideo")[0];
+    const containerDescrip = sectionElem.querySelectorAll(".descrip-container")[0];
 
 
     btnMas.addEventListener("click", (e) => {
         e.preventDefault();
-     descripcion.style.display='block';
+        containerDescrip.style.opacity = "1";
+        containerDescrip.style.visibility = "visible";
+        descripcion.classList.toggle("modal-closeDescrip");
     })
 
-    cerrarDescrip.addEventListener("click", () => {
+      cerrarDescrip.addEventListener("click", () => {
         descripcion.classList.toggle("modal-closeDescrip");
-        descripcion.style.display='none';
-          
-      });
+        setTimeout(() => {
+            descripcion.style.opacity = "0";
+            descripcion.style.visibility = "hidden";
+        }, 600)
+    });
 
 
 
