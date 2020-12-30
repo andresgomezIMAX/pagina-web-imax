@@ -170,7 +170,7 @@ export default () => {
             modalC.style.opacity = "1";
             modalC.style.visibility = "visible";
             modal.classList.toggle("modal-close");
-        })
+        });
     });
     
     cerrar.addEventListener("click", () => {

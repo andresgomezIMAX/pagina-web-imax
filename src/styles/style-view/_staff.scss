@@ -70,9 +70,9 @@
                 align-items: center;
         
                 .descripcion {
-                    width: 55%;
-                    height: 65%;
-                    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+                    width: 40%;
+                    height: 55%;
+                    background: linear-gradient(180deg, #cecece 0%, #3e4242 100%);
                     // overflow: hidden;
                     text-align: center;
                     display: flex;
@@ -83,12 +83,7 @@
                     transform: translateY(0%);
                     border-radius: 10px;
                     padding: 10px;
-        
-                    img {
-                        width: 50%;
-                        margin-left: 25%;
-                    }
-        
+    
                     .closeDescrip {
                         position: absolute;
                         top: 5px;
@@ -96,7 +91,7 @@
                         display: inline-block;
                         width: 25px;
                         height: 25px;
-                        background: cornflowerblue;
+                        background:  #1a9bca;
                         cursor: pointer;
                         line-height: 25px;
                         border-radius: 50%;

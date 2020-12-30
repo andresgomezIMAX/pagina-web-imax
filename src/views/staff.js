@@ -96,25 +96,50 @@ export default () => {
 
         
     const btnMas = sectionElem.querySelectorAll(".btn-mas")[0];
-    // const btnMas1 = sectionElem.querySelectorAll(".btn-mas")[1];
+    const btnMas1 = sectionElem.querySelectorAll(".btn-mas")[1];
+    const btnMas2 = sectionElem.querySelectorAll(".btn-mas")[2];
+    const btnMas3 = sectionElem.querySelectorAll(".btn-mas")[3];
+    const btnMas4 = sectionElem.querySelectorAll(".btn-mas")[4];
+    const btnMas5 = sectionElem.querySelectorAll(".btn-mas")[5];
+    const btnMas6 = sectionElem.querySelectorAll(".btn-mas")[6];
+    const btnMas7 = sectionElem.querySelectorAll(".btn-mas")[7];
+    const btnMas8 = sectionElem.querySelectorAll(".btn-mas")[8];
+    
+
+    const array = [btnMas, btnMas1, btnMas2, btnMas3, btnMas4, btnMas5, btnMas6, btnMas7, btnMas8];
+    
     const cerrarDescrip = sectionElem.querySelectorAll(".closeDescrip")[0];
     const descripcion = sectionElem.querySelectorAll(".descripcion")[0];
     const containerDescrip = sectionElem.querySelectorAll(".descrip-container")[0];
 
 
+    array.forEach((btnMas) => {
     btnMas.addEventListener("click", (e) => {
         e.preventDefault();
         containerDescrip.style.opacity = "1";
         containerDescrip.style.visibility = "visible";
         descripcion.classList.toggle("modal-closeDescrip");
-    })
+    });
+});
 
       cerrarDescrip.addEventListener("click", () => {
         descripcion.classList.toggle("modal-closeDescrip");
         setTimeout(() => {
-            descripcion.style.opacity = "0";
-            descripcion.style.visibility = "hidden";
+            containerDescrip.style.opacity = "0";
+            containerDescrip.style.visibility = "hidden";
         }, 600)
+    });
+
+    window.addEventListener("click", (e) => {
+        console.log(e.target)
+        if (e.target == containerDescrip) {
+            descripcion.classList.toggle("modal-closeDescrip");
+
+            setTimeout(() => {
+                containerDescrip.style.opacity = "0";
+                containerDescrip.style.visibility = "hidden";
+            }, 900)
+        }
     });
 
 
