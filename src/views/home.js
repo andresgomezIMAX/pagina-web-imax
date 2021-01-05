@@ -25,41 +25,26 @@ export default () => {
     </section>
 
     <section class="servicios" >
-        <p class="title">Nuestros Servicios</p>
+        <p class="title">Nuestras Unidades de Negocio</p>
         <div class="box-services">
             <div class="box-btn">
                 <div class="div-servicios">                   
                     <a href="#" class="cta"><input type="image" src="../assets/tasaciones.png" class="btn-imagen"></a>
-                    <p>Tasaciones</p>
+                    <p>Tasaciones y valuaciones</p>
                 </div>
             </div>
-            <div class="box-btn">
-                <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/valuaciones.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
-                    <p>Valuaciones NIIF</p>
-                </div>
-            </div>
+           
             <div class="box-btn">
                 <div class="div-servicios">
                     <a href="#" class="cta"><input type="image" src="../assets/monitoreo.png" class="btn-imagen"></a>
-                    <p>Monitoreo de Obras</p>
+                    <p>Evaluación y seguimiento de Proyectos</p>
                 </div>
             </div>
-            <div class="box-btn">
-                <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/viabilidad.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
-                    <p>Estudios de Viabilidad</p>
-                </div>
-            </div>
-        </div>    
-        <div class="box-services">
             <div class="box-btn">
                 <div class="div-servicios">
                     <a href="#" class="cta"><input type="image" src="../assets/supervisiones.png" class="btn-imagen"></a>
                     <!-- <button class="btn-imagen"></button> -->
-                    <p>Supervisiones</p>
+                    <p>Gerencia y Supervision de obras</p>
                 </div>
             </div>
             <div class="box-btn">
@@ -69,14 +54,9 @@ export default () => {
                     <p>Gerencia de Proyectos</p>
                 </div>
             </div>
-            <div class="box-btn">
-                <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/desarrollo.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
-                    <p>Desarrollo Integral de Proyectos</p>
-                </div>
-            </div>
-        </div>
+            
+        </div>    
+
         <div class="modal-container">
             <div class="modal modal-close">
             <p class="close">X</p>
@@ -91,7 +71,7 @@ export default () => {
 
     </section>
 
-    <canvas class="myChart" id="myChart" width="400" height="400"></canvas>
+    <!-- <canvas class="myChart" id="myChart" width="400" height="400"></canvas> -->
  
 
     <section class="informacion">
@@ -150,15 +130,12 @@ export default () => {
     sectionElem.innerHTML = viewHome;
 
     const abrir = sectionElem.querySelectorAll(".cta")[0];
-    
     const abrir1 = sectionElem.querySelectorAll(".cta")[1];
     const abrir2 = sectionElem.querySelectorAll(".cta")[2];
     const abrir3 = sectionElem.querySelectorAll(".cta")[3];
-    const abrir4 = sectionElem.querySelectorAll(".cta")[4];
-    const abrir5 = sectionElem.querySelectorAll(".cta")[5];
-    const abrir6 = sectionElem.querySelectorAll(".cta")[6];
 
-    const array = [abrir, abrir1, abrir2, abrir3, abrir4, abrir5, abrir6]
+
+    const array = [abrir, abrir1, abrir2, abrir3]
 
     let cerrar = sectionElem.querySelector(".close");
     let modal = sectionElem.querySelector(".modal");
@@ -217,9 +194,9 @@ export default () => {
     }
     });
 
-
-    const ctx = document.querySelector(".myChart");
-    console.log('hola ' + ctx)
+// codigo para el grafico en servicios
+    // const ctx = document.querySelector(".myChart");
+    // console.log('hola ' + ctx)
     
 
     
