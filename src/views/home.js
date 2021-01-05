@@ -1,6 +1,8 @@
 export default () => {
     const viewHome = `
+   
     <section>
+    
     <div class="slider-fotos">
         <ul>
             <li><img src="../assets/construction-site.jpg"></li>

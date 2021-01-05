@@ -152,7 +152,7 @@
   width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 1% 5%;
+  padding: 5%;
 }
 
 .servicios .box-services .box-btn {
@@ -900,7 +900,7 @@
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-body {
+.body-web {
   background: #71c3db;
 }
 
@@ -912,7 +912,7 @@ body {
   display: none;
 }
 
-header {
+.header-web {
   width: 84%;
   position: fixed;
   background: #ffffff;
@@ -920,7 +920,7 @@ header {
   margin-left: 8%;
 }
 
-header nav {
+.header-web nav {
   background: #8c8c8b;
   z-index: 1000;
   max-width: 100%;
@@ -934,44 +934,44 @@ header nav {
           justify-content: space-between;
 }
 
-header nav ul {
+.header-web nav ul {
   list-style: none;
 }
 
-header nav ul li {
+.header-web nav ul li {
   display: inline-block;
   position: relative;
 }
 
-header nav ul li a {
+.header-web nav ul li a {
   color: white;
   display: block;
   text-decoration: none;
   padding: 15px 30px;
 }
 
-header nav ul li .intranet {
+.header-web nav ul li .intranet {
   width: 80%;
 }
 
-header nav ul li :hover {
+.header-web nav ul li :hover {
   background: #5f6669;
 }
 
-header nav ul li :hover .children {
+.header-web nav ul li :hover .children {
   display: block;
 }
 
-header nav .logo {
+.header-web nav .logo {
   margin-left: 5%;
   width: 14%;
 }
 
-header nav ul li:hover .children {
+.header-web nav ul li:hover .children {
   display: block;
 }
 
-header nav ul li .children {
+.header-web nav ul li .children {
   display: none;
   background: #A1A39E;
   position: absolute;
@@ -979,13 +979,13 @@ header nav ul li .children {
   z-index: 1000;
 }
 
-header nav ul li .children li {
+.header-web nav ul li .children li {
   display: block;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-header nav ul li .children li a {
+.header-web nav ul li .children li a {
   display: block;
 }
 
