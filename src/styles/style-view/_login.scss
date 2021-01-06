@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+.container-login{
+    height: 100vh;
+    background-image: url(../../../assets/fondo-login.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box-login{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+        
+        .login-form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: #ffffff;
+            width: 28%;
+            padding: 25px 0;
+
+                    .logo-login{
+                    width: 45%;
+                    margin: 4%;
+                }
+
+                .box-input{
+                    margin: 20px;
+                    height: 45px;
+                    width: 70%;
+                    border-bottom: 1px solid rgb(19, 19, 19);
+                    display: flex;
+                    align-items: flex-end;
+
+                    .user{
+                        color: rgb(0, 0, 0);
+                        font-size: 1.1rem;
+                        background-color: transparent;
+                        padding-left: 5px;
+                        height: 90%;
+                        width: 100%;
+                        border: 0;
+                        outline: none;
+                    }
+
+                    .user-icon{
+                        font-size: 1.3rem;
+                        color: rgb(134, 134, 134);
+                        margin: 10px;
+                    }
+                }
+
+                .btn-login{
+                    color: #ffffff;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin: 15px 0;
+                    background-color: #00AFEF;
+                    height: 50px;
+                    width: 60%;
+                    border-radius: 9px;
+                    border: 0;
+                    outline: none;
+                }
+
+                .login-google{
+                    margin-top: 10px  ;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .google-icon{
+                        font-size: 1.3rem;
+                        color: rgb(134, 134, 134);
+                        margin: 10px;
+                    }
+                }
+             }
+        }
+}
+
+
+
+
+    //     .box-input div{
+    //         margin: 26% 0;
+    //         display: flex;
+    //         border-bottom: 2px solid grey;
+            
+    //         input{
+    //             outline: none;
+    //             border: none;
+                
+    //         }
+    //     }
+    // }
+
+
+
+
