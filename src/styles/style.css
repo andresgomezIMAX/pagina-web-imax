@@ -902,7 +902,7 @@
 
 .container-login {
   height: 100vh;
-  background-color: khaki;
+  background-image: url(../../../assets/fondo-login.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
