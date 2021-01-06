@@ -2,6 +2,8 @@ export default () => {
     const viewHome = `
    
     <section>
+
+    
     
     <div class="slider-fotos">
         <ul>

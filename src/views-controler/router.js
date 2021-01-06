@@ -16,8 +16,6 @@ const changeView = (hash) => {
        case '#/staff': 
        case '#/proyectos':
        case '#/contacto':
-       case '#/intranet':
-          case '#/intranet':
 
             { return sectionMain.appendChild(components[id]()); } 
    

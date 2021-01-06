@@ -18,9 +18,9 @@ function main () {
     })
 
     // Mostramos y ocultamos submenus
-    // $('.submenu').click(function(){
-    //     $(this).children('.children').slidetoggle();
-    // })
+    $('.submenu').click(function(){
+        $(this).children('.children').slidetoggle();
+    })
 
 
 
