@@ -139,6 +139,10 @@
   font-weight: bold;
 }
 
+.servicios .ruleta {
+  margin-left: 25%;
+}
+
 .servicios .box-services {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -968,7 +972,7 @@
           align-items: flex-end;
 }
 
-.container-login .box-login .login-form .box-input .user {
+.container-login .box-login .login-form .box-input .emailLogin, .container-login .box-login .login-form .box-input .passwordLogin {
   color: black;
   font-size: 1.1rem;
   background-color: transparent;
