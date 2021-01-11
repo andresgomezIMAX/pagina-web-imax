@@ -8,10 +8,10 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><img src="../assets/construction-site.jpg"></li>
-            <li><img src="../assets/home-slide-1.jpg"></li>
-            <li><img src="../assets/home-slide-3.jpg"></li>
-            <li><img src="../assets/monitoreo.jpg"></li>
+            <li><img src="./assets/construction-site.jpg"></li>
+            <li><img src="./assets/home-slide-1.jpg"></li>
+            <li><img src="./assets/home-slide-3.jpg"></li>
+            <li><img src="./assets/monitoreo.jpg"></li>
         </ul>
     </div>
     </section>
@@ -34,27 +34,27 @@ export default () => {
         <div class="box-services">
             <div class="box-btn">
                 <div class="div-servicios">                   
-                    <a href="#" class="cta"><input type="image" src="../assets/tasaciones.png" class="btn-imagen"></a>
+                    <a href="#" class="cta"><input type="image" src="./assets/tasaciones.png" class="btn-imagen"></a>
                     <p>Tasaciones y valuaciones</p>
                 </div>
             </div>
            
             <div class="box-btn">
                 <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/monitoreo.png" class="btn-imagen"></a>
+                    <a href="#" class="cta"><input type="image" src="./assets/monitoreo.png" class="btn-imagen"></a>
                     <p>Evaluación y seguimiento de Proyectos</p>
                 </div>
             </div>
             <div class="box-btn">
                 <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/supervisiones.png" class="btn-imagen"></a>
+                    <a href="#" class="cta"><input type="image" src="./assets/supervisiones.png" class="btn-imagen"></a>
                 
                     <p>Gerencia y Supervision de obras</p>
                 </div>
             </div>
             <div class="box-btn">
                 <div class="div-servicios">
-                    <a href="#" class="cta"><input type="image" src="../assets/gerencia.png" class="btn-imagen"></a>
+                    <a href="#" class="cta"><input type="image" src="./assets/gerencia.png" class="btn-imagen"></a>
                
                     <p>Gerencia de Proyectos</p>
                 </div>
@@ -65,7 +65,7 @@ export default () => {
         <div class="modal-container">
             <div class="modal modal-close">
             <p class="close">X</p>
-            <img src="../assets/home-big.jpg">
+            <img src="./assets/home-big.jpg">
             <div class="modal-textos">
                 <h2> titulo1</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil error obcaecati animi ipsum doloremque 
@@ -81,7 +81,7 @@ export default () => {
     <section class="servicios" >
     <!-- <p class="title">Nuestras Unidades de Negocio</p>
 
-        <img class="ruleta" src="../assets/unidadesNegocio.png">-->
+        <img class="ruleta" src="./assets/unidadesNegocio.png">-->
         <h1 class="title" >Nuestras Unidades de Negocio</h1>
         <div class="grafico"> 
             <canvas width="50" height="50" id="dibujito" class="dibujito"></canvas>
@@ -97,22 +97,22 @@ export default () => {
             <li>
                 <input type="radio" id="sbutton1"  name="sradio" checked >
                 <label for="sbutton1"></label>
-                <img src="../assets/info.png">
+                <img src="./assets/info.png">
             </li>
             <li>
                 <input type="radio" id="sbutton2"  name="sradio">
                 <label for="sbutton2"></label>
-                <img src="../assets/info3.png">
+                <img src="./assets/info3.png">
             </li>
             <li>
                 <input type="radio" id="sbutton3"  name="sradio">
                 <label for="sbutton3"></label>
-                <img src="../assets/info2.jpg">
+                <img src="./assets/info2.jpg">
             </li>
             <li>
                 <input type="radio" id="sbutton4"  name="sradio">
                 <label for="sbutton4"></label>
-                <img src="../assets/info.png">
+                <img src="./assets/info.png">
             </li>
       </ul>
     </section>
@@ -124,19 +124,19 @@ export default () => {
     <section class="clientes">
         <p class="title">Nuestros Clientes</p>
         <div class="box-clientes">
-            <img src="../assets/client1.jpg">
-            <img src="../assets/client2.jpg">
+            <img src="./assets/client1.jpg">
+            <img src="./assets/client2.jpg">
         </div>
         <div class="box-clientes">
-            <img src="../assets/client3.jpg">
-            <img src="../assets/client4.jpg">
+            <img src="./assets/client3.jpg">
+            <img src="./assets/client4.jpg">
         </div>
     </section>
 
 
     <div class="contenedorSubir" >
         <div class="botonSubir">
-            <img src="../assets/flecha-arriba.png" alt="subir">
+            <img src="./assets/flecha-arriba.png" alt="subir">
         </div> 
     </div>  
     

@@ -5,42 +5,42 @@ export default () => {
         <h2 class="title">Conoce nuestros proyectos</h2>
         <div class="box-proyectos"> 
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
                 </div>
             </div>
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
                 </div>
             </div>
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
                 </div>
             </div>
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
                 </div>
             </div>
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
                 </div>
             </div>
             <div class="card-proyecto">
-                <img class="img-proyecto" src="../assets/departamentos.jpg">
+                <img class="img-proyecto" src="./assets/departamentos.jpg">
                 <div class="info-proyecto">
                     <h3>Proyecto Miraflores</h3>
                     <p>Miraflores-Lima</p>
@@ -60,7 +60,7 @@ export default () => {
 
     <div class="contenedorSubir" >
         <div class="botonSubir">
-            <img src="../assets/flecha-arriba.png" alt="subir">
+            <img src="./assets/flecha-arriba.png" alt="subir">
         </div> 
     </div> `
 

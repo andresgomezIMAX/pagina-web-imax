@@ -1,7 +1,7 @@
 export default () => {
   const viewSomos = `
     <section class="course-banner">
-      <img src="../assets/video.png">
+      <img src="./assets/video.png">
       <div class="circle-overlay">
         <div class="gs-banner-content">
           <div>
@@ -41,11 +41,11 @@ export default () => {
             través de nuestras principales unidades de negocio a la 
             velocidad que el mercado lo requiera.</p>
         </div>
-        <img class="img-nosotros" src="../assets/somos.jpg"> 
+        <img class="img-nosotros" src="./assets/somos.jpg"> 
     </div> 
 
     <div class="box-nosotros">
-        <img class="img-nosotros1" src="../assets/mision.jpg">
+        <img class="img-nosotros1" src="./assets/mision.jpg">
         <div class="descripcion">
             <h2>MISION</h2> <br>
             <p>Asumir la necesidad del cliente como propia para brindarle 
@@ -56,7 +56,7 @@ export default () => {
             clientes ofreciéndoles soluciones integrales que lideren el 
             mercado inmobiliario.</p>
         </div>
-        <img class="img-nosotros2" src="../assets/mision.jpg">
+        <img class="img-nosotros2" src="./assets/mision.jpg">
     </div>
 
     <div class="box-nosotros">
@@ -74,12 +74,12 @@ export default () => {
                  con el medio ambiente.<br>
             🔹Tenemos constancia para crecer juntos.</p>
         </div>
-        <img class="img-nosotros" src="../assets/valores.jpg">  
+        <img class="img-nosotros" src="./assets/valores.jpg">  
     </div>
 </section>
 <div class="contenedorSubir" >
 <div class="botonSubir">
-    <img src="../assets/flecha-arriba.png" alt="subir">
+    <img src="./assets/flecha-arriba.png" alt="subir">
 </div> 
 </div> `
 
