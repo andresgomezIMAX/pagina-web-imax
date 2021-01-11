@@ -28,7 +28,7 @@ export default () => {
         
     </section>
 
-    <section class="servicios" >
+    <!--<section class="servicios" >
         <p class="title">Nuestras Unidades de Negocio</p>
         <div class="box-services">
             <div class="box-btn">
@@ -47,14 +47,14 @@ export default () => {
             <div class="box-btn">
                 <div class="div-servicios">
                     <a href="#" class="cta"><input type="image" src="../assets/supervisiones.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
+                
                     <p>Gerencia y Supervision de obras</p>
                 </div>
             </div>
             <div class="box-btn">
                 <div class="div-servicios">
                     <a href="#" class="cta"><input type="image" src="../assets/gerencia.png" class="btn-imagen"></a>
-                    <!-- <button class="btn-imagen"></button> -->
+               
                     <p>Gerencia de Proyectos</p>
                 </div>
             </div>
@@ -73,9 +73,15 @@ export default () => {
             </div>
         </div>
 
-    </section>
+    </section> -->
 
-    <!-- <canvas class="myChart" id="myChart" width="400" height="400"></canvas> -->
+    
+
+    <section class="servicios" >
+    <p class="title">Nuestras Unidades de Negocio</p>
+
+    <img class="ruleta" src="../assets/unidadesNegocio.png">
+    </section>
  
 
     <section class="informacion">
@@ -133,46 +139,46 @@ export default () => {
     const sectionElem = document.createElement('div');
     sectionElem.innerHTML = viewHome;
 
-    const abrir = sectionElem.querySelectorAll(".cta")[0];
-    const abrir1 = sectionElem.querySelectorAll(".cta")[1];
-    const abrir2 = sectionElem.querySelectorAll(".cta")[2];
-    const abrir3 = sectionElem.querySelectorAll(".cta")[3];
+    // const abrir = sectionElem.querySelectorAll(".cta")[0];
+    // const abrir1 = sectionElem.querySelectorAll(".cta")[1];
+    // const abrir2 = sectionElem.querySelectorAll(".cta")[2];
+    // const abrir3 = sectionElem.querySelectorAll(".cta")[3];
 
 
-    const array = [abrir, abrir1, abrir2, abrir3]
+    // const array = [abrir, abrir1, abrir2, abrir3]
 
-    let cerrar = sectionElem.querySelector(".close");
-    let modal = sectionElem.querySelector(".modal");
-    let modalC = sectionElem.querySelector(".modal-container");
+    // let cerrar = sectionElem.querySelector(".close");
+    // let modal = sectionElem.querySelector(".modal");
+    // let modalC = sectionElem.querySelector(".modal-container");
 
-    array.forEach((abrir) => {
-        abrir.addEventListener("click", (e) => {
-            e.preventDefault();
-            modalC.style.opacity = "1";
-            modalC.style.visibility = "visible";
-            modal.classList.toggle("modal-close");
-        });
-    });
+    // array.forEach((abrir) => {
+    //     abrir.addEventListener("click", (e) => {
+    //         e.preventDefault();
+    //         modalC.style.opacity = "1";
+    //         modalC.style.visibility = "visible";
+    //         modal.classList.toggle("modal-close");
+    //     });
+    // });
     
-    cerrar.addEventListener("click", () => {
-        modal.classList.toggle("modal-close");
-        setTimeout(() => {
-            modalC.style.opacity = "0";
-            modalC.style.visibility = "hidden";
-        }, 600)
-    });
+    // cerrar.addEventListener("click", () => {
+    //     modal.classList.toggle("modal-close");
+    //     setTimeout(() => {
+    //         modalC.style.opacity = "0";
+    //         modalC.style.visibility = "hidden";
+    //     }, 600)
+    // });
 
-    window.addEventListener("click", (e) => {
-        console.log(e.target)
-        if (e.target == modalC) {
-            modal.classList.toggle("modal-close");
+    // window.addEventListener("click", (e) => {
+    //     console.log(e.target)
+    //     if (e.target == modalC) {
+    //         modal.classList.toggle("modal-close");
 
-            setTimeout(() => {
-                modalC.style.opacity = "0";
-                modalC.style.visibility = "hidden";
-            }, 900)
-        }
-    });
+    //         setTimeout(() => {
+    //             modalC.style.opacity = "0";
+    //             modalC.style.visibility = "hidden";
+    //         }, 900)
+    //     }
+    // });
 
     // Para ver el video
 
@@ -199,8 +205,18 @@ export default () => {
     });
 
 // codigo para el grafico en servicios
-    // const ctx = document.querySelector(".myChart");
-    // console.log('hola ' + ctx)
+// const d = sectionElem.querySelector('#dibujito');
+// const lienzo = d.getContext("2d");
+
+// console.log(lienzo);
+
+// lienzo.beginPath();
+// lienzo.strokeStyle = "blue";
+// lienzo.moveTo(50,10);
+// lienzo.lineTo(250,2);
+// lienzo.stroke();
+// lienzo.closePath();
+
     
 
     
