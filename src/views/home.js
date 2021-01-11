@@ -1,3 +1,4 @@
+
 export default () => {
     const viewHome = `
    
@@ -78,9 +79,14 @@ export default () => {
     
 
     <section class="servicios" >
-    <p class="title">Nuestras Unidades de Negocio</p>
+    <!-- <p class="title">Nuestras Unidades de Negocio</p>
 
-    <img class="ruleta" src="../assets/unidadesNegocio.png">
+        <img class="ruleta" src="../assets/unidadesNegocio.png">-->
+        <h1 class="title" >Nuestras Unidades de Negocio</h1>
+        <div class="grafico"> 
+            <canvas width="50" height="50" id="dibujito" class="dibujito"></canvas>
+        </div>
+
     </section>
  
 
@@ -205,18 +211,39 @@ export default () => {
     });
 
 // codigo para el grafico en servicios
-// const d = sectionElem.querySelector('#dibujito');
-// const lienzo = d.getContext("2d");
+const d = sectionElem.querySelector('#dibujito');
+const lienzo = d.getContext("2d");
 
-// console.log(lienzo);
+console.log(lienzo);
 
-// lienzo.beginPath();
-// lienzo.strokeStyle = "blue";
-// lienzo.moveTo(50,10);
-// lienzo.lineTo(250,2);
-// lienzo.stroke();
-// lienzo.closePath();
+const myChart = new Chart  (lienzo, {
+    type: 'pie',
+    data: {
+        labels:[
+            "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
+        ],
+        datasets: [{
+            data:[
+                5.94,3,11.82,11.82,11.82,0.06,0.18
+            ],
+            backgroundColor:[
+                '#404040',
+                '#ffc000',
+                '#5b9bd5',
+                '#70ad47',
+                '#ff0000',
+                '#d9d9d9',
+                '#acacac'
 
+            ],
+        }],
+       
+       
+    },
+    options: {
+        responsive:true,
+    }
+});
     
 
     
