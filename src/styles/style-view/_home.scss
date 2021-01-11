@@ -189,11 +189,25 @@
 .servicios {
     background: #F1FAFB;
     padding: 2%;
+   
+
+
+    
 
     .title {
         color: #009AD2;
         font-size: 195%;
         font-weight: bold;
+    }
+
+    
+    .grafico{
+        width: 45%;
+        margin: 2% 0 2% 30%;
+    }
+
+    .ruleta{
+        margin-left: 25%;
     }
 
     .box-services {
