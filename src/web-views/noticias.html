@@ -11,61 +11,61 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
 </head>
-<body>
+<body class="container-noticias">
 
-    <header class="header-intranet">
-   
-        <div class="menu-bar">
-            <a href="#" class="bt-menu"><i class="iconMenu fas fa-bars"></i>Menú</label></a>
-        </div>    
+    <header class="header-intranet">   
         <nav class="menu">
             <img class="logo" src="../../assets/logo.png">
             <ul>
-                <li><a href="#/">Noticias</a></li>
-                <li><a href="#/proyectos">Mis Pagos</a></li>
-                <li><a href="#/proyectos">Mis Vacaciones</a></li>
-                <li><a href="#/contacto">Herramientas IMAX</a></li>
-                <!-- <li><a href="#/proyectos">ingresar Pagos</a></li>
-                <li><a href="#/proyectos">Solicitudes de Vacaciones</a></li>
-                <li><a href="#/contacto">Agregar Colaboradores</a></li> -->
-                <li><a href="#/contacto">Cerrar sesión</a></li>
+                <a href="#/"><li>Noticias</li></a>
+                <a href="#/proyectos"><li>Mis Pagos</li></a>
+                <a href="#/proyectos"><li>Mis Vacaciones</li></a>
+                <a href="#/contacto"><li>Herramientas IMAX</li></a>
+                <!-- <a href="#/proyectos">ingresar Pagos</a>
+                <a href="#/proyectos">Solicitudes de Vacaciones</a>
+                <a href="#/contacto">Agregar Colaboradores</a> -->
+                <a href="#/contacto"><li>Cerrar sesión</li></a>
                
             </ul>
         </nav>
 
-</header>
+    </header>
 
-    <main>
-        <div>
-            <p>Noticias IMAX</p>
-        </div>
+    <main class="box-noticias">
+        <div class="column-noticias">
 
-        <section>
-            <div class="writePost">
-                <textarea id="newPublication" class="textarea" rows="5" cols="50"></textarea>
+            <div class="title-noticias">
+                <p>Noticias IMAX</p>
             </div>
-            <progress value= "0" max= "100" id="uploader">0%</progress>
-            <input type="file" id="addImage" accept ="image/*" class= "addImg"> 
-            <label for= "addImage">
-                <i class="fas fa-camera"></i>
-            </label> <br>
-            <button id="btnNewPublication" class="btnPost">Publicar</button>
-        </section>
+    
+            <section class="create-post">
+                <div class="writePost">
+                    <textarea id="newPublication" class="textarea" rows="10" cols="50"></textarea>
+                </div>
+                <div class="box-publicar">
+                    <div class="progress">
+                        <progress value= "0" max= "100" id="uploader">0%</progress>
+                        <input type="file" id="addImage" accept ="image/*" class= "addImg"> 
+                        <label for= "addImage">
+                            <i class="fas fa-camera"></i>
+                        </label> <br>
+                    </div>
+                    
+                    <button id="btnNewPublication" class="btnPost">Publicar</button>
+                </div>
+                
+                
+            </section>
+    
+    
+            <section class="container-post">
+                    <ul class="posts">
+                      
+                    </ul>
+            </section>
 
-        <section>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem quae neque odio alias nobis eveniet sunt vitae natus illo soluta reprehenderit quaerat quas consequatur, ipsum eum veniam similique, commodi debitis.</p>
-            </div>
-        </section>
-
-        <div>
-                <ul class="posts">
-                    <li>
-                        <h3>Titulo</h3>
-                        <p>Lorem ipsum dolor sit amet. </p>
-                    </li>
-                </ul>
         </div>
+        
 
 
 
