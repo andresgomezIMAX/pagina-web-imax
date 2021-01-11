@@ -911,7 +911,7 @@
 
 .container-login {
   height: 100vh;
-  background-image: url(../../../assets/fondo-login.png);
+  background-image: url(../fondos/fondo-login.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1040,7 +1040,7 @@
 
 .container-noticias {
   height: 100vh;
-  background-image: url(../../../assets/imax-background.png);
+  background-image: url(../fondos/imax-background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
