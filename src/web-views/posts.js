@@ -2,19 +2,19 @@ const postsList = document.querySelector('.posts');
 
 const setupPosts = data => {
     if (data.length) {
-        let html = '';
+        let posts = '';
         data.forEach(doc=> {
             const post = doc.data();
             const li = `
-            <li>
-            <h5>${post.title}</h5>
+            <li class="box-post">
+            <h3>${post.title}</h5>
             <p>${post.description}</p>
             </li>`;
 
-            html += li;
+            posts += li;
         });
 
-        postsList.innerHTML= html;
+        postsList.innerHTML= posts;
     } else {
         postsList.innerHTML= `<p>No existen post en este momento</p>`;
     }
