@@ -10,30 +10,62 @@
 <body>
     <section class="container-login">
         <div class="box-login">
-            <div class="login-form">
+            <form class="login-form">
                 <img class="logo-login" src="../assets/logo.png">
                
                 <div class="box-input">
                     <i class="user-icon fas fa-user"></i>
-                    <input class="user" type="email" placeholder="Usuario">
+                    <input class="emailLogin" name="email" type="email" placeholder="Usuario">
                 </div>
                 <div class="box-input">
                     <i class="user-icon fas fa-lock"></i>
-                    <input class="user" type="password" placeholder="Contraseña">
+                    <input class="passwordLogin" type="password" placeholder="Contraseña">
                 </div>
-              
-                <button class="btn-login" type="button">Ingresar</button>
+                <div class="reg_error_inner" id="reg_error_inner"></div>
+                <button class="btn-login" type="submit" > ingresar</button>
                 <div class="login-google">
                     <p>o puedes ingresar con ...</p>
                     <i class="google-icon fab fa-google"></i>
                 </div>
-           </div>
+            </form>
         </div>
        
 
     </section>
 
- 
+<!-- Firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    
+
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.analytics();
+    </script>
+
+    <!-- custom code -->
+    <script src="web-views/login.js"></script> 
 
 
 </body>
