@@ -139,6 +139,11 @@
   font-weight: bold;
 }
 
+.servicios .grafico {
+  width: 45%;
+  margin: 2% 0 2% 30%;
+}
+
 .servicios .ruleta {
   margin-left: 25%;
 }
