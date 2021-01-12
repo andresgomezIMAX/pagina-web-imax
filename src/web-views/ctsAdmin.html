@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>noticias</title>
+</head>
+<body class="container-noticias">
+
+    <header class="header-intranet">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const" >Mis Constancias CTS</li></a>
+                        </ul>
+               </a> </li>
+               <li><a href="#/proyectos">Mis Vacaciones</a></li>
+               <li><a href="#/contacto">Herramientas IMAX</a></li>
+               <li><a href="#/" class="admin">Administrador
+                    <ul class="nav-admin hide">
+                        <a href="boletasAdmin.html" ><li class="btn-admin-boletas" >Ingresar Boletas</li></a>
+                        <a href="ctsAdmin.html" ><li class="btn-admi-const" >Ingresar CTS</li></a>
+                    </ul>
+                </a> </li>
+                <a href="#/contacto"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-admin-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Ingresar Constancias CTS</p>
+                <p><i class="fas fa-user"></i>Administrador</p>
+            </div>
+
+            <div class="box-generate-ticket">
+                <div class="generate-ticket">
+                    <div class="box-search">
+                        <div class="search-name">
+                            <label for="search">Nombre del Colaborador:</label>
+                            <select name="name" className="select-modal" required >
+                                <option value="emp">Pepito Castillo Luna</option>
+                                <option value="ie">Laura Catillo Luna </option>
+                                <option value="iad">Pepito Castillo Luna</option>
+                            </select>
+                        </div>
+    
+                        <div class="search-second">
+                            <div> 
+                                <label for="search">Mes:</label>
+                                <select name="mes" className="select-modal" required >
+                                    <option value="emp">Diciembre 2020</option>
+                                    <option value="ie">Julio 2020</option>
+                                    <option value="emp">Diciembre 2019</option>
+                                    <option value="ie">Julio 2019</option>
+                                    <option value="emp">Diciembre 2018</option>
+                                    <option value="ie">Julio 2018</option>
+                                    <option value="emp">Diciembre 2017</option>
+                                    <option value="ie">Julio 2017</option>
+                                
+                                </select>
+                            </div>
+                            <div>
+                                <label for="search">Total s/.: </label>
+                                <input type="number" name="search" >
+                            </div>
+                            <div>
+                                <label for="search">Adjuntar Constancia <i class="fas fa-paperclip"></i></label>
+                                <input type="file" id="addImage" accept ="image/*" class= "addImg">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-generar">Generar</button>
+                </div>   
+            </div>
+
+            <div class="box-search-filter">
+                <p class="title-filter">Constancias CTS publicadas</p>
+                <div class="search-filter">
+                    <p>Filtro de Búsqueda</p>
+                    <div class="detailed-search">
+                        <label for="search">Por Colaborador:</label>
+                        <input type="text" name="search" >
+                    
+                        <label for="search">Por Mes:</label>
+                        <input type="text" name="search" >   
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box-table">
+                <table style="width:100%">
+                    <tr>
+                      <th>Colaborador</th>
+                      <th>Mes</th>
+                      <th>Constancias CTS</th>
+                    </tr>
+                    <tr>
+                      <td>Pepito Castillo Luna</td>  
+                      <td>Diciembre 2020</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                   
+                    </tr>
+                    <tr>
+                      <td>Laura Luna Catillo</td>
+                      <td>Noviembre 2020</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                    </tr>                     
+                  </table>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="nav.js"></script>  
+</body>
+</html>
