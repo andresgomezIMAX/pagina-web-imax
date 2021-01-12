@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>noticias</title>
+</head>
+<body class="container-noticias">
+
+    <header class="header-intranet">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const" >Mis Constancias CTS</li></a>
+                        </ul>
+               </a> </li>
+               <li><a href="#/proyectos">Mis Vacaciones</a></li>
+               <li><a href="#/contacto">Herramientas IMAX</a></li>
+                <!-- <a href="#/proyectos">ingresar Pagos</a>
+                <a href="#/proyectos">Solicitudes de Vacaciones</a>
+                <a href="#/contacto">Agregar Colaboradores</a> -->
+                <a href="#/contacto"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Mis boletas de pago</p>
+                <p><i class="fas fa-user"></i>Pepito Castillo</p>
+            </div>
+            <div class="box-search">
+                <div>
+                    <p>Filtro de Busqueda</p>
+                    <label for="search">Por Mes:</label>
+                    <input type="text" name="search" >
+                    
+                </div>
+                <div class="note">
+                    <p>*Estimado usuario, una vez vizualizada su boleta de pago, por favor dar click en la conformidad.</p>
+                </div>
+                
+            </div>
+            <div class="box-table">
+                <table style="width:100%">
+                    <tr>
+                      <th>Mes</th>
+                      <th>Total de Haberes</th>
+                      <th>Boleta de Pago</th>
+                      <th>Conformidad</th>
+                    </tr>
+                    <tr>
+                      <td>Diciembre 2020</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                      <td>Noviembre 2020</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                      <td>Octubre 2020</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                        <td>Diciembre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Noviembre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Octubre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Diciembre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Noviembre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Octubre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Diciembre 2020</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                     
+                  </table>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="nav.js"></script>  
+</body>
+</html>
