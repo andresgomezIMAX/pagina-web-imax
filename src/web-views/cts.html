@@ -26,9 +26,12 @@
                </a> </li>
                <li><a href="#/proyectos">Mis Vacaciones</a></li>
                <li><a href="#/contacto">Herramientas IMAX</a></li>
-                <!-- <a href="#/proyectos">ingresar Pagos</a>
-                <a href="#/proyectos">Solicitudes de Vacaciones</a>
-                <a href="#/contacto">Agregar Colaboradores</a> -->
+               <li><a href="#/" class="admin">Administrador
+                    <ul class="nav-admin hide">
+                        <a href="boletasAdmin.html" ><li class="btn-admin-boletas" >Ingresar Boletas</li></a>
+                        <a href="ctsAdmin.html" ><li class="btn-admi-const" >Ingresar CTS</li></a>
+                    </ul>
+                 </a> </li>
                 <a href="#/contacto"><li>Cerrar sesión</li></a>
                
             </ul>
@@ -37,14 +40,77 @@
 
     </header>
 
-    <main class="box-noticias">
-<p>cts jolaa
-
-</p>>
-        
-
-
-
+    <main class="box-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Mis Constancias CTS</p>
+                <p><i class="fas fa-user"></i>Pepito Castillo</p>
+            </div>
+            <div class="box-search">
+                <div>
+                    <p>Filtro de Busqueda</p>
+                    <label for="search">Por Año:</label>
+                    <input type="text" name="search" >
+                    
+                </div>
+                <div class="note">
+                    <p>*Estimado usuario, una vez vizualizada tu constancia CTS, por favor dar click en la conformidad.</p>
+                </div>
+                
+            </div>
+            <div class="box-table">
+                <table style="width:100%">
+                    <tr>
+                      <th>Fecha</th>
+                      <th>Total de Haberes</th>
+                      <th>Constancias CTS</th>
+                      <th>Conformidad</th>
+                    </tr>
+                    <tr>
+                      <td>Diciembre 2020</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                      <td>Julio 2020</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                      <td>Diciembre 2019</td>
+                      <td>3000.00</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>
+                    <tr>
+                        <td>Julio 2019</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Diciembre 2018</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Julio 2018</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>
+                      <tr>
+                        <td>Diciembre 2017</td>
+                        <td>3000.00</td>
+                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                      </tr>                     
+                  </table>
+            </div>
+        </section>
 
     </main>
     
