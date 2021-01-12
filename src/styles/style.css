@@ -1075,7 +1075,7 @@
 
 .container-noticias .header-intranet .menu li {
   list-style: none;
-  line-height: 70px;
+  line-height: 60px;
   border-top: 0.5px solid rgba(69, 69, 69, 0.6);
   font-weight: 700;
   font-size: 1.3rem;
@@ -1154,7 +1154,7 @@
       -ms-flex-align: end;
           align-items: flex-end;
   padding: 2% 10% 2%  2%;
-  border-bottom: 0.5px solid rgba(69, 69, 69, 0.6);
+  border-bottom: 2px solid rgba(69, 69, 69, 0.6);
 }
 
 .container-noticias .box-noticias .create-post .writePost {
@@ -1351,10 +1351,247 @@
   border: none;
   outline: none;
   background-color: #ffffff;
+  color: red;
+  font-weight: bold;
 }
 
 .box-boletas .container-boletas .box-table table button:active, .box-boletas .container-boletas .box-table td button:active {
+  color: black;
+}
+
+.box-admin-boletas {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box-admin-boletas .container-boletas {
+  background-color: #F3F3F3;
+  height: 90%;
+  width: 90%;
+}
+
+.box-admin-boletas .container-boletas .title-new {
+  background: rgba(140, 140, 140, 0.8);
+  margin: 20px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+}
+
+.box-admin-boletas .container-boletas .title-new p {
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 12px;
+}
+
+.box-admin-boletas .box-generate-ticket {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket {
+  border: 1px solid #C4C4C4;
+  width: 92%;
+  padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket label {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket select, .box-admin-boletas .box-generate-ticket .generate-ticket input {
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 5px #999;
+          box-shadow: 2px 2px 5px #999;
+  height: 25px;
+  outline: none;
+  border: none;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2%;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-name select {
+  width: 70%;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-second {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar {
+  border-radius: 9px;
+  width: 20%;
+  color: white;
+  font-family: "Pridi",gitserif;
+  font-size: 20px;
+  height: 120px;
+  font-weight: 700;
+  outline: none;
+  border: none;
+  background-color: #8DB9CA;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar:active {
+  background-color: #00ADEF !important;
+}
+
+.box-admin-boletas .box-search-filter {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.box-admin-boletas .box-search-filter .title-filter {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+.box-admin-boletas .box-search-filter .search-filter {
+  width: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box-admin-boletas .box-search-filter .search-filter .detailed-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 1% 0;
+}
+
+.box-admin-boletas .box-search-filter .search-filter .detailed-search input {
+  width: 30%;
+  margin-right: 70px;
+  border: none;
+  background-color: #C4C4C4;
+  outline: none;
+  height: 25px;
+}
+
+.box-admin-boletas .box-table {
+  padding: 1% 3% 2% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 65%;
+  overflow: auto;
+}
+
+.box-admin-boletas .box-table table, .box-admin-boletas .box-table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  height: 40px;
+  text-align: center;
+}
+
+.box-admin-boletas .box-table table th, .box-admin-boletas .box-table td th {
+  background-color: #C4C4C4;
+  border-collapse: collapse;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.box-admin-boletas .box-table table button, .box-admin-boletas .box-table td button {
+  border: none;
+  outline: none;
+  background-color: #ffffff;
   color: red;
+  font-weight: bold;
+}
+
+.box-admin-boletas .box-table table button:active, .box-admin-boletas .box-table td button:active {
+  color: black;
 }
 
 * {
