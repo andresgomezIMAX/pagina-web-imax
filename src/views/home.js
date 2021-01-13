@@ -18,7 +18,7 @@ export default () => {
     <div class="contenedorVideo">
         <div class="pantallaVideo modal-closeVideo">
           <p class="closeVideo">X</p>
-          <iframe src="https://www.youtube.com/embed/1rOcl7dSavM" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
     <section >
