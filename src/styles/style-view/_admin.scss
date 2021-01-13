@@ -167,4 +167,68 @@
               }
         }
     }
+
+
+    // vistas workerAdmin
+
+    .box-fill-data{
+        margin: 1% 4%;
+
+        .fill-input{
+          
+            padding-bottom: 2.5% ;
+            display: flex;
+            justify-content: space-between;
+
+            div{
+                width: 50%;
+            }
+
+            .box-file{
+                padding-left: 6%;
+            }
+            label{
+                margin: 10px 0;
+                font-weight: bold;
+            }
+
+            select, input{
+                border-radius: 7px;
+                box-shadow: 2px 2px 5px #999;
+                height: 25px;
+                outline: none;
+                border: none;
+                background-color:  #ffffff;
+                font-size: 14px;
+                width: 68%;
+            }
+
+            .checkAdmin{
+                width: 4%;
+                height: 20px;
+            }
+
+            .fechaAdmin{
+                width: 45%;
+            }
+
+            .salarioAdmin, .addImg{
+                width: 50%;
+            }
+        }
+
+        .add-worker{
+            border-radius: 9px;
+            width: 30%;
+            padding: 5px 0;
+            color: rgb(255, 255, 255);
+            font-family: "Pridi",gitserif;
+            font-size: 20px;
+            height: 35px;
+            font-weight: 700;
+            outline: none;
+            border: none;
+            background-color: #00ADEF;
+        }
+    }
 }
