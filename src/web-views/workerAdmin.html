@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>noticias</title>
+</head>
+<body class="container-noticias">
+
+    <header class="header-intranet">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const" >Mis Constancias CTS</li></a>
+                        </ul>
+               </a> </li>
+               <li><a href="#/proyectos">Mis Vacaciones</a></li>
+               <li><a href="#/contacto">Herramientas IMAX</a></li>
+               <li><a href="#/" class="admin">Administrador
+                    <ul class="nav-admin hide">
+                        <a href="boletasAdmin.html" ><li class="btn-admin-boletas" >Ingresar Boletas</li></a>
+                        <a href="ctsAdmin.html" ><li class="btn-admi-const" >Ingresar CTS</li></a>
+                        <a href="workerAdmin.html" ><li class="btn-admi-const" >Agregar Colaborador</li></a>
+                    </ul>
+                </a> </li>
+                <a href="#/contacto"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-admin-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Agregar Colaboradores IMAX</p>
+                <p><i class="fas fa-user"></i>Administrador</p>
+            </div>
+
+            <div class="box-fill-data">
+                <div class="fill-input">
+                    <div>
+                        <label for="search">Nombres: </label>
+                        <input type="text" name="search" >
+                    </div>
+                    <div>
+                        <label for="search">Apellidos: </label>
+                        <input type="text" name="search" >
+                    </div>
+                   
+                </div>
+                <div class="fill-input">
+                    <div>
+                        <label for="search">DNI: </label>
+                        <input type="number" name="search" >
+                    </div>
+                    <div>
+                        <label for="search">Email: </label>
+                        <input type="email" name="search" >
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div>
+                        <label for="search">DNI: </label>
+                        <input type="number" name="search" >
+                    </div>
+                    <div>
+                        <label for="search">Jefe Inmediato: </label>
+                        <select name="mes" className="select-modal" required >
+                            <option value="emp">Max Alfaro</option>
+                            <option value="ie">Andrés Gómez</option>
+                            <option value="emp">Max Alfaro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div>
+                        <label for="search">Fecha de Ingreso: </label>
+                        <input type="date" name="search" class="fechaAdmin">
+                    </div>
+                    <div>
+                        <label for="search">Salario Bruto: </label>
+                        <input type="number" name="search" class="salarioAdmin" >
+                    </div>
+                 
+                </div>
+                <div class="fill-input">
+                    <div>
+                        <label for="search">Firma electrónica: <i class="fas fa-paperclip"></i></label>
+                        <input type="file" id="addImage" accept ="image/*" class= "addImg">
+                    </div>
+                    <div class="box-file">
+                        <label for="search">Administrador(a): </label>
+                        <input type="checkbox" id="cbox2" class="checkAdmin" value="conformidad">
+                    </div>
+                </div>
+                <button class="add-worker">Agregar Colaborador</button>
+            </div>
+            
+
+
+            <div class="box-search-filter">
+                <p class="title-filter">Listas de Colaboradores IMAX</p>
+            </div>
+
+            <div class="box-table">
+                <table style="width:100%">
+                    <tr>
+                      <th>Colaborador</th>
+                      <th>Mes</th>
+                      <th>Constancias CTS</th>
+                    </tr>
+                    <tr>
+                      <td>Pepito Castillo Luna</td>  
+                      <td>Diciembre 2020</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                   
+                    </tr>
+                    <tr>
+                      <td>Laura Luna Catillo</td>
+                      <td>Noviembre 2020</td>
+                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+                    </tr>                     
+                  </table>
+            </div>
+        </section>
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="nav.js"></script>  
+</body>
+</html>
