@@ -1,3 +1,64 @@
+
+.container-pagos{
+    // height: 100vh;
+    background-image: url(../assets/imax-background.png);
+ 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+
+    .header-intranet-pagos{
+        width: 22%;
+        height: 100vh;
+        background: rgba(0,175,239,.4);
+
+        .menu{
+            width: 100%;
+            height: 100%;
+
+            .logo{
+                width: 50%;
+                margin: 25px 0px 25px 70px;
+            }
+
+           
+
+            
+                li{
+                    list-style: none;
+                    line-height: 50px;
+                    border-top: .5px solid rgba(69,69,69,.6);
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0 20px;
+
+                    .btn-go-boletas, .btn-go-const {
+                        padding: 0;   
+                        a{
+                            text-decoration: none;
+                            color: #1b1b1b;
+                        
+                    }       
+                    }
+                }
+
+                // li:hover{
+                //     background-color: #F3F3F3;
+                // }
+
+            
+                a{
+                    text-decoration: none;
+                    color: #1b1b1b;
+
+            }
+            
+        }
+    }
+}
+
 .box-boletas{
     width: 85%;
 
@@ -80,7 +141,240 @@
                   }
             }
         }
+
+        .box-check-boss{
+            width: 100%;
+            border-bottom: 1px solid rgba(69,69,69,.6);
+            padding: 2%;
+
+            p, label{
+                margin-bottom: 2%;
+                font-weight: bold;
+            }
+
+
+            select, input{
+                border-radius: 5px;
+                box-shadow: 2px 2px 5px #999;
+                height: 25px;
+                outline: none;
+                border: none;
+                background-color:  #ffffff;
+                font-size: 14px;
+            }
+
+            .date-vacations{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+                margin-bottom: 2%;
+            }
+
+            .btn-vb{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button{
+                    border-radius: 9px;
+                    width: 20%;
+                    padding: 5px 0;
+                    margin: 1%;
+                    color: white;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    height: 40px;
+                    font-weight: 700;
+                    outline: none;
+                    border: none;
+                    background-color: #00ADEF;
+                }
+
+                }
+                
+
+            button:active{
+                background-color: #8DB9CA !important;
+            }
+          
+            
+        }
+
+        .box-send-request{
+            width: 100%;
+            padding: 2%;
+
+            p{
+                margin-bottom: 2%;
+                font-weight: bold;
+            }
+
+            div{
+                display: flex;
+                justify-content: space-evenly;
+                .download-format{
+                    border: none;
+                    outline: none;
+                    background-color: #F3F3F3;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    color: red;
+                    font-weight: bold;
+                }
+                .download-format:active {
+                    color: rgb(0, 0, 0);
+                  }
+
+                .send-format{
+                    border-radius: 9px;
+                    width: 20%;
+                    padding: 5px 0;
+                    margin: 1%;
+                    color: white;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    height: 40px;
+                    font-weight: 700;
+                    outline: none;
+                    border: none;
+                    background-color: #00ADEF;
+                }
+                .send-format:active{
+                    background-color: #8DB9CA !important;
+                }
+
+               
+            }
+             
+        }
         
+    }
+
+    .container-vacations{
+        background-color: #F3F3F3;
+        height: 65%;
+        width: 90%;
+
+        .title-new{
+            background: rgba(140,140,140,.8);
+            margin: 20px 0px;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            padding: 0 30px;
+
+            p{
+                font-weight: 700;
+                font-size: 1.3rem;
+                padding: 12px;
+            }
+        }
+
+        .box-check-boss{
+            width: 100%;
+            border-bottom: 1px solid rgba(69,69,69,.6);
+            padding: 2%;
+
+            p, label{
+                margin-bottom: 2%;
+                font-weight: bold;
+            }
+
+
+            select, input{
+                border-radius: 5px;
+                box-shadow: 2px 2px 5px #999;
+                height: 25px;
+                outline: none;
+                border: none;
+                background-color:  #ffffff;
+                font-size: 14px;
+            }
+
+            .date-vacations{
+                display: flex;
+                justify-content: space-between;
+                width: 70%;
+                margin-bottom: 2%;
+            }
+
+            .btn-vb{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button{
+                    border-radius: 9px;
+                    width: 20%;
+                    padding: 5px 0;
+                    margin: 1% 0 1.2% 0;
+                    color: white;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    height: 40px;
+                    font-weight: 700;
+                    outline: none;
+                    border: none;
+                    background-color: #00ADEF;
+                }
+
+            }
+                
+
+            button:active{
+                background-color: #8DB9CA !important;
+            }
+          
+            
+        }
+
+        .box-send-request{
+            width: 100%;
+            padding: 2%;
+
+            p{
+                margin-bottom: 2%;
+                font-weight: bold;
+            }
+
+            div{
+                display: flex;
+                justify-content: space-evenly;
+                .download-format{
+                    border: none;
+                    outline: none;
+                    background-color: #F3F3F3;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    color: red;
+                    font-weight: bold;
+                }
+                .download-format:active {
+                    color: rgb(0, 0, 0);
+                  }
+
+                .send-format{
+                    border-radius: 9px;
+                    width: 20%;
+                    padding: 5px 0;
+                    margin: 1%;
+                    color: white;
+                    font-family: "Pridi",gitserif;
+                    font-size: 20px;
+                    height: 40px;
+                    font-weight: 700;
+                    outline: none;
+                    border: none;
+                    background-color: #00ADEF;
+                }
+                .send-format:active{
+                    background-color: #8DB9CA !important;
+                }
+
+               
+            }
+             
+        }
     }
 }
 
