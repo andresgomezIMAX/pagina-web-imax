@@ -13,7 +13,7 @@
 
 
 .container-noticias{
-    height: 100vh;
+    // height: 100vh;
     background-image: url(../assets/imax-background.png);
  
     background-repeat: no-repeat;
@@ -25,7 +25,7 @@
 
     .header-intranet{
         width: 22%;
-        height: 100vh;
+        // height: 100vh;
         background: rgba(0,175,239,.4);
 
         .menu{
@@ -42,12 +42,12 @@
             
                 li{
                     list-style: none;
-                    line-height: 60px;
+                    line-height: 50px;
                     border-top: .5px solid rgba(69,69,69,.6);
                     font-weight: 700;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     padding: 0 20px;
-
+                    
                     .btn-go-boletas, .btn-go-const {
                         padding: 0;   
                         a{
