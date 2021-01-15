@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>noticias</title>
+</head>
+<body class="container-pagos">
+
+    <header class="header-intranet-pagos">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const" >Mis Constancias CTS</li></a>
+                        </ul>
+               </a> </li>
+               <li><a href="vacations.html">Mis Vacaciones</a></li>
+              
+               <li><a href="#/" class="admin">Administrador
+                    <ul class="nav-admin hide">
+                        <a href="boletasAdmin.html" ><li class="btn-admin-boletas" >Ingresar Boletas</li></a>
+                        <a href="ctsAdmin.html" ><li class="btn-admi-const" >Ingresar CTS</li></a>
+                        <a href="vacactionsAdmin.html" ><li class="btn-admi-const" >Solicitud Vacaciones</li></a>
+                        <a href="workerAdmin.html" ><li class="btn-admi-const" >Agregar Colaborador</li></a>
+                    </ul>
+                 </a> </li>
+                 <li><a href="#/contacto">Herramientas IMAX</a></li>
+                <a href="#/contacto"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-boletas">
+        <section class="container-vacations">
+            <div class="title-new">
+                <p>Mis Vacaciones</p>
+                <p><i class="fas fa-user"></i>Pepito Castillo</p>
+            </div>
+
+            <div class="box-check-boss">
+                <p>*Llene sus datos y solicite el Visto Bueno de su lider inmediato</p>
+                <div class="date-vacations">
+                    <div>
+                        <label for="search">Fecha de Inicio: </label>
+                        <input type="date" name="search" >
+                    </div>
+                    <div>
+                        <label for="search">Fecha de Fin: </label>
+                        <input type="date" name="search" >
+                    </div>
+                    
+                    
+                </div>
+                <label for="search">Jefe Inmediato: </label>
+                <select name="mes" className="select-modal" required >
+                    <option value="emp">Max Alfaro Ramirez</option>
+                    <option value="ie">Andrés Gómez</option>
+                    <option value="emp">Lider de IAD</option>
+                </select>
+                <div class="btn-vb">
+                    <button>Solicitar V°B°</button>
+                </div>
+                
+            </div>
+
+            <div class="box-send-request">
+                <p>*Su solicitud obtuvo el V°B° de su lider. Puede proceder a enviarla
+                    al área de administración. </p>
+                <div>
+                    <button class="download-format">Descargar Formato</button>    
+                    <button class="send-format">Enviar Solicitud</button>
+                </div>    
+                
+
+            </div>
+            
+        </section>
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="nav.js"></script>  
+</body>
+</html>
