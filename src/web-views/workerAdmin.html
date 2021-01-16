@@ -34,6 +34,7 @@
                         <a href="workerAdmin.html" ><li class="btn-admi-const" >Agregar Colaborador</li></a>   
                     </ul>
                 </a> </li>
+                <li><a href="vacationsLider.html">Lider de Unidad</a></li>
                 <li><a href="#/contacto">Herramientas IMAX</a></li>
                 <a href="#/contacto"><li>Cerrar sesión</li></a>
                
@@ -44,7 +45,7 @@
     </header>
 
     <main class="box-admin-boletas">
-        <section class="container-add-worker">
+        <!-- <section class="container-add-worker">
             <div class="title-new">
                 <p>Agregar Colaboradores IMAX</p>
                 <p><i class="fas fa-user"></i>Administrador</p>
@@ -68,8 +69,18 @@
                         <input type="number" name="search" >
                     </div>
                     <div class="space">
+                        <label for="search">Celular: </label>
+                        <input type="number" name="search" >
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
                         <label for="search">Email: </label>
                         <input type="email" name="search" >
+                    </div>
+                    <div class="space">
+                        <label for="search">Contraseña: </label>
+                       <input type="text" name="search"> 
                     </div>
                 </div>
                 <div class="fill-input">
@@ -118,39 +129,182 @@
                
             </div>
             
-        </section>
+        </section> -->
 
-        <!-- <section class="container-boletas">
+        <section class="container-boletas">
             <div class="title-new">
                 <p>Colaboradores IMAX</p>
                 <p><i class="fas fa-user"></i>Administrador</p>
             </div>
 
-            <div class="box-search-filter">
+            <div class="box-search-filter-worker">
                 <p class="title-filter">Listas de Colaboradores IMAX</p>
             </div>
 
-            <div class="box-table">
-                <table style="width:100%">
-                    <tr>
-                      <th>Colaborador</th>
-                      <th>Mes</th>
-                      <th>Constancias CTS</th>
-                    </tr>
-                    <tr>
-                      <td>Pepito Castillo Luna</td>  
-                      <td>Diciembre 2020</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                   
-                    </tr>
-                    <tr>
-                      <td>Laura Luna Catillo</td>
-                      <td>Noviembre 2020</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                    </tr>                     
-                  </table>
+            <div class="box-table-list-worker">
+             
+                    <table style="width:100%">
+                        <tr>
+                          <th>Colaborador</th>
+                          <th>DNI</th>
+                          <th>Email</th>
+                          <th>Contraseña</th>
+                          <th>Area</th>
+                          <th>Jefe inmediato</th>
+                          <th>Fecha de Ingreso</th>
+                          <th>Salario Bruto</th>
+                          <th>Firma Electronica</th>
+                          <th>Administrador</th>
+                          <th>Opciones</th>
+                        </tr>
+                        <tr>
+                          <td>Pepito Castillo Luna</td>  
+                          <td>03457263</td>
+                          <td>pepito.castillo@imax.com.pe</td>  
+                          <td>diciembre2020</td>
+                          <td>Evaluación y Monitoreo de Proyectos</td>  
+                          <td>Max Alfaro Ramirez</td>
+                          <td>20/12/2015</td>  
+                          <td>3000</td>
+                          <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                          <td>No</td>
+                          <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr>  
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr>       
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr> 
+                        <tr>
+                            <td>Pepito Castillo Luna </td>   
+                            <td>03457263</td>
+                            <td>pepito.castillo@imax.com.pe</td>  
+                            <td>diciembre2020</td>
+                            <td>Evaluación y Monitoreo de Proyectos</td>  
+                            <td>Max Alfaro Ramirez</td>
+                            <td>20/12/2015</td>  
+                            <td>3000</td>
+                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
+                            <td>No</td>
+                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                        </tr>             
+                      </table>
+          
+                
             </div>
-        </section> -->
+        </section>
 
     </main>
     
