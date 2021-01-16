@@ -1249,6 +1249,7 @@
 }
 
 .container-pagos {
+  height: 100vh;
   background-image: url(../assets/imax-background.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -1670,6 +1671,7 @@
 }
 
 .container-admin {
+  height: 100vh;
   background-image: url(../assets/imax-background.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -1959,7 +1961,7 @@
 
 .box-admin-boletas .container-add-worker {
   background-color: #F3F3F3;
-  height: 75%;
+  height: 80%;
   width: 90%;
 }
 
@@ -2171,6 +2173,109 @@
 }
 
 .box-admin-boletas .box-table-vacations table button:active, .box-admin-boletas .box-table-vacations td button:active {
+  color: black;
+}
+
+.box-admin-boletas .box-search-filter-worker {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box-admin-boletas .box-search-filter-worker .title-filter {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+.box-admin-boletas .box-search-filter-worker .search-filter {
+  width: 92%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box-admin-boletas .box-search-filter-worker .search-filter .detailed-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 1% 0;
+}
+
+.box-admin-boletas .box-search-filter-worker .search-filter .detailed-search input {
+  width: 30%;
+  margin-right: 70px;
+  border: none;
+  background-color: #C4C4C4;
+  outline: none;
+  height: 25px;
+}
+
+.box-admin-boletas .box-table-list-worker {
+  margin: 1% 1% 2% 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 70%;
+  overflow: auto;
+}
+
+.box-admin-boletas .box-table-list-worker table, .box-admin-boletas .box-table-list-worker td {
+  margin: 1% 1% 2% 6%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.box-admin-boletas .box-table-list-worker table th, .box-admin-boletas .box-table-list-worker td th {
+  background-color: #C4C4C4;
+  border-collapse: collapse;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.box-admin-boletas .box-table-list-worker table button, .box-admin-boletas .box-table-list-worker td button {
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  color: red;
+  font-weight: bold;
+}
+
+.box-admin-boletas .box-table-list-worker table button:active, .box-admin-boletas .box-table-list-worker td button:active {
   color: black;
 }
 
