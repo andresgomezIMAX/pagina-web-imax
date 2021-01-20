@@ -11,3 +11,13 @@ menuAdmin.addEventListener('click', () => {
   navAdmin.classList.toggle('hide');
   console.log('click');
 });
+
+ //funcion para cerra sesion
+const logOut = document.querySelector('.logOut');
+logOut.addEventListener('click', e => {
+  e.preventDefault();
+  auth.signOut().then(()=> {
+    console.log('sign out')
+    location.href="../intranet.html"
+  }).catch()
+}) 

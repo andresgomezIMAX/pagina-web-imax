@@ -1,48 +1,31 @@
 const login = document.querySelector('.login-form');
 
-const iconGoogle = document.querySelector('.google-icon');
-// const currentUser = () => firebase.auth().currentUser;
+// AUTH CON GOOGLE
+// const iconGoogle = document.querySelector('.google-icon');
 
-// const saveUser = ({ displayName, photoURL, email }) => {
-//   fs.collection('usuarios').doc(email).set({
-//     nameUser: displayName,
-//     photoURL,
-//     emailUser: email,
-//   });
+// const googleAuth = () => {
+//   const provider = new firebase.auth.GoogleAuthProvider();
+//   firebase.auth().signInWithPopup(provider).then(() => {
+//     // saveUser(currentUser());
+//     if (googleAuth) {
+//     login.reset();
+//       console.log('ingresaste por google');
+//       location.href="web-views/noticias.html"
+    
+//     }
+//   }).catch();
+//   return provider;
 // };
 
-const googleAuth = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(() => {
-    // saveUser(currentUser());
-    if (googleAuth) {
-    login.reset();
-      console.log('ingresaste por google');
-      location.href="web-views/noticias.html"
-    
-    }
-  }).catch();
-  return provider;
-};
-
-
-iconGoogle.addEventListener('click', (event) => {
-  event.preventDefault();
-  googleAuth();
-});
 
 // iconGoogle.addEventListener('click', (event) => {
-//   // event.preventDefault();
-//   const provider = new firebase.auth.GoogleAuthProvider();
-//   auth.signInWithPopup(provider)
-//   .then(result => {
-//     console.log('login con goo')
-//     login.reset();
-//   })
-//   .catch(err => {
-//     console.log('ocurrio algo')
-//   })
+//   event.preventDefault();
+//   googleAuth();
 // });
+
+
+
+
 
 
 
@@ -73,16 +56,3 @@ login.addEventListener('submit', (e) => {
         }
       })
 });
-
-
-
-
-//  //funcion para cerra sesion
-// const logOut = document.querySelector('.logout');
-
-// logOut.addEventListener('click', e => {
-//   e.preventDefault();
-//   auth.signOut().then(()=> {
-//     console.log('sign out')
-//   }).catch()
-// }) 

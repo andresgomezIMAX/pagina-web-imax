@@ -2029,7 +2029,7 @@
   margin-left: 12px;
 }
 
-.box-admin-boletas .box-fill-data .fill-input .checkAdmin {
+.box-admin-boletas .box-fill-data .fill-input .checkAdmin-register {
   width: 4%;
   height: 20px;
 }
@@ -2038,7 +2038,7 @@
   width: 45%;
 }
 
-.box-admin-boletas .box-fill-data .fill-input .salarioAdmin, .box-admin-boletas .box-fill-data .fill-input .addImg {
+.box-admin-boletas .box-fill-data .fill-input .salarioAdmin, .box-admin-boletas .box-fill-data .fill-input .addImg-register {
   width: 50%;
 }
 

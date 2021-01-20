@@ -36,7 +36,7 @@
                 </a> </li>
                 <li><a href="vacationsLider.html">Lider de Unidad</a></li>
                 <li><a href="#/contacto">Herramientas IMAX</a></li>
-                <a href="#/contacto"><li>Cerrar sesión</li></a>
+                <a class="logOut"><li>Cerrar sesión</li></a>
                
             </ul>
         </nav>
@@ -45,56 +45,56 @@
     </header>
 
     <main class="box-admin-boletas">
-        <!-- <section class="container-add-worker">
+        <section class="container-add-worker">
             <div class="title-new">
                 <p>Agregar Colaboradores IMAX</p>
                 <p><i class="fas fa-user"></i>Administrador</p>
             </div>
 
-            <div class="box-fill-data">
+            <form class="box-fill-data">
                 <div class="fill-input">
                     <div>
-                        <label for="search">Nombres: </label>
-                        <input type="text" name="search" >
+                        <label for="name">Nombres: </label>
+                        <input type="text" name="name" class="name-register" >
                     </div>
                     <div>
-                        <label for="search">Apellidos: </label>
-                        <input type="text" name="search" >
+                        <label for="lastName">Apellidos: </label>
+                        <input type="text" name="lastName" class="lastName-register" >
                     </div>
                    
                 </div>
                 <div class="fill-input">
                     <div class="space">
-                        <label for="search">DNI: </label>
-                        <input type="number" name="search" >
+                        <label for="dni">DNI: </label>
+                        <input type="number" name="dni" class="dni-register">
                     </div>
                     <div class="space">
-                        <label for="search">Celular: </label>
-                        <input type="number" name="search" >
+                        <label for="phone">Celular: </label>
+                        <input type="number" name="phone" class="phone-register">
                     </div>
                 </div>
                 <div class="fill-input">
                     <div class="space">
-                        <label for="search">Email: </label>
-                        <input type="email" name="search" >
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" class="email-register" >
                     </div>
                     <div class="space">
-                        <label for="search">Contraseña: </label>
-                       <input type="text" name="search"> 
+                        <label for="password">Contraseña: </label>
+                       <input type="text" name="password" class="password-register"> 
                     </div>
                 </div>
                 <div class="fill-input">
                     <div >
-                        <label for="search">Área: </label>
-                        <select name="mes" className="select-modal" required >
+                        <label for="area">Área: </label>
+                        <select name="area" className="select-modal" class="area-register" required >
                             <option value="emp">Evaluación y monitoreo de Proyectos</option>
                             <option value="ie">Innovación y Análisis de Data</option>
                             <option value="emp">Tasaciones</option>
                         </select>
                     </div>
                     <div >
-                        <label for="search">Jefe Inmediato: </label>
-                        <select name="mes" className="select-modal" required >
+                        <label for="leader">Jefe Inmediato: </label>
+                        <select name="leader" className="select-modal" class="leader-register" required >
                             <option value="emp">Max Alfaro</option>
                             <option value="ie">Andrés Gómez</option>
                             <option value="emp">Lider de IAD</option>
@@ -103,35 +103,36 @@
                 </div>
                 <div class="fill-input">
                     <div class="space">
-                        <label for="search">Fecha de Ingreso: </label>
-                        <input type="date" name="search" class="fechaAdmin">
+                        <label for="entryDay">Fecha de Ingreso: </label>
+                        <input type="date" name="entryDay" class="fechaAdmin" >
                     </div>
                     <div class="space">
-                        <label for="search">Salario Bruto: </label>
-                        <input type="number" name="search" class="salarioAdmin" >
+                        <label for="salary">Salario Bruto: </label>
+                        <input type="number" name="salary" class="salarioAdmin-register" >
                     </div>
                  
                 </div>
                 <div class="fill-input">
                     <div>
-                        <label for="search">Firma electrónica: <i class="fas fa-paperclip"></i></label>
-                        <input type="file" id="addImage" accept ="image/*" class= "addImg">
+                        <label for="firm">Firma electrónica: <i class="fas fa-paperclip"></i></label>
+                        <input type="file" id="addImage" accept ="image/*" class= "addImg-register" name="firm">
                     </div>
                     <div class="box-file">
-                        <label for="search">Administrador(a): </label>
-                        <input type="checkbox" id="cbox2" class="checkAdmin" value="conformidad">
+                        <label for="admin">Administrador(a): </label>
+                        <input type="checkbox" id="cbox2" class="checkAdmin-register" value="conformidad" name="admin">
                     </div>
                 </div>
                 <div class="box-button-add">
-                    <button class="add-worker">Agregar Colaborador</button>
+                    <div class="reg_error_inner" id="reg_error_inner"></div>
+                    <button type="submit" class="add-worker">Agregar Colaborador</button>
                     <button class="add-worker">Lista de Colaboradores </button>
                 </div>
                
-            </div>
+            </form>
             
-        </section> -->
+        </section>
 
-        <section class="container-boletas">
+        <!-- <section class="container-boletas">
             <div class="title-new">
                 <p>Colaboradores IMAX</p>
                 <p><i class="fas fa-user"></i>Administrador</p>
@@ -169,142 +170,12 @@
                           <td><button><i class="fas fa-download"></i>Descargar</button></td>
                           <td>No</td>
                           <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr>  
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr>       
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr> 
-                        <tr>
-                            <td>Pepito Castillo Luna </td>   
-                            <td>03457263</td>
-                            <td>pepito.castillo@imax.com.pe</td>  
-                            <td>diciembre2020</td>
-                            <td>Evaluación y Monitoreo de Proyectos</td>  
-                            <td>Max Alfaro Ramirez</td>
-                            <td>20/12/2015</td>  
-                            <td>3000</td>
-                            <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                            <td>No</td>
-                            <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr>             
+                        </tr>           
                       </table>
           
                 
             </div>
-        </section>
+        </section> -->
 
     </main>
     
@@ -327,5 +198,6 @@
 
   
     <script src="nav.js"></script>  
+    <script src="register.js"></script>  
 </body>
 </html>
