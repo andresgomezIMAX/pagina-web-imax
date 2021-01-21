@@ -1,4 +1,5 @@
 
+
 .container-admin{
     height: 100vh;
     background-image: url(../assets/imax-background.png);
@@ -236,7 +237,7 @@
 
     .container-add-worker{
         background-color: #F3F3F3;
-        height: 80%;
+        height: 85%;
         width: 90%;
 
         .title-new{
@@ -254,7 +255,22 @@
             }
         }
     }
+    .list-worker{
+        border: none;
+        outline: none;
+        background-color: #F3F3F3;
+        color: red;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 80%;
 
+        text-decoration:underline
+       
+    }
+
+    .list-worker:hover{
+      color: black;
+    }
 
     .box-fill-data{
         margin: 1% 4%;
@@ -295,9 +311,9 @@
                 }
             }
 
-            .checkAdmin-register{
-                width: 4%;
-                height: 20px;
+            .checkAdmin{
+                width: 15%;
+                height: 27px;
             }
 
             .fechaAdmin{
@@ -312,8 +328,8 @@
         .box-button-add{
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
-            margin: 4%;
+            justify-content: center;
+            margin: 2%;
 
             .add-worker{
                 border-radius: 9px;
@@ -457,13 +473,14 @@
     }
 
     .box-table-list-worker{
-        margin: 1% 1% 2% 1%;
+        margin: 1%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        height: 70%;
+        height: 65%;
         overflow: auto;
+  
         
         table, td {
             margin: 1% 1% 2% 6%;
@@ -495,5 +512,25 @@
                 color: rgb(0, 0, 0);
               }
         }
+    }
+
+    .back-worker{
+        border-radius: 9px;
+        width: 15%;
+        padding: 5px 0;
+        color: rgb(255, 255, 255);
+        font-family: "Pridi",gitserif;
+        font-size: 20px;
+        height: 45px;
+        margin-left: 80%;
+        font-weight: 700;
+        outline: none;
+        border: none;
+        background-color: #00ADEF;
+    
+
+        .back-worker:active{
+        background-color: #8DB9CA;
+    }
     }
 }

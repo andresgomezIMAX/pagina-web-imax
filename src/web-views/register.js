@@ -2,13 +2,13 @@ const register = document.querySelector('.box-fill-data');
 const user = () => firebase.auth().currentUser;
 
 
-const saveUser = ({ displayName, photoURL, email }) => {
-  fs.collection('usuarios').doc(email).set({
-    nameUser: displayName,
-    photoURL,
-    emailUser:email,
-  });
-};
+// const saveUser = ({ displayName, photoURL, email }) => {
+//   fs.collection('usuarios').doc(email).set({
+//     nameUser: displayName,
+//     photoURL,
+//     emailUser:email,
+//   });
+// };
 
 // register con email
 register.addEventListener('submit', (e) => {
@@ -24,18 +24,30 @@ register.addEventListener('submit', (e) => {
   const entryDay = document.querySelector('.fechaAdmin').value;
   const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
   const addImg = document.querySelector('.addImg-register').value;
-  const checkAdmin = document.querySelector('.checkAdmin-register').value;
+  const checkAdmin = document.querySelector('.checkAdmin').value;
 
   console.log(name, lastName, dni, phone, email, password, area,leader,entryDay,salarioAdmin,addImg,checkAdmin)
   firebase.auth().createUserWithEmailAndPassword(email,  password)
   .then(userCredential => {
-    if (register) {
-      saveUser((user(email)));
-      register.reset();
-      alert('guardado');
+    const db = firebase.firestore();
+      return db.collection('users').doc(userCredential.user.uid).set({
+        name, 
+        lastName, 
+        dni, 
+        phone, 
+        email, 
+        password, 
+        area,
+        leader,
+        entryDay,
+        salarioAdmin,
+        addImg,
+        checkAdmin
+      });
      
-  
-    }    
+  }).then(() => {
+    register.reset();
+    alert('guardado'); 
   })
   .catch((error) => {
     const errorCode = error.code;
