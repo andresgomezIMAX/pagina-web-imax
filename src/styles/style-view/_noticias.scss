@@ -207,6 +207,103 @@
                 justify-content: center;
             }
         }
+
+        .eachPost{
+            border: solid 1px rgb(145, 144, 144);
+            margin: 0px 0px 20px 0px;
+            background: #f9f9f9;
+          }
+          .postHeader{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            background: #cb2d3e;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+            /* background: rgb(236, 120, 78); */
+        
+          }
+          select{
+            background: #EB7C6A;
+            outline: none;  
+        
+          }
+        
+          .user-info{
+          display: flex;
+          justify-content: flex-start;
+          }
+        
+          .option-edit-post{
+            align-self: flex-start;
+            padding-right: 5px;
+          }
+        
+          span{
+            font-size: 25px;
+            margin-bottom: 15px;
+            margin-left: 0;
+            /* padding-left: 50px; */
+          }
+        
+          .optionPost{ 
+            list-style: none;
+            display: none;
+          }
+        
+          .optionPost>ul{
+            list-style: none;
+            display: none;
+          }
+          .option-edit-post:hover>ul{
+            display: block;
+            cursor: pointer;
+            border: 2px solid rgb(204, 202, 202);
+            border-radius: 3px;
+            /* box-shadow: 1px 5px 5px 3px rgb(233, 171, 171); */
+          }
+        
+          li:hover{
+            padding: 2px;
+            margin: 2px;
+            transform: scale(1.1);
+            transition: 0.5;
+            background: rgb(192, 197, 199);
+          }
+        
+          #nameUser{
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px;
+          }
+        
+          .contentPost{
+            border: solid 2px #BAB7B7;
+            width: 78%;
+            margin: 1em 1em 1em 1.3em;
+            padding: 1em;
+            border-radius: 10px;
+          }
+         #photoPost{
+          width: 95%;
+         }
+        
+         .updateImgPost{
+            width: 90%;
+          }
+          .hide{
+            left: 20%;
+          }
+        
+          time{
+            font-size: 10px;
+            margin: 5px;
+            top: 38px;
+          }
         }
 
     

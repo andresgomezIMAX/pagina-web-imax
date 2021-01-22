@@ -1272,6 +1272,125 @@
           justify-content: center;
 }
 
+.container-noticias .box-noticias .container-post .eachPost {
+  border: solid 1px #919090;
+  margin: 0px 0px 20px 0px;
+  background: #f9f9f9;
+}
+
+.container-noticias .box-noticias .container-post .postHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #cb2d3e;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#ef473a), to(#cb2d3e));
+  background: linear-gradient(to right, #ef473a, #cb2d3e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: rgb(236, 120, 78); */
+}
+
+.container-noticias .box-noticias .container-post select {
+  background: #EB7C6A;
+  outline: none;
+}
+
+.container-noticias .box-noticias .container-post .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.container-noticias .box-noticias .container-post .option-edit-post {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-right: 5px;
+}
+
+.container-noticias .box-noticias .container-post span {
+  font-size: 25px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  /* padding-left: 50px; */
+}
+
+.container-noticias .box-noticias .container-post .optionPost {
+  list-style: none;
+  display: none;
+}
+
+.container-noticias .box-noticias .container-post .optionPost > ul {
+  list-style: none;
+  display: none;
+}
+
+.container-noticias .box-noticias .container-post .option-edit-post:hover > ul {
+  display: block;
+  cursor: pointer;
+  border: 2px solid #cccaca;
+  border-radius: 3px;
+  /* box-shadow: 1px 5px 5px 3px rgb(233, 171, 171); */
+}
+
+.container-noticias .box-noticias .container-post li:hover {
+  padding: 2px;
+  margin: 2px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5;
+  transition: 0.5;
+  background: #c0c5c7;
+}
+
+.container-noticias .box-noticias .container-post #nameUser {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.container-noticias .box-noticias .container-post .contentPost {
+  border: solid 2px #BAB7B7;
+  width: 78%;
+  margin: 1em 1em 1em 1.3em;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.container-noticias .box-noticias .container-post #photoPost {
+  width: 95%;
+}
+
+.container-noticias .box-noticias .container-post .updateImgPost {
+  width: 90%;
+}
+
+.container-noticias .box-noticias .container-post .hide {
+  left: 20%;
+}
+
+.container-noticias .box-noticias .container-post time {
+  font-size: 10px;
+  margin: 5px;
+  top: 38px;
+}
+
 .container-pagos {
   height: 100vh;
   background-image: url(../assets/imax-background.png);
