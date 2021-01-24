@@ -203,6 +203,17 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
 
 
+  const delFileStorage = (file) => firebase.storage().ref().child(`postImage/${currentUser().email}/${file.name}`).delete();
+
+  const btnDeleteImg = document.querySelector('.deleteImg');
+  if (btnDeleteImg) {
+    btnDeleteImg.addEventListener('click', () => {
+      const objFile =  sessionStorage.getItem('imgNewPost');;
+      delFileStorage(objFile);
+      sessionStorage.removeItem('imgNewPost');
+      btnDeleteImg.parentNode.classList.add('hide');
+    });
+  }
 
 
 
