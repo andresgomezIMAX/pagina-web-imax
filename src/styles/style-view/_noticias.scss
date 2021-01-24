@@ -110,7 +110,7 @@
             justify-content: flex-end;
             align-items: flex-end;
             padding: 2% 10% 2%  2% ;
-            border-bottom: 2px solid rgba(69,69,69,.6);
+            // border-bottom: 2px solid rgba(69,69,69,.6);
 
             .writePost {
                
@@ -133,7 +133,6 @@
 
                 .containerProgress {
                     width: 500%;
-                
                     height: 15px;
                     margin: 1% 0 2%;
                     background-color: rgb(195, 189, 189);
@@ -155,6 +154,7 @@
 
                 .addImg{
                     display:none;
+          
                 }
 
                 .btnNewPost{
@@ -176,6 +176,28 @@
                     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
                     transition: all 0.2s ease;
                   }
+
+                  .divImg {
+                    width: 70px;
+                    height: 65px;
+                    padding: 1%;
+                    margin: 2% 0 1%;
+                    border: solid 1px #c5c5c5;
+                    border-radius: 8px;
+                    position: relative;
+
+                    .deleteImg {
+                      font-size: 12px;
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      cursor: pointer;
+                    }
+                    .picPost {
+                    width: 100%;
+                    height: 100%;
+                    }
+                }  
             }
 
           
@@ -211,7 +233,8 @@
         .eachPost{
             border: solid 1px rgb(145, 144, 144);
             margin: 0px 0px 20px 0px;
-            background: #f9f9f9;
+            background: #ffffff;
+  
           }
           .postHeader{
             display: flex;
@@ -220,9 +243,9 @@
             justify-content: space-between;
             align-items: center;
             position: relative;
-            background: #cb2d3e;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background:   rgb(192, 197, 199);
+            padding: 4px;
+            
         
             /* background: rgb(236, 120, 78); */
         
@@ -236,60 +259,98 @@
           .user-info{
           display: flex;
           justify-content: flex-start;
+
+          .user-icon{
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            padding: 4px 0 0 7px;
+            margin: 4px;
+          }
+
+          .dateUser{
+            display: flex;
+
+            time{
+              margin-top: 10px;
+            }
+          }
           }
         
           .option-edit-post{
             align-self: flex-start;
             padding-right: 5px;
-          }
-        
-          span{
-            font-size: 25px;
-            margin-bottom: 15px;
-            margin-left: 0;
-            /* padding-left: 50px; */
-          }
-        
-          .optionPost{ 
-            list-style: none;
-            display: none;
-          }
-        
-          .optionPost>ul{
-            list-style: none;
-            display: none;
+
+            span{
+              font-size: 25px;
+              margin-bottom: 15px;
+              margin-left: 0;
+              /* padding-left: 50px; */
+              position: absolute;
+              right: 10px;
+            }
+
+            .optionPost{ 
+              list-style: none;
+              display: none;
+              font-size: 15px;
+
+              li{
+                border-radius: 5px;
+              }
+            
+              li:hover{
+                padding: 2px;
+                margin: 2px;
+                transform: scale(1.1);
+                transition: 0.5;
+                font-size: 14px;
+                background: rgba(0, 175, 239, 0.4);
+              }
+  
+            }
+          
+            .optionPost>ul{
+              list-style: none;
+              display: none;
+
+            }
+         
+  
+       
           }
           .option-edit-post:hover>ul{
             display: block;
             cursor: pointer;
+            border-radius: 5px;
+            // background: #f3f3f3;
             border: 2px solid rgb(204, 202, 202);
-            border-radius: 3px;
-            /* box-shadow: 1px 5px 5px 3px rgb(233, 171, 171); */
+            padding: 2px;
           }
         
-          li:hover{
-            padding: 2px;
-            margin: 2px;
-            transform: scale(1.1);
-            transition: 0.5;
-            background: rgb(192, 197, 199);
-          }
+         
+        
+          
         
           #nameUser{
-            font-size: 12px;
+            font-size: 15px;
             font-weight: bold;
             margin: 5px;
           }
         
           .contentPost{
-            border: solid 2px #BAB7B7;
-            width: 78%;
+            // border: solid 2px #BAB7B7;
+            width: 95%;
             margin: 1em 1em 1em 1.3em;
-            padding: 1em;
-            border-radius: 10px;
+            // border-radius: 10px;
           }
          #photoPost{
-          width: 95%;
+          max-width: 80%;
+          margin-top: 1em;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
          }
         
          .updateImgPost{

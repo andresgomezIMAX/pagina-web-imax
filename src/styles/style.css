@@ -1156,7 +1156,6 @@
       -ms-flex-align: end;
           align-items: flex-end;
   padding: 2% 10% 2%  2%;
-  border-bottom: 2px solid rgba(69, 69, 69, 0.6);
 }
 
 .container-noticias .box-noticias .create-post .writePost {
@@ -1227,6 +1226,29 @@
   transition: all 0.2s ease;
 }
 
+.container-noticias .box-noticias .create-post .box-publicar .divImg {
+  width: 70px;
+  height: 65px;
+  padding: 1%;
+  margin: 2% 0 1%;
+  border: solid 1px #c5c5c5;
+  border-radius: 8px;
+  position: relative;
+}
+
+.container-noticias .box-noticias .create-post .box-publicar .divImg .deleteImg {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.container-noticias .box-noticias .create-post .box-publicar .divImg .picPost {
+  width: 100%;
+  height: 100%;
+}
+
 .container-noticias .box-noticias .container-post {
   padding: 2% 0;
 }
@@ -1275,7 +1297,7 @@
 .container-noticias .box-noticias .container-post .eachPost {
   border: solid 1px #919090;
   margin: 0px 0px 20px 0px;
-  background: #f9f9f9;
+  background: #ffffff;
 }
 
 .container-noticias .box-noticias .container-post .postHeader {
@@ -1295,12 +1317,8 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  background: #cb2d3e;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, left top, right top, from(#ef473a), to(#cb2d3e));
-  background: linear-gradient(to right, #ef473a, #cb2d3e);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #c0c5c7;
+  padding: 4px;
   /* background: rgb(236, 120, 78); */
 }
 
@@ -1318,25 +1336,62 @@
           justify-content: flex-start;
 }
 
+.container-noticias .box-noticias .container-post .user-info .user-icon {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 4px 0 0 7px;
+  margin: 4px;
+}
+
+.container-noticias .box-noticias .container-post .user-info .dateUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-noticias .box-noticias .container-post .user-info .dateUser time {
+  margin-top: 10px;
+}
+
 .container-noticias .box-noticias .container-post .option-edit-post {
   -ms-flex-item-align: start;
       align-self: flex-start;
   padding-right: 5px;
 }
 
-.container-noticias .box-noticias .container-post span {
+.container-noticias .box-noticias .container-post .option-edit-post span {
   font-size: 25px;
   margin-bottom: 15px;
   margin-left: 0;
   /* padding-left: 50px; */
+  position: absolute;
+  right: 10px;
 }
 
-.container-noticias .box-noticias .container-post .optionPost {
+.container-noticias .box-noticias .container-post .option-edit-post .optionPost {
   list-style: none;
   display: none;
+  font-size: 15px;
 }
 
-.container-noticias .box-noticias .container-post .optionPost > ul {
+.container-noticias .box-noticias .container-post .option-edit-post .optionPost li {
+  border-radius: 5px;
+}
+
+.container-noticias .box-noticias .container-post .option-edit-post .optionPost li:hover {
+  padding: 2px;
+  margin: 2px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5;
+  transition: 0.5;
+  font-size: 14px;
+  background: rgba(0, 175, 239, 0.4);
+}
+
+.container-noticias .box-noticias .container-post .option-edit-post .optionPost > ul {
   list-style: none;
   display: none;
 }
@@ -1344,37 +1399,28 @@
 .container-noticias .box-noticias .container-post .option-edit-post:hover > ul {
   display: block;
   cursor: pointer;
+  border-radius: 5px;
   border: 2px solid #cccaca;
-  border-radius: 3px;
-  /* box-shadow: 1px 5px 5px 3px rgb(233, 171, 171); */
-}
-
-.container-noticias .box-noticias .container-post li:hover {
   padding: 2px;
-  margin: 2px;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 0.5;
-  transition: 0.5;
-  background: #c0c5c7;
 }
 
 .container-noticias .box-noticias .container-post #nameUser {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   margin: 5px;
 }
 
 .container-noticias .box-noticias .container-post .contentPost {
-  border: solid 2px #BAB7B7;
-  width: 78%;
+  width: 95%;
   margin: 1em 1em 1em 1.3em;
-  padding: 1em;
-  border-radius: 10px;
 }
 
 .container-noticias .box-noticias .container-post #photoPost {
-  width: 95%;
+  max-width: 80%;
+  margin-top: 1em;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .container-noticias .box-noticias .container-post .updateImgPost {

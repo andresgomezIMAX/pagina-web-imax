@@ -37,6 +37,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   <div class="eachPost">
                     <div class="postHeader">
                         <div class="user-info">
+                          <div class="circle-user"> <i class="user-icon fas fa-user"></i> </div> 
                           <div class= "dateUser">
                             <p id="nameUser"> Publicado por: ${post.email}</p>
                             <time datetime="date">${post.date} </time>
@@ -46,8 +47,8 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                         <div class="option-edit-post">
                           <span>...</span>
                             <ul class="optionPost"> 
-                              <li class="btnEdit" data-id="${post.id}">Editar</li>
-                              <li class="btnRemove" data-id="${post.id}">Eliminar</li>
+                              <li class="btnEdit" data-id="${post.id}"> <i class="fas fa-edit"></i> Editar</li>
+                              <li class="btnRemove" data-id="${post.id}"> <i class="fas fa-trash-alt"></i> Eliminar</li>
                             </ul>
                         </div>  ` : ''}      
                     </div>
@@ -56,8 +57,6 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                         <p contenteditable="false" id="editPost" >${post.content}</p>
                         ${post.url ? `<img id="photoPost" src="${post.url}">` : ''}
                       </div>
-                      <button class="hide" hidden id="btnSave">💾</button>
-                      <button class="hide" hidden id="btnCancel">✖️</button>
                     </div>
                   </div>`;
 
