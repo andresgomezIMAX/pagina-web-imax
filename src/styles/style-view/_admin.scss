@@ -275,18 +275,24 @@
     .box-fill-data{
         margin: 1% 4%;
 
+
         .fill-input{
           
             padding: 1% 1% 2% 1%;;
             display: flex;
             justify-content: space-between;
+           
 
             div{
                 width: 50%;
             }
 
             .box-file{
-                padding-left: 6%;
+                margin-left: 6%;
+                width: 40%;
+            }
+            .box-name{
+                width: 60%;
             }
             label{
                 margin: 10px 0;

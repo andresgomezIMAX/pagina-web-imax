@@ -54,69 +54,9 @@
 
             <form class="box-fill-data">
                 <div class="fill-input">
-                    <div>
+                    <div class="box-name">
                         <label for="name">Nombres: </label>
-                        <input type="text" name="name" class="name-register" >
-                    </div>
-                    <div>
-                        <label for="lastName">Apellidos: </label>
-                        <input type="text" name="lastName" class="lastName-register" >
-                    </div>
-                   
-                </div>
-                <div class="fill-input">
-                    <div class="space">
-                        <label for="dni">DNI: </label>
-                        <input type="number" name="dni" class="dni-register">
-                    </div>
-                    <div class="space">
-                        <label for="phone">Celular: </label>
-                        <input type="number" name="phone" class="phone-register">
-                    </div>
-                </div>
-                <div class="fill-input">
-                    <div class="space">
-                        <label for="email">Email: </label>
-                        <input type="email" name="email" value="@imax.com.pe" class="email-register" >
-                    </div>
-                    <div class="space">
-                        <label for="password">Contraseña: </label>
-                       <input type="text" name="password" class="password-register"> 
-                    </div>
-                </div>
-                <div class="fill-input">
-                    <div >
-                        <label for="area">Área: </label>
-                        <select name="area" class="area-register" required >
-                            <option value="emp">Evaluación y monitoreo de Proyectos</option>
-                            <option value="ie">Innovación y Análisis de Data</option>
-                            <option value="emp">Tasaciones</option>
-                        </select>
-                    </div>
-                    <div >
-                        <label for="leader">Jefe Inmediato: </label>
-                        <select name="leader"  class="leader-register" required >
-                            <option value="emp">Max Alfaro</option>
-                            <option value="ie">Andrés Gómez</option>
-                            <option value="emp">Lider de IAD</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="fill-input">
-                    <div class="space">
-                        <label for="entryDay">Fecha de Ingreso: </label>
-                        <input type="date" name="entryDay" class="fechaAdmin" >
-                    </div>
-                    <div class="space">
-                        <label for="salary">Salario Bruto: </label>
-                        <input type="number" name="salary" class="salarioAdmin-register" >
-                    </div>
-                 
-                </div>
-                <div class="fill-input">
-                    <div>
-                        <label for="firm">Firma electrónica: <i class="fas fa-paperclip"></i></label>
-                        <input type="file" id="addImage" accept ="image/*" class= "addImg-register" name="firm">
+                        <input type="text" name="name" class="name-register" required>
                     </div>
                     <div class="box-file">
                         <label for="admin">Administrador(a): </label>
@@ -124,6 +64,87 @@
                             <option value="si">SI</option>
                             <option value="no">NO</option>
                         </select>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
+                        <label for="dni">DNI: </label>
+                        <input type="number" name="dni" class="dni-register" required>
+                    </div>
+                    <div class="space">
+                        <label for="phone">Celular: </label>
+                        <input type="number" name="phone" class="phone-register" required>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
+                        <label for="email">Email: </label>
+                        <input type="email" name="email" value="@imax.com.pe" class="email-register" required >
+                    </div>
+                    <div class="space">
+                        <label for="password">Contraseña: </label>
+                       <input type="text" name="password" class="password-register" required> 
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div >
+                        <label for="area">Área: </label>
+                        <select name="area" class="area-register" required >
+                            <option value="gg">Gerencia General </option>
+                            <option value="adh">Administración y Recuso Humano</option>
+                            <option value="gec">Gestión Comercial </option>
+                            <option value="tas">Tasaciones</option>
+                            <option value="evp">Informes Especiales, Valuaciones y Peritajes</option>
+                            <option value="emp">Evaluación y Monitoreo de Proyectos</option>
+                            <option value="gso">Gerencia y Supervisión de Obras</option>
+                            <option value="gdp">Gestión y Desarrollo de Proyectos</option>
+                            <option value="iad">Innovación y Análisis de Data</option>
+                            <option value="sds">Streno Design Studio</option>
+                            <option value="gmm">Gestión Marketing y Medio</option>
+                        </select>
+                    </div>
+                    <div >
+                        <label for="leader">Jefe Inmediato: </label>
+                        <select name="leader"  class="leader-register" required >
+                            <option value="gg">Max Alfaro </option>
+                            <option value="adh">Elena Alfaro</option>
+                            <option value="gec">Manuel Farje</option>
+                            <option value="tas">Claudia Coronel</option>
+                            <option value="evp">Maurice Calmet</option>
+                            <option value="emp">Patricia Valdivia</option>
+                            <option value="gso">Andrés Gómez</option>
+                            <option value="gdp">Marcela Mendoza</option>
+                            <option value="iad">Andrés Gómez</option>
+                            <option value="sds">Verónica Bustamante</option>
+                            <option value="gmm">Enrique Alaba</option>
+                            <option value="ladh">Lider de Administración y Recuso Humano</option>
+                            <option value="lgec">Lider de Gestión Comercial </option>
+                            <option value="ltas">Lider de Tasaciones</option>
+                            <option value="levp">Lider de Informes Especiales, Valuaciones y Peritajes</option>
+                            <option value="lemp">Lider de Evaluación y Monitoreo de Proyectos</option>
+                            <option value="lgso">Lider de Gerencia y Supervisión de Obras</option>
+                            <option value="lgdp">Lider de Gestión y Desarrollo de Proyectos</option>
+                            <option value="liad">Lider de Innovación y Análisis de Data</option>
+                            <option value="lsds">Lider de Streno Design Studio</option>
+                            <option value="lgmm">Lider de Gestión Marketing y Medio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
+                        <label for="entryDay">Fecha de Ingreso: </label>
+                        <input type="date" name="entryDay" class="fechaAdmin" required >
+                    </div>
+                    <div class="space">
+                        <label for="salary">Salario Bruto: </label>
+                        <input type="number" name="salary" class="salarioAdmin-register" required >
+                    </div>
+                 
+                </div>
+                <div class="fill-input">
+                    <div>
+                        <label for="firm">Firma electrónica: <i class="fas fa-paperclip"></i></label>
+                        <input type="file" id="addImage" accept ="image/*" class= "firm-register" name="firm" required>
                     </div>
                 </div>
                 <div class="box-button-add">
@@ -199,6 +220,7 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 

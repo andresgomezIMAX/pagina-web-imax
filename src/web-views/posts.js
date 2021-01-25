@@ -178,7 +178,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
           // if (userLogueado !== null) {
           // //   loadPostHome();
           
-          console.log('no jodadddssasaa')
+          console.log('se publicó post')
           // }
         });
       }else{

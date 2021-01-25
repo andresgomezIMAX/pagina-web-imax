@@ -2209,7 +2209,12 @@
 }
 
 .box-admin-boletas .box-fill-data .fill-input .box-file {
-  padding-left: 6%;
+  margin-left: 6%;
+  width: 40%;
+}
+
+.box-admin-boletas .box-fill-data .fill-input .box-name {
+  width: 60%;
 }
 
 .box-admin-boletas .box-fill-data .fill-input label {

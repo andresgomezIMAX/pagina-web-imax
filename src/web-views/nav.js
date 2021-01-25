@@ -13,28 +13,6 @@ menuAdmin.addEventListener('click', () => {
 });
 
 
-//funcion para mostrar lista de colaboradores en workerAdmin
-const btnlista = document.querySelector('.list-worker');
-const btnBack = document.querySelector('.back-worker');
-const listWorker = document.querySelector('.container-boletas');
-const addworker = document.querySelector('.container-add-worker');
-  btnlista.addEventListener('click', () => {
-    listWorker.classList.toggle('show');
-    addworker.classList.remove('show');
-    addworker.classList.toggle('hide');
-    console.log('click');
-  });
-
-  btnBack.addEventListener('click', () => {
-  listWorker.classList.remove('show');
-  listWorker.classList.add('hide');
-  addworker.classList.remove('hide');
-  addworker.classList.toggle('show');
-  console.log('click');
-});
-
-
-
 
 //funcion para ATRAS en lista de colaboradores
 // const btnBack = document.querySelector('.back-worker');

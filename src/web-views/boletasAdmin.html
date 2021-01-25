@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -55,8 +56,8 @@
                 <div class="generate-ticket">
                     <div class="box-search">
                         <div class="search-name">
-                            <label for="search">Nombre del Colaborador:</label>
-                            <select name="name" className="select-modal" required >
+                            <label for="name">Nombre del Colaborador:</label>
+                            <select name="name" class="nameWorker select-modal" required >
                                 <option value="emp">Pepito Castillo Luna</option>
                                 <option value="ie">Laura Catillo Luna </option>
                                 <option value="iad">Pepito Castillo Luna</option>
@@ -65,35 +66,36 @@
     
                         <div class="search-second">
                             <div> 
-                                <label for="search">Mes:</label>
-                                <select name="mes" className="select-modal" required >
-                                    <option value="emp">Enero</option>
-                                    <option value="ie">Febrero</option>
-                                    <option value="iad">Marzo</option>
-                                    <option value="emp">Abril</option>
-                                    <option value="ie">Mayo</option>
-                                    <option value="iad">Junio</option>
-                                    <option value="emp">Julio</option>
-                                    <option value="ie">Agosto</option>
-                                    <option value="iad">Setiembre</option>
-                                    <option value="emp">Octubre/option>
-                                    <option value="ie">Noviembre</option>
-                                    <option value="iad">Diciembre</option>
+                                <label for="month">Mes:</label>
+                                <select name="month" class="month select-modal " required >
+                                    <option value="ene">Enero</option>
+                                    <option value="feb">Febrero</option>
+                                    <option value="mar">Marzo</option>
+                                    <option value="abr">Abril</option>
+                                    <option value="may">Mayo</option>
+                                    <option value="jun">Junio</option>
+                                    <option value="jul">Julio</option>
+                                    <option value="ago">Agosto</option>
+                                    <option value="set">Setiembre</option>
+                                    <option value="oct">Octubre/option>
+                                    <option value="nov">Noviembre</option>
+                                    <option value="dic">Diciembre</option>
                                 </select>
                             </div>
                             <div>
-                                <label for="search">Total s/.: </label>
-                                <input type="number" name="search" >
+                                <label for="totalPage">Total s/.: </label>
+                                <input type="number" name="totalPage"  class="totalPage" >
                             </div>
                             <div>
-                                <label for="search">Adjuntar Boleta <i class="fas fa-paperclip"></i></label>
-                                <input type="file" id="addImage" accept ="image/*" class= "addImg">
+                                <label for="addTicked">Adjuntar Boleta <i class="fas fa-paperclip"></i></label>
+                                <input type="file" id="addImage" accept ="image/*" class= "addTicked">
                                
                             </div>
                         </div>
                     </div>
                     <button class="btn-generar">Generar</button>
                 </div>   
+                <div class="reg_error_inner" id="reg_error_inner"></div>
             </div>
 
             <div class="box-search-filter">
@@ -148,10 +150,12 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 
   
     <script src="nav.js"></script>  
+    <script src="pagos.js"></script>
 </body>
 </html>

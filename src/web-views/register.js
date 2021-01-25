@@ -1,20 +1,11 @@
 const register = document.querySelector('.box-fill-data');
 const user = () => firebase.auth().currentUser;
 
-
-// const saveUser = ({ displayName, photoURL, email }) => {
-//   fs.collection('usuarios').doc(email).set({
-//     nameUser: displayName,
-//     photoURL,
-//     emailUser:email,
-//   });
-// };
-
 // register con email
 register.addEventListener('submit', (e) => {
   e.preventDefault();
   const name = document.querySelector('.name-register').value;
-  const lastName = document.querySelector('.lastName-register').value;
+  const checkAdmin = document.querySelector('.checkAdmin').value;
   const dni = document.querySelector('.dni-register').value;
   const phone= document.querySelector('.phone-register').value;
   const email = document.querySelector('.email-register').value;
@@ -23,16 +14,16 @@ register.addEventListener('submit', (e) => {
   const leader = document.querySelector('.leader-register').value;
   const entryDay = document.querySelector('.fechaAdmin').value;
   const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
-  const addImg = document.querySelector('.addImg-register').value;
-  const checkAdmin = document.querySelector('.checkAdmin').value;
+  const addImg = document.querySelector('.firm-register').value;
+  
 
-  console.log(name, lastName, dni, phone, email, password, area,leader,entryDay,salarioAdmin,addImg,checkAdmin)
+  console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,addImg)
   firebase.auth().createUserWithEmailAndPassword(email,  password)
   .then(userCredential => {
     const db = firebase.firestore();
       return db.collection('users').doc(userCredential.user.uid).set({
         name, 
-        lastName, 
+        checkAdmin,
         dni, 
         phone, 
         email, 
@@ -41,8 +32,7 @@ register.addEventListener('submit', (e) => {
         leader,
         entryDay,
         salarioAdmin,
-        addImg,
-        checkAdmin
+        addImg
       });
      
   }).then(() => {
@@ -59,6 +49,26 @@ register.addEventListener('submit', (e) => {
     }
   });
 
+});
+
+//funcion para mostrar lista de colaboradores en workerAdmin
+const btnlista = document.querySelector('.list-worker');
+const btnBack = document.querySelector('.back-worker');
+const listWorker = document.querySelector('.container-boletas');
+const addworker = document.querySelector('.container-add-worker');
+  btnlista.addEventListener('click', () => {
+    listWorker.classList.toggle('show');
+    addworker.classList.remove('show');
+    addworker.classList.toggle('hide');
+    console.log('click');
+  });
+
+  btnBack.addEventListener('click', () => {
+  listWorker.classList.remove('show');
+  listWorker.classList.add('hide');
+  addworker.classList.remove('hide');
+  addworker.classList.toggle('show');
+  console.log('click');
 });
 
 

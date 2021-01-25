@@ -1,34 +1,5 @@
 const login = document.querySelector('.login-form');
 
-// AUTH CON GOOGLE
-// const iconGoogle = document.querySelector('.google-icon');
-
-// const googleAuth = () => {
-//   const provider = new firebase.auth.GoogleAuthProvider();
-//   firebase.auth().signInWithPopup(provider).then(() => {
-//     // saveUser(currentUser());
-//     if (googleAuth) {
-//     login.reset();
-//       console.log('ingresaste por google');
-//       location.href="web-views/noticias.html"
-    
-//     }
-//   }).catch();
-//   return provider;
-// };
-
-
-// iconGoogle.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   googleAuth();
-// });
-
-
-
-
-
-
-
 //Login con email
 
 login.addEventListener('submit', (e) => {
