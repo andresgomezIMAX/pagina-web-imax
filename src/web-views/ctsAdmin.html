@@ -53,7 +53,7 @@
             </div>
 
             <div class="box-generate-ticket">
-                <div class="generate-ticket">
+                <form class="generate-ticket">
                     <div class="box-search">
                         <div class="search-name">
                             <label for="name">Nombre del Colaborador:</label>
@@ -74,14 +74,14 @@
                                 <input type="number" name="page-cts"  class="page-cts" >
                             </div>
                             <div>
-                                <label for="search">Adjuntar Constancia <i class="fas fa-paperclip"></i></label>
-                                <input type="file" id="addImage" accept ="image/*" class= "addImgCts">
+                                <label for="addImgCts">Adjuntar Constancia <i class="fas fa-paperclip"></i></label>
+                                <input type="file" id="addImage" accept ="application/pdf" class= "addImgCts">
                                
                             </div>
                         </div>
                     </div>
-                    <button class="btn-generar-cts">Generar</button>
-                </div>   
+                    <button type="submit" class="btn-generar-cts">Generar</button>
+                </form>   
             </div>
 
             <div class="box-search-filter">

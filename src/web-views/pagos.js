@@ -46,7 +46,7 @@ generarBoleta.addEventListener('submit', (e) => {
     if(urlBoleta){
       saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
         // sessionStorage.removeItem('fileNewTicked');
-        console.log('con foto');
+        console.log('se registró boleta');
         generarBoleta.reset();
         alert('se registró boleta');
       });
