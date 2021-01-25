@@ -37,7 +37,7 @@ register.addEventListener('submit', (e) => {
      
   }).then(() => {
     register.reset();
-    alert('guardado'); 
+    alert('Datos guardados'); 
   })
   .catch((error) => {
     const errorCode = error.code;

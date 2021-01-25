@@ -1,7 +1,7 @@
 const getUsers = () => firebase.firestore().collection('users').get();
 
 // ADMINISTRADOR GENERAR BOLETA
-const generarBoleta = document.querySelector('.btn-generar-boleta');
+const generarBoleta = document.querySelector('.generate-ticket');
 const user = () => firebase.auth().currentUser;
 
 const currentUser = () => firebase.auth().currentUser;
@@ -11,20 +11,7 @@ const currentUser = () => firebase.auth().currentUser;
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
       // Get file
       file = e.target.files[0];
-})
-}
-
-generarBoleta.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('hola');
-    const userLogueado = firebase.auth().currentUser;
-    console.log(userLogueado)
-    const useruid = userLogueado.uid;
-    const nameWorker = document.querySelector('.nameWorker').value;
-    const month = document.querySelector('.month').value; 
-    const totalPage = document.querySelector('.totalPage').value;
-    console.log(nameWorker,month,totalPage)
-    if(file){
+      if(file){
         const storageRef = firebase.storage().ref(`tickedFile/${currentUser().email}/${file.name}`);
         const task = storageRef .put(file);
         console.log(task)
@@ -37,16 +24,35 @@ generarBoleta.addEventListener('click', (e) => {
                 urlBoleta = url;
                 console.log('holaaaaaaaaaaaa', urlBoleta);
                 sessionStorage.setItem('fileNewTicked', urlBoleta);
-                saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
-                  // sessionStorage.removeItem('fileNewTicked');
-                  console.log('con foto')
-                });
               })
              
           });
        
     }
-    getUsers();
+})
+}
+
+generarBoleta.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('hola');
+    const userLogueado = firebase.auth().currentUser;
+    console.log(userLogueado)
+    const useruid = userLogueado.uid;
+    const nameWorker = document.querySelector('.nameWorker').value;
+    const month = document.querySelector('.month').value; 
+    const totalPage = document.querySelector('.totalPage').value;
+    const urlBoleta = sessionStorage.getItem('fileNewTicked');
+    console.log(nameWorker,month,totalPage)
+    if(urlBoleta){
+      saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
+        // sessionStorage.removeItem('fileNewTicked');
+        console.log('con foto');
+        generarBoleta.reset();
+        alert('se registró boleta');
+      });
+      
+    }
+    
 });
 
 const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
