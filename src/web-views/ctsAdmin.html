@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -55,8 +56,8 @@
                 <div class="generate-ticket">
                     <div class="box-search">
                         <div class="search-name">
-                            <label for="search">Nombre del Colaborador:</label>
-                            <select name="name" className="select-modal" required >
+                            <label for="name">Nombre del Colaborador:</label>
+                            <select name="name" class="nameWorkerCts select-modal" required >
                                 <option value="emp">Pepito Castillo Luna</option>
                                 <option value="ie">Laura Catillo Luna </option>
                                 <option value="iad">Pepito Castillo Luna</option>
@@ -65,31 +66,21 @@
     
                         <div class="search-second">
                             <div> 
-                                <label for="search">Mes:</label>
-                                <select name="mes" className="select-modal" required >
-                                    <option value="emp">Diciembre 2020</option>
-                                    <option value="ie">Julio 2020</option>
-                                    <option value="emp">Diciembre 2019</option>
-                                    <option value="ie">Julio 2019</option>
-                                    <option value="emp">Diciembre 2018</option>
-                                    <option value="ie">Julio 2018</option>
-                                    <option value="emp">Diciembre 2017</option>
-                                    <option value="ie">Julio 2017</option>
-                                
-                                </select>
+                                <label for="month-Cts">Mes:</label>
+                                <input type="text" name="month-Cts" class="month-Cts" >
                             </div>
                             <div>
-                                <label for="search">Total s/.: </label>
-                                <input type="number" name="search" >
+                                <label for="page-cts">Total s/.: </label>
+                                <input type="number" name="page-cts"  class="page-cts" >
                             </div>
                             <div>
                                 <label for="search">Adjuntar Constancia <i class="fas fa-paperclip"></i></label>
-                                <input type="file" id="addImage" accept ="image/*" class= "addImg">
+                                <input type="file" id="addImage" accept ="image/*" class= "addImgCts">
                                
                             </div>
                         </div>
                     </div>
-                    <button class="btn-generar">Generar</button>
+                    <button class="btn-generar-cts">Generar</button>
                 </div>   
             </div>
 
@@ -145,10 +136,12 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 
   
     <script src="nav.js"></script>  
+    <script src="cts.js"></script> 
 </body>
 </html>

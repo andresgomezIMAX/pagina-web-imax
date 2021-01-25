@@ -2029,7 +2029,7 @@
   display: flex;
 }
 
-.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar {
+.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar-boleta, .box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar-cts {
   border-radius: 9px;
   width: 20%;
   color: white;
@@ -2042,7 +2042,7 @@
   background-color: #8DB9CA;
 }
 
-.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar:active {
+.box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar-boleta:active, .box-admin-boletas .box-generate-ticket .generate-ticket .btn-generar-cts:active {
   background-color: #00ADEF !important;
 }
 

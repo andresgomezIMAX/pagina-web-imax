@@ -1,5 +1,7 @@
 const getUsers = () => firebase.firestore().collection('users').get();
-const generarBoleta = document.querySelector('.btn-generar');
+
+// ADMINISTRADOR GENERAR BOLETA
+const generarBoleta = document.querySelector('.btn-generar-boleta');
 const user = () => firebase.auth().currentUser;
 
 const currentUser = () => firebase.auth().currentUser;
@@ -35,15 +37,14 @@ generarBoleta.addEventListener('click', (e) => {
                 urlBoleta = url;
                 console.log('holaaaaaaaaaaaa', urlBoleta);
                 sessionStorage.setItem('fileNewTicked', urlBoleta);
+                saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
+                  // sessionStorage.removeItem('fileNewTicked');
+                  console.log('con foto')
+                });
               })
-              .catch(() => {
-                console.log('ocurrió un error');
-              });
+             
           });
-        saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
-            sessionStorage.removeItem('fileNewTicked');
-            console.log('con foto')
-          });
+       
     }
     getUsers();
 });
@@ -74,4 +75,6 @@ const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
 //       setupPosts([])
 //     }
 // });
+
+
 
