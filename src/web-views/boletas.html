@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -36,7 +37,7 @@
                 </a> </li>
                 <li><a href="vacationsLider.html">Lider de Unidad</a></li>
                 <li><a href="#/contacto">Herramientas IMAX</a></li>
-                <a class="logOut""><li>Cerrar sesión</li></a>
+                <a class="logOut"><li>Cerrar sesión</li></a>
                
             </ul>
         </nav>
@@ -70,66 +71,8 @@
                       <th>Boleta de Pago</th>
                       <th>Conformidad</th>
                     </tr>
-                    <tr>
-                      <td>Diciembre 2020</td>
-                      <td>3000.00</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                    </tr>
-                    <tr>
-                      <td>Noviembre 2020</td>
-                      <td>3000.00</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                    </tr>
-                    <tr>
-                      <td>Octubre 2020</td>
-                      <td>3000.00</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                    </tr>
-                    <tr>
-                        <td>Diciembre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Noviembre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Octubre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Diciembre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Noviembre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Octubre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
-                      <tr>
-                        <td>Diciembre 2020</td>
-                        <td>3000.00</td>
-                        <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                      </tr>
+                    <tbody class="table-page">
+                    </tbody>
                       
                      
                   </table>
@@ -152,10 +95,12 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 
   
     <script src="nav.js"></script>  
+    <script src="pagosWorker.js"> </script>
 </body>
 </html>
