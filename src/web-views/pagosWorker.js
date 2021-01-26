@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
                                     <tr>
                                 <td>${page.month}</td>
-                                <td>3000.00</td>
+                                <td>${page.totalPage}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
                                 <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
                              `;
