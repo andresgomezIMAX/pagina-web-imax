@@ -1,11 +1,10 @@
-const getUsers = () => firebase.firestore().collection('users').get();
-
 // ADMINISTRADOR GENERAR BOLETA
 const generarBoleta = document.querySelector('.generate-ticket');
 const user = () => firebase.auth().currentUser;
 
 const currentUser = () => firebase.auth().currentUser;
-  const addTicked = document.querySelector('#addImage');
+  const addTicked = document.querySelector('.addTicked')
+  console.log(addTicked)
   if(addTicked){
     addTicked.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
@@ -42,7 +41,7 @@ generarBoleta.addEventListener('submit', (e) => {
     const month = document.querySelector('.month').value; 
     const totalPage = document.querySelector('.totalPage').value;
     const urlBoleta = sessionStorage.getItem('fileNewTicked');
-    console.log(nameWorker,month,totalPage)
+    console.log(nameWorker,month,totalPage, urlBoleta)
     if(urlBoleta){
       saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
         // sessionStorage.removeItem('fileNewTicked');
@@ -66,7 +65,55 @@ const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
     });
 };
 
+// para mostrar los datos en la tabla'pages'
+const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
+const getUsers = () => firebase.firestore().collection('users').get();
+const getPages = () => firebase.firestore().collection().get();
 
+const pageContainer = document.querySelector('.table-page')
+window.addEventListener('DOMContentLoaded', async(e) => {
+  onGetPages((querySnapshot)=>{
+    pageContainer.innerHTML='';
+    querySnapshot.forEach(doc => {
+      const page = doc.data();
+      console.log(page)
+      page.id = doc.id;
+      const user = firebase.auth().currentUser;
+      pageContainer.innerHTML +=  `
+                              <tr>
+                                <td> ${page.nameWorker}</td>  
+                                <td> ${page.month}</td>
+                                <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
+                                <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                              </tr>
+                             `;
+
+
+                  const btnsRemove = document.querySelectorAll('.btnRemove');
+                  btnsRemove.forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                 
+                     await deletePost(e.target.dataset.id)
+                    })
+                  });
+
+                  const btnsEdit = document.querySelectorAll('.btnEdit');
+                  btnsEdit.forEach((btn) => {
+                    btn.addEventListener('click', async(e) => {
+                     const doc = await getPostEdit(e.target.dataset.id)
+                     console.log(doc.data())
+                     const post = doc.data();
+                     editStatus = true;
+                     id = doc.id;
+                     const inputTextArea = document.querySelector ('.textarea');
+                     inputTextArea.value = post.content;
+                     btnNewPost.innerHTML = 'Actualizar'
+                    })
+                  });
+    });
+  })
+ 
+})
 
 // firebase.auth().onAuthStateChanged(user => {
 //     if (user) {
