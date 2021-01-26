@@ -10,7 +10,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>noticias</title>
+    <title>Boletas Admin</title>
 </head>
 <body class="container-admin">
 
@@ -140,7 +140,7 @@
     };
     firebase.initializeApp(firebaseConfig);
     console.log(firebase.name)
-    const auth = firebase.auth();
+    firebase.auth();
     const fs = firebase.firestore();
     firebase.storage();
     firebase.analytics();
@@ -148,6 +148,6 @@
 
   
     <script src="nav.js"></script>  
-    <script src="pagos.js"></script>
+    <script src="boletasAdmin.js"></script>
 </body>
 </html>

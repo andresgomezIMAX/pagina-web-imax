@@ -10,7 +10,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>noticias</title>
+    <title>CTS Admin</title>
 </head>
 <body class="container-admin">
 
@@ -56,18 +56,31 @@
                 <form class="generate-ticket">
                     <div class="box-search">
                         <div class="search-name">
-                            <label for="name">Nombre del Colaborador:</label>
+                            <label for="nameWorkerCts">Nombre del Colaborador:</label>
                             <select name="name" class="nameWorkerCts select-modal" required >
-                                <option value="emp">Pepito Castillo Luna</option>
-                                <option value="ie">Laura Catillo Luna </option>
-                                <option value="iad">Pepito Castillo Luna</option>
+                                <option value="Pepito Castillo Luna">Pepito Castillo Luna</option>
+                                <option value="Laura Catillo Luna">Laura Catillo Luna </option>
+                                <option value="Pepito Castillo Luna">Pepito Castillo Luna</option>
                             </select>
                         </div>
     
                         <div class="search-second">
                             <div> 
                                 <label for="month-Cts">Mes:</label>
-                                <input type="text" name="month-Cts" class="month-Cts" >
+                                <select name="month-Cts" class="month-Cts select-modal " required >
+                                    <option value="Enero">Enero</option>
+                                    <option value="Febrero">Febrero</option>
+                                    <option value="Marzo">Marzo</option>
+                                    <option value="Abril">Abril</option>
+                                    <option value="Mayo">Mayo</option>
+                                    <option value="Junio">Junio</option>
+                                    <option value="Julio">Julio</option>
+                                    <option value="Agosto">Agosto</option>
+                                    <option value="Setiembre">Setiembre</option>
+                                    <option value="Octubre">Octubre</option>
+                                    <option value="Noviembre">Noviembre</option>
+                                    <option value="Diciembre">Diciembre</option>
+                                </select>
                             </div>
                             <div>
                                 <label for="page-cts">Total s/.: </label>
@@ -104,18 +117,11 @@
                       <th>Colaborador</th>
                       <th>Mes</th>
                       <th>Constancias CTS</th>
+                      <th>Opciones</th>
                     </tr>
-                    <tr>
-                      <td>Pepito Castillo Luna</td>  
-                      <td>Diciembre 2020</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                   
-                    </tr>
-                    <tr>
-                      <td>Laura Luna Catillo</td>
-                      <td>Noviembre 2020</td>
-                      <td><button><i class="fas fa-download"></i> Imprimir</button></td>
-                    </tr>                     
+                    <tbody class="table-cts">
+
+                    </tbody>                 
                   </table>
             </div>
         </section>
@@ -142,6 +148,6 @@
 
   
     <script src="nav.js"></script>  
-    <script src="cts.js"></script> 
+    <script src="ctsAdmin.js"></script> 
 </body>
 </html>
