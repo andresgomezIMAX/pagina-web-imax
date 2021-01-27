@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -90,7 +91,7 @@
                     <div >
                         <label for="area">Área: </label>
                         <select name="area" class="area-register" required >
-                            <option value="gg">Gerencia General </option>
+                            <option value="gg">Gerencia General</option>
                             <option value="adh">Administración y Recuso Humano</option>
                             <option value="gec">Gestión Comercial </option>
                             <option value="tas">Tasaciones</option>
@@ -106,27 +107,27 @@
                     <div >
                         <label for="leader">Jefe Inmediato: </label>
                         <select name="leader"  class="leader-register" required >
-                            <option value="gg">Max Alfaro </option>
-                            <option value="adh">Elena Alfaro</option>
-                            <option value="gec">Manuel Farje</option>
-                            <option value="tas">Claudia Coronel</option>
-                            <option value="evp">Maurice Calmet</option>
-                            <option value="emp">Patricia Valdivia</option>
-                            <option value="gso">Andrés Gómez</option>
-                            <option value="gdp">Marcela Mendoza</option>
-                            <option value="iad">Andrés Gómez</option>
-                            <option value="sds">Verónica Bustamante</option>
-                            <option value="gmm">Enrique Alaba</option>
-                            <option value="ladh">Lider de Administración y Recuso Humano</option>
-                            <option value="lgec">Lider de Gestión Comercial </option>
-                            <option value="ltas">Lider de Tasaciones</option>
-                            <option value="levp">Lider de Informes Especiales, Valuaciones y Peritajes</option>
-                            <option value="lemp">Lider de Evaluación y Monitoreo de Proyectos</option>
-                            <option value="lgso">Lider de Gerencia y Supervisión de Obras</option>
-                            <option value="lgdp">Lider de Gestión y Desarrollo de Proyectos</option>
-                            <option value="liad">Lider de Innovación y Análisis de Data</option>
-                            <option value="lsds">Lider de Streno Design Studio</option>
-                            <option value="lgmm">Lider de Gestión Marketing y Medio</option>
+                            <option value="Max Alfaro">Max Alfaro</option>
+                            <option value="Elena Alfaro">Elena Alfaro</option>
+                            <option value="Manuel Farje">Manuel Farje</option>
+                            <option value="Claudia Coronel">Claudia Coronel</option>
+                            <option value="Maurice Calmet">Maurice Calmet</option>
+                            <option value="Patricia Valdivia">Patricia Valdivia</option>
+                            <option value="Andrés Gómez">Andrés Gómez</option>
+                            <option value="Marcela Mendoza">Marcela Mendoza</option>
+                            <option value="Andrés Gómez">Andrés Gómez</option>
+                            <option value="Verónica Bustamante">Verónica Bustamante</option>
+                            <option value="Enrique Alaba">Enrique Alaba</option>
+                            <option value="Lider de Administración y Recuso Humano">Lider de Administración y Recuso Humano</option>
+                            <option value="Lider de Gestión Comercial">Lider de Gestión Comercial </option>
+                            <option value="Lider de Tasaciones">Lider de Tasaciones</option>
+                            <option value="Lider de Informes Especiales, Valuaciones y Peritajes">Lider de Informes Especiales, Valuaciones y Peritajes</option>
+                            <option value="Lider de Evaluación y Monitoreo de Proyectos">Lider de Evaluación y Monitoreo de Proyectos</option>
+                            <option value="Lider de Gerencia y Supervisión de Obras">Lider de Gerencia y Supervisión de Obras</option>
+                            <option value="Lider de Gestión y Desarrollo de Proyectos">Lider de Gestión y Desarrollo de Proyectos</option>
+                            <option value="Lider de Innovación y Análisis de Data">Lider de Innovación y Análisis de Data</option>
+                            <option value="Lider de Streno Design Studio">Lider de Streno Design Studio</option>
+                            <option value="Lider de Gestión Marketing y Medio">Lider de Gestión Marketing y Medio</option>
                         </select>
                     </div>
                 </div>
@@ -182,20 +183,10 @@
                           <th>Firma Electronica</th>
                           <th>Administrador</th>
                           <th>Opciones</th>
-                        </tr>
-                        <tr>
-                          <td>Pepito Castillo Luna</td>  
-                          <td>03457263</td>
-                          <td>pepito.castillo@imax.com.pe</td>  
-                          <td>diciembre2020</td>
-                          <td>Evaluación y Monitoreo de Proyectos</td>  
-                          <td>Max Alfaro Ramirez</td>
-                          <td>20/12/2015</td>  
-                          <td>3000</td>
-                          <td><button><i class="fas fa-download"></i>Descargar</button></td>
-                          <td>No</td>
-                          <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
-                        </tr>     
+                        </tr> 
+                        <tbody class="table-users">
+
+                        </tbody>  
                       </table>
                    
                 
