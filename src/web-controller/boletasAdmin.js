@@ -1,9 +1,6 @@
-// ADMINISTRADOR GENERAR BOLETA
-const generarBoleta = document.querySelector('.generate-ticket');
-const user = () => firebase.auth().currentUser;
-
+// GUARDANDO URL DEL PDF DE LA BOLETA
 const currentUser = () => firebase.auth().currentUser;
-  const addTicked = document.querySelector('.addTicked')
+const addTicked = document.querySelector('.addTicked')
   console.log(addTicked)
   if(addTicked){
     addTicked.addEventListener('change', (e) => {
@@ -31,6 +28,8 @@ const currentUser = () => firebase.auth().currentUser;
 })
 }
 
+// ADMINISTRADOR GENERAR BOLETA
+const generarBoleta = document.querySelector('.generate-ticket');
 generarBoleta.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log('hola');
@@ -54,6 +53,7 @@ generarBoleta.addEventListener('submit', (e) => {
     
 });
 
+//FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
 const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
     const firestore = firebase.firestore();
     return firestore.collection('pages').add({
@@ -65,10 +65,9 @@ const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
     });
 };
 
-// para mostrar los datos en la tabla'pages'
+//PARA MOSTRAR LAS BOLETAS GUARDADAS EN LA TABLA DE 'PAGES'
 const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
-const getPages = () => firebase.firestore().collection().get();
 const deletePost = id => firebase.firestore().collection('pages').doc(id).delete();
 
 const pageContainer = document.querySelector('.table-page')
