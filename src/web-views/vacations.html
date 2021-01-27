@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -50,32 +51,63 @@
                 <p>Mis Vacaciones</p>
                 <p><i class="fas fa-user"></i>Pepito Castillo</p>
             </div>
-
-            <div class="box-check-boss">
-                <p>*Llene sus datos y solicite el Visto Bueno de su lider inmediato</p>
-                <div class="date-vacations">
-                    <div>
-                        <label for="search">Fecha de Inicio: </label>
-                        <input type="date" name="search" >
+            <div class="box-check-complete">
+                <form class="box-check-boss">
+                    <p>*Llene sus datos y solicite el Visto Bueno de su lider inmediato</p>
+                    <div class="date-vacations">
+                        <div>
+                            <label for="inicioVacation">Fecha de Inicio: </label>
+                            <input type="date" name="inicioVacation" class="inicio-Vacation" required  >
+                        </div>
+                        <div>
+                            <label for="finVacation">Fecha de Fin: </label>
+                            <input type="date" name="finVacation" class="fin-Vacation" required  >
+                        </div>
+                        
+                        
                     </div>
+           
                     <div>
-                        <label for="search">Fecha de Fin: </label>
-                        <input type="date" name="search" >
+                        <label for="jefe">Jefe Inmediato: </label>
+                        <select name="jefe"  class="boss-inmediate select-modal" required >
+                            <option value="gg">Max Alfaro </option>
+                            <option value="adh">Elena Alfaro</option>
+                            <option value="gec">Manuel Farje</option>
+                            <option value="tas">Claudia Coronel</option>
+                            <option value="evp">Maurice Calmet</option>
+                            <option value="emp">Patricia Valdivia</option>
+                            <option value="gso">Andrés Gómez</option>
+                            <option value="gdp">Marcela Mendoza</option>
+                            <option value="iad">Andrés Gómez</option>
+                            <option value="sds">Verónica Bustamante</option>
+                            <option value="gmm">Enrique Alaba</option>
+                            <option value="ladh">Lider de Administración y Recuso Humano</option>
+                            <option value="lgec">Lider de Gestión Comercial </option>
+                            <option value="ltas">Lider de Tasaciones</option>
+                            <option value="levp">Lider de Informes Especiales, Valuaciones y Peritajes</option>
+                            <option value="lemp">Lider de Evaluación y Monitoreo de Proyectos</option>
+                            <option value="lgso">Lider de Gerencia y Supervisión de Obras</option>
+                            <option value="lgdp">Lider de Gestión y Desarrollo de Proyectos</option>
+                            <option value="liad">Lider de Innovación y Análisis de Data</option>
+                            <option value="lsds">Lider de Streno Design Studio</option>
+                            <option value="lgmm">Lider de Gestión Marketing y Medio</option>
+                        </select>
                     </div>
+                      
+            
                     
-                    
+                    <div class="btn-vb">
+                        <button type="submit">Solicitar V°B°</button>
+                    </div>
+                   
+                </form>
+                <div class="box-info-date">
+                    <h4>Importante:</h4> <br>
+                    <p><strong>Truncas:</strong> 20 días</p>
+                    <p><strong>Vencimiento:</strong>14/12/2021 </p>
                 </div>
-                <label for="search">Jefe Inmediato: </label>
-                <select name="mes" className="select-modal" required >
-                    <option value="emp">Max Alfaro Ramirez</option>
-                    <option value="ie">Andrés Gómez</option>
-                    <option value="emp">Lider de IAD</option>
-                </select>
-                <div class="btn-vb">
-                    <button>Solicitar V°B°</button>
-                </div>
-                
             </div>
+            
 
             <div class="box-send-request">
                 <p>*Su solicitud obtuvo el V°B° de su lider. Puede proceder a enviarla
@@ -106,10 +138,12 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 
   
-    <script src="nav.js"></script>  
+    <script src="../web-controller/nav.js"></script> 
+    <script src="../web-controller/vacation.js"></script> 
 </body>
 </html>
