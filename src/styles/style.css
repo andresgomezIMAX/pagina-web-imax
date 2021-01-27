@@ -1653,7 +1653,6 @@
   color: white;
   font-family: "Pridi",gitserif;
   font-size: 20px;
-  height: 40px;
   font-weight: 700;
   outline: none;
   border: none;
@@ -1718,7 +1717,7 @@
 
 .box-boletas .container-vacations {
   background-color: #F3F3F3;
-  height: 65%;
+  height: 70%;
   width: 90%;
 }
 
@@ -1743,10 +1742,17 @@
   padding: 12px;
 }
 
-.box-boletas .container-vacations .box-check-boss {
+.box-boletas .container-vacations .box-check-complete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  border-bottom: 1px solid rgba(69, 69, 69, 0.6);
   padding: 2%;
+}
+
+.box-boletas .container-vacations .box-check-boss {
+  width: 80%;
+  border-bottom: 1px solid rgba(69, 69, 69, 0.6);
 }
 
 .box-boletas .container-vacations .box-check-boss p, .box-boletas .container-vacations .box-check-boss label {
@@ -1772,7 +1778,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70%;
+  width: 100%;
   margin-bottom: 2%;
 }
 
@@ -1805,6 +1811,25 @@
 
 .box-boletas .container-vacations .box-check-boss button:active {
   background-color: #8DB9CA !important;
+}
+
+.box-boletas .container-vacations .box-info-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 9px;
+  height: 80px;
+  margin: 0px 15px;
+  background-color: #8DB9CA;
+  padding: 1%;
+  font-size: 15px;
 }
 
 .box-boletas .container-vacations .box-send-request {

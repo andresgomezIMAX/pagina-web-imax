@@ -183,7 +183,7 @@
                     color: white;
                     font-family: "Pridi",gitserif;
                     font-size: 20px;
-                    height: 40px;
+                    // height: 40px;
                     font-weight: 700;
                     outline: none;
                     border: none;
@@ -252,7 +252,7 @@
 
     .container-vacations{
         background-color: #F3F3F3;
-        height: 65%;
+        height: 70%;
         width: 90%;
 
         .title-new{
@@ -270,10 +270,16 @@
             }
         }
 
-        .box-check-boss{
+        .box-check-complete{
+            display: flex;
             width: 100%;
-            border-bottom: 1px solid rgba(69,69,69,.6);
             padding: 2%;
+        }
+
+        .box-check-boss{
+            width: 80%;
+            border-bottom: 1px solid rgba(69,69,69,.6);
+          
 
             p, label{
                 margin-bottom: 2%;
@@ -294,7 +300,7 @@
             .date-vacations{
                 display: flex;
                 justify-content: space-between;
-                width: 70%;
+                width: 100%;
                 margin-bottom: 2%;
             }
 
@@ -326,6 +332,18 @@
             }
           
             
+        }
+
+        .box-info-date{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+             border-radius: 9px;
+            height: 80px;
+            margin: 0px 15px;
+            background-color: #8DB9CA;
+            padding: 1%;
+            font-size: 15px;
         }
 
         .box-send-request{
