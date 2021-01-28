@@ -26,7 +26,7 @@ registerVacation.addEventListener('submit', (e) => {
 
   const  saveVacation = (useruid,inicioVacation,finVacation,bossInmediate) => {
     const firestore = firebase.firestore();
-    return firestore.collection('vacation').add({
+    return firestore.collection('users').doc(userCredential.user.uid).collection('vacation').add({
         useruid,
         inicioVacation,
         finVacation,
