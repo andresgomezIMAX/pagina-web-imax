@@ -6,7 +6,7 @@ const addTicked = document.querySelector('.addTicked')
     addTicked.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
       // Get file
-      file = e.target.files[0];
+      let file = e.target.files[0];
       if(file){
         const storageRef = firebase.storage().ref(`tickedFile/${currentUser().email}/${file.name}`);
         const task = storageRef .put(file);
@@ -85,15 +85,15 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <td> ${page.month}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
                                 <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
-                                <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                                <td><i class="fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
                               </tr>
                              `;
 
 
-                  const btnsRemove = document.querySelectorAll('.btnRemove');
-                  btnsRemove.forEach(btn => {
+                  const deletePage = document.querySelectorAll('.deletePage');
+                  deletePage.forEach(btn => {
                     btn.addEventListener('click', async (e) => {
-                 
+                      confirm('¿Quieres eliminar esta Boleta de Pago?')
                      await deletePost(e.target.dataset.id)
                     })
                   });

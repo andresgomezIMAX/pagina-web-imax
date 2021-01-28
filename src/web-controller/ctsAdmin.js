@@ -3,6 +3,7 @@
 const generarCts = document.querySelector('.generate-ticket');
 const user = () => firebase.auth().currentUser;
 
+let file;
 const currentUser = () => firebase.auth().currentUser;
   const addCts = document.querySelector('.addImgCts')
   if(addCts){
@@ -67,7 +68,7 @@ const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts,  useruid) => {
 // para mostrar los datos en la tabla'cts'
 const onGetCts = (callback) => firebase.firestore().collection('cts').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
-const getCts = () => firebase.firestore().collection().get();
+const deletePost = id => firebase.firestore().collection('cts').doc(id).delete();
 
 const ctsContainer = document.querySelector('.table-cts')
 console.log(ctsContainer)
@@ -84,18 +85,18 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <td> ${cts.nameWorkerCts}</td>  
                                 <td> ${cts.monthCts}</td>
                                 <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
-                                <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                                <td><i class="fas fa-edit"></i> <i class="deleteCts fas fa-trash-alt" data-id="${cts.id}"></i></td>
                               </tr>
                              `;
 
 
-                  // const btnsRemove = document.querySelectorAll('.btnRemove');
-                  // btnsRemove.forEach(btn => {
-                  //   btn.addEventListener('click', async (e) => {
+                  const deleteCts = document.querySelectorAll('.deleteCts');
+                  deleteCts.forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
                  
-                  //    await deletePost(e.target.dataset.id)
-                  //   })
-                  // });
+                     await deletePost(e.target.dataset.id)
+                    })
+                  });
 
                   // const btnsEdit = document.querySelectorAll('.btnEdit');
                   // btnsEdit.forEach((btn) => {

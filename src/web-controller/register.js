@@ -7,10 +7,10 @@ const firmRegister = document.querySelector('.firm-register');
     firmRegister.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
       // Get file
-      file = e.target.files[0];
+      let file = e.target.files[0];
       if(file){
         const storageRef = firebase.storage().ref(`firmRegister/${currentUser().email}/${file.name}`);
-        const task = storageRef .put(file);
+        const task = storageRef.put(file);
         console.log(task)
         let urlfirmRegister = '';
         // Update progress bar
@@ -82,7 +82,7 @@ register.addEventListener('submit', (e) => {
 // PARA MOSTRAR DATOS EN LA TABLA DE BOLETAS
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
-// const deletePost = id => firebase.firestore().collection('users').doc(id).delete();
+const deletePost = id => firebase.firestore().collection('users').doc(id).delete();
 
 const userContainer = document.querySelector('.table-users')
 window.addEventListener('DOMContentLoaded', async(e) => {
@@ -105,18 +105,21 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                   <td>${user.salarioAdmin}</td>
                                   <td><a href=${user.urlfirmRegister} download="Boleta.pdf"><button><i class="fas fa-download"></i>Descargar</button></a></td>
                                   <td>${user.checkAdmin}</td>
-                                  <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i></td>
+                                  <td><i class="btn-editUser fas fa-edit"></i> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}"></i></td>
                                 </tr>  
                              `;
 
 
-                  // const btnsRemove = document.querySelectorAll('.btnRemove');
-                  // btnsRemove.forEach(btn => {
-                  //   btn.addEventListener('click', async (e) => {
-                 
-                  //    await deletePost(e.target.dataset.id)
-                  //   })
-                  // });
+                  const deleteUser = document.querySelectorAll('.btn-delUser');
+                  deleteUser.forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                      console.log('click')
+                      console.log(e.target)
+                      confirm('¿Quieres eliminar este colaborador@?')
+                     await deletePost(e.target.dataset.id)
+                     
+                    })
+                  });
 
                   // const btnsEdit = document.querySelectorAll('.btnEdit');
                   // btnsEdit.forEach((btn) => {

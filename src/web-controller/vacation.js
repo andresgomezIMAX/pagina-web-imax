@@ -33,3 +33,4 @@ registerVacation.addEventListener('submit', (e) => {
         bossInmediate
     });
 };
+
