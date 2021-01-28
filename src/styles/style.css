@@ -1704,7 +1704,6 @@
   color: white;
   font-family: "Pridi",gitserif;
   font-size: 20px;
-  height: 40px;
   font-weight: 700;
   outline: none;
   border: none;
@@ -1748,11 +1747,11 @@
   display: flex;
   width: 100%;
   padding: 2%;
+  border-bottom: 1px solid rgba(69, 69, 69, 0.6);
 }
 
 .box-boletas .container-vacations .box-check-boss {
   width: 80%;
-  border-bottom: 1px solid rgba(69, 69, 69, 0.6);
 }
 
 .box-boletas .container-vacations .box-check-boss p, .box-boletas .container-vacations .box-check-boss label {
@@ -1802,7 +1801,6 @@
   color: white;
   font-family: "Pridi",gitserif;
   font-size: 20px;
-  height: 40px;
   font-weight: 700;
   outline: none;
   border: none;
@@ -1873,7 +1871,6 @@
   color: white;
   font-family: "Pridi",gitserif;
   font-size: 20px;
-  height: 40px;
   font-weight: 700;
   outline: none;
   border: none;
