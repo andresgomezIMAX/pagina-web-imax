@@ -19,6 +19,7 @@ const getPostEdit = (id) => firebase.firestore().collection('posts').doc(id).get
 
 const onGetPost = (callback) => firebase.firestore().collection('posts').onSnapshot(callback);
 
+
 const deletePost = id => firebase.firestore().collection('posts').doc(id).delete();
 
 const editPost = (id, contentPost) => firebase.firestore().collection('posts').doc(id).update(contentPost);

@@ -1,6 +1,7 @@
 
 //CAPTURANDO EL URL DE LA FIRMA ELECTRONICA
 const currentUser = () => firebase.auth().currentUser;
+console.log(currentUser.email)
 const firmRegister = document.querySelector('.firm-register');
   console.log(firmRegister)
   if(firmRegister){

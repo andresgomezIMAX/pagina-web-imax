@@ -1781,6 +1781,16 @@
   margin-bottom: 2%;
 }
 
+.box-boletas .container-vacations .box-check-boss .box-boss-inmediate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box-boletas .container-vacations .box-check-boss .box-boss-inmediate .name-leader {
+  font-weight: 200;
+}
+
 .box-boletas .container-vacations .box-check-boss .btn-vb {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -7,6 +7,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -71,13 +72,16 @@
                       <th>Detalles</th>
                       <th>Conformidad</th>
                     </tr>
-                    <tr>
+                    <tbody class="table-vacation" >
+
+                    </tbody>
+                    <!-- <tr>
                       <td>Pepito Castillo Luna</td>  
                       <td>10/10/2020 al 20/10/2020</td>
                       <td>Pendientes: 15 días <br>
                           Vencen: 31/12/2021</td>
-                          <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                    </tr>     
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>      -->
                   </table>
             </div>
 
@@ -101,10 +105,12 @@
     console.log(firebase.name)
     const auth = firebase.auth();
     const fs = firebase.firestore();
+    firebase.storage();
     firebase.analytics();
     </script>
 
   
     <script src="../web-controller/nav.js"></script>  
+    <script src="../web-controller/vacationLider.js"></script>  
 </body>
 </html>

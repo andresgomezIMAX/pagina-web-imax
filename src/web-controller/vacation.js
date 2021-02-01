@@ -1,6 +1,19 @@
 const registerVacation = document.querySelector('.box-check-boss');
 const user = () => firebase.auth().currentUser;
 
+const boxNameLeader = document.querySelector('.boss-inmediate');
+boxNameLeader.innerHTML = '',
+firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().leader}`);
+        boxNameLeader.innerHTML += `
+        <label type="text" class="name-leader" > ${doc.data().leader} </label>`
+       
+    })
+})
+
+
+
 registerVacation.addEventListener('submit', (e) => {
     e.preventDefault();
     const userLogueado = firebase.auth().currentUser;
@@ -24,9 +37,12 @@ registerVacation.addEventListener('submit', (e) => {
   
   });
 
-  const  saveVacation = (useruid,inicioVacation,finVacation,bossInmediate) => {
+   const  saveVacation = (useruid,inicioVacation,finVacation,bossInmediate) => {
     const firestore = firebase.firestore();
-    return firestore.collection('users').doc(userCredential.user.uid).collection('vacation').add({
+    const userLogueado = firebase.auth().currentUser;
+    console.log(userLogueado)
+    const userUid = userLogueado.uid;
+    return firestore.collection('users').doc(userUid).collection('vacation').add({
         useruid,
         inicioVacation,
         finVacation,
