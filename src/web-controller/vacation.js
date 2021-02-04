@@ -274,12 +274,18 @@ registerVacation.addEventListener('submit', (e) => {
     const firestore = firebase.firestore();
     const userLogueado = firebase.auth().currentUser;
     console.log(userLogueado)
-    const userUid = userLogueado.uid;
-    return firestore.collection('users').doc(userUid).collection('vacation').add({
-        useruid,
-        inicioVacation,
-        finVacation,
-        bossInmediate
+
+    // return firestore.collection('users').doc(userUid).collection('vacation').add({
+    //     useruid,
+    //     inicioVacation,
+    //     finVacation,
+    //     bossInmediate
+    // });
+    return firestore.collection('vacation').add({
+      useruid,
+      inicioVacation,
+      finVacation,
+      bossInmediate
     });
 };
 
