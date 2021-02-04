@@ -6,8 +6,7 @@ login.addEventListener('submit', (e) => {
     e.preventDefault();
    const emailLogin = document.querySelector('.emailLogin').value;
    const passwordLogin = document.querySelector('.passwordLogin').value;
-   console.log(emailLogin,passwordLogin);
-   console.log('jajajjaja')
+   console.log('se ingresó')
   auth
       .signInWithEmailAndPassword(emailLogin,passwordLogin)
       .then(userCredential => {
