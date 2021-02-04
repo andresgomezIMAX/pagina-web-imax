@@ -1,5 +1,6 @@
 // para mostrar los datos en la tabla'pages'
 const onGetCts = (callback) => firebase.firestore().collection('cts').onSnapshot(callback);
+
 const getUsers = () => firebase.firestore().collection('users').get();
 const getCts = () => firebase.firestore().collection().get();
 

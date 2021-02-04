@@ -1,10 +1,20 @@
 // para mostrar los datos en la tabla'pages'
-const user = () => firebase.auth().currentUser;
-console.log(user.useruid)
-const userLogueado = firebase.auth().currentUser;
-console.log(userLogueado)
-const onGetVacation = (callback) => firebase.firestore().collection('users').doc(user.uid).collection('vacation').onSnapshot(callback);
-console.log(onGetVacation)
+  // const userLogueado = firebase.auth().currentUser;
+  // console.log(userLogueado)
+  // const userUid = userLogueado.uid;
+var db = firebase.firestore();
+const traerId =  db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(doc.id);
+        const onGetVacationss = doc.id;
+        return onGetVacationss;
+    });
+});
+
+traerId=db.collection("users").get().then((res)=>console.log(res))
+
+const onGetVacation = (callback) => firebase.firestore().collection('users').doc('k8Y5ZGjnxFatZ066T6njvIdUrfw2').collection('vacation').onSnapshot(callback);
+
 const getUsers = () => firebase.firestore().collection('users').get();
 const getCts = () => firebase.firestore().collection().get();
 
