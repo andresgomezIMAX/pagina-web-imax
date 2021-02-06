@@ -31,39 +31,15 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
             return texto.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
           }
         if(useruid === doc.id){
+
+            //Obteniendo fecha de ingreso
             const uid = doc.data();
-            var f = uid.entryDay;
-            console.log(f);
-            const vec = f.split('-');
-            var fecha = new Date(vec[0], vec [1], vec[2]);
-            console.log(fecha)
+            var dateOfEntry = uid.entryDay;
+            console.log(dateOfEntry);
 
-            fecha.setFullYear(fecha.getFullYear());
-   
-            let mes = fecha.getMonth();
-            if(fecha.getMonth() < 10){
-                mes= `0${fecha.getMonth()}`
-              }else{
-                mes= `${fecha.getMonth()}`
-              }
-            let dia = fecha.getDate();
-            if(fecha.getDate() < 10){
-                dia= `0${fecha.getDate()}`
-              }else{
-                dia= `${fecha.getDate()}`
-              }  
-
-            const salida = fecha.getFullYear()+1+'-'+mes+'-'+dia;
-            console.log(salida)
-            var resDateExpire = formato(salida);
-            console.log(resDateExpire);
-            
-
-            // const resDateExpireYear = (fecha.getFullYear()+1)+'-'+mes+'-'+dia;
-            // console.log(resDateExpireYear)
-
-            var fechaActual = new Date();
-            console.log(fechaActual);
+            //Obteniendo fecha actual
+            var dateToday = new Date();
+            console.log(dateToday);
             function formatDate(date) {
                 var d = new Date(date),
                     month = '' + (d.getMonth() + 1),
@@ -77,26 +53,49 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
             
                 return [year, month, day].join('-');
             }
-             
-            const resDateToday = formatDate(fechaActual);
-            console.log(resDateToday);
-            
-         
-            if(salida <= resDateToday){
-                var f = salida;
-                console.log(f)
-                const vec = f.split('-');
-                var fecha = new Date(vec[0], vec [1], vec[2]);
+      
+            const currentDate = formatDate(dateToday);
+            console.log(currentDate);
+
+            //A la fecha de ingreso ponerle el año vigente (2021)
+            const vec = dateOfEntry.split('-');
+            var fecha = new Date(vec[0], vec[1]-1, vec[2]);
+            console.log(fecha)
+            var año = dateToday.getFullYear();
+            console.log(año)
+            let mes = fecha.getMonth();
+            if(fecha.getMonth() < 10){
+                mes= `0${fecha.getMonth()+1}`
+            }else{
+                mes= `${fecha.getMonth()+1}`
+            }
+            let dia = fecha.getDate();
+            if(fecha.getDate() < 10){
+                dia= `0${fecha.getDate()}`
+            }else{
+                dia= `${fecha.getDate()}`
+            }  
+
+
+            const newDateExpire = año +'-'+mes+'-'+dia;
+            console.log(newDateExpire)
+
+            //cabiando formato de fecha
+            var fechaItem = año-1 +'-'+mes+'-'+dia;
+            console.log(fechaItem)
+
+            if(newDateExpire <= currentDate){
+                const vec = newDateExpire.split('-');
+                var fecha = new Date(vec[0],vec[1]-1, vec[2]);
                 console.log(fecha)
                 fecha.setFullYear(fecha.getFullYear()+1);
-                var getAño = new Date();
-                var año = getAño.getFullYear();
+                var año = dateToday.getFullYear()+1;
                 console.log(año)
                 let mes = fecha.getMonth();
                 if(fecha.getMonth() < 10){
-                    mes= `0${fecha.getMonth()}`
+                    mes= `0${fecha.getMonth()+1}`
                 }else{
-                    mes= `${fecha.getMonth()}`
+                    mes= `${fecha.getMonth()+1}`
                 }
                 let dia = fecha.getDate();
                 if(fecha.getDate() < 10){
@@ -104,67 +103,32 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                 }else{
                     dia= `${fecha.getDate()}`
                 }  
+
     
                 const salida2 = año +'-'+mes+'-'+dia;
                 console.log(salida2)
+                var resDateExpireYear2 = formato(salida2);
+                console.log(resDateExpireYear2);  
 
-                if(salida2 <= resDateToday){
-                var f = salida2;
-                console.log(f)
-                const vec = f.split('-');
-                var fecha = new Date(vec[0], vec [1], vec[2]);
-                console.log(fecha)
-                fecha.setFullYear(fecha.getFullYear()+1);
-                var getAño = new Date();
-                var año = getAño.getFullYear()+1;
-                console.log(año)
-                let mes = fecha.getMonth();
-                if(fecha.getMonth() < 10){
-                    mes= `0${fecha.getMonth()}`
-                }else{
-                    mes= `${fecha.getMonth()}`
-                }
-                let dia = fecha.getDate();
-                if(fecha.getDate() < 10){
-                    dia= `0${fecha.getDate()}`
-                }else{
-                    dia= `${fecha.getDate()}`
-                }  
-
-    
-                const salida3 = año +'-'+mes+'-'+dia;
-                console.log(salida3)
-
-                var resDateExpireYear1 = formato(salida3);
-                console.log(resDateExpireYear1);
-
-                const fecha2 = new Date ();
-                const vacationPending = calcVacationToday(salida2,fecha2)
-
-                
+                const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
                 vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpireYear1} </p>
-                <p><strong>Truncas:</strong> ${vacationPending} días</p>`
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>
+                <p><strong>Truncas:</strong>${vacationPending} días</p>`
 
-                } else {
 
-                    var resDateExpireYear = formato(salida2);
-                    console.log(resDateExpireYear);
-
-                    const fecha2 = new Date ();
-                    const vacationPending = calcVacationTodayYear(salida2,fecha2)
-    
-                    vacationExpire.innerHTML += `
-                    <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>
-                    <p><strong>Truncas:</strong> ${vacationPending} días</p>`
-                }
-
-             
             } else {
+                var resDateExpireYear = formato(newDateExpire);
+                console.log(resDateExpireYear);    
+               
+                const vacationPending = calcVacationTodayYear(fechaItem,currentDate)
+                console.log(monthDiff(fechaItem,currentDate))
+
                 vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpire} </p>`
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>
+                <p><strong>Truncas:</strong>${vacationPending} días</p>`
             }
+            
 
             
         }
@@ -175,71 +139,26 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
 
 
 //funcion para sacar meses de diferencia
-const restaFechas = (d1, d2) => {
-    var year1=d1.getFullYear();
-var year2=d2.getFullYear();
-var month1=d1.getMonth();
-var month2=d2.getMonth();
-if(month1===0){ //Have to take into account
-  month1++;
-  month2++;
-}
-var numberOfMonths;
-numberOfMonths = (year2 - year1) * 12 + (month2 - month1);
-return numberOfMonths;
+const monthDiff = (date1, date2) => { 
+    const vec1 = date1.split('-');
+    var d1 = new Date(vec1[0],vec1[1]-1, vec1[2]);
+    const vec2 = date2.split('-');
+    var d2 = new Date(vec2[0],vec2[1]-1, vec2[2]);
+    var months; 
+    months = (d2.getFullYear() - d1.getFullYear()) * 12; 
+    months -= d1.getMonth() + 1; 
+    months += d2.getMonth(); 
+    if (d2.getDate() >= d1.getDate()) months++ 
+    return months <= 0 ? 0 : months; 
 }
 
-
+//multiplicar meses por 2.5 dias de vacaciones
 const calcVacationTodayYear = (fecha1, fecha2) => {
-    const item = fecha1.split('-');
-    var fechaItem = new Date(item[0]-1, item [1], item[2]);
-    console.log(fechaItem)
-    alert(restaFechas(fechaItem,fecha2))
-    const resFechas = restaFechas(fechaItem,fecha2)
+    console.log(monthDiff(fecha1,fecha2))
+    const resFechas = monthDiff(fecha1,fecha2)
     const vacationPending = resFechas*2.5;
     return vacationPending;
 }
-
-const calcVacationToday = (fecha1, fecha2) => {
-    const item = fecha1.split('-');
-    var fechaItem = new Date(item[0], item [1]-1, item[2]);
-    console.log(fechaItem)
-    alert(restaFechas(fechaItem,fecha2))
-    const resFechas = restaFechas(fechaItem,fecha2)
-    const vacationPending = resFechas*2.5;
-    return vacationPending;
-}
-
-
-
-
-
-// const pendingVacation = document.querySelector('.box-vac-truncas');
-// pendingVacation.innerHTML = '',
-// firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
-//     querySnapshot.forEach((doc) => {
-//         // console.log(`${doc.id} => ${doc.data().entryDay}`);
-//         const userLogueado = firebase.auth().currentUser;
-//         const useruid = userLogueado.uid;
-//         if(useruid === doc.id){
-//             const uid = doc.data();
-//             var entryDay = uid.entryDay;
-//             // console.log(entryDay);
-//             const vec = entryDay.split('-');
-//             var date = new Date(vec[0], vec [1], vec[2]);
-//             console.log(date)
-//             let diasAcumulados=0;
-//             if( date.setMonth(date.getMonth()+1)){
-//                 diasAcumulados += 2.5;
-//                 console.log(diasAcumulados)
-//                 pendingVacation.innerHTML += `
-//                 <p><strong>Truncas:</strong> ${diasAcumulados} días</p>
-//                 `
-//             }
-//         }
-     
-//     })
-// })
 
 
 
