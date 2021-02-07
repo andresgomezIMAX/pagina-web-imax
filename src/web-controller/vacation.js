@@ -1,6 +1,15 @@
 const registerVacation = document.querySelector('.box-check-boss');
 const user = () => firebase.auth().currentUser;
 
+// const cityRef = firebase.firestore().collection('vacation').doc('iD2cSjB5Szhf2O0yDRd7');
+
+// const res = doc.set({
+//   capital: true
+// }, { merge: true });
+
+
+
+
 
 //Para mostrar el jefe inmediato por defecto
 const boxNameLeader = document.querySelector('.boss-inmediate');
@@ -112,6 +121,27 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
 
                 const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
+                firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(`${doc.id} => ${doc.data().useruid}`);
+                        const userLogueado = firebase.auth().currentUser;
+                        const useruid = userLogueado.uid;
+                        console.log(useruid)
+                        console.log(doc.uid)
+                        if(useruid === doc.data().useruid){
+                            console.log('eeeeeeeeeee')
+                            const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+                            const res = cityRef.set({
+                              resDateExpireYear2,
+                              vacationPending
+
+                            }, { merge: true });
+                        }
+                       
+                       
+                    })
+                })
+
                 vacationExpire.innerHTML += `
                 <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>
                 <p><strong>Truncas:</strong>${vacationPending} días</p>`
@@ -123,6 +153,27 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                
                 const vacationPending = calcVacationTodayYear(fechaItem,currentDate)
                 console.log(monthDiff(fechaItem,currentDate))
+
+                firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+                    querySnapshot.forEach((doc) => {
+                        console.log(`${doc.id} => ${doc.data().useruid}`);
+                        const userLogueado = firebase.auth().currentUser;
+                        const useruid = userLogueado.uid;
+                        console.log(useruid)
+                        console.log(doc.uid)
+                        if(useruid === doc.data().useruid){
+                            console.log('eeeeeeeeeee')
+                            const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+                            const res = cityRef.set({
+                              resDateExpireYear,
+                              vacationPending
+
+                            }, { merge: true });
+                        }
+                       
+                       
+                    })
+                })
 
                 vacationExpire.innerHTML += `
                 <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>
