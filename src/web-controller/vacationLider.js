@@ -31,10 +31,33 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                         <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
                                         <td>Pendientes: ${vacation.vacationPending} días <br>
                                             Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
-                                        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                                        <td><input type="checkbox" class="conformidad" value=false name="conformidad"></td>
                                         </tr> 
                              `;
+      const checkbox = document.querySelector('.conformidad');
+      console.log(checkbox)
+      checkbox.addEventListener( 'change', function() {
+          if(this.checked) {
+            firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                  console.log(`${doc.id} => ${doc.data().useruid}`);
+                  const userLogueado = firebase.auth().currentUser;
+                  const useruid = userLogueado.uid;
+                  if(useruid === doc.data().useruid){
+                      const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+                      const res = cityRef.update({
+                        confirmacion : true
+                      }, { merge: true });
+                  }
+
+              })
+          })
+          } 
+      });
+
     });
   })
  
-})
+});
+
+

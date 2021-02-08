@@ -127,7 +127,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                             const res = cityRef.set({
                               resDateExpireYear2,
                               vacationPending,
-                              nameWorker
+                              nameWorker, 
+                              confirmacion : false
 
                             }, { merge: true });
                         }
@@ -162,7 +163,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                             const res = cityRef.set({
                               resDateExpireYear,
                               vacationPending,
-                              nameWorker
+                              nameWorker,
+                              confirmacion : false
 
                             }, { merge: true });
                         }
