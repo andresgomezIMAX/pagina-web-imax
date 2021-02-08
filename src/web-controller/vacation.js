@@ -1,15 +1,6 @@
 const registerVacation = document.querySelector('.box-check-boss');
 const user = () => firebase.auth().currentUser;
 
-// const cityRef = firebase.firestore().collection('vacation').doc('iD2cSjB5Szhf2O0yDRd7');
-
-// const res = doc.set({
-//   capital: true
-// }, { merge: true });
-
-
-
-
 
 //Para mostrar el jefe inmediato por defecto
 const boxNameLeader = document.querySelector('.boss-inmediate');
@@ -119,6 +110,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                 var resDateExpireYear2 = formato(salida2);
                 console.log(resDateExpireYear2);  
 
+                const nameWorker = doc.data().name
+
                 const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
                 firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
@@ -133,7 +126,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                             const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
                             const res = cityRef.set({
                               resDateExpireYear2,
-                              vacationPending
+                              vacationPending,
+                              nameWorker
 
                             }, { merge: true });
                         }
@@ -150,7 +144,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
             } else {
                 var resDateExpireYear = formato(newDateExpire);
                 console.log(resDateExpireYear);    
-               
+                
+                const nameWorker = doc.data().name
                 const vacationPending = calcVacationTodayYear(fechaItem,currentDate)
                 console.log(monthDiff(fechaItem,currentDate))
 
@@ -166,7 +161,8 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                             const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
                             const res = cityRef.set({
                               resDateExpireYear,
-                              vacationPending
+                              vacationPending,
+                              nameWorker
 
                             }, { merge: true });
                         }
@@ -220,14 +216,14 @@ registerVacation.addEventListener('submit', (e) => {
     console.log(userLogueado)
     const useruid = userLogueado.uid;
     console.log(useruid)
-    const inicioVacation = document.querySelector('.inicio-Vacation').value;
-    const finVacation = document.querySelector('.fin-Vacation').value;
+    const startOfVacation = document.querySelector('.inicio-Vacation').value;
+    const endOfVacation = document.querySelector('.fin-Vacation').value;
     const bossInmediate = document.querySelector('.name-leader').innerHTML;
     console.log(bossInmediate)
   
-    console.log(useruid,inicioVacation,finVacation,bossInmediate)
-    if(inicioVacation,finVacation){
-        saveVacation(useruid,inicioVacation,finVacation,bossInmediate).then(() => {
+    console.log(useruid,startOfVacation,endOfVacation,bossInmediate)
+    if(startOfVacation,endOfVacation){
+        saveVacation(useruid,startOfVacation,endOfVacation,bossInmediate).then(() => {
             // sessionStorage.removeItem('fileNewTicked');
             console.log('se registró solicitud de vacaciones');
             registerVacation.reset();
@@ -240,21 +236,21 @@ registerVacation.addEventListener('submit', (e) => {
 
 
 //funcion para guaradr vacacones en firestore  
-   const  saveVacation = (useruid,inicioVacation,finVacation,bossInmediate) => {
+   const  saveVacation = (useruid,startOfVacation,endOfVacation,bossInmediate) => {
     const firestore = firebase.firestore();
     const userLogueado = firebase.auth().currentUser;
     console.log(userLogueado)
 
     // return firestore.collection('users').doc(userUid).collection('vacation').add({
     //     useruid,
-    //     inicioVacation,
-    //     finVacation,
+    //     startOfVacation,
+    //     endOfVacation,
     //     bossInmediate
     // });
     return firestore.collection('vacation').add({
       useruid,
-      inicioVacation,
-      finVacation,
+      startOfVacation,
+      endOfVacation,
       bossInmediate
     });
 };
