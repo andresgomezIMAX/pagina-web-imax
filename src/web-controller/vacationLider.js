@@ -17,7 +17,6 @@ const getUsers = () => firebase.firestore().collection('users').get();
 const getCts = () => firebase.firestore().collection().get();
 
 const vacationContainer = document.querySelector('.table-vacation')
-console.log(vacationContainer)
 window.addEventListener('DOMContentLoaded', async(e) => {
     onGetVacation((querySnapshot)=>{
     vacationContainer.innerHTML='';
@@ -28,10 +27,10 @@ window.addEventListener('DOMContentLoaded', async(e) => {
       const user = firebase.auth().currentUser;
       vacationContainer.innerHTML +=  `
                                         <tr>
-                                        <td>${vacation.useruid}</td>  
-                                        <td>${vacation.inicioVacation} al ${vacation.finVacation}</td>
-                                        <td>Pendientes: 15 días <br>
-                                            Vencen: 31/12/2021</td>
+                                        <td>${vacation.nameWorker}</td>  
+                                        <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
+                                        <td>Pendientes: ${vacation.vacationPending} días <br>
+                                            Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
                                         <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
                                         </tr> 
                              `;
