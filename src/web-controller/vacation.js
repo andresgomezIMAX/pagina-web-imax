@@ -257,3 +257,56 @@ registerVacation.addEventListener('submit', (e) => {
     });
 };
 
+
+// const confirVacationLider = document.querySelector('.box-send-request');
+// confirVacationLider.innerHTML = '';
+// Create a reference to the cities collection
+
+// firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').onSnapshot((onSnapshot) => {
+//     onSnapshot.forEach((doc) => {
+//         const vacation = doc.data();
+//       console.log(vacation)
+//       vacation.id = doc.id;
+//     })
+// })
+// .then(()=>{
+
+//             // console.log(`${doc.id} => ${doc.data().leader}`);
+//             const userLogueado = firebase.auth().currentUser;
+//             const useruid = userLogueado.uid;
+//             if(useruid === doc.id){
+//                 confirVacationLider.innerHTML += `
+//     <p>*Su solicitud obtuvo el V°B° de su lider. Puede proceder a enviarla
+//     al área de administración. </p>
+//     <div class="box-table-vacations-confirmLider">
+//                 <table style="width:100%">
+//                     <tr>
+//                       <th>Colaborador</th>
+//                       <th>Fecha</th>
+//                       <th>Detalles</th>
+//                       <th>Conformidad</th>
+//                     </tr>
+//                     <tbody class="table-vacation" >
+
+//                     </tbody>
+//                     <tr>
+//                       <td>Pepito Castillo Luna</td>  
+//                       <td>10/10/2020 al 20/10/2020</td>
+//                       <td>Pendientes: 15 días <br>
+//                           Vencen: 31/12/2021</td>
+//                       <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+//                     </tr>
+//                   </table>
+//             </div>
+//     <div>
+//         <button class="download-format">Descargar Formato</button>    
+//         <button class="send-format">Enviar Solicitud</button>
+//     </div> `
+//             }
+           
+           
+  
+//     console.log(snapshot);
+    
+// })
+
