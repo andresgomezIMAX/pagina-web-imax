@@ -27,34 +27,34 @@
            
 
             
-                li{
-                    list-style: none;
-                    line-height: 50px;
-                    border-top: .5px solid rgba(69,69,69,.6);
-                    font-weight: 700;
-                    font-size: 1.1rem;
-                    padding: 0 20px;
+            li{
+                list-style: none;
+                line-height: 50px;
+                border-top: .5px solid rgba(69,69,69,.6);
+                font-weight: 700;
+                font-size: 1.1rem;
+                padding: 0 20px;
 
-                    .btn-go-boletas, .btn-go-const {
-                        padding: 0;   
-                        a{
-                            text-decoration: none;
-                            color: #1b1b1b;
-                        
-                    }       
-                    }
+                .btn-go-boletas, .btn-go-const,.btn-admin-boletas, .btn-admi-const {
+                    padding: 0;   
                 }
+                .second-parent:hover{
+                    background-color: #afafaf;
+    
 
-                // li:hover{
-                //     background-color: #F3F3F3;
-                // }
 
-            
-                a{
-                    text-decoration: none;
-                    color: #1b1b1b;
-
+                }
             }
+
+            li:hover{
+                background-color: #F3F3F3;
+            }
+
+        
+            a{
+                text-decoration: none;
+                color: #1b1b1b;
+           }
             
         }
     }

@@ -1084,13 +1084,16 @@
   padding: 0 20px;
 }
 
-.container-noticias .header-intranet .menu li .btn-go-boletas, .container-noticias .header-intranet .menu li .btn-go-const {
+.container-noticias .header-intranet .menu li .btn-go-boletas, .container-noticias .header-intranet .menu li .btn-go-const, .container-noticias .header-intranet .menu li .btn-admin-boletas, .container-noticias .header-intranet .menu li .btn-admi-const {
   padding: 0;
 }
 
-.container-noticias .header-intranet .menu li .btn-go-boletas a, .container-noticias .header-intranet .menu li .btn-go-const a {
-  text-decoration: none;
-  color: #1b1b1b;
+.container-noticias .header-intranet .menu li .second-parent:hover {
+  background-color: #afafaf;
+}
+
+.container-noticias .header-intranet .menu li:hover {
+  background-color: #F3F3F3;
 }
 
 .container-noticias .header-intranet .menu a {
@@ -1477,13 +1480,16 @@
   padding: 0 20px;
 }
 
-.container-pagos .header-intranet-pagos .menu li .btn-go-boletas, .container-pagos .header-intranet-pagos .menu li .btn-go-const {
+.container-pagos .header-intranet-pagos .menu li .btn-go-boletas, .container-pagos .header-intranet-pagos .menu li .btn-go-const, .container-pagos .header-intranet-pagos .menu li .btn-admin-boletas, .container-pagos .header-intranet-pagos .menu li .btn-admi-const {
   padding: 0;
 }
 
-.container-pagos .header-intranet-pagos .menu li .btn-go-boletas a, .container-pagos .header-intranet-pagos .menu li .btn-go-const a {
-  text-decoration: none;
-  color: #1b1b1b;
+.container-pagos .header-intranet-pagos .menu li .second-parent:hover {
+  background-color: #afafaf;
+}
+
+.container-pagos .header-intranet-pagos .menu li:hover {
+  background-color: #F3F3F3;
 }
 
 .container-pagos .header-intranet-pagos .menu a {
@@ -1777,7 +1783,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: 60%;
   margin-bottom: 2%;
 }
 
@@ -1931,13 +1937,16 @@
   padding: 0 20px;
 }
 
-.container-admin .header-intranet-admin .menu li .btn-go-boletas, .container-admin .header-intranet-admin .menu li .btn-go-const {
+.container-admin .header-intranet-admin .menu li .btn-go-boletas, .container-admin .header-intranet-admin .menu li .btn-go-const, .container-admin .header-intranet-admin .menu li .btn-admin-boletas, .container-admin .header-intranet-admin .menu li .btn-admi-const {
   padding: 0;
 }
 
-.container-admin .header-intranet-admin .menu li .btn-go-boletas a, .container-admin .header-intranet-admin .menu li .btn-go-const a {
-  text-decoration: none;
-  color: #1b1b1b;
+.container-admin .header-intranet-admin .menu li .second-parent:hover {
+  background-color: #afafaf;
+}
+
+.container-admin .header-intranet-admin .menu li:hover {
+  background-color: #F3F3F3;
 }
 
 .container-admin .header-intranet-admin .menu a {
