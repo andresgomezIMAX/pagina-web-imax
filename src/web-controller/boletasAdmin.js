@@ -1,4 +1,5 @@
 // GUARDANDO URL DEL PDF DE LA BOLETA
+let file;
 const currentUser = () => firebase.auth().currentUser;
 const addTicked = document.querySelector('.addTicked')
   console.log(addTicked)
@@ -83,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                               <tr>
                                 <td> ${page.nameWorker}</td>  
                                 <td> ${page.month}</td>
-                                <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
+                                <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
                                 <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
                                 <td><i class="fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
                               </tr>

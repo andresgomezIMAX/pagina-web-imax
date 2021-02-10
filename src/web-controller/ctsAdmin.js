@@ -84,7 +84,8 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                               <tr>
                                 <td> ${cts.nameWorkerCts}</td>  
                                 <td> ${cts.monthCts}</td>
-                                <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
+                                <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+                                <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
                                 <td><i class="fas fa-edit"></i> <i class="deleteCts fas fa-trash-alt" data-id="${cts.id}"></i></td>
                               </tr>
                              `;

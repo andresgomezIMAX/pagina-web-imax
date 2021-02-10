@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <tr>
                                 <td>${cts.monthCts}</td>
                                 <td>${cts.pageCts}</td>
-                                <td><a href=${cts.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Imprimir</button></a></td>
+                                <td><a href=${cts.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
                                 <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
                              `;
     });
