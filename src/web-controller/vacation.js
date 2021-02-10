@@ -119,16 +119,13 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                         console.log(`${doc.id} => ${doc.data().useruid}`);
                         const userLogueado = firebase.auth().currentUser;
                         const useruid = userLogueado.uid;
-                        console.log(useruid)
-                        console.log(doc.uid)
                         if(useruid === doc.data().useruid){
                             console.log('eeeeeeeeeee')
                             const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
                             const res = cityRef.set({
                               resDateExpireYear2,
                               vacationPending,
-                              nameWorker, 
-                              confirmacion : false
+                              nameWorker
 
                             }, { merge: true });
                         }
@@ -163,8 +160,7 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                             const res = cityRef.set({
                               resDateExpireYear,
                               vacationPending,
-                              nameWorker,
-                              confirmacion : false
+                              nameWorker
 
                             }, { merge: true });
                         }
@@ -258,17 +254,34 @@ registerVacation.addEventListener('submit', (e) => {
 };
 
 
-// const confirVacationLider = document.querySelector('.box-send-request');
-// confirVacationLider.innerHTML = '';
-// Create a reference to the cities collection
+const confirVacationLider = document.querySelector('.box-send-request');
+confirVacationLider.innerHTML = '';
+//Create a reference to the cities collection
 
-// firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').onSnapshot((onSnapshot) => {
-//     onSnapshot.forEach((doc) => {
-//         const vacation = doc.data();
-//       console.log(vacation)
-//       vacation.id = doc.id;
-//     })
-// })
+
+firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').get()
+.then(()=>{
+    console.log('hola')
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().useruid}`);
+        const userLogueado = firebase.auth().currentUser;
+        const useruid = userLogueado.uid;
+        if(useruid === doc.data().useruid){
+            console.log('eeeeeeeeeeve')
+        }
+    })    
+})
+
+   
+
+firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((obj) => {
+        console.log(`${obj.id} `);
+    const vacation = doc.data();
+      console.log(vacation.id)
+      vacation.id = doc.id;
+    })
+})
 // .then(()=>{
 
 //             // console.log(`${doc.id} => ${doc.data().leader}`);
