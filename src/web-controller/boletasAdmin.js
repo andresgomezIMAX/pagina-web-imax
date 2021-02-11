@@ -1,8 +1,25 @@
+//Para colaboradores el jefe inmediato por defecto
+const boxNameWorker = document.querySelector('.nameWorker');
+console.log(boxNameWorker)
+boxNameWorker.innerHTML = '',
+firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        // console.log(`${doc.id} => ${doc.data().leader}`);
+        const userLogueado = firebase.auth().currentUser;
+        const useruid = userLogueado.uid;
+            boxNameWorker.innerHTML += `
+                <option value="${doc.data().name}">${doc.data().name}</option>`
+      
+       
+       
+    })
+})
+
+
 // GUARDANDO URL DEL PDF DE LA BOLETA
 let file;
 const currentUser = () => firebase.auth().currentUser;
 const addTicked = document.querySelector('.addTicked')
-  console.log(addTicked)
   if(addTicked){
     addTicked.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);

@@ -1,3 +1,21 @@
+//Para colaboradores el jefe inmediato por defecto
+const boxNameWorkerCts = document.querySelector('.nameWorkerCts');
+console.log(boxNameWorkerCts)
+boxNameWorkerCts.innerHTML = '',
+firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        // console.log(`${doc.id} => ${doc.data().leader}`);
+        const userLogueado = firebase.auth().currentUser;
+        const useruid = userLogueado.uid;
+            boxNameWorkerCts.innerHTML += `
+                <option value="${doc.data().name}">${doc.data().name}</option>`
+      
+       
+       
+    })
+})
+
+
 
 // ADMINISTRADOR GENERAR CTS
 const generarCts = document.querySelector('.generate-ticket');
