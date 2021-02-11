@@ -53,11 +53,13 @@ window.addEventListener('DOMContentLoaded', async(e) => {
             console.log(e.target.dataset.id)
             if( e.target.dataset.id === doc.id){
               console.log('joalaaa')
-              
+              confirm('¿Desea dar el VB a la solicitud de vacaciones?')
               const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
               const res = cityRef.set({
                 confirmacion : true
               }, { merge: true });
+              
+              
           }
           //    firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
           //    querySnapshot.forEach(doc => {

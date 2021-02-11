@@ -141,7 +141,7 @@
     };
     firebase.initializeApp(firebaseConfig);
     console.log(firebase.name)
-    firebase.auth();
+    const auth = firebase.auth();
     const fs = firebase.firestore();
     firebase.storage();
     firebase.analytics();
