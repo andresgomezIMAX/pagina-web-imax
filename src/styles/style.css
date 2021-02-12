@@ -1897,6 +1897,14 @@
   background-color: #8DB9CA !important;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .container-admin {
   height: 100vh;
   background-image: url(../assets/imax-background.png);
@@ -2501,13 +2509,14 @@
 }
 
 .box-admin-boletas .box-table-list-worker table, .box-admin-boletas .box-table-list-worker td {
-  margin: 1% 1% 2% 6%;
+  margin: 1% 1% 2% 40%;
   border: 1px solid black;
   border-collapse: collapse;
   background-color: #ffffff;
   height: 40px;
   text-align: center;
   font-size: 15px;
+  table-layout: auto;
 }
 
 .box-admin-boletas .box-table-list-worker table th, .box-admin-boletas .box-table-list-worker td th {

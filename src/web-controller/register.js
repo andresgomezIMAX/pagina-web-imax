@@ -66,7 +66,7 @@ register.addEventListener('submit', (e) => {
      
   }).then(() => {
     register.reset();
-    alert('Datos guardados'); 
+    alert('Se agregó un nuevo colaborador'); 
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -83,7 +83,18 @@ register.addEventListener('submit', (e) => {
 // PARA MOSTRAR DATOS EN LA TABLA DE BOLETAS
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
-const deletePost = id => firebase.firestore().collection('users').doc(id).delete();
+const deleteUser = id => firebase.firestore().collection('users').doc(id).delete();
+const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin) => firebase.firestore().collection('posts').doc(id).update({ 
+  name, 
+  checkAdmin, 
+  dni, 
+  phone, 
+  email, 
+  password, 
+  area,
+  leader,
+  entryDay,
+  salarioAdmin });
 
 const userContainer = document.querySelector('.table-users')
 window.addEventListener('DOMContentLoaded', async(e) => {
@@ -95,18 +106,19 @@ window.addEventListener('DOMContentLoaded', async(e) => {
       user.id = doc.id;
       const users = firebase.auth().currentUser;
       userContainer.innerHTML +=  `
-                                  <tr>
-                                  <td> ${user.name}</td>  
-                                  <td>${user.dni}</td>
-                                  <td>${user.email}</td>  
-                                  <td>${user.password}</td>
-                                  <td>${user.area}</td>  
-                                  <td>${user.leader}</td>
-                                  <td>${user.entryDay}</td>  
-                                  <td>${user.salarioAdmin}</td>
+                                <tr class="row-users" contenteditable="false" data-id="${user.id}">
+                                  <td data-id="${user.id}" class="nameUser"> ${user.name}</td>  
+                                  <td data-id="${user.id}" class="dniUser">${user.dni}</td>
+                                  <td data-id="${user.id}" class="phoneUser">${user.phone}</td>
+                                  <td data-id="${user.id}" class="emailUser">${user.email}</td>  
+                                  <td data-id="${user.id}" class="passwordUser">${user.password}</td>
+                                  <td data-id="${user.id}" class="areaUser">${user.area}</td>  
+                                  <td data-id="${user.id}" class="leaderUser">${user.leader}</td>
+                                  <td data-id="${user.id}" class="fechaUser">${user.entryDay}</td>  
+                                  <td data-id="${user.id}" class="salarioAdminUser">${user.salarioAdmin}</td>
                                   <td><a href=${user.urlfirmRegister} download="Boleta.pdf"><button><i class="fas fa-download"></i>Descargar</button></a></td>
-                                  <td>${user.checkAdmin}</td>
-                                  <td><i class="btn-editUser fas fa-edit"></i> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}"></i></td>
+                                  <td data-id="${user.id}" class="checkUser">${user.checkAdmin}</td>
+                                  <td><i data-id="${user.id}" class="btn-editUser fas fa-edit"></i> <button data-id="${user.id}" class="btnSaveFile" id="btnSaveFile">💾</button> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}"></i></td>
                                 </tr>  
                              `;
 
@@ -114,13 +126,174 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   const deleteUser = document.querySelectorAll('.btn-delUser');
                   deleteUser.forEach(btn => {
                     btn.addEventListener('click', async (e) => {
-                      console.log('click')
-                      console.log(e.target)
-                      confirm('¿Quieres eliminar este colaborador@?')
-                     await deletePost(e.target.dataset.id)
-                     
+                      const r = confirm('¿Quieres eliminar este colaborador@?');
+                      if (r == true) {
+                        await deleteUser(e.target.dataset.id);
+                      } else {
+                        console.log('nose eliminó')
+                      }    
                     })
                   });
+
+                  const btnEditRow = document.querySelectorAll('.btn-editUser');
+                  const btnUpdateRow = document.querySelectorAll('.btnSaveFile');
+                  const editableRow = document.querySelectorAll('.row-users');
+                  
+                  btnEditRow.forEach(edit => {
+                    edit.addEventListener('click', (e) => {
+                      console.log('clickeando editar');
+                      console.log(e.target.dataset.id);
+                      console.log(doc.data());
+                      fs.collection('users').get().then((querySnapshot)=>{
+                            querySnapshot.forEach(doc => {
+                              console.log(doc.id)
+                              if(e.target.dataset.id === doc.id){
+                                console.log(e.target.dataset.id);
+                                console.log(doc.id);
+                                editableRow.contentEditable = 'true';
+                                editableRow.forEach(row => {
+                                  console.log('holay')
+                                  row.addEventListener('click', (e) => {
+                                    console.log('holassss')
+                                    console.log(e.target.dataset.id);
+                                    console.log(doc.id);
+                                    if(e.target.dataset.id === doc.id){
+                                      row.contentEditable = 'true';
+                                      row.focus()='true';
+                                    }
+                                  })
+                                })
+                                // btnUpdateRow.forEach(btn => {
+                                //   console.log(btnUpdateRow)
+                                //   btn.addEventListener('click', async (e) => {
+                                //     console.log(e.target.dataset.id);
+                                //     console.log(doc.id);
+                                //     if(e.target.dataset.id === doc.id){
+                                //       btnUpdateRow.hidden = false;
+                                //     }
+                                //   })
+                                // })
+                              }
+                            })
+                      })
+                      
+                    });
+                  })  
+
+                    // btnEditRow.addEventListener('click', () => {
+                    //   console.log('clickeando editar');
+                    //   const editableRow = document.querySelector('.row-users');
+                    //   editableRow.contentEditable = 'true';
+                    //   btnUpdateRow.hidden = false;
+                    // });
+
+
+                  btnUpdateRow.forEach(update => {
+                    console.log(btnUpdateRow)
+                    update.addEventListener('click', (e) =>{
+                    console.log(update);
+                    const docId = e.target.dataset.id;
+                    editableRow.forEach(row => {
+                      console.log('holay')
+                      row.addEventListener('click', (e) => {
+                        if(e.target.dataset.id === docId){
+                          console.log('aaaaaaaaaa')
+                          const name = row.querySelector('.nameUser').innerHTML;
+                          const checkAdmin = row.querySelector('.checkUser').innerHTML;
+                          const dni = row.querySelector('.dniUser').innerHTML;
+                          const phone= row.querySelector('.phoneUser').innerHTML;
+                          const email = row.querySelector('.emailUser').innerHTML;
+                          const password = row.querySelector('.passwordUser').innerHTML;
+                          const area = row.querySelector('.areaUser').innerHTML;
+                          const leader = row.querySelector('.leaderUser').innerHTML;
+                          const entryDay = row.querySelector('.fechaUser').innerHTML;
+                          const salarioAdmin= row.querySelector('.salarioAdminUser').innerHTML;
+                          console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
+                          const cityRef = firebase.firestore().collection('users').doc(docId );
+                          const res = cityRef.update({
+                            name, 
+                            checkAdmin,
+                            dni, 
+                            phone, 
+                            email, 
+                            password, 
+                            area,
+                            leader,
+                            entryDay,
+                            salarioAdmin
+      
+                         }, { merge: true });
+                         alert('Se han actualizado los datos')
+                        }
+                      
+                      })
+                    })
+
+                    // fs.collection('users').get().then((querySnapshot)=>{
+                    //   querySnapshot.forEach(doc => {
+                    //     console.log(doc.id)
+                    //     console.log(e.target.dataset.id)
+                    //     if(e.target.dataset.id === doc.id){
+                    //       const name = document.querySelector('.nameUser').innerHTML;
+                    //       const checkAdmin = document.querySelector('.checkUser').innerHTML;
+                    //       const dni = document.querySelector('.dniUser').innerHTML;
+                    //       const phone= document.querySelector('.phoneUser').innerHTML;
+                    //       const email = document.querySelector('.emailUser').innerHTML;
+                    //       const password = document.querySelector('.passwordUser').innerHTML;
+                    //       const area = document.querySelector('.areaUser').innerHTML;
+                    //       const leader = document.querySelector('.leaderUser').innerHTML;
+                    //       const entryDay = document.querySelector('.fechaUser').innerHTML;
+                    //       const salarioAdmin= document.querySelector('.salarioAdminUser').innerHTML;
+                    //       console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
+                    //       const cityRef = firebase.firestore().collection('users').doc(doc.id);
+                    //       const res = cityRef.update({
+                    //         name, 
+                    //         checkAdmin,
+                    //         dni, 
+                    //         phone, 
+                    //         email, 
+                    //         password, 
+                    //         area,
+                    //         leader,
+                    //         entryDay,
+                    //         salarioAdmin
+      
+                    //      });
+                    //     }
+                    //   })
+                    // })  
+                
+                    })
+                  })
+                    
+                  // btnUpdateRow.addEventListener('click', () => {
+                  //   console.log('UPDATE');
+                  //   const name = document.querySelector('.nameUser').innerHTML;
+                  //   const checkAdmin = document.querySelector('.checkUser').innerHTML;
+                  //   const dni = document.querySelector('.dniUser').innerHTML;
+                  //   const phone= document.querySelector('.phoneUser').innerHTML;
+                  //   const email = document.querySelector('.emailUser').innerHTML;
+                  //   const password = document.querySelector('.passwordUser').innerHTML;
+                  //   const area = document.querySelector('.areaUser').innerHTML;
+                  //   const leader = document.querySelector('.leaderUser').innerHTML;
+                  //   const entryDay = document.querySelector('.fechaUser').innerHTML;
+                  //   const salarioAdmin= document.querySelector('.salarioAdminUser').innerHTML;
+                  //   console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
+                  //   const cityRef = firebase.firestore().collection('users').doc(doc.id);
+                  //   const res = cityRef.update({
+                  //     name, 
+                  //     checkAdmin,
+                  //     dni, 
+                  //     phone, 
+                  //     email, 
+                  //     password, 
+                  //     area,
+                  //     leader,
+                  //     entryDay,
+                  //     salarioAdmin
+
+                  //  }, { merge: true });
+                  // });
 
                   // const btnsEdit = document.querySelectorAll('.btnEdit');
                   // btnsEdit.forEach((btn) => {

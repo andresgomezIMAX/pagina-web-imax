@@ -1,4 +1,10 @@
+.hide{
+    display: none;
+}
 
+.show{
+    display: block;
+}
 
 .container-admin{
     height: 100vh;
@@ -489,13 +495,14 @@
   
         
         table, td {
-            margin: 1% 1% 2% 6%;
+            margin: 1% 1% 2% 40%;
             border: 1px solid black;
             border-collapse: collapse;
             background-color: #ffffff;
             height: 40px;
             text-align: center;
             font-size: 15px;
+            table-layout: auto;
           
             
 
