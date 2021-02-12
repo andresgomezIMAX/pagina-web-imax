@@ -1,5 +1,6 @@
 
 //CAPTURANDO EL URL DE LA FIRMA ELECTRONICA
+let file;
 const currentUser = () => firebase.auth().currentUser;
 console.log(currentUser.email)
 const firmRegister = document.querySelector('.firm-register');
@@ -83,7 +84,7 @@ register.addEventListener('submit', (e) => {
 // PARA MOSTRAR DATOS EN LA TABLA DE BOLETAS
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
-const deleteUser = id => firebase.firestore().collection('users').doc(id).delete();
+const deleteUserReg = id => firebase.firestore().collection('users').doc(id).delete();
 const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin) => firebase.firestore().collection('posts').doc(id).update({ 
   name, 
   checkAdmin, 
@@ -128,7 +129,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                     btn.addEventListener('click', async (e) => {
                       const r = confirm('¿Quieres eliminar este colaborador@?');
                       if (r == true) {
-                        await deleteUser(e.target.dataset.id);
+                        await deleteUserReg(e.target.dataset.id);
                       } else {
                         console.log('nose eliminó')
                       }    

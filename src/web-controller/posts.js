@@ -19,7 +19,6 @@ const getPostEdit = (id) => firebase.firestore().collection('posts').doc(id).get
 
 const onGetPost = (callback) => firebase.firestore().collection('posts').onSnapshot(callback);
 
-
 const deletePost = id => firebase.firestore().collection('posts').doc(id).delete();
 
 const editPost = (id, contentPost) => firebase.firestore().collection('posts').doc(id).update(contentPost);
@@ -78,7 +77,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                      const post = doc.data();
                      editStatus = true;
                      id = doc.id;
-                     const inputTextArea = document.querySelector ('.textarea');
+                     const inputTextArea = document.querySelector('.textarea');
                      inputTextArea.value = post.content;
                      btnNewPost.innerHTML = 'Actualizar'
                     })
@@ -167,7 +166,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
           content:textToPost,
         })
 
-       editStatus = false;
+        editStatus = false;
         id = '';
         btnNewPost.innerHTML = 'Publicar'
        }

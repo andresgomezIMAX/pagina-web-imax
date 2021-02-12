@@ -1,3 +1,6 @@
+let editStatus = false;
+let id = '';
+
 //Para colaboradores el jefe inmediato por defecto
 const boxNameWorker = document.querySelector('.nameWorker');
 console.log(boxNameWorker)
@@ -47,46 +50,61 @@ const addTicked = document.querySelector('.addTicked')
 }
 
 // ADMINISTRADOR GENERAR BOLETA
+const btnGenerarBoleta = document.querySelector('.btn-generar-boleta');
 const generarBoleta = document.querySelector('.generate-ticket');
-generarBoleta.addEventListener('submit', (e) => {
+btnGenerarBoleta.addEventListener('click', (e) => {
     e.preventDefault();
     console.log('hola');
-    const userLogueado = firebase.auth().currentUser;
-    console.log(userLogueado)
-    const useruid = userLogueado.uid;
+    // const userLogueado = firebase.auth().currentUser;
+    // console.log(userLogueado)
+    // const useruid = userLogueado.uid;
     const nameWorker = document.querySelector('.nameWorker').value;
     const month = document.querySelector('.month').value; 
     const totalPage = document.querySelector('.totalPage').value;
     const urlBoleta = sessionStorage.getItem('fileNewTicked');
     console.log(nameWorker,month,totalPage, urlBoleta)
     if(urlBoleta){
-      saveBoleta(nameWorker, month, totalPage, urlBoleta, useruid).then(() => {
-        // sessionStorage.removeItem('fileNewTicked');
-        console.log('se registró boleta');
-        generarBoleta.reset();
-        alert('se registró boleta');
-      });
+      if(!editStatus){
+        saveBoleta(nameWorker, month, totalPage, urlBoleta).then(() => {
+          // sessionStorage.removeItem('fileNewTicked');
+          console.log('se registró boleta');
+          generarBoleta.reset();
+          alert('se registró boleta');
+        });
+      } else{
+         updatePage(id, {
+          nameWorker, 
+          month, 
+          totalPage,
+          urlBoleta
+         })
+      }
+      editStatus = false;
+      id = '';
+      btnGenerarBoleta.innerHTML = 'Publicar'
+  
       
     }
     
 });
 
 //FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
-const saveBoleta = (nameWorker, month, totalPage, urlBoleta, useruid) => {
+const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
     const firestore = firebase.firestore();
     return firestore.collection('pages').add({
         nameWorker,
         month,
         totalPage,
         urlBoleta,
-        useruid,
     });
 };
 
 //PARA MOSTRAR LAS BOLETAS GUARDADAS EN LA TABLA DE 'PAGES'
 const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
+const getPagesEdit = (id) => firebase.firestore().collection('pages').doc(id).get();
 const getUsers = () => firebase.firestore().collection('users').get();
 const deletePost = id => firebase.firestore().collection('pages').doc(id).delete();
+const updatePage = (id, contentPage) => firebase.firestore().collection('posts').doc(id).update(contentPage);
 
 const pageContainer = document.querySelector('.table-page')
 window.addEventListener('DOMContentLoaded', async(e) => {
@@ -103,7 +121,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <td> ${page.month}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
                                 <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
-                                <td><i class="fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
+                                <td><i data-id="${page.id}" class="btnEdit fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
                               </tr>
                              `;
 
@@ -116,28 +134,34 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                     })
                   });
 
-                  // const btnsEdit = document.querySelectorAll('.btnEdit');
-                  // btnsEdit.forEach((btn) => {
-                  //   btn.addEventListener('click', async(e) => {
-                  //    const doc = await getPostEdit(e.target.dataset.id)
-                  //    console.log(doc.data())
-                  //    const post = doc.data();
-                  //    editStatus = true;
-                  //    id = doc.id;
-                  //    const inputTextArea = document.querySelector ('.textarea');
-                  //    inputTextArea.value = post.content;
-                  //    btnNewPost.innerHTML = 'Actualizar'
-                  //   })
-                  // });
+                  const btnsEdit = document.querySelectorAll('.btnEdit');
+                  btnsEdit.forEach(btn => {
+                    btn.addEventListener('click', async(e) => {
+                     const doc = await getPagesEdit(e.target.dataset.id)
+                     console.log(doc.data())
+                     const page = doc.data();
+                     editStatus = true;
+                     id = doc.id;
+                     const nameWorker = document.querySelector('.nameWorker');
+                     nameWorker.value = page.nameWorker;
+                     const month = document.querySelector('.month'); 
+                     month.value = page.month;
+                     const totalPage = document.querySelector('.totalPage');
+                     totalPage.value = page.totalPage;
+                     const urlBoleta = '';
+                     urlBoleta.value = page.urlBoleta;
+                    //  const inputTextArea = document.querySelector ('.textarea');
+                    //  inputTextArea.value = post.content;
+                    btnGenerarBoleta.innerHTML = 'Actualizar'
+                    })
+                  });
 
                     const filterPageWorker = (data, texto) => {
                     const longNameWorker = texto.length;
                     // const dataName =  fs.collection('users').get().then((snapshot) => {console.log(snapshot.docs);
                     //     // setupPosts(snapshot.docs)
                     // });
-
                     const dataName = page.nameWorker;
-                    
                     const filterName = dataName.filter((worker) => (
                       texto === dataName.toLowerCase().substring(0, longNameWorker)
                     ));
