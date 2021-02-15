@@ -73,7 +73,7 @@ register.addEventListener('submit', (e) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     if (errorCode === 'auth/weak-password') {
-      document.querySelector('#reg_error_inner').innerHTML = 'The password is too weak.';
+      document.querySelector('#reg_error_inner').innerHTML = 'La contraseña es demasiado débil. Utlice letras y números';
     } else {
       document.querySelector('#reg_error_inner').innerHTML = errorMessage;
     }
@@ -112,27 +112,34 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                   <td data-id="${user.id}" class="dniUser">${user.dni}</td>
                                   <td data-id="${user.id}" class="phoneUser">${user.phone}</td>
                                   <td data-id="${user.id}" class="emailUser">${user.email}</td>  
-                                  <td data-id="${user.id}" class="passwordUser">${user.password}</td>
+                                  <td data-id="${user.id}" class="passwordUser">********</td>
                                   <td data-id="${user.id}" class="areaUser">${user.area}</td>  
                                   <td data-id="${user.id}" class="leaderUser">${user.leader}</td>
                                   <td data-id="${user.id}" class="fechaUser">${user.entryDay}</td>  
                                   <td data-id="${user.id}" class="salarioAdminUser">${user.salarioAdmin}</td>
                                   <td><a href=${user.urlfirmRegister} download="Boleta.pdf"><button><i class="fas fa-download"></i>Descargar</button></a></td>
                                   <td data-id="${user.id}" class="checkUser">${user.checkAdmin}</td>
-                                  <td><i data-id="${user.id}" class="btn-editUser fas fa-edit"></i> <button data-id="${user.id}" class="btnSaveFile" id="btnSaveFile">💾</button> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}"></i></td>
+                                  <td><i data-id="${user.id}" class="btn-editUser fas fa-edit"></i> <button data-id="${user.id}" class="btnSaveFile" id="btnSaveFile">💾</button> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}" data-name="${user.name}"></i></td>
                                 </tr>  
+
+                                
                              `;
 
-
+                            
                   const deleteUser = document.querySelectorAll('.btn-delUser');
                   deleteUser.forEach(btn => {
                     btn.addEventListener('click', async (e) => {
-                      const r = confirm('¿Quieres eliminar este colaborador@?');
-                      if (r == true) {
-                        await deleteUserReg(e.target.dataset.id);
-                      } else {
-                        console.log('nose eliminó')
-                      }    
+                            const txt = e.target.dataset.name;
+                            const r = confirm('¿Quieres eliminar a ' + txt + '?');
+                            if (r == true) {
+                               deleteUserReg(e.target.dataset.id);
+                            } else {
+                              console.log('nose eliminó')
+                            } 
+                          
+                        
+                      
+                         
                     })
                   });
 

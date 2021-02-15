@@ -6,6 +6,10 @@
     display: block;
 }
 
+#reg_error_inner{
+    color: red;
+    font-weight: 500;
+}
 .container-admin{
     height: 100vh;
     background-image: url(../assets/imax-background.png);
@@ -339,6 +343,7 @@
 
         .box-button-add{
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             margin: 2%;

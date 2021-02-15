@@ -18,6 +18,27 @@ fs.collection('users').onSnapshot((querySnapshot) => {
     })
 })
 
+
+//Obteniendo fecha actual
+      var dateToday = new Date();
+      console.log(dateToday);
+      function formatDate(date) {
+          var d = new Date(date),
+              month = '' + (d.getMonth() + 1),
+              day = '' + d.getDate(),
+              year = d.getFullYear();
+      
+          if (month.length < 2) 
+              month = '0' + month;
+          if (day.length < 2) 
+              day = '0' + day;
+      
+          return [year, month, day].join('-');
+      }
+
+      const currentDate = formatDate(dateToday);
+      console.log(currentDate);
+
 //Para mostrar fecha de vencimiento
 const vacationExpire = document.querySelector('.box-vac-venc');
 vacationExpire.innerHTML = '',
@@ -36,25 +57,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
             var dateOfEntry = uid.entryDay;
             console.log(dateOfEntry);
 
-            //Obteniendo fecha actual
-            var dateToday = new Date();
-            console.log(dateToday);
-            function formatDate(date) {
-                var d = new Date(date),
-                    month = '' + (d.getMonth() + 1),
-                    day = '' + d.getDate(),
-                    year = d.getFullYear();
-            
-                if (month.length < 2) 
-                    month = '0' + month;
-                if (day.length < 2) 
-                    day = '0' + day;
-            
-                return [year, month, day].join('-');
-            }
       
-            const currentDate = formatDate(dateToday);
-            console.log(currentDate);
 
             //A la fecha de ingreso ponerle el año vigente (2021)
             const vec = dateOfEntry.split('-');
@@ -205,7 +208,8 @@ const calcVacationTodayYear = (fecha1, fecha2) => {
 }
 
 
-
+document.querySelector('.inicio-Vacation').setAttribute('min', currentDate);
+document.querySelector('.fin-Vacation').setAttribute('min', currentDate);;
 // formulario para enviar solicitud de vacaciones
 registerVacation.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -213,10 +217,10 @@ registerVacation.addEventListener('submit', (e) => {
     console.log(userLogueado)
     const useruid = userLogueado.uid;
     console.log(useruid)
+    var fecha = new Date();
     const startOfVacation = document.querySelector('.inicio-Vacation').value;
     const endOfVacation = document.querySelector('.fin-Vacation').value;
     const bossInmediate = document.querySelector('.name-leader').innerHTML;
-    console.log(bossInmediate)
   
     console.log(useruid,startOfVacation,endOfVacation,bossInmediate)
     if(startOfVacation,endOfVacation){
@@ -258,29 +262,31 @@ confirVacationLider.innerHTML = '';
 //Create a reference to the cities collection
 
 
-fs.collection('vacation').where('confirmacion', '==', 'true').get()
-.then(()=>{
-    console.log('hola')
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().useruid}`);
-        const userLogueado = firebase.auth().currentUser;
-        const useruid = userLogueado.uid;
-        if(useruid === doc.data().useruid){
-            console.log('eeeeeeeeeeve')
-        }
-    })    
-})
+// fs.collection('vacation').where('confirmacion', '==', 'true').get()
+// .then(()=>{
+//     console.log('hola')
+//     querySnapshot.forEach((doc) => {
+//         console.log(`${doc.id} => ${doc.data().useruid}`);
+//         const userLogueado = firebase.auth().currentUser;
+//         const useruid = userLogueado.uid;
+//         if(useruid === doc.data().useruid){
+//             console.log('eeeeeeeeeeve')
+//         }
+//     })    
+// })
 
    
 
-fs.collection('vacation').where('confirmacion', '==', 'true').onSnapshot((querySnapshot) => {
-    querySnapshot.forEach((obj) => {
-        console.log(`${obj.id} `);
-    const vacation = doc.data();
-      console.log(vacation.id)
-      vacation.id = doc.id;
-    })
-})
+// fs.collection('vacation').where('confirmacion', '==', 'true').onSnapshot((querySnapshot) => {
+//     querySnapshot.forEach((obj) => {
+//         console.log(`${obj.id} `);
+//     const vacation = doc.data();
+//       console.log(vacation.id)
+//       vacation.id = doc.id;
+//     })
+// })
+
+
 // .then(()=>{
 
 //             // console.log(`${doc.id} => ${doc.data().leader}`);

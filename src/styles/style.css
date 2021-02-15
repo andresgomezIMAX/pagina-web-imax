@@ -1905,6 +1905,11 @@
   display: block;
 }
 
+#reg_error_inner {
+  color: red;
+  font-weight: 500;
+}
+
 .container-admin {
   height: 100vh;
   background-image: url(../assets/imax-background.png);
@@ -2304,6 +2309,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
