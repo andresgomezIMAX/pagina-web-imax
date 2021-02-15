@@ -1,3 +1,6 @@
+let editStatus = false;
+let id = '';
+
 //Para colaboradores el jefe inmediato por defecto
 const boxNameWorkerCts = document.querySelector('.nameWorkerCts');
 console.log(boxNameWorkerCts)
@@ -18,12 +21,9 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
 
 
 // ADMINISTRADOR GENERAR CTS
-const generarCts = document.querySelector('.generate-ticket');
-const user = () => firebase.auth().currentUser;
-
 let file;
 const currentUser = () => firebase.auth().currentUser;
-  const addCts = document.querySelector('.addImgCts')
+const addCts = document.querySelector('.addImgCts')
   if(addCts){
     addCts.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
@@ -49,44 +49,66 @@ const currentUser = () => firebase.auth().currentUser;
 })
 }
 
-generarCts.addEventListener('submit', (e) => {
+// ADMINISTRADOR GENERAR CTS
+const generarCts = document.querySelector('.generate-ticket');
+const btnGenerarCts = document.querySelector('.btn-generar-cts');
+btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
     e.preventDefault();
     console.log('hola');
-    const userLogueado = firebase.auth().currentUser;
-    console.log(userLogueado)
-    const useruid = userLogueado.uid;
+    // const userLogueado = firebase.auth().currentUser;
+    // console.log(userLogueado)
+    // const useruid = userLogueado.uid;
     const nameWorkerCts = document.querySelector('.nameWorkerCts').value;
     const monthCts = document.querySelector('.month-Cts').value; 
     const pageCts = document.querySelector('.page-cts').value;
     const urlCts = sessionStorage.getItem('fileNewCts');
     console.log(nameWorkerCts,monthCts,pageCts, urlCts);
     if(urlCts){
-        saveCts(nameWorkerCts,monthCts,pageCts, urlCts, useruid).then(() => {
-            // sessionStorage.removeItem('fileNewCts');
-            console.log('se registró constancia CTS');
-            generarCts.reset();
-            alert('se registró constancia CTS');
-        });
+      if(!editStatus){
+        saveCts(nameWorkerCts,monthCts,pageCts, urlCts).then(() => {
+          // sessionStorage.removeItem('fileNewCts');
+          console.log('se registró constancia CTS');
+          generarCts.reset();
+          alert('se registró constancia CTS');
+      });
+      }else {
+        updateCts(id, {
+          nameWorkerCts : nameWorkerCts, 
+          monthCts : monthCts, 
+          pageCts : pageCts, 
+          urlCts : urlCts
+          } )
+
+          alert('se actualizó constancia CTS');
+          generarCts.reset();
+ 
+  }
+
+  editStatus = false;
+  id = '';
+  btnGenerarCts.innerHTML = 'Generar'
+        
     }
     
 
 });
 
-const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts,  useruid) => {
+const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts) => {
     const firestore = firebase.firestore();
     return firestore.collection('cts').add({
         nameWorkerCts,
         monthCts,
         pageCts, 
         urlCts, 
-        useruid,
     });
 };
 
 // para mostrar los datos en la tabla'cts'
 const onGetCts = (callback) => firebase.firestore().collection('cts').onSnapshot(callback);
+const getCtsEdit = (id) => firebase.firestore().collection('cts').doc(id).get();
 const getUsers = () => firebase.firestore().collection('users').get();
-const deletePost = id => firebase.firestore().collection('cts').doc(id).delete();
+const deleteCtsId = id => firebase.firestore().collection('cts').doc(id).delete();
+const updateCts = (id, contentCts) => firebase.firestore().collection('cts').doc(id).update(contentCts);
 
 const ctsContainer = document.querySelector('.table-cts')
 console.log(ctsContainer)
@@ -104,7 +126,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <td> ${cts.monthCts}</td>
                                 <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
                                 <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
-                                <td><i class="fas fa-edit"></i> <i class="deleteCts fas fa-trash-alt" data-id="${cts.id}"></i></td>
+                                <td><i data-id="${cts.id}" class="btnEdit fas fa-edit"></i> <i class="deleteCts fas fa-trash-alt" data-id="${cts.id}"></i></td>
                               </tr>
                              `;
 
@@ -112,8 +134,11 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   const deleteCts = document.querySelectorAll('.deleteCts');
                   deleteCts.forEach(btn => {
                     btn.addEventListener('click', async (e) => {
-                 
-                     await deletePost(e.target.dataset.id)
+                      const r = confirm('¿Quieres eliminar esta Constancia CTS?')
+                      if (r == true) {
+                        await deleteCtsId(e.target.dataset.id)
+                      } 
+                  
                     })
                   });
 
@@ -130,6 +155,58 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   //    btnNewPost.innerHTML = 'Actualizar'
                   //   })
                   // });
+
+                  const btnsEdit = document.querySelectorAll('.btnEdit');
+                  btnsEdit.forEach(btn => {
+                    btn.addEventListener('click', async (e) => {
+                      const doc = await getCtsEdit(e.target.dataset.id)
+                      console.log(doc.data())
+                      const cts = doc.data();
+                      id = doc.id;
+                      console.log(id)
+                      editStatus = true;
+
+                      const nameWorkerCts = document.querySelector('.nameWorkerCts');
+                      nameWorkerCts.value = cts.nameWorkerCts;
+                      const monthCts = document.querySelector('.month-Cts'); 
+                      monthCts.value = cts.monthCts;
+                      const pageCts = document.querySelector('.page-cts');
+                      pageCts.value = cts.pageCts;
+                      const urlCts = document.querySelector('.addImgCts');
+            
+                      console.log(nameWorkerCts.value, monthCts.value, pageCts.value, urlCts.file)
+            
+                      let res;
+                      
+            
+                      firebase.firestore().collection('cts').onSnapshot(async (querySnapshot) => {
+                        querySnapshot.forEach((doc) => {
+                          console.log(`${doc.id} => ${doc.data().urlCts}`);
+                          const constCts = doc.data();
+                          constCts.id = doc.id;
+                          console.log(constCts.id)
+                          console.log(id)
+                          if (constCts.id === id) {
+                            res = constCts.urlCts;
+                            console.log(res)
+                            console.log('jaaaa')
+                            console.log(res)
+                            console.log(urlCts.file = res)
+                            urlCts.file = res;
+                            console.log(nameWorkerCts.value, monthCts.value, pageCts.value, urlCts.file)
+                            editStatus = true;
+                          
+            
+                          }
+                        })
+                       
+            
+            
+                      
+                      })
+                      btnGenerarCts.innerHTML = 'Actualizar'
+                    })
+                  });
     });
   })
  
