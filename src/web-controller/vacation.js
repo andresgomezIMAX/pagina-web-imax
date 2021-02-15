@@ -5,7 +5,7 @@ const user = () => firebase.auth().currentUser;
 //Para mostrar el jefe inmediato por defecto
 const boxNameLeader = document.querySelector('.boss-inmediate');
 boxNameLeader.innerHTML = '',
-firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+fs.collection('users').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // console.log(`${doc.id} => ${doc.data().leader}`);
         const userLogueado = firebase.auth().currentUser;
@@ -15,14 +15,13 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
             <label type="text" class="name-leader" > ${doc.data().leader} </label>`
         }
        
-       
     })
 })
 
 //Para mostrar fecha de vencimiento
 const vacationExpire = document.querySelector('.box-vac-venc');
 vacationExpire.innerHTML = '',
-firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+fs.collection('users').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // console.log(`${doc.id} => ${doc.data().entryDay}`);
         const userLogueado = firebase.auth().currentUser;
@@ -114,14 +113,14 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
 
                 const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
-                firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+                fs.collection('vacation').onSnapshot((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         console.log(`${doc.id} => ${doc.data().useruid}`);
                         const userLogueado = firebase.auth().currentUser;
                         const useruid = userLogueado.uid;
                         if(useruid === doc.data().useruid){
                             console.log('eeeeeeeeeee')
-                            const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+                            const cityRef = fs.collection('vacation').doc(doc.id);
                             const res = cityRef.set({
                               resDateExpireYear2,
                               vacationPending,
@@ -147,7 +146,7 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                 const vacationPending = calcVacationTodayYear(fechaItem,currentDate)
                 console.log(monthDiff(fechaItem,currentDate))
 
-                firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+                fs.collection('vacation').onSnapshot((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         console.log(`${doc.id} => ${doc.data().useruid}`);
                         const userLogueado = firebase.auth().currentUser;
@@ -156,7 +155,7 @@ firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
                         console.log(doc.uid)
                         if(useruid === doc.data().useruid){
                             console.log('eeeeeeeeeee')
-                            const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+                            const cityRef = fs.collection('vacation').doc(doc.id);
                             const res = cityRef.set({
                               resDateExpireYear,
                               vacationPending,
@@ -235,7 +234,7 @@ registerVacation.addEventListener('submit', (e) => {
 
 //funcion para guaradr vacacones en firestore  
    const  saveVacation = (useruid,startOfVacation,endOfVacation,bossInmediate) => {
-    const firestore = firebase.firestore();
+    const firestore = fs;
     const userLogueado = firebase.auth().currentUser;
     console.log(userLogueado)
 
@@ -259,7 +258,7 @@ confirVacationLider.innerHTML = '';
 //Create a reference to the cities collection
 
 
-firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').get()
+fs.collection('vacation').where('confirmacion', '==', 'true').get()
 .then(()=>{
     console.log('hola')
     querySnapshot.forEach((doc) => {
@@ -274,7 +273,7 @@ firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').
 
    
 
-firebase.firestore().collection('vacation').where('confirmacion', '==', 'true').onSnapshot((querySnapshot) => {
+fs.collection('vacation').where('confirmacion', '==', 'true').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((obj) => {
         console.log(`${obj.id} `);
     const vacation = doc.data();

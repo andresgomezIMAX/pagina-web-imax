@@ -5,7 +5,7 @@ let id = '';
 const boxNameWorker = document.querySelector('.nameWorker');
 console.log(boxNameWorker)
 boxNameWorker.innerHTML = '',
-  firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+  fs.collection('users').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       // console.log(`${doc.id} => ${doc.data().leader}`);
       const userLogueado = firebase.auth().currentUser;
@@ -99,7 +99,7 @@ const generarBoleta = document.querySelector('.generate-ticket');
 
 //FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
 const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
-  const firestore = firebase.firestore();
+  const firestore = fs;
   return firestore.collection('pages').add({
     nameWorker,
     month,
@@ -109,11 +109,11 @@ const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
 };
 
 //PARA MOSTRAR LAS BOLETAS GUARDADAS EN LA TABLA DE 'PAGES'
-const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
-const getPagesEdit = (id) => firebase.firestore().collection('pages').doc(id).get();
-const getUsers = () => firebase.firestore().collection('users').get();
-const deletePageId = id => firebase.firestore().collection('pages').doc(id).delete();
-const updatePage = (id, contentPage) => firebase.firestore().collection('pages').doc(id).update(contentPage);
+const onGetPages = (callback) => fs.collection('pages').onSnapshot(callback);
+const getPagesEdit = (id) => fs.collection('pages').doc(id).get();
+const getUsers = () => fs.collection('users').get();
+const deletePageId = id => fs.collection('pages').doc(id).delete();
+const updatePage = (id, contentPage) => fs.collection('pages').doc(id).update(contentPage);
 
 const pageContainer = document.querySelector('.table-page')
 window.addEventListener('DOMContentLoaded', async (e) => {
@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           let res;
           
 
-          firebase.firestore().collection('pages').onSnapshot(async (querySnapshot) => {
+          fs.collection('pages').onSnapshot(async (querySnapshot) => {
             querySnapshot.forEach((doc) => {
               console.log(`${doc.id} => ${doc.data().urlBoleta}`);
               const boleta = doc.data();

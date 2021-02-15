@@ -1,7 +1,7 @@
 // para mostrar los datos en la tabla'pages'
-const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
-const getUsers = () => firebase.firestore().collection('users').get();
-const getPages = () => firebase.firestore().collection().get();
+const onGetPages = (callback) => fs.collection('pages').onSnapshot(callback);
+const getUsers = () => fs.collection('users').get();
+const getPages = () => fs.collection().get();
 
 const pageContainer = document.querySelector('.table-page')
 window.addEventListener('DOMContentLoaded', async(e) => {

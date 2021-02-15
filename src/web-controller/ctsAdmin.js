@@ -5,7 +5,7 @@ let id = '';
 const boxNameWorkerCts = document.querySelector('.nameWorkerCts');
 console.log(boxNameWorkerCts)
 boxNameWorkerCts.innerHTML = '',
-firebase.firestore().collection('users').onSnapshot((querySnapshot) => {
+fs.collection('users').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         // console.log(`${doc.id} => ${doc.data().leader}`);
         const userLogueado = firebase.auth().currentUser;
@@ -94,7 +94,7 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
 });
 
 const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts) => {
-    const firestore = firebase.firestore();
+    const firestore = fs;
     return firestore.collection('cts').add({
         nameWorkerCts,
         monthCts,
@@ -104,11 +104,11 @@ const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts) => {
 };
 
 // para mostrar los datos en la tabla'cts'
-const onGetCts = (callback) => firebase.firestore().collection('cts').onSnapshot(callback);
-const getCtsEdit = (id) => firebase.firestore().collection('cts').doc(id).get();
-const getUsers = () => firebase.firestore().collection('users').get();
-const deleteCtsId = id => firebase.firestore().collection('cts').doc(id).delete();
-const updateCts = (id, contentCts) => firebase.firestore().collection('cts').doc(id).update(contentCts);
+const onGetCts = (callback) => fs.collection('cts').onSnapshot(callback);
+const getCtsEdit = (id) => fs.collection('cts').doc(id).get();
+const getUsers = () => fs.collection('users').get();
+const deleteCtsId = id => fs.collection('cts').doc(id).delete();
+const updateCts = (id, contentCts) => fs.collection('cts').doc(id).update(contentCts);
 
 const ctsContainer = document.querySelector('.table-cts')
 console.log(ctsContainer)
@@ -179,7 +179,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                       let res;
                       
             
-                      firebase.firestore().collection('cts').onSnapshot(async (querySnapshot) => {
+                      fs.collection('cts').onSnapshot(async (querySnapshot) => {
                         querySnapshot.forEach((doc) => {
                           console.log(`${doc.id} => ${doc.data().urlCts}`);
                           const constCts = doc.data();

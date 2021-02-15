@@ -1,8 +1,8 @@
 // para mostrar los datos en la tabla'pages'
-const onGetCts = (callback) => firebase.firestore().collection('cts').onSnapshot(callback);
+const onGetCts = (callback) => fs.collection('cts').onSnapshot(callback);
 
-const getUsers = () => firebase.firestore().collection('users').get();
-const getCts = () => firebase.firestore().collection().get();
+const getUsers = () => fs.collection('users').get();
+const getCts = () => fs.collection().get();
 
 const ctsContainer = document.querySelector('.table-cts')
 window.addEventListener('DOMContentLoaded', async(e) => {

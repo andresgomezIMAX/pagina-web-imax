@@ -2,8 +2,7 @@ let editStatus = false;
 let id = '';
 
 const savePost = (email, date, datetime, content,  url, useruid) => {
-    const firestore = firebase.firestore();
-    return firestore.collection('posts').add({
+    return fs.collection('posts').add({
       email,
       date,
       datetime,
@@ -13,15 +12,15 @@ const savePost = (email, date, datetime, content,  url, useruid) => {
     });
 };
 
-const getPosts = () => firebase.firestore().collection('posts').get();
+const getPosts = () => fs.collection('posts').orderBy('orderDate', 'desc').get();
 
-const getPostEdit = (id) => firebase.firestore().collection('posts').doc(id).get();
+const getPostEdit = (id) => fs.collection('posts').doc(id).get();
 
-const onGetPost = (callback) => firebase.firestore().collection('posts').onSnapshot(callback);
+const onGetPost = (callback) => fs.collection('posts').orderBy('datetime', 'desc').onSnapshot(callback);
 
-const deletePost = id => firebase.firestore().collection('posts').doc(id).delete();
+const deletePost = id => fs.collection('posts').doc(id).delete();
 
-const editPost = (id, contentPost) => firebase.firestore().collection('posts').doc(id).update(contentPost);
+const editPost = (id, contentPost) => fs.collection('posts').doc(id).update(contentPost);
 
 
 
@@ -239,8 +238,8 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
 
 
-// const editPost = (id, content) => firebase.firestore().collection('posts').doc(id).update({ content });
-// const deletePost = id => firebase.firestore().collection('posts').doc(id).delete(); 
+// const editPost = (id, content) => fs.collection('posts').doc(id).update({ content });
+// const deletePost = id => fs.collection('posts').doc(id).delete(); 
 
 // const postsList = document.querySelector('.posts');
 // const setupPosts = data => {

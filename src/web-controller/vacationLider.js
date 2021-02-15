@@ -12,9 +12,9 @@
 // traerId=db.collection("users").get().then((res)=>console.log(res))
 
 // const onGetVacation = (callback) => firebase.firestore().collection('users').doc('k8Y5ZGjnxFatZ066T6njvIdUrfw2').collection('vacation').onSnapshot(callback);
-const onGetVacation = (callback) => firebase.firestore().collection('vacation').onSnapshot(callback);
-const getUsers = () => firebase.firestore().collection('users').get();
-const getCts = () => firebase.firestore().collection().get();
+const onGetVacation = (callback) => fs.collection('vacation').onSnapshot(callback);
+const getUsers = () => fs.collection('users').get();
+const getCts = () => fs.collection().get();
 
 const vacationContainer = document.querySelector('.table-vacation')
 window.addEventListener('DOMContentLoaded', async(e) => {
@@ -54,14 +54,14 @@ window.addEventListener('DOMContentLoaded', async(e) => {
             if( e.target.dataset.id === doc.id){
               console.log('joalaaa')
               confirm('¿Desea dar el VB a la solicitud de vacaciones?')
-              const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+              const cityRef = fs.collection('vacation').doc(doc.id);
               const res = cityRef.set({
                 confirmacion : true
               }, { merge: true });
               
               
           }
-          //    firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+          //    fs.collection('vacation').onSnapshot((querySnapshot) => {
           //    querySnapshot.forEach(doc => {
           //      const vacation = doc.data();
           //      console.log(`${doc.id} => ${vacation.id}`);
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
 
           //      if( vacation.id === doc.id){
-          //          const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+          //          const cityRef = fs.collection('vacation').doc(doc.id);
           //          const res = cityRef.update({
           //            confirmacion : true
           //          }, { merge: true });
@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
             if( e.target.dataset.id === doc.id){
               console.log('joalaaa')
               
-              const cityRef = firebase.firestore().collection('vacation').doc(doc.id);
+              const cityRef = fs.collection('vacation').doc(doc.id);
               const res = cityRef.set({
                 confirmacion : false
               }, { merge: true });
@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
         })
       }
       //else {
-      //    firebase.firestore().collection('vacation').onSnapshot((querySnapshot) => {
+      //    fs.collection('vacation').onSnapshot((querySnapshot) => {
       //      querySnapshot.forEach((doc) => {
       //          console.log(`${doc.id} => ${doc.data().useruid}`);
       //          const userLogueado = firebase.auth().currentUser;
