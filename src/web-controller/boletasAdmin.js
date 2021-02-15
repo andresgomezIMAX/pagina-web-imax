@@ -1,3 +1,6 @@
+let editStatus = false;
+let id = '';
+
 //Para colaboradores el jefe inmediato por defecto
 const boxNameWorker = document.querySelector('.nameWorker');
 console.log(boxNameWorker)
@@ -19,9 +22,9 @@ boxNameWorker.innerHTML = '',
 // GUARDANDO URL DEL PDF DE LA BOLETA
 let file;
 const currentUser = () => firebase.auth().currentUser;
-const addTicked = document.querySelector('.addTicked')
-if (addTicked) {
-  addTicked.addEventListener('change', (e) => {
+const urlBoleta = document.querySelector('.addTicked')
+if (urlBoleta) {
+  urlBoleta.addEventListener('change', (e) => {
     console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
     // Get file
     let file = e.target.files[0];
@@ -49,7 +52,8 @@ if (addTicked) {
 // ADMINISTRADOR GENERAR BOLETA
 const btnGenerarBoleta = document.querySelector('.btn-generar-boleta');
 const generarBoleta = document.querySelector('.generate-ticket');
-btnGenerarBoleta.addEventListener('click', (e) => {
+
+  btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
   e.preventDefault();
   console.log('hola');
   // const userLogueado = firebase.auth().currentUser;
@@ -61,15 +65,37 @@ btnGenerarBoleta.addEventListener('click', (e) => {
   const urlBoleta = sessionStorage.getItem('fileNewTicked');
   console.log(nameWorker, month, totalPage, urlBoleta)
   if (urlBoleta) {
-    saveBoleta(nameWorker, month, totalPage, urlBoleta).then(() => {
-      // sessionStorage.removeItem('fileNewTicked');
-      console.log('se registró boleta');
-      generarBoleta.reset();
-      alert('se registró boleta');
-    });
+    if (!editStatus) {
+      saveBoleta(nameWorker, month, totalPage, urlBoleta).then(() => {
+        // sessionStorage.removeItem('fileNewTicked');
+        console.log('se registró boleta');
+        generarBoleta.reset();
+        alert('se registró boleta');
+      });
+    }
+    else {
+          updatePage(id, {
+              nameWorker : nameWorker, 
+              month : month, 
+              totalPage : totalPage, 
+              urlBoleta :  urlBoleta
+            } )
+
+            alert('se actualizó boleta');
+            generarBoleta.reset();
+   
+    }
+
+    editStatus = false;
+    id = '';
+    btnGenerarBoleta.innerHTML = 'Generar'
+
   }
 
 });
+
+
+
 
 //FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
 const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
@@ -86,11 +112,8 @@ const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
 const onGetPages = (callback) => firebase.firestore().collection('pages').onSnapshot(callback);
 const getPagesEdit = (id) => firebase.firestore().collection('pages').doc(id).get();
 const getUsers = () => firebase.firestore().collection('users').get();
-const deletePost = id => firebase.firestore().collection('pages').doc(id).delete();
-const editWorker = (id, nameWorker, month, ) => firebase.firestore().collection('posts').doc(id).update({
-  nameWorker,
-  month
-});
+const deletePageId = id => firebase.firestore().collection('pages').doc(id).delete();
+const updatePage = (id, contentPage) => firebase.firestore().collection('pages').doc(id).update(contentPage);
 
 const pageContainer = document.querySelector('.table-page')
 window.addEventListener('DOMContentLoaded', async (e) => {
@@ -102,13 +125,12 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       page.id = doc.id;
       const user = firebase.auth().currentUser;
       pageContainer.innerHTML += `
-                              <tr class="row-pages" contenteditable="false" data-id="${page.id}">
-                                <td data-id="${page.id}" class="nameWorkerPage"> ${page.nameWorker}</td>  
-                                <td data-id="${page.id}" class="monthPage"> ${page.month}</td>
-                                <td data-id="${page.id}" class="totalPage"> ${page.totalPage}</td>
-                                <td data-id="${page.id}" class="urlPage"> <a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
-                                <td data-id="${page.id}" class="checkPage"> <input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
-                                <td><i data-id="${page.id}" class="btnEdit fas fa-edit"></i> <button data-id="${page.id}" class="btnSaveWorker" id="btnSaveWorker">💾</button> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
+                              <tr>
+                                <td> ${page.nameWorker}</td>  
+                                <td> ${page.month}</td>
+                                <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+                                <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
+                                <td><i data-id="${page.id}" class="btnEdit fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
                               </tr>
                              `;
 
@@ -116,85 +138,64 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       const deletePage = document.querySelectorAll('.deletePage');
       deletePage.forEach(btn => {
         btn.addEventListener('click', async (e) => {
-          const res = confirm('¿Quieres eliminar esta Boleta de Pago?')
-          if (res === true){
-            await deletePost(e.target.dataset.id)
-          }
+          const r = confirm('¿Quieres eliminar esta Boleta de Pago?')
+          if (r == true) {
+            await deletePageId(e.target.dataset.id)
+          } 
         })
       });
 
-      const btnEditWorker = document.querySelectorAll('.btnEdit');
-      const btnUpdateWorker = document.querySelectorAll('.btnSaveWorker');
-      const editableWorker = document.querySelectorAll('.row-pages');
+      const btnsEdit = document.querySelectorAll('.btnEdit');
+      btnsEdit.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          const doc = await getPagesEdit(e.target.dataset.id)
+          console.log(doc.data())
+          const page = doc.data();
+          id = doc.id;
+          console.log(id)
+          editStatus = true;
 
-      btnEditWorker.forEach(edit => {
-        edit.addEventListener('click', (e) => {
-          console.log('clickeando editar');
-          console.log(e.target.dataset.id);
-          console.log(doc.data());
-          fs.collection('pages').get().then((querySnapshot) => {
-            querySnapshot.forEach(doc => {
-              console.log(doc.id)
-              if (e.target.dataset.id === doc.id) {
-                console.log(e.target.dataset.id);
-                console.log(doc.id);
-                editableWorker.contentEditable = 'true';
-                editableWorker.forEach(row => {
-                  console.log('holay')
-                  row.addEventListener('click', (e) => {
-                    console.log('holassss')
-                    console.log(e.target.dataset.id);
-                    console.log(doc.id);
-                    if (e.target.dataset.id === doc.id) {
-                      row.contentEditable = 'true';
-                      row.focus() = 'true';
-                    }
-                  })
-                })
+          const nameWorker = document.querySelector('.nameWorker');
+          nameWorker.value = page.nameWorker;
+          const month = document.querySelector('.month');
+          month.value = page.month;
+          const totalPage = document.querySelector('.totalPage');
+          totalPage.value = page.totalPage;
+          const urlBoleta = document.querySelector('.addTicked');
+
+          console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
+
+          let res;
+          
+
+          firebase.firestore().collection('pages').onSnapshot(async (querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              console.log(`${doc.id} => ${doc.data().urlBoleta}`);
+              const boleta = doc.data();
+              boleta.id = doc.id;
+              console.log(boleta.id)
+              console.log(id)
+              if (boleta.id === id) {
+                res = boleta.urlBoleta;
+                console.log(res)
+                console.log('jaaaa')
+                console.log(res)
+                console.log(urlBoleta.file = res)
+                urlBoleta.file = res;
+                console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
+                editStatus = true;
+              
 
               }
             })
+           
+
+
+          
           })
-
-        });
-      });
-
-      btnUpdateWorker.forEach(update => {
-        console.log(btnUpdateWorker)
-        update.addEventListener('click', (e) => {
-          console.log(update);
-          const docId = e.target.dataset.id;
-          editableWorker.forEach(row => {
-            console.log('holay')
-            row.addEventListener('click', (e) => {
-              if (e.target.dataset.id === docId) {
-                console.log('aaaaaaaaaa')
-                const nameWorker = row.querySelector('.nameWorkerPage').innerHTML;
-                const month = row.querySelector('.monthPage').innerHTML;
-                const totalPage = row.querySelector('.totalPage').innerHTML;
-                console.log(nameWorker, month, totalPage)
-                const cityRef = firebase.firestore().collection('pages').doc(docId);
-                const res = cityRef.update({
-                  nameWorker,
-                  month,
-                }, {merge: true});
-                alert('Se han actualizado los datos')
-              }
-
-            })
-          })
-
+          btnGenerarBoleta.innerHTML = 'Actualizar'
         })
-      })
-
-
-
-
-
-
-
-
-
+      });
 
       const filterPageWorker = (data, texto) => {
         const longNameWorker = texto.length;
