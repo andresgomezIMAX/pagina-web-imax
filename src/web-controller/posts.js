@@ -64,8 +64,10 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   const btnsRemove = document.querySelectorAll('.btnRemove');
                   btnsRemove.forEach(btn => {
                     btn.addEventListener('click', async (e) => {
-                      confirm('¿Quieres eliminar esta noticia?')
-                     await deletePost(e.target.dataset.id)
+                      const r = confirm('¿Quieres eliminar esta noticia?')
+                      if (r == true) {
+                        await deletePost(e.target.dataset.id)
+                      } 
                     })
                   });
 
