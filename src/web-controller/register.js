@@ -197,7 +197,6 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
 
                   btnUpdateRow.forEach(update => {
-                    console.log(btnUpdateRow)
                     update.addEventListener('click', (e) =>{
                     console.log(update);
                     const docId = e.target.dataset.id;

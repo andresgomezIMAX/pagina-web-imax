@@ -216,24 +216,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//prueba 
 
 
 
