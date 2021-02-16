@@ -1856,6 +1856,52 @@
   font-weight: bold;
 }
 
+.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider {
+  padding: 1% 3% 2% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 60%;
+  overflow: auto;
+}
+
+.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table th, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td th {
+  background-color: #C4C4C4;
+  border-collapse: collapse;
+  border: 1px solid black;
+  height: 40px;
+}
+
+.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table button, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td button {
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  color: #292727;
+  font-weight: bold;
+}
+
+.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table button:active, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td button:active {
+  color: black;
+}
+
 .box-boletas .container-vacations .box-send-request div {
   display: -webkit-box;
   display: -ms-flexbox;
