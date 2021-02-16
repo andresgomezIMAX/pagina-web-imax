@@ -252,7 +252,8 @@ registerVacation.addEventListener('submit', (e) => {
       useruid,
       startOfVacation,
       endOfVacation,
-      bossInmediate
+      bossInmediate,
+      confirmacion: false
     });
 };
 
@@ -262,18 +263,18 @@ confirVacationLider.innerHTML = '';
 //Create a reference to the cities collection
 
 
-// fs.collection('vacation').where('confirmacion', '==', 'true').get()
-// .then(()=>{
-//     console.log('hola')
-//     querySnapshot.forEach((doc) => {
-//         console.log(`${doc.id} => ${doc.data().useruid}`);
-//         const userLogueado = firebase.auth().currentUser;
-//         const useruid = userLogueado.uid;
-//         if(useruid === doc.data().useruid){
-//             console.log('eeeeeeeeeeve')
-//         }
-//     })    
-// })
+fs.collection('vacation').where('confirmacion', '==', 'true').get()
+.then(()=>{
+    console.log('hola')
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().useruid}`);
+        const userLogueado = firebase.auth().currentUser;
+        const useruid = userLogueado.uid;
+        if(useruid === doc.data().useruid){
+            console.log('eeeeeeeeeeve')
+        }
+    })    
+})
 
    
 
