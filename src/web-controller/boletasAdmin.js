@@ -1,20 +1,19 @@
 let editStatus = false;
 let id = '';
 
-//Para colaboradores el jefe inmediato por defecto
+//Para nombres
 const boxNameWorker = document.querySelector('.nameWorker');
 console.log(boxNameWorker)
-boxNameWorker.innerHTML = '',
+boxNameWorker.innerHTML = '';
   fs.collection('users').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       // console.log(`${doc.id} => ${doc.data().leader}`);
       const userLogueado = firebase.auth().currentUser;
       const useruid = userLogueado.uid;
+      const user = doc.data()
+      user.id = doc.id;
       boxNameWorker.innerHTML += `
-                <option value="${doc.data().name}">${doc.data().name}</option>`
-
-
-
+                <option value="${doc.id}" >${doc.data().name}</option>`
     })
   })
 
@@ -59,15 +58,17 @@ const generarBoleta = document.querySelector('.generate-ticket');
   // const userLogueado = firebase.auth().currentUser;
   // console.log(userLogueado)
   // const useruid = userLogueado.uid;
-  const nameWorker = document.querySelector('.nameWorker').value;
+  const boxIdWorder = document.querySelector('.nameWorker')
+  const idWorker = document.querySelector('.nameWorker').value;
+  const nameWorker = boxIdWorder.options[boxIdWorder.selectedIndex].text;
   const month = document.querySelector('.month').value;
   const totalPage = document.querySelector('.totalPage').value;
   const urlBoleta = sessionStorage.getItem('fileNewTicked');
-  console.log(nameWorker, month, totalPage, urlBoleta)
+  console.log(idWorker, nameWorker, month, totalPage, urlBoleta)
   if (urlBoleta) {
     if (!editStatus) {
-      saveBoleta(nameWorker, month, totalPage, urlBoleta).then(() => {
-        // sessionStorage.removeItem('fileNewTicked');
+      saveBoleta(idWorker, nameWorker, month, totalPage, urlBoleta).then(() => {
+        sessionStorage.removeItem('fileNewTicked');
         console.log('se registró boleta');
         generarBoleta.reset();
         alert('se registró boleta');
@@ -75,6 +76,7 @@ const generarBoleta = document.querySelector('.generate-ticket');
     }
     else {
           updatePage(id, {
+              idWorker: idWorker,
               nameWorker : nameWorker, 
               month : month, 
               totalPage : totalPage, 
@@ -98,9 +100,10 @@ const generarBoleta = document.querySelector('.generate-ticket');
 
 
 //FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
-const saveBoleta = (nameWorker, month, totalPage, urlBoleta) => {
+const saveBoleta = (idWorker, nameWorker, month, totalPage, urlBoleta) => {
   const firestore = fs;
   return firestore.collection('pages').add({
+    idWorker,
     nameWorker,
     month,
     totalPage,
