@@ -11,7 +11,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
         const userLogueado = firebase.auth().currentUser;
         const useruid = userLogueado.uid;
             boxNameWorkerCts.innerHTML += `
-                <option value="${doc.data().name}">${doc.data().name}</option>`
+                <option value="${doc.id}">${doc.data().name}</option>`
       
        
        
@@ -58,14 +58,16 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
     // const userLogueado = firebase.auth().currentUser;
     // console.log(userLogueado)
     // const useruid = userLogueado.uid;
-    const nameWorkerCts = document.querySelector('.nameWorkerCts').value;
+    const boxIdCts = document.querySelector('.nameWorkerCts');
+    const idWorkerCts = document.querySelector('.nameWorkerCts').value;
+    const nameWorkerCts = boxIdCts.options[boxIdCts.selectedIndex].text;
     const monthCts = document.querySelector('.month-Cts').value; 
     const pageCts = document.querySelector('.page-cts').value;
     const urlCts = sessionStorage.getItem('fileNewCts');
-    console.log(nameWorkerCts,monthCts,pageCts, urlCts);
+    console.log(idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts);
     if(urlCts){
       if(!editStatus){
-        saveCts(nameWorkerCts,monthCts,pageCts, urlCts).then(() => {
+        saveCts(idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts).then(() => {
           // sessionStorage.removeItem('fileNewCts');
           console.log('se registró constancia CTS');
           generarCts.reset();
@@ -73,6 +75,7 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
       });
       }else {
         updateCts(id, {
+          idWorkerCts : idWorkerCts,
           nameWorkerCts : nameWorkerCts, 
           monthCts : monthCts, 
           pageCts : pageCts, 
@@ -93,9 +96,10 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
 
 });
 
-const saveCts = (nameWorkerCts,monthCts,pageCts, urlCts) => {
+const saveCts = (idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts) => {
     const firestore = fs;
     return firestore.collection('cts').add({
+        idWorkerCts,
         nameWorkerCts,
         monthCts,
         pageCts, 

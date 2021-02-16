@@ -12,14 +12,18 @@ window.addEventListener('DOMContentLoaded', async(e) => {
       const cts = doc.data();
       console.log(cts)
       cts.id = doc.id;
-      const user = firebase.auth().currentUser;
-      ctsContainer.innerHTML +=  `
-                                <tr>
-                                <td>${cts.monthCts}</td>
-                                <td>${cts.pageCts}</td>
-                                <td><a href=${cts.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
-                                <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-                             `;
+      const userLogueado = firebase.auth().currentUser;
+      console.log(userLogueado.uid)
+      if (cts.idWorkerCts === userLogueado.uid) {
+        ctsContainer.innerHTML +=  `
+        <tr>
+        <td>${cts.monthCts}</td>
+        <td>${cts.pageCts}</td>
+        <td><a href=${cts.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+     `;
+      }
+    
     });
   })
  
