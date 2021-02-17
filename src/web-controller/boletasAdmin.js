@@ -163,8 +163,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           editStatus = true;
 
           const nameWorker = document.querySelector('.nameWorker');
-          nameWorker.text = page.nameWorker
-       
+          nameWorker.text= page.nameWorker
+          nameWorker.value= page.idWorker
           const year = document.querySelector('.year');
           year.value = page.year;
           const month = document.querySelector('.month');
