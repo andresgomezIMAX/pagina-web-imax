@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       if (page.idWorker === userLogueado.uid) {
         pageContainer.innerHTML += `
         <tr class ="month">
-        <td>${page.month}</td>
+        <td>${page.month} - ${page.year}</td>
         <td>${page.totalPage}</td>
         <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
         <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 

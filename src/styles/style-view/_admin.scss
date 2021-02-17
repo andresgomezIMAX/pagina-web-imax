@@ -132,11 +132,21 @@
 
                 .search-name{
                     display: flex;
-                    flex-direction: column;
                     margin-bottom: 2%;
+                    justify-content: flex-start ;
+                  
                     
                     select{
-                      width: 70%;
+                      width: 500px;
+                
+                    }
+                    .space{
+                        width: 25%;
+
+                        input{
+                            width: 120px;
+                        }
+                       
                     }
                 }
 

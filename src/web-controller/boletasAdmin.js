@@ -61,13 +61,14 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
   const boxIdWorder = document.querySelector('.nameWorker')
   const idWorker = document.querySelector('.nameWorker').value;
   const nameWorker = boxIdWorder.options[boxIdWorder.selectedIndex].text;
+  const year = document.querySelector('.year').value;
   const month = document.querySelector('.month').value;
   const totalPage = document.querySelector('.totalPage').value;
   const urlBoleta = sessionStorage.getItem('fileNewTicked');
-  console.log(idWorker, nameWorker, month, totalPage, urlBoleta)
+  console.log(idWorker, nameWorker, year, month, totalPage, urlBoleta)
   if (urlBoleta) {
     if (!editStatus) {
-      saveBoleta(idWorker, nameWorker, month, totalPage, urlBoleta).then(() => {
+      saveBoleta(idWorker, nameWorker,year, month, totalPage, urlBoleta).then(() => {
         sessionStorage.removeItem('fileNewTicked');
         console.log('se registró boleta');
         generarBoleta.reset();
@@ -77,6 +78,7 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
       updatePage(id, {
         idWorker: idWorker,
         nameWorker: nameWorker,
+        year:year,
         month: month,
         totalPage: totalPage,
         urlBoleta: urlBoleta
@@ -99,11 +101,12 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
 
 
 //FUNCIÓN DE FIREBASE PARA CREAR LA COLECCION DE BOLETAS 
-const saveBoleta = (idWorker, nameWorker, month, totalPage, urlBoleta) => {
+const saveBoleta = (idWorker, nameWorker, year,  month, totalPage, urlBoleta) => {
   const firestore = fs;
   return firestore.collection('pages').add({
     idWorker,
     nameWorker,
+    year,
     month,
     totalPage,
     urlBoleta,
@@ -130,7 +133,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       pageContainer.innerHTML += `
                               <tr>
                                 <td> ${page.nameWorker}</td>  
-                                <td> ${page.month}</td>
+                                <td> ${page.month} - ${page.year}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
 
                                 <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}"  readonly="readonly" onclick="javascript: return false;" checked>` : 
@@ -160,14 +163,17 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           editStatus = true;
 
           const nameWorker = document.querySelector('.nameWorker');
-          nameWorker.value = page.nameWorker;
+          nameWorker.text = page.nameWorker
+       
+          const year = document.querySelector('.year');
+          year.value = page.year;
           const month = document.querySelector('.month');
           month.value = page.month;
           const totalPage = document.querySelector('.totalPage');
           totalPage.value = page.totalPage;
           const urlBoleta = document.querySelector('.addTicked');
 
-          console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
+          console.log(nameWorker.value, year.value, month.value, totalPage.value, urlBoleta.file)
 
           let res;
 
@@ -186,7 +192,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 console.log(res)
                 console.log(urlBoleta.file = res)
                 urlBoleta.file = res;
-                console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
+                console.log(nameWorker.value, year.value, month.value, totalPage.value, urlBoleta.file)
                 editStatus = true;
 
               }

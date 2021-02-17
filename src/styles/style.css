@@ -1440,6 +1440,14 @@
   top: 38px;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .container-pagos {
   height: 100vh;
   background-image: url(../assets/imax-background.png);
@@ -2111,15 +2119,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin-bottom: 2%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-name select {
-  width: 70%;
+  width: 500px;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-name .space {
+  width: 25%;
+}
+
+.box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-name .space input {
+  width: 120px;
 }
 
 .box-admin-boletas .box-generate-ticket .generate-ticket .box-search .search-second {
