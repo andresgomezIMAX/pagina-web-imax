@@ -104,6 +104,7 @@ const saveCts = (idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts) => {
         monthCts,
         pageCts, 
         urlCts, 
+        confirmacion: false
     });
 };
 
@@ -129,7 +130,9 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                 <td> ${cts.nameWorkerCts}</td>  
                                 <td> ${cts.monthCts}</td>
                                 <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
-                                <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
+                                
+                                <td>${cts.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${cts.confirmacion}  name="conformidad" data-id="${cts.id}"  readonly="readonly" onclick="javascript: return false;" checked>` : 
+                                `<input type="checkbox" class="conformidad" value= ${cts.confirmacion}  name="conformidad" data-id="${cts.id}" readonly="readonly" onclick="javascript: return false;" > `} </td>
                                 <td><i data-id="${cts.id}" class="btnEdit fas fa-edit"></i> <i class="deleteCts fas fa-trash-alt" data-id="${cts.id}"></i></td>
                               </tr>
                              `;
