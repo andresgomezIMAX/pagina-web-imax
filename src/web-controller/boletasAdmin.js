@@ -5,17 +5,17 @@ let id = '';
 const boxNameWorker = document.querySelector('.nameWorker');
 console.log(boxNameWorker)
 boxNameWorker.innerHTML = '';
-  fs.collection('users').onSnapshot((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // console.log(`${doc.id} => ${doc.data().leader}`);
-      const userLogueado = firebase.auth().currentUser;
-      const useruid = userLogueado.uid;
-      const user = doc.data()
-      user.id = doc.id;
-      boxNameWorker.innerHTML += `
+fs.collection('users').onSnapshot((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    // console.log(`${doc.id} => ${doc.data().leader}`);
+    const userLogueado = firebase.auth().currentUser;
+    const useruid = userLogueado.uid;
+    const user = doc.data()
+    user.id = doc.id;
+    boxNameWorker.innerHTML += `
                 <option value="${doc.id}" >${doc.data().name}</option>`
-    })
   })
+})
 
 
 // GUARDANDO URL DEL PDF DE LA BOLETA
@@ -52,7 +52,7 @@ if (urlBoleta) {
 const btnGenerarBoleta = document.querySelector('.btn-generar-boleta');
 const generarBoleta = document.querySelector('.generate-ticket');
 
-  btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
+btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
   e.preventDefault();
   console.log('hola');
   // const userLogueado = firebase.auth().currentUser;
@@ -73,19 +73,18 @@ const generarBoleta = document.querySelector('.generate-ticket');
         generarBoleta.reset();
         alert('se registró boleta');
       });
-    }
-    else {
-          updatePage(id, {
-              idWorker: idWorker,
-              nameWorker : nameWorker, 
-              month : month, 
-              totalPage : totalPage, 
-              urlBoleta :  urlBoleta
-            } )
+    } else {
+      updatePage(id, {
+        idWorker: idWorker,
+        nameWorker: nameWorker,
+        month: month,
+        totalPage: totalPage,
+        urlBoleta: urlBoleta
+      })
 
-            alert('se actualizó boleta');
-            generarBoleta.reset();
-   
+      alert('se actualizó boleta');
+      generarBoleta.reset();
+
     }
 
     editStatus = false;
@@ -108,6 +107,7 @@ const saveBoleta = (idWorker, nameWorker, month, totalPage, urlBoleta) => {
     month,
     totalPage,
     urlBoleta,
+    confirmacion: false
   });
 };
 
@@ -132,10 +132,11 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                                 <td> ${page.nameWorker}</td>  
                                 <td> ${page.month}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
-                                <td><input type="checkbox" name="fieldName" value="Check Value" readonly="readonly" onclick="javascript: return false;"/></td>
+
+                                <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}"  readonly="readonly" onclick="javascript: return false;" checked>` : 
+                                `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" readonly="readonly" onclick="javascript: return false;" > `} </td>
                                 <td><i data-id="${page.id}" class="btnEdit fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
-                              </tr>
-                             `;
+                              </tr>`;
 
 
       const deletePage = document.querySelectorAll('.deletePage');
@@ -144,7 +145,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           const r = confirm('¿Quieres eliminar esta Boleta de Pago?')
           if (r == true) {
             await deletePageId(e.target.dataset.id)
-          } 
+          }
         })
       });
 
@@ -169,7 +170,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
 
           let res;
-          
+
 
           fs.collection('pages').onSnapshot(async (querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -187,41 +188,36 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                 urlBoleta.file = res;
                 console.log(nameWorker.value, month.value, totalPage.value, urlBoleta.file)
                 editStatus = true;
-              
 
               }
             })
-           
 
-
-          
           })
           btnGenerarBoleta.innerHTML = 'Actualizar'
         })
       });
 
-      const filterPageWorker = (data, texto) => {
-        const longNameWorker = texto.length;
-        // const dataName =  fs.collection('users').get().then((snapshot) => {console.log(snapshot.docs);
-        //     // setupPosts(snapshot.docs)
-        // });
-        const dataName = page.nameWorker;
-        const filterName = dataName.filter((worker) => (
-          texto === dataName.toLowerCase().substring(0, longNameWorker)
-        ));
-        return filterName; // retornamos el array de objetos encontrados
-      };
+      // const filterPageWorker = (data, texto) => {
+      //   const longNameWorker = texto.length;
+      //   // const dataName =  fs.collection('users').get().then((snapshot) => {console.log(snapshot.docs);
+      //   //     // setupPosts(snapshot.docs)
+      //   // });
+      //   const dataName = page.nameWorker;
+      //   const filterName = dataName.filter((worker) => (
+      //     texto === dataName.toLowerCase().substring(0, longNameWorker)
+      //   ));
+      //   return filterName; // retornamos el array de objetos encontrados
+      // };
 
-      const searchName = document.querySelector('.searchName');
-      searchName.addEventListener('input', (evt) => {
-        const texto = evt.target.value.toLowerCase(); // extraemos el valor de la caja de texto
-        console.log(texto)
-        const filtroNameWorker = filterPageWorker(page, texto);
-      });
+      // const searchName = document.querySelector('.searchName');
+      // searchName.addEventListener('input', (evt) => {
+      //   const texto = evt.target.value.toLowerCase(); // extraemos el valor de la caja de texto
+      //   console.log(texto)
+      //   const filtroNameWorker = filterPageWorker(page, texto);
+      // });
     });
-  })
-
-})
+  });
+});
 
 
 

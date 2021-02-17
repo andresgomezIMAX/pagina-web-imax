@@ -19,11 +19,65 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         <td>${page.month}</td>
         <td>${page.totalPage}</td>
         <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
-        <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
-     `;
-      }
+        <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 
+        `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad"  data-id="${page.id}" > `} </td>
+        </tr>`
+      };
+    
+      
+      
 
     });
+
+
+
+    const checkboxs = document.querySelectorAll('.conformidad');
+    checkboxs.forEach(check => {
+      check.addEventListener('click', function (e) {
+        if (this.checked) {
+          console.log('click pe')
+          querySnapshot.forEach(doc => {
+            const confir = doc.id
+            console.log(doc.id);
+            console.log(e.target.dataset.id)
+            if (e.target.dataset.id === doc.id) {
+
+              console.log('joalaaa')
+              const r = confirm('¿Desea dar conformidad a su Boleta de pago?')
+              window.localStorage.setItem(doc.id, check.checked)
+              const cityRef = fs.collection('pages').doc(doc.id);
+              const res = cityRef.update({
+                confirmacion: true
+              }, {
+                merge: true
+              });
+             
+            }
+            
+          })
+
+        check.setAttribute("disabled" ,"disabled")
+         
+        } else {
+          querySnapshot.forEach(doc => {
+            console.log(doc.id);
+            console.log(e.target.dataset.id)
+            if (e.target.dataset.id === doc.id) {
+              console.log('joalaaa')
+              // confirm('¿Desea dar el VB a la solicitud de vacaciones?')
+              // window.localStorage.removeItem(doc.id, false)
+              // window.localStorage.setItem(doc.id, false)
+              const cityRef = fs.collection('pages').doc(doc.id);
+              const res = cityRef.update({
+                confirmacion: false
+              }, {
+                merge: true
+              });
+            }
+          })
+        }
+      })
+    })
   })
 
 })
