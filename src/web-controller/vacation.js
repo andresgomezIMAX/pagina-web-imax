@@ -264,7 +264,7 @@ const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) =>
 };
 
 
-const confirVacationLider = document.querySelector('.box-send-request');
+const confirVacationLider = document.querySelector('.table-vacation-vb');
 confirVacationLider.innerHTML = '';
 
 fs.collection('vacation').onSnapshot((querySnapshot) => {
@@ -278,31 +278,13 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
             if (doc.data().confirmacion === true) {
                 console.log('vacaciones ok')
                 confirVacationLider.innerHTML += `
-            <p>*Su solicitud obtuvo el V°B° de su lider. Puede proceder a enviarla
-            al área de administración. </p>
-            <div class="box-table-vacations-confirmLider">
-                        <table style="width:100%">
-                            <tr>
-                            <th>Colaborador</th>
-                            <th>Fecha</th>
-                            <th>Conformidad</th>
-                            <th>Conformidad</th>
-                            </tr>
-                            <tbody class="table-vacation" >
-
-                            </tbody>
-                            <tr>
-                            <td>${vacation.nameWorker}</td>  
-                            <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
-                            <td> <button class="download-format">Descargar Formato</button></td>
-                            <td>     <button class="send-format">Enviar Solicitud</button></td>
-                            </tr>
-                        </table>
-                    </div>
-            <div>
-                   
-            
-            </div> `
+                <tr>
+                <td>${vacation.nameWorker}</td>  
+                <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
+                <td> <button class="download-format">Descargar Formato</button></td>
+                <td>     <button class="send-format">Enviar Solicitud</button></td>
+                </tr>
+            `
             }
         }
     })

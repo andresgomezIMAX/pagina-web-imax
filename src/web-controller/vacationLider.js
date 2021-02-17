@@ -31,7 +31,8 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                                         <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
                                         <td>Pendientes: ${vacation.vacationPending} días <br>
                                             Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
-                                        <td><input type="checkbox" class="conformidad" value= ${vacation.confirmacion}  name="conformidad" data-id="${vacation.id}" ></td>
+                                        <td>${vacation.confirmacion === true ? `<input type="checkbox" class="conformidadLider" value= ${vacation.confirmacion}  name="conformidad" data-id="${vacation.id}"  checked >` : 
+                                        `<input type="checkbox" class="conformidad" value= ${vacation.confirmacion}  name="conformidad"  data-id="${vacation.id}" > `} </td>
                                         </tr> 
                              `;
 
@@ -40,28 +41,27 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     });
 
-    fs.collection('vacation').onSnapshot((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${doc.data().useruid}`);
-          const vacation = doc.data();
-          console.log(vacation.confirmacion)
-          if(vacation.confirmacion === true){
-            console.log('hay vida')
-            const checkboxs = document.querySelectorAll('.conformidad');
-            checkboxs.forEach(check => {
-                check.checked = true
+    // fs.collection('vacation').onSnapshot((querySnapshot) => {
+    //   querySnapshot.forEach((doc) => {
+    //       console.log(`${doc.id} => ${doc.data().useruid}`);
+    //       const vacation = doc.data();
+    //       console.log(vacation.confirmacion)
+    //       if(vacation.confirmacion === true){
+    //         console.log('hay vida')
+    //         const checkboxs = document.querySelectorAll('.conformidad');
+    //         checkboxs.forEach(check => {
+    //             check.checked = true
           
               
-            })
-          }
-      })
-    })
+    //         })
+    //       }
+    //   })
+    // })
 
     
 
     const checkboxs = document.querySelectorAll('.conformidad');
     checkboxs.forEach(check => {
-      // check.checked = eval(window.localStorage.getItem(check.id))
       check.addEventListener('change', function (e) {
         if (this.checked) {
           console.log('click pe')
@@ -71,7 +71,6 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             if (e.target.dataset.id === doc.id) {
               console.log('joalaaa')
               confirm('¿Desea dar el VB a la solicitud de vacaciones?')
-              window.localStorage.setItem(doc.id, check.checked)
               const cityRef = fs.collection('vacation').doc(doc.id);
               const res = cityRef.update({
                 confirmacion: true
