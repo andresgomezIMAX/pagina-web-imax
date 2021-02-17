@@ -15,17 +15,39 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       console.log(userLogueado)
       if (page.idWorker === userLogueado.uid) {
         pageContainer.innerHTML += `
-        <tr>
+        <tr class ="month">
         <td>${page.month}</td>
         <td>${page.totalPage}</td>
         <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
         <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 
         `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad"  data-id="${page.id}" > `} </td>
-        </tr>`
+        </tr>
+
+        `
+        const searchMonth = document.querySelector('.search')
+        console.log(searchMonth);
+
+        const d = document;
+
+        const txt = searchMonth.value;
+        const texto = txt.toLowerCase()
+
+        const monthText = page.month
+        const salida = monthText.toLowerCase()
+
+        function searchFilter(input, selector) {
+          d.addEventListener('keyup', (e) => {
+            if (e.target.matches(input)) {
+              d.querySelectorAll(selector).forEach((el) =>
+                el.textContent.toLowerCase().includes(e.target.value) ?
+                el.classList.remove("hide") :
+                el.classList.add("hide"))
+            }
+          })
+        }
+
+        searchFilter('.search', '.month', )
       };
-    
-      
-      
 
     });
 
@@ -43,7 +65,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
             if (e.target.dataset.id === doc.id) {
 
               console.log('joalaaa')
-              const r = confirm('¿Desea dar conformidad a su Boleta de pago?')
+              alert('¿Desea dar conformidad a su Boleta de pago?')
               window.localStorage.setItem(doc.id, check.checked)
               const cityRef = fs.collection('pages').doc(doc.id);
               const res = cityRef.update({
@@ -51,22 +73,19 @@ window.addEventListener('DOMContentLoaded', async (e) => {
               }, {
                 merge: true
               });
-             
+
             }
-            
+
           })
 
-        check.setAttribute("disabled" ,"disabled")
-         
+          check.setAttribute("disabled", "disabled")
+
         } else {
           querySnapshot.forEach(doc => {
             console.log(doc.id);
             console.log(e.target.dataset.id)
             if (e.target.dataset.id === doc.id) {
               console.log('joalaaa')
-              // confirm('¿Desea dar el VB a la solicitud de vacaciones?')
-              // window.localStorage.removeItem(doc.id, false)
-              // window.localStorage.setItem(doc.id, false)
               const cityRef = fs.collection('pages').doc(doc.id);
               const res = cityRef.update({
                 confirmacion: false
@@ -78,6 +97,107 @@ window.addEventListener('DOMContentLoaded', async (e) => {
         }
       })
     })
+
+
+
   })
+
+
+
+
+
+
+
+
+
+  // onGetPages((querySnapshot) => {
+  //   pageContainer.innerHTML = '';
+  //   querySnapshot.forEach(doc => {
+  //     const page = doc.data();
+  //     console.log(page)
+  //     page.id = doc.id;
+  //     const userLogueado = firebase.auth().currentUser;
+  //     console.log(userLogueado)
+  //     if (page.idWorker === userLogueado.uid) {
+
+  //       pageContainer.innerHTML += `
+  //       <tr>
+  //       <td>${page.month}</td>
+  //       <td>${page.totalPage}</td>
+  //       <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+  //       <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 
+  //       `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad"  data-id="${page.id}" > `} </td>
+  //       </tr>
+
+
+  //       `
+
+
+  //       const searchMonth = document.querySelector('.search')
+  //       console.log(searchMonth);
+  //       const filtrar = () => {
+  //         const txt = searchMonth.value;
+  //         const texto = txt.toLowerCase()
+
+
+  //         const monthText = page.month
+  //         const salida = monthText.toLowerCase()
+
+
+
+  //         if (salida === texto) {
+  //           pageContainer.innerHTML = '';
+  //           console.log(page.month)
+  //           console.log(texto)
+  //           pageContainer.innerHTML += `
+  //           <tr>
+  //           <td>${page.month}</td>
+  //           <td>${page.totalPage}</td>
+  //           <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+  //           <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 
+  //           `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad"  data-id="${page.id}" > `} </td>
+  //           </tr>`
+
+  //         }
+
+
+  //         if (texto === '') {
+  //           // pageContainer.innerHTML = '';
+  //           pageContainer.innerHTML += `
+  //        <tr>
+  //        <td>${page.month}</td>
+  //        <td>${page.totalPage}</td>
+  //        <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
+  //        <td>${page.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" disabled="disabled"  checked >` : 
+  //        `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad"  data-id="${page.id}" > `} </td>
+  //        </tr>
+
+
+  //        `
+  //         }
+
+
+
+  //       }
+
+  //       searchMonth.addEventListener('keyup', filtrar);
+
+
+
+
+
+
+
+  //     };
+
+
+
+
+  //   });
+
+
+
+
+  // })
 
 })

@@ -25,9 +25,9 @@ menuMobile.addEventListener('click', () => {
 const onlyAdmin = document.querySelector('.only-admin')
 fs.collection('users').onSnapshot((querySnapshot) => {
   querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().checkAdmin}`);
+    // console.log(`${doc.id} => ${doc.data().checkAdmin}`);
     const userLogueado = firebase.auth().currentUser;
-    console.log(userLogueado)
+    // console.log(userLogueado)
     if (doc.id === userLogueado.uid) {
       if (doc.data().checkAdmin === 'SI') {
         onlyAdmin.innerHTML += `
