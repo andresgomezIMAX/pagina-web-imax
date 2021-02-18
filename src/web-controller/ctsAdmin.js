@@ -1,7 +1,7 @@
 let editStatus = false;
 let id = '';
 
-//Para colaboradores el jefe inmediato por defecto
+//Para nombres por defecto
 const boxNameWorkerCts = document.querySelector('.nameWorkerCts');
 console.log(boxNameWorkerCts)
 boxNameWorkerCts.innerHTML = '',
@@ -61,13 +61,14 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
     const boxIdCts = document.querySelector('.nameWorkerCts');
     const idWorkerCts = document.querySelector('.nameWorkerCts').value;
     const nameWorkerCts = boxIdCts.options[boxIdCts.selectedIndex].text;
+    const yearCts = document.querySelector('.year').value;
     const monthCts = document.querySelector('.month-Cts').value; 
     const pageCts = document.querySelector('.page-cts').value;
     const urlCts = sessionStorage.getItem('fileNewCts');
-    console.log(idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts);
+    console.log(idWorkerCts, nameWorkerCts, yearCts,monthCts,pageCts, urlCts);
     if(urlCts){
       if(!editStatus){
-        saveCts(idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts).then(() => {
+        saveCts(idWorkerCts, nameWorkerCts, yearCts, monthCts,pageCts, urlCts).then(() => {
           // sessionStorage.removeItem('fileNewCts');
           console.log('se registró constancia CTS');
           generarCts.reset();
@@ -77,6 +78,7 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
         updateCts(id, {
           idWorkerCts : idWorkerCts,
           nameWorkerCts : nameWorkerCts, 
+          yearCts: yearCts,
           monthCts : monthCts, 
           pageCts : pageCts, 
           urlCts : urlCts
@@ -96,11 +98,12 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
 
 });
 
-const saveCts = (idWorkerCts, nameWorkerCts,monthCts,pageCts, urlCts) => {
+const saveCts = (idWorkerCts, nameWorkerCts,yearCts,monthCts,pageCts, urlCts) => {
     const firestore = fs;
     return firestore.collection('cts').add({
         idWorkerCts,
         nameWorkerCts,
+        yearCts,
         monthCts,
         pageCts, 
         urlCts, 
@@ -128,7 +131,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
       ctsContainer.innerHTML +=  `
                               <tr>
                                 <td> ${cts.nameWorkerCts}</td>  
-                                <td> ${cts.monthCts}</td>
+                                <td> ${cts.monthCts}- ${cts.yearCts}</td>
                                 <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
                                 
                                 <td>${cts.confirmacion === true ? `<input type="checkbox" class="conformidad" value= ${cts.confirmacion}  name="conformidad" data-id="${cts.id}"  readonly="readonly" onclick="javascript: return false;" checked>` : 
@@ -174,14 +177,17 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                       editStatus = true;
 
                       const nameWorkerCts = document.querySelector('.nameWorkerCts');
-                      nameWorkerCts.value = cts.nameWorkerCts;
+                      nameWorkerCts.text = cts.nameWorkerCts;
+                      nameWorkerCts.value = cts.idWorkerCts;
+                      const yearCts = document.querySelector('.year'); 
+                      yearCts.value = cts.yearCts;
                       const monthCts = document.querySelector('.month-Cts'); 
                       monthCts.value = cts.monthCts;
                       const pageCts = document.querySelector('.page-cts');
                       pageCts.value = cts.pageCts;
                       const urlCts = document.querySelector('.addImgCts');
             
-                      console.log(nameWorkerCts.value, monthCts.value, pageCts.value, urlCts.file)
+                      console.log(nameWorkerCts.value, yearCts.value ,monthCts.value, pageCts.value, urlCts.file)
             
                       let res;
                       
@@ -200,7 +206,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                             console.log(res)
                             console.log(urlCts.file = res)
                             urlCts.file = res;
-                            console.log(nameWorkerCts.value, monthCts.value, pageCts.value, urlCts.file)
+                            console.log(nameWorkerCts.value, yearCts.value, monthCts.value, pageCts.value, urlCts.file)
                             editStatus = true;
                           
             
