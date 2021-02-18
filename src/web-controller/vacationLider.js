@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       vacation.id = doc.id;
       const user = firebase.auth().currentUser;
       vacationContainer.innerHTML += `
-                                        <tr>
+                                        <tr class="nameWorker">
                                         <td>${vacation.nameWorker}</td>  
                                         <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
                                         <td>Pendientes: ${vacation.vacationPending} días <br>
@@ -41,22 +41,24 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
     });
 
-    // fs.collection('vacation').onSnapshot((querySnapshot) => {
-    //   querySnapshot.forEach((doc) => {
-    //       console.log(`${doc.id} => ${doc.data().useruid}`);
-    //       const vacation = doc.data();
-    //       console.log(vacation.confirmacion)
-    //       if(vacation.confirmacion === true){
-    //         console.log('hay vida')
-    //         const checkboxs = document.querySelectorAll('.conformidad');
-    //         checkboxs.forEach(check => {
-    //             check.checked = true
-          
-              
-    //         })
-    //       }
-    //   })
-    // })
+
+    const searchName = document.querySelector('.search')
+    console.log(searchName);
+
+    const d = document;
+
+    function searchFilter(input, selector) {
+      d.addEventListener('keyup', (e) => {
+        if (e.target.matches(input)) {
+          d.querySelectorAll(selector).forEach((el) =>
+            el.textContent.toLowerCase().includes(e.target.value) ?
+            el.classList.remove("hide") :
+            el.classList.add("hide"))
+        }
+      })
+    }
+
+    searchFilter('.search', '.nameWorker')
 
     
 

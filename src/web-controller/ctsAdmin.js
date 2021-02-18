@@ -206,7 +206,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                             console.log(res)
                             console.log(urlCts.file = res)
                             urlCts.file = res;
-                            console.log(nameWorkerCts.value, yearCts.value, monthCts.value, pageCts.value, urlCts.file)
+                            console.log(nameWorkerCts.value, yearCts.value,  monthCts.value, pageCts.value, urlCts.file)
                             editStatus = true;
                           
             
