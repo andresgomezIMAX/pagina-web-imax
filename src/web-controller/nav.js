@@ -59,6 +59,26 @@ fs.collection('users').onSnapshot((querySnapshot) => {
 })
 
 
+const userNew = document.querySelector('.user-new')
+fs.collection('users').onSnapshot((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    // console.log(`${doc.id} => ${doc.data().checkAdmin}`);
+    const userLogueado = firebase.auth().currentUser;
+    const user = doc.data();
+    if (doc.id === userLogueado.uid) {
+     
+        userNew.innerHTML += `
+        <p><i class="fas fa-user"></i>${user.name}</p>`;
+
+  
+      }
+
+
+
+
+    })
+
+  });
 
 
 
