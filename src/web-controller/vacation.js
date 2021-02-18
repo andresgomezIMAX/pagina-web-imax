@@ -53,6 +53,7 @@ vacationExpire.innerHTML = '',
                 return texto.replace(/^(\d{4})-(\d{2})-(\d{2})$/g, '$3/$2/$1');
             }
             if (useruid === doc.id) {
+                const area = doc.data().area
 
                 //Obteniendo fecha de ingreso
                 const uid = doc.data();
@@ -129,7 +130,9 @@ vacationExpire.innerHTML = '',
                                 const res = cityRef.set({
                                     resDateExpireYear2,
                                     vacationPending,
-                                    nameWorker
+                                    nameWorker,
+                                    nameWorker,
+                                    area
 
                                 }, {
                                     merge: true
@@ -166,7 +169,8 @@ vacationExpire.innerHTML = '',
                                 const res = cityRef.set({
                                     resDateExpireYear,
                                     vacationPending,
-                                    nameWorker
+                                    nameWorker,
+                                    area
 
                                 }, {
                                     merge: true
