@@ -1,3 +1,5 @@
+
+
 const registerVacation = document.querySelector('.box-check-boss');
 const user = () => firebase.auth().currentUser;
 
@@ -267,32 +269,108 @@ const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) =>
     });
 };
 
-
+const getVacationId = (id) => fs.collection('vacation').doc(id).get();
 const confirVacationLider = document.querySelector('.table-vacation-vb');
 confirVacationLider.innerHTML = '';
+const templateDoc = document.querySelector('.templateDoc');
+const totalSection = document.querySelector('.container-vacations');
+templateDoc.innerHTML = '';
 
 fs.collection('vacation').onSnapshot((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().confirmacion}`);
+      
         const userLogueado = firebase.auth().currentUser;
         const vacation = doc.data();
+        vacation.id = doc.id;
         if (vacation.useruid === userLogueado.uid) {
-            console.log(vacation.useruid)
-            console.log(userLogueado.uid)
+            console.log(vacation.useruid +'=>' + userLogueado.uid)
             if (doc.data().confirmacion === true) {
                 console.log('vacaciones ok')
                 confirVacationLider.innerHTML += `
                 <tr>
                 <td>${vacation.nameWorker}</td>  
                 <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
-                <td> <button class="download-format">Descargar Formato</button></td>
-                <td>     <button class="send-format">Enviar Solicitud</button></td>
+                <td> <a class="download-format" data-id="${vacation.id}">DESCARGAR</a></td>
+                <td> <button class="send-format">Enviar Solicitud</button></td>
                 </tr>
             `
+     
+            const docFormato = document.querySelectorAll('.download-format');
+            docFormato.forEach(btn => { 
+              btn.addEventListener('click', async (e) => {
+                const doc = await getVacationId(e.target.dataset.id)
+                console.log(doc)
+                fs.collection('vacation').onSnapshot((querySnapshot) => {
+                    console.log(doc.data())
+                    const vacation = doc.data();
+                                templateDoc.innerHTML += `
+                                <div class= "box-boleta"> 
+                                <tr>
+                                <td>${vacation.nameWorker}</td>  
+                                <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
+                                
+                                </tr>
+                                
+                                </div>
+                                <button class="btnCreatePdf" onclick="generatePDF()">click aqui </button>
+                                
+                            `;                      
+                    totalSection.classList.add('hide');
+
+
+                //     document.addEventListener("DOMContentLoaded", () => {
+                //         const btnPDF = document.querySelector('.btnCreatePdf');
+                //         btnPDF.addEventListener("click", () => {
+                //             const elementConvert = document.querySelector('.templateDoc');
+                //             html2pdf()
+                //                 .set({
+                //                     margin:1,
+                //                     filename:'document.pdf',
+                                    
+                //                     html2canvas :{
+                //                         scale: 3,
+                //                         letterRendering:true,
+                //                     },
+                //                     jsPDF:{
+                //                         unit: "in",
+                //                         format: "a4",
+                //                         orientation:'portrait'
+                //                     }
+                
+                //                 })
+                //                 .from(elementConvert)
+                //                 .save()
+                //                 .catch(err => console.log(err))
+                //         })
+                // })
+                })
+              })
+            })
+        
+
+    
+            
+        
+
+   
             }
+          
         }
     })
 })
+
+function generatePDF(){
+    const element = document.querySelector('.box-boleta');
+
+    html2pdf()
+    .from(element)
+    .save();
+}
+
+
+
+
 
 // fs.collection('vacation').where('confirmacion', '==', 'true').get()
 // .then(()=>{

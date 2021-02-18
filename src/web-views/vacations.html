@@ -8,6 +8,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+
     <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
@@ -94,8 +97,8 @@
                                     <tr>
                                     <th>Colaborador</th>
                                     <th>Fecha</th>
-                                    <th>Conformidad</th>
-                                    <th>Conformidad</th>
+                                    <th>Formato</th>
+                                    <th>Enviar</th>
                                     </tr>
                                     <tbody class="table-vacation-vb" >
         
@@ -103,9 +106,14 @@
                                     
                                 </table>
                     </div>
+
             </div>
             
         </section>
+
+        <div class="templateDoc">
+
+        </div>
 
     </main>
     
@@ -130,5 +138,6 @@
   
     <script src="../web-controller/nav.js"></script> 
     <script src="../web-controller/vacation.js"></script> 
+    <!-- <script src="../web-controller/template.js"></script>  -->
 </body>
 </html>
