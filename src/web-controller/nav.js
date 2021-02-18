@@ -68,13 +68,10 @@ fs.collection('users').onSnapshot((querySnapshot) => {
     if (doc.id === userLogueado.uid) {
      
         userNew.innerHTML += `
-        <p><i class="fas fa-user"></i>${user.name}</p>`;
+        <p class="userLog"><i class="fas fa-user"></i>${user.name}</p>`;
 
   
       }
-
-
-
 
     })
 
