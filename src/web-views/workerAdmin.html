@@ -56,8 +56,8 @@
                     <div class="box-file">
                         <label for="admin">Administrador(a): </label>
                         <select name="leader"  class="checkAdmin" required >
-                            <option value="SI">SI</option>
                             <option value="NO">NO</option>
+                            <option value="SI">SI</option>
                         </select>
                     </div>
                 </div>
@@ -101,6 +101,7 @@
                     <div >
                         <label for="leader">Jefe Inmediato: </label>
                         <select name="leader"  class="leader-register" required >
+                            <option value="Gerencia">-</option>
                             <option value="Max Alfaro">Max Alfaro</option>
                             <option value="Elena Alfaro">Elena Alfaro</option>
                             <option value="Manuel Farje">Manuel Farje</option>
@@ -112,16 +113,7 @@
                             <option value="Andrés Gómez">Andrés Gómez</option>
                             <option value="Verónica Bustamante">Verónica Bustamante</option>
                             <option value="Enrique Alaba">Enrique Alaba</option>
-                            <option value="Lider de Administración y Recuso Humano">Lider de Administración y Recuso Humano</option>
-                            <option value="Lider de Gestión Comercial">Lider de Gestión Comercial </option>
-                            <option value="Lider de Tasaciones">Lider de Tasaciones</option>
-                            <option value="Lider de Informes Especiales, Valuaciones y Peritajes">Lider de Informes Especiales, Valuaciones y Peritajes</option>
-                            <option value="Lider de Evaluación y Monitoreo de Proyectos">Lider de Evaluación y Monitoreo de Proyectos</option>
-                            <option value="Lider de Gerencia y Supervisión de Obras">Lider de Gerencia y Supervisión de Obras</option>
-                            <option value="Lider de Gestión y Desarrollo de Proyectos">Lider de Gestión y Desarrollo de Proyectos</option>
-                            <option value="Lider de Innovación y Análisis de Data">Lider de Innovación y Análisis de Data</option>
-                            <option value="Lider de Streno Design Studio">Lider de Streno Design Studio</option>
-                            <option value="Lider de Gestión Marketing y Medio">Lider de Gestión Marketing y Medio</option>
+                            
                         </select>
                     </div>
                 </div>
@@ -140,6 +132,13 @@
                     <div>
                         <label for="firm">Firma electrónica: <i class="fas fa-paperclip"></i></label>
                         <input type="file" id="addImage" accept ="image/*" class= "firm-register" name="firm" required>
+                    </div>
+                    <div class="box-file">
+                        <label for="admin">Lider de Area: </label>
+                        <select name="leader"  class="checkLider" required >
+                            <option value="SI">SI</option>
+                            <option value="NO">NO</option>
+                        </select>
                     </div>
                 </div>
                 <div class="box-button-add">
@@ -177,6 +176,7 @@
                           <th>Salario Bruto</th>
                           <th>Firma Electronica</th>
                           <th>Administrador</th>
+                          <th>Lider de Área</th>
                           <th>Opciones</th>
                         </tr> 
                         <tbody class="table-users">

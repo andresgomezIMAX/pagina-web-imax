@@ -46,7 +46,8 @@ register.addEventListener('submit', (e) => {
   const entryDay = document.querySelector('.fechaAdmin').value;
   const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
   const urlfirmRegister = sessionStorage.getItem('firmRegister');
-  console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,urlfirmRegister)
+  const checkLider = document.querySelector('.checkLider').value;
+  console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
   
   firebase.auth().createUserWithEmailAndPassword(email,  password)
   .then(userCredential => {
@@ -62,7 +63,8 @@ register.addEventListener('submit', (e) => {
         leader,
         entryDay,
         salarioAdmin,
-        urlfirmRegister
+        urlfirmRegister,
+        checkLider
       });
      
   }).then(() => {
@@ -85,7 +87,7 @@ register.addEventListener('submit', (e) => {
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
 const deleteUserReg = id => firebase.firestore().collection('users').doc(id).delete();
-const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin) => firebase.firestore().collection('posts').doc(id).update({ 
+const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,checkLider) => firebase.firestore().collection('posts').doc(id).update({ 
   name, 
   checkAdmin, 
   dni, 
@@ -95,7 +97,8 @@ const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader
   area,
   leader,
   entryDay,
-  salarioAdmin });
+  salarioAdmin,
+  checkLider });
 
 const userContainer = document.querySelector('.table-users')
 window.addEventListener('DOMContentLoaded', async(e) => {
@@ -119,6 +122,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                   <td data-id="${user.id}" class="salarioAdminUser">${user.salarioAdmin}</td>
                                   <td><a href=${user.urlfirmRegister} download="Boleta.pdf"><button><i class="fas fa-download"></i>Descargar</button></a></td>
                                   <td data-id="${user.id}" class="checkUser">${user.checkAdmin}</td>
+                                  <td data-id="${user.id}" class="checkLider">${user.checkLider}</td>
                                   <td><i data-id="${user.id}" class="btn-editUser fas fa-edit"></i> <button data-id="${user.id}" class="btnSaveFile" id="btnSaveFile">💾</button> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}" data-name="${user.name}"></i></td>
                                 </tr>  
 
@@ -167,7 +171,9 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                     console.log(doc.id);
                                     if(e.target.dataset.id === doc.id){
                                       row.contentEditable = 'true';
-                                      row.focus()='true';
+                                      row.style.background = 'blue';
+                                      row.style.color = 'red';
+                                      // row.focus()='true';
                                     }
                                   })
                                 })
@@ -215,7 +221,8 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                           const leader = row.querySelector('.leaderUser').innerHTML;
                           const entryDay = row.querySelector('.fechaUser').innerHTML;
                           const salarioAdmin= row.querySelector('.salarioAdminUser').innerHTML;
-                          console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
+                          const checkLider = row.querySelector('.checkLider').innerHTML;
+                          console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin, checkLider)
                           const cityRef = firebase.firestore().collection('users').doc(docId );
                           const res = cityRef.update({
                             name, 
@@ -227,7 +234,8 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                             area,
                             leader,
                             entryDay,
-                            salarioAdmin
+                            salarioAdmin,
+                            checkLider
       
                          }, { merge: true });
                          alert('Se han actualizado los datos')
