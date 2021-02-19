@@ -31,57 +31,122 @@ const firmRegister = document.querySelector('.firm-register');
 })
 }
 
+
+const emailWorker = document.querySelector('.email-register');
+console.log(emailWorker)
+emailWorker.innerHTML = '';
+fs.collection('users').onSnapshot((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    // console.log(`${doc.id} => ${doc.data().leader}`);
+    const userLogueado = firebase.auth().currentUser;
+    const useruid = userLogueado.uid;
+    const user = doc.data()
+    user.id = doc.id;
+    emailWorker.innerHTML += `
+                <option value="${user.email}" >${doc.data().email}</option>`
+  })
+})
+
+
+
 // REGISTRANDO USUARIOS 
 const register = document.querySelector('.box-fill-data');
 register.addEventListener('submit', (e) => {
   e.preventDefault();
-  const name = document.querySelector('.name-register').value;
-  const checkAdmin = document.querySelector('.checkAdmin').value;
-  const dni = document.querySelector('.dni-register').value;
-  const phone= document.querySelector('.phone-register').value;
-  const email = document.querySelector('.email-register').value;
-  const password = document.querySelector('.password-register').value;
-  const area = document.querySelector('.area-register').value;
-  const leader = document.querySelector('.leader-register').value;
-  const entryDay = document.querySelector('.fechaAdmin').value;
-  const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
-  const urlfirmRegister = sessionStorage.getItem('firmRegister');
-  const checkLider = document.querySelector('.checkLider').value;
-  console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
-  
-  firebase.auth().createUserWithEmailAndPassword(email,  password)
-  .then(userCredential => {
-    const db = firebase.firestore();
-      return db.collection('users').doc(userCredential.user.uid).set({
-        name, 
-        checkAdmin,
-        dni, 
-        phone, 
-        email, 
-        password, 
-        area,
-        leader,
-        entryDay,
-        salarioAdmin,
-        urlfirmRegister,
-        checkLider
-      });
-     
-  }).then(() => {
-    register.reset();
-    alert('Se agregó un nuevo colaborador'); 
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    if (errorCode === 'auth/weak-password') {
-      document.querySelector('#reg_error_inner').innerHTML = 'La contraseña es demasiado débil. Utlice letras y números';
-    } else {
-      document.querySelector('#reg_error_inner').innerHTML = errorMessage;
-    }
-  });
+  fs.collection('users').get().then((querySnapshot)=>{
+    querySnapshot.forEach(doc => {
+      const user = doc.data();
+      console.log(user)
+      user.id = doc.id;
+      const docId = user.id;
+      // const userLogueado = firebase.auth().currentUser;
+      const email = document.querySelector('.email-register').value;
+      console.log(docId)
+      console.log(email)
+      console.log(user.email)   
+      if (email === user.email) {
+        const name = document.querySelector('.name-register').value;
+        const checkAdmin = document.querySelector('.checkAdmin').value;
+        const dni = document.querySelector('.dni-register').value;
+        const phone= document.querySelector('.phone-register').value;
+        const area = document.querySelector('.area-register').value;
+        const leader = document.querySelector('.leader-register').value;
+        const entryDay = document.querySelector('.fechaAdmin').value;
+        const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
+        const urlfirmRegister = sessionStorage.getItem('firmRegister');
+        const checkLider = document.querySelector('.checkLider').value;
+        console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
+        const cityRef = firebase.firestore().collection('users').doc(docId);
+        const res = cityRef.update({
+          name, 
+          checkAdmin,
+          email,
+          dni, 
+          phone, 
+          area,
+          leader,
+          entryDay,
+          salarioAdmin,
+          urlfirmRegister,
+          checkLider
 
-});
+       }, { merge: true });
+       alert('Los datos han sido guardados')
+      }
+    })
+  })
+})    
+
+
+// register.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const name = document.querySelector('.name-register').value;
+//   const checkAdmin = document.querySelector('.checkAdmin').value;
+//   const dni = document.querySelector('.dni-register').value;
+//   const phone= document.querySelector('.phone-register').value;
+//   const email = document.querySelector('.email-register').value;
+//   const password = document.querySelector('.password-register').value;
+//   const area = document.querySelector('.area-register').value;
+//   const leader = document.querySelector('.leader-register').value;
+//   const entryDay = document.querySelector('.fechaAdmin').value;
+//   const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
+//   const urlfirmRegister = sessionStorage.getItem('firmRegister');
+//   const checkLider = document.querySelector('.checkLider').value;
+//   console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
+  
+//   firebase.auth().createUserWithEmailAndPassword(email,  password)
+//   .then(userCredential => {
+//     const db = firebase.firestore();
+//       return db.collection('users').doc(userCredential.user.uid).set({
+//         name, 
+//         checkAdmin,
+//         dni, 
+//         phone, 
+//         email, 
+//         password, 
+//         area,
+//         leader,
+//         entryDay,
+//         salarioAdmin,
+//         urlfirmRegister,
+//         checkLider
+//       });
+     
+//   }).then(() => {
+//     register.reset();
+//     alert('Se agregó un nuevo colaborador'); 
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     if (errorCode === 'auth/weak-password') {
+//       document.querySelector('#reg_error_inner').innerHTML = 'La contraseña es demasiado débil. Utlice letras y números';
+//     } else {
+//       document.querySelector('#reg_error_inner').innerHTML = errorMessage;
+//     }
+//   });
+
+// });
 
 // PARA MOSTRAR DATOS EN LA TABLA DE BOLETAS
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
@@ -177,30 +242,12 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                     }
                                   })
                                 })
-                                // btnUpdateRow.forEach(btn => {
-                                //   console.log(btnUpdateRow)
-                                //   btn.addEventListener('click', async (e) => {
-                                //     console.log(e.target.dataset.id);
-                                //     console.log(doc.id);
-                                //     if(e.target.dataset.id === doc.id){
-                                //       btnUpdateRow.hidden = false;
-                                //     }
-                                //   })
-                                // })
                               }
                             })
                       })
                       
                     });
                   })  
-
-                    // btnEditRow.addEventListener('click', () => {
-                    //   console.log('clickeando editar');
-                    //   const editableRow = document.querySelector('.row-users');
-                    //   editableRow.contentEditable = 'true';
-                    //   btnUpdateRow.hidden = false;
-                    // });
-
 
                   btnUpdateRow.forEach(update => {
                     update.addEventListener('click', (e) =>{
@@ -242,87 +289,10 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                         }
                       
                       })
-                    })
-
-                    // fs.collection('users').get().then((querySnapshot)=>{
-                    //   querySnapshot.forEach(doc => {
-                    //     console.log(doc.id)
-                    //     console.log(e.target.dataset.id)
-                    //     if(e.target.dataset.id === doc.id){
-                    //       const name = document.querySelector('.nameUser').innerHTML;
-                    //       const checkAdmin = document.querySelector('.checkUser').innerHTML;
-                    //       const dni = document.querySelector('.dniUser').innerHTML;
-                    //       const phone= document.querySelector('.phoneUser').innerHTML;
-                    //       const email = document.querySelector('.emailUser').innerHTML;
-                    //       const password = document.querySelector('.passwordUser').innerHTML;
-                    //       const area = document.querySelector('.areaUser').innerHTML;
-                    //       const leader = document.querySelector('.leaderUser').innerHTML;
-                    //       const entryDay = document.querySelector('.fechaUser').innerHTML;
-                    //       const salarioAdmin= document.querySelector('.salarioAdminUser').innerHTML;
-                    //       console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
-                    //       const cityRef = firebase.firestore().collection('users').doc(doc.id);
-                    //       const res = cityRef.update({
-                    //         name, 
-                    //         checkAdmin,
-                    //         dni, 
-                    //         phone, 
-                    //         email, 
-                    //         password, 
-                    //         area,
-                    //         leader,
-                    //         entryDay,
-                    //         salarioAdmin
-      
-                    //      });
-                    //     }
-                    //   })
-                    // })  
+                    }) 
                 
                     })
                   })
-                    
-                  // btnUpdateRow.addEventListener('click', () => {
-                  //   console.log('UPDATE');
-                  //   const name = document.querySelector('.nameUser').innerHTML;
-                  //   const checkAdmin = document.querySelector('.checkUser').innerHTML;
-                  //   const dni = document.querySelector('.dniUser').innerHTML;
-                  //   const phone= document.querySelector('.phoneUser').innerHTML;
-                  //   const email = document.querySelector('.emailUser').innerHTML;
-                  //   const password = document.querySelector('.passwordUser').innerHTML;
-                  //   const area = document.querySelector('.areaUser').innerHTML;
-                  //   const leader = document.querySelector('.leaderUser').innerHTML;
-                  //   const entryDay = document.querySelector('.fechaUser').innerHTML;
-                  //   const salarioAdmin= document.querySelector('.salarioAdminUser').innerHTML;
-                  //   console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin)
-                  //   const cityRef = firebase.firestore().collection('users').doc(doc.id);
-                  //   const res = cityRef.update({
-                  //     name, 
-                  //     checkAdmin,
-                  //     dni, 
-                  //     phone, 
-                  //     email, 
-                  //     password, 
-                  //     area,
-                  //     leader,
-                  //     entryDay,
-                  //     salarioAdmin
-
-                  //  }, { merge: true });
-                  // });
-
-                  // const btnsEdit = document.querySelectorAll('.btnEdit');
-                  // btnsEdit.forEach((btn) => {
-                  //   btn.addEventListener('click', async(e) => {
-                  //    const doc = await getPostEdit(e.target.dataset.id)
-                  //    console.log(doc.data())
-                  //    const post = doc.data();
-                  //    editStatus = true;
-                  //    id = doc.id;
-                  //    const inputTextArea = document.querySelector ('.textarea');
-                  //    inputTextArea.value = post.content;
-                  //    btnNewPost.innerHTML = 'Actualizar'
-                  //   })
-                  // });
     });
   })
  

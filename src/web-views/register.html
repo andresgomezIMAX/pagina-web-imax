@@ -3,46 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>intranet</title>
 </head>
 <body>
     <section class="container-login">
         <div class="box-login">
-            <form class="login-form">
-                <img class="logo-login" src="./assets/logo.png">
+            <form class="box-fill-data">
+                <img class="logo-login" src="../assets/logo.png">
                
                 <div class="box-input">
                     <i class="user-icon fas fa-user"></i>
-                    <input class="emailLogin" name="email" type="email" placeholder="Usuario">
+                    <input class="email-Register" name="email" type="email" placeholder="Email">
                 </div>
                 <div class="box-input">
                     <i class="user-icon fas fa-lock"></i>
-                    <input class="passwordLogin" type="password" placeholder="Contraseña">
+                    <input class="password-Register" type="password" placeholder="Contraseña">
                 </div>
                 <div class="reg_error_inner" id="reg_error_inner"></div>
-                <button class="btn-login" type="submit" > ingresar</button>
-                <div class="login-google">
-                    <p>¿No tienes cuenta?</p>
-                    <a href="web-views/register.html">Registrate</a>
-                </div>
+                <button class="btn-login" type="submit" >Registrar</button>
             </form>
         </div>
        
 
     </section>
 
-<!-- Firebase -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    
 
     <script>
     // Your web app's Firebase configuration
@@ -64,7 +55,7 @@
     </script>
 
     <!-- custom code -->
-    <script src="./web-controller/login.js"></script> 
+    <script src="../web-controller/registerUser.js"></script> 
 
 
 </body>

@@ -66,7 +66,6 @@ fs.collection('users').onSnapshot((querySnapshot) => {
     const userLogueado = firebase.auth().currentUser;
     const user = doc.data();
     if (doc.id === userLogueado.uid) {
-     
         userNew.innerHTML += `
         <p class="userLog"><i class="fas fa-user"></i>${user.name}</p>`;
 

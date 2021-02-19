@@ -939,7 +939,7 @@
           justify-content: center;
 }
 
-.container-login .box-login .login-form {
+.container-login .box-login .login-form, .container-login .box-login .box-fill-data {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -959,12 +959,12 @@
   padding: 25px 0;
 }
 
-.container-login .box-login .login-form .logo-login {
+.container-login .box-login .login-form .logo-login, .container-login .box-login .box-fill-data .logo-login {
   width: 45%;
   margin: 4%;
 }
 
-.container-login .box-login .login-form .box-input {
+.container-login .box-login .login-form .box-input, .container-login .box-login .box-fill-data .box-input {
   margin: 20px;
   height: 45px;
   width: 70%;
@@ -977,7 +977,7 @@
           align-items: flex-end;
 }
 
-.container-login .box-login .login-form .box-input .emailLogin, .container-login .box-login .login-form .box-input .passwordLogin {
+.container-login .box-login .login-form .box-input .emailLogin, .container-login .box-login .login-form .box-input .passwordLogin, .container-login .box-login .login-form .box-input .email-Register, .container-login .box-login .login-form .box-input .password-Register, .container-login .box-login .box-fill-data .box-input .emailLogin, .container-login .box-login .box-fill-data .box-input .passwordLogin, .container-login .box-login .box-fill-data .box-input .email-Register, .container-login .box-login .box-fill-data .box-input .password-Register {
   color: black;
   font-size: 1.1rem;
   background-color: transparent;
@@ -988,13 +988,13 @@
   outline: none;
 }
 
-.container-login .box-login .login-form .box-input .user-icon {
+.container-login .box-login .login-form .box-input .user-icon, .container-login .box-login .box-fill-data .box-input .user-icon {
   font-size: 1.3rem;
   color: #868686;
   margin: 10px;
 }
 
-.container-login .box-login .login-form .btn-login {
+.container-login .box-login .login-form .btn-login, .container-login .box-login .box-fill-data .btn-login {
   color: #ffffff;
   font-size: 1.2rem;
   font-weight: 700;
@@ -1007,7 +1007,7 @@
   outline: none;
 }
 
-.container-login .box-login .login-form .login-google {
+.container-login .box-login .login-form .login-google, .container-login .box-login .box-fill-data .login-google {
   margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1024,7 +1024,7 @@
           justify-content: center;
 }
 
-.container-login .box-login .login-form .login-google .google-icon {
+.container-login .box-login .login-form .login-google .google-icon, .container-login .box-login .box-fill-data .login-google .google-icon {
   font-size: 1.3rem;
   color: #868686;
   margin: 10px;
@@ -2404,7 +2404,7 @@
   margin-left: 12px;
 }
 
-.box-admin-boletas .box-fill-data .fill-input .checkAdmin {
+.box-admin-boletas .box-fill-data .fill-input .checkAdmin, .box-admin-boletas .box-fill-data .fill-input .checkLider {
   width: 15%;
   height: 27px;
 }
