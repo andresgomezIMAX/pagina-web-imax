@@ -256,7 +256,7 @@ registerVacation.addEventListener('submit', (e) => {
 });
 
 
-//funcion para guaradr vacacones en firestore  
+//funcion para guaradr vacaciones en firestore  
 const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) => {
     const firestore = fs;
     const userLogueado = firebase.auth().currentUser;

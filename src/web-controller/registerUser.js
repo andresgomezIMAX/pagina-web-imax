@@ -10,14 +10,16 @@ register.addEventListener('submit', (e) => {
   console.log( email, password,)
   
   firebase.auth().createUserWithEmailAndPassword(email,  password)
-  .then(userCredential => {
-    const db = firebase.firestore();
-      return db.collection('users').doc(userCredential.user.uid).set({
-        email, 
-        password, 
-      });
+  .then(userCredential =>
+  //    {
+  //   const db = firebase.firestore();
+  //     return db.collection('users').doc(userCredential.user.uid).set({
+  //       email, 
+  //       password, 
+  //     });
      
-  }).then(() => {
+  // }).then(() => 
+  {
     register.reset();
     location.href="noticias.html"
   })

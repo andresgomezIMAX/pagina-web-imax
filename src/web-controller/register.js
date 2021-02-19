@@ -47,55 +47,58 @@ fs.collection('users').onSnapshot((querySnapshot) => {
   })
 })
 
-
+const saveUsers = (useruid, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider) => {
+  const firestore = fs;
+  const userLogueado = firebase.auth().currentUser;
+  console.log(userLogueado)
+  return firestore.collection('users').add({
+    useruid,
+    name, 
+    checkAdmin, 
+    dni, 
+    phone, 
+    email, 
+    password, 
+    area,
+    leader,
+    entryDay,
+    salarioAdmin,
+    urlfirmRegister,
+    checkLider
+  });
+};
 
 // REGISTRANDO USUARIOS 
 const register = document.querySelector('.box-fill-data');
 register.addEventListener('submit', (e) => {
   e.preventDefault();
-  fs.collection('users').get().then((querySnapshot)=>{
-    querySnapshot.forEach(doc => {
-      const user = doc.data();
-      console.log(user)
-      user.id = doc.id;
-      const docId = user.id;
-      // const userLogueado = firebase.auth().currentUser;
-      const email = document.querySelector('.email-register').value;
-      console.log(docId)
-      console.log(email)
-      console.log(user.email)   
-      if (email === user.email) {
-        const name = document.querySelector('.name-register').value;
-        const checkAdmin = document.querySelector('.checkAdmin').value;
-        const dni = document.querySelector('.dni-register').value;
-        const phone= document.querySelector('.phone-register').value;
-        const area = document.querySelector('.area-register').value;
-        const leader = document.querySelector('.leader-register').value;
-        const entryDay = document.querySelector('.fechaAdmin').value;
-        const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
-        const urlfirmRegister = sessionStorage.getItem('firmRegister');
-        const checkLider = document.querySelector('.checkLider').value;
-        console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
-        const cityRef = firebase.firestore().collection('users').doc(docId);
-        const res = cityRef.update({
-          name, 
-          checkAdmin,
-          email,
-          dni, 
-          phone, 
-          area,
-          leader,
-          entryDay,
-          salarioAdmin,
-          urlfirmRegister,
-          checkLider
+  const userLogueado = firebase.auth().currentUser;
+  console.log(userLogueado)
+  const useruid = userLogueado.uid;
+  const userEmail = userLogueado.email;
+  console.log(useruid)
+  const email = document.querySelector('.email-register').value;
+  if(email === userEmail){
+    const name = document.querySelector('.name-register').value;
+    const checkAdmin = document.querySelector('.checkAdmin').value;
+    const dni = document.querySelector('.dni-register').value;
+    const phone= document.querySelector('.phone-register').value;
+    const area = document.querySelector('.area-register').value;
+    const leader = document.querySelector('.leader-register').value;
+    const entryDay = document.querySelector('.fechaAdmin').value;
+    const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
+    const urlfirmRegister = sessionStorage.getItem('firmRegister');
+    const checkLider = document.querySelector('.checkLider').value;
+    console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
+    saveUsers(useruid, name, checkAdmin, dni, email, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider).then(() => {
+      // sessionStorage.removeItem('fileNewTicked');
+      console.log('se registró solicitud de vacaciones');
+      register.reset();
+      alert('Se resgistraron los datos del usuario');
+  });
+  }
+})
 
-       }, { merge: true });
-       alert('Los datos han sido guardados')
-      }
-    })
-  })
-})    
 
 
 // register.addEventListener('submit', (e) => {
