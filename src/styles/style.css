@@ -1737,7 +1737,7 @@
 
 .box-boletas .container-vacations {
   background-color: #F3F3F3;
-  height: 70%;
+  height: 90%;
   width: 90%;
 }
 
@@ -1767,6 +1767,7 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 35%;
   padding: 2%;
   border-bottom: 1px solid rgba(69, 69, 69, 0.6);
 }
@@ -1863,7 +1864,19 @@
 
 .box-boletas .container-vacations .box-send-request {
   width: 100%;
+  height: 50%;
   padding: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .box-boletas .container-vacations .box-send-request p {
@@ -1885,7 +1898,7 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 60%;
+  height: 90%;
   overflow: auto;
 }
 
@@ -1905,57 +1918,88 @@
   height: 40px;
 }
 
-.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table button, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td button {
-  border: none;
-  outline: none;
-  background-color: #ffffff;
-  color: #292727;
-  font-weight: bold;
-}
-
-.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table button:active, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td button:active {
-  color: black;
-}
-
-.box-boletas .container-vacations .box-send-request div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.box-boletas .container-vacations .box-send-request div .download-format {
+.box-boletas .container-vacations .box-send-request .download-format {
   border: none;
   outline: none;
   background-color: #F3F3F3;
   font-family: "Pridi",gitserif;
-  font-size: 20px;
+  font-size: 16px;
   color: red;
   font-weight: bold;
 }
 
-.box-boletas .container-vacations .box-send-request div .download-format:active {
+.box-boletas .container-vacations .box-send-request .download-format:active {
   color: black;
 }
 
-.box-boletas .container-vacations .box-send-request div .send-format {
+.box-boletas .container-vacations .box-send-request .send-format {
   border-radius: 9px;
-  width: 20%;
+  width: 90%;
   padding: 5px 0;
   margin: 1%;
   color: white;
   font-family: "Pridi",gitserif;
-  font-size: 20px;
+  font-size: 16px;
+  height: 30px;
+  font-weight: 300;
+  outline: none;
+  border: none;
+  background-color: #8abccf;
+}
+
+.box-boletas .container-vacations .box-send-request .send-format:active {
+  background-color: #00ADEF !important;
+}
+
+.box-boletas .templateDoc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.box-boletas .templateDoc .box-boleta-pdf {
+  width: 65%;
+  margin-left: 15%;
+  height: 450px;
+  padding: 3%;
+  background: white;
+}
+
+.box-boletas .templateDoc .box-boleta-pdf h1 {
+  margin: 2%;
+  margin-left: 10%;
+}
+
+.box-boletas .templateDoc .box-boleta-pdf .body-doc {
+  margin: 2%;
+}
+
+.box-boletas .templateDoc .box-boleta-pdf .firma-pdf {
+  width: 20%;
+  margin-left: 40%;
+}
+
+.box-boletas .templateDoc .btnCreatePdf {
+  border-radius: 9px;
+  width: 18%;
+  padding: 5px 0;
+  margin: 1% 1% 1% 40%;
+  color: white;
+  font-family: "Pridi",gitserif;
+  font-size: 25px;
+  height: 40px;
   font-weight: 700;
   outline: none;
   border: none;
   background-color: #00ADEF;
 }
 
-.box-boletas .container-vacations .box-send-request div .send-format:active {
-  background-color: #8DB9CA !important;
+.box-boletas .templateDoc .btnCreatePdf:active {
+  background-color: #8abccf !important;
 }
 
 .hide {

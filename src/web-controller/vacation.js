@@ -55,7 +55,9 @@ vacationExpire.innerHTML = '',
                 return texto.replace(/^(\d{4})-(\d{2})-(\d{2})$/g, '$3/$2/$1');
             }
             if (useruid === doc.id) {
-                const area = doc.data().area
+                const area = doc.data().area;
+                const dni = doc.data().dni;
+                const urlfirmRegister = doc.data().urlfirmRegister;
 
                 //Obteniendo fecha de ingreso
                 const uid = doc.data();
@@ -134,7 +136,10 @@ vacationExpire.innerHTML = '',
                                     vacationPending,
                                     nameWorker,
                                     nameWorker,
-                                    area
+                                    area,
+                                    dni,
+                                    urlfirmRegister,
+                                    currentDate
 
                                 }, {
                                     merge: true
@@ -172,7 +177,10 @@ vacationExpire.innerHTML = '',
                                     resDateExpireYear,
                                     vacationPending,
                                     nameWorker,
-                                    area
+                                    area,
+                                    dni,
+                                    urlfirmRegister,
+                                    currentDate
 
                                 }, {
                                     merge: true
@@ -301,22 +309,35 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
               btn.addEventListener('click', async (e) => {
                 const doc = await getVacationId(e.target.dataset.id)
                 console.log(doc)
+                
                 fs.collection('vacation').onSnapshot((querySnapshot) => {
                     console.log(doc.data())
+                  
                     const vacation = doc.data();
                                 templateDoc.innerHTML += `
-                                <div class= "box-boleta"> 
-                                <tr>
-                                <td>${vacation.nameWorker}</td>  
-                                <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
+                                <div class= "box-boleta-pdf"> 
+                                <img class="firma-pdf" src="../assets/logo.png">
+                                <h1>Solicitud de vacaciones</h1>
+                                <p class="body-doc">Mediante la presente me dirijo a usted para solicitar
+                                con anticipacion los días de vacaciones correspondientes a este año, desde ${vacation.startOfVacation} 
+                                al ${vacation.endOfVacation}
+                                por ser mi derecho </p>
+
+                                <p class="body-doc"> Agradeciendo su atencion y esperando que no exista inconveniente por 
+                                su parte, quedo a la espera de su contestacion </p>
+
+                                <p class="body-doc"> Le saluda atentamente ${vacation.nameWorker}</p>
                                 
-                                </tr>
+                                <img class="firma-pdf" src="${vacation.urlfirmRegister} ">
+                               
                                 
-                                </div>
-                                <button class="btnCreatePdf" onclick="generatePDF()">click aqui </button>
+                                </div> 
+                                <button class="btnCreatePdf" onclick="generatePDF()">Descargar </button>
                                 
-                            `;                      
+                            `;     
+                                         
                     totalSection.classList.add('hide');
+               
 
 
                 //     document.addEventListener("DOMContentLoaded", () => {
@@ -361,9 +382,26 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
 })
 
 function generatePDF(){
-    const element = document.querySelector('.box-boleta');
+    const element = document.querySelector('.box-boleta-pdf');
 
     html2pdf()
+    .set({
+        margin: 1,
+        filename: 'documento.pdf',
+        image: {
+            type: 'jpeg',
+            quality: 0.98
+        },
+        html2canvas: {
+            scale: 3, // A mayor escala, mejores gráficos, pero más peso
+            letterRendering: true,
+        },
+        jsPDF: {
+            unit: "in",
+            format: "a3",
+            orientation: 'portrait' // landscape o portrait
+        }
+    })
     .from(element)
     .save();
 }

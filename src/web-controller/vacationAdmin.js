@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           <td>${vacation.area}</td>
           <td>Pendientes: ${vacation.vacationPending} días <br>
           Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
-          <td><button><i class="fas fa-download"></i> Imprimir</button></td>
+          <td><button onclick="generatePDF()"><i class="fas fa-download"></i> Imprimir</button></td>
         </tr>
                  `;
 
@@ -56,3 +56,10 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 
 })
 
+// function generatePDF(){
+//   const element = document.querySelector('.box-boleta');
+
+//   html2pdf()
+//   .from(element)
+//   .save();
+// }
