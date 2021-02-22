@@ -2,7 +2,7 @@ let editStatus = false;
 let id = '';
 
 //Para nombres por defecto
-const boxNameWorkerCts = document.querySelector('.nameWorkerCts');
+const boxNameWorkerCts = document.querySelector('.nameWorkersCts');
 console.log(boxNameWorkerCts)
 boxNameWorkerCts.innerHTML = '',
 fs.collection('users').onSnapshot((querySnapshot) => {
@@ -58,8 +58,8 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
     // const userLogueado = firebase.auth().currentUser;
     // console.log(userLogueado)
     // const useruid = userLogueado.uid;
-    const boxIdCts = document.querySelector('.nameWorkerCts');
-    const idWorkerCts = document.querySelector('.nameWorkerCts').value;
+    const boxIdCts = document.querySelector('.nameWorkersCts');
+    const idWorkerCts = document.querySelector('.nameWorkersCts').value;
     const nameWorkerCts = boxIdCts.options[boxIdCts.selectedIndex].text;
     const yearCts = document.querySelector('.year').value;
     const monthCts = document.querySelector('.month-Cts').value; 
@@ -87,12 +87,14 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
           alert('se actualizó constancia CTS');
           generarCts.reset();
  
-  }
+      }
 
-  editStatus = false;
-  id = '';
-  btnGenerarCts.innerHTML = 'Generar'
+    editStatus = false;
+    id = '';
+    btnGenerarCts.innerHTML = 'Generar'
         
+    } else {
+      alert("Datos incompletos, Porfavor verifique");
     }
     
 
@@ -129,7 +131,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
       cts.id = doc.id;
       const user = firebase.auth().currentUser;
       ctsContainer.innerHTML +=  `
-                              <tr>
+                              <tr class ="nameWorkerCts monthCts">
                                 <td> ${cts.nameWorkerCts}</td>  
                                 <td> ${cts.monthCts}- ${cts.yearCts}</td>
                                 <td><a href=${cts.urlCts} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
@@ -141,16 +143,41 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                              `;
 
 
-                  const deleteCts = document.querySelectorAll('.deleteCts');
-                  deleteCts.forEach(btn => {
-                    btn.addEventListener('click', async (e) => {
-                      const r = confirm('¿Quieres eliminar esta Constancia CTS?')
-                      if (r == true) {
-                        await deleteCtsId(e.target.dataset.id)
-                      } 
-                  
-                    })
-                  });
+                             const searchName = document.querySelector('.searchNameCts')
+                             console.log(searchName);
+                       
+                             const searchMonth = document.querySelector('.searchMonthCts')
+                             console.log(searchMonth);
+                       
+                             const d = document;
+                       
+                             function searchFilter(input, selector) {
+                               d.addEventListener('keyup', (e) => {
+                                 if (e.target.matches(input)) {
+                                   d.querySelectorAll(selector).forEach((el) =>
+                                     el.textContent.toLowerCase().includes(e.target.value) ?
+                                     el.classList.remove("hide") :
+                                     el.classList.add("hide"))
+                                 }
+                               })
+                             }
+                       
+                             searchFilter('.searchNameCts', '.nameWorkerCts')
+                       
+                             searchFilter('.searchMonthCts', '.monthCts')
+
+
+
+    const deleteCts = document.querySelectorAll('.deleteCts');
+    deleteCts.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const r = confirm('¿Quieres eliminar esta Constancia CTS?')
+        if (r == true) {
+          await deleteCtsId(e.target.dataset.id)
+        } 
+    
+      })
+    });
 
                   // const btnsEdit = document.querySelectorAll('.btnEdit');
                   // btnsEdit.forEach((btn) => {
@@ -176,7 +203,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                       console.log(id)
                       editStatus = true;
 
-                      const nameWorkerCts = document.querySelector('.nameWorkerCts');
+                      const nameWorkerCts = document.querySelector('.nameWorkersCts');
                       nameWorkerCts.text = cts.nameWorkerCts;
                       nameWorkerCts.value = cts.idWorkerCts;
                       const yearCts = document.querySelector('.year'); 

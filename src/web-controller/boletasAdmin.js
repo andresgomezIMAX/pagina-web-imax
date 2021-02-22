@@ -2,7 +2,7 @@ let editStatus = false;
 let id = '';
 
 //Para nombres
-const boxNameWorker = document.querySelector('.nameWorker');
+const boxNameWorker = document.querySelector('.nameWorkers');
 console.log(boxNameWorker)
 boxNameWorker.innerHTML = '';
 fs.collection('users').onSnapshot((querySnapshot) => {
@@ -58,8 +58,8 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
   // const userLogueado = firebase.auth().currentUser;
   // console.log(userLogueado)
   // const useruid = userLogueado.uid;
-  const boxIdWorder = document.querySelector('.nameWorker')
-  const idWorker = document.querySelector('.nameWorker').value;
+  const boxIdWorder = document.querySelector('.nameWorkers')
+  const idWorker = document.querySelector('.nameWorkers').value;
   const nameWorker = boxIdWorder.options[boxIdWorder.selectedIndex].text;
   const year = document.querySelector('.year').value;
   const month = document.querySelector('.month').value;
@@ -93,6 +93,8 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
     id = '';
     btnGenerarBoleta.innerHTML = 'Generar'
 
+  } else {
+    alert("Datos incompletos, porfavor verifique")
   }
 
 });
@@ -131,7 +133,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
       page.id = doc.id;
       const user = firebase.auth().currentUser;
       pageContainer.innerHTML += `
-                              <tr>
+                              <tr class ="nameWorker month">
                                 <td> ${page.nameWorker}</td>  
                                 <td> ${page.month} - ${page.year}</td>
                                 <td><a href=${page.urlBoleta} download="Boleta.pdf"><button><i class="fas fa-download"></i> Descargar</button></a></td>
@@ -140,6 +142,32 @@ window.addEventListener('DOMContentLoaded', async (e) => {
                                 `<input type="checkbox" class="conformidad" value= ${page.confirmacion}  name="conformidad" data-id="${page.id}" readonly="readonly" onclick="javascript: return false;" > `} </td>
                                 <td><i data-id="${page.id}" class="btnEdit fas fa-edit"></i> <i class="deletePage fas fa-trash-alt" data-id="${page.id}"></i></td>
                               </tr>`;
+
+
+      const searchName = document.querySelector('.searchName')
+      console.log(searchName);
+
+      const searchMonth = document.querySelector('.searchMonth')
+      console.log(searchMonth);
+
+      const d = document;
+
+      function searchFilter(input, selector) {
+        d.addEventListener('keyup', (e) => {
+          if (e.target.matches(input)) {
+            d.querySelectorAll(selector).forEach((el) =>
+              el.textContent.toLowerCase().includes(e.target.value) ?
+              el.classList.remove("hide") :
+              el.classList.add("hide"))
+          }
+        })
+      }
+
+      searchFilter('.searchName', '.nameWorker')
+
+      searchFilter('.searchMonth', '.month')
+
+  
 
 
       const deletePage = document.querySelectorAll('.deletePage');
@@ -162,7 +190,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
           console.log(id)
           editStatus = true;
 
-          const nameWorker = document.querySelector('.nameWorker');
+          const nameWorker = document.querySelector('.nameWorkers');
           nameWorker.text= page.nameWorker
           nameWorker.value= page.idWorker
           const year = document.querySelector('.year');

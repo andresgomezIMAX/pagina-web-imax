@@ -300,7 +300,6 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
                 <td>${vacation.nameWorker}</td>  
                 <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
                 <td> <a class="download-format" data-id="${vacation.id}">DESCARGAR</a></td>
-                <td> <button class="send-format">Enviar Solicitud</button></td>
                 </tr>
             `
      
