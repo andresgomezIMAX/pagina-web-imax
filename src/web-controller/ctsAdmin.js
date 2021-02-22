@@ -49,10 +49,12 @@ const addCts = document.querySelector('.addImgCts')
 })
 }
 
+
+
 // ADMINISTRADOR GENERAR CTS
 const generarCts = document.querySelector('.generate-ticket');
 const btnGenerarCts = document.querySelector('.btn-generar-cts');
-btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
+generarCts.addEventListener('submit', generarCtsFn = (e) => {
     e.preventDefault();
     console.log('hola');
     // const userLogueado = firebase.auth().currentUser;
@@ -69,33 +71,32 @@ btnGenerarCts.addEventListener('click', generarCtsFn = (e) => {
     if(urlCts){
       if(!editStatus){
         saveCts(idWorkerCts, nameWorkerCts, yearCts, monthCts,pageCts, urlCts).then(() => {
-          // sessionStorage.removeItem('fileNewCts');
+          sessionStorage.removeItem('fileNewCts');
           console.log('se registró constancia CTS');
           generarCts.reset();
           alert('se registró constancia CTS');
+         
       });
-      }else {
-        updateCts(id, {
-          idWorkerCts : idWorkerCts,
-          nameWorkerCts : nameWorkerCts, 
-          yearCts: yearCts,
-          monthCts : monthCts, 
-          pageCts : pageCts, 
-          urlCts : urlCts
-          } )
-
-          alert('se actualizó constancia CTS');
-          generarCts.reset();
- 
       }
-
-    editStatus = false;
-    id = '';
-    btnGenerarCts.innerHTML = 'Generar'
         
-    } else {
-      alert("Datos incompletos, Porfavor verifique");
-    }
+    }else {
+      updateCts(id, {
+        idWorkerCts : idWorkerCts,
+        nameWorkerCts : nameWorkerCts, 
+        yearCts: yearCts,
+        monthCts : monthCts, 
+        pageCts : pageCts, 
+
+        } )
+
+        alert('se actualizó constancia CTS');
+        generarCts.reset();
+
+}
+
+editStatus = false;
+id = '';
+btnGenerarCts.innerHTML = 'Generar'
     
 
 });

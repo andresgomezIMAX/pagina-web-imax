@@ -52,7 +52,7 @@ if (urlBoleta) {
 const btnGenerarBoleta = document.querySelector('.btn-generar-boleta');
 const generarBoleta = document.querySelector('.generate-ticket');
 
-btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
+generarBoleta.addEventListener('submit', generarBoletaFn = (e) => {
   e.preventDefault();
   console.log('hola');
   // const userLogueado = firebase.auth().currentUser;
@@ -73,29 +73,28 @@ btnGenerarBoleta.addEventListener('click', generarBoletaFn = (e) => {
         console.log('se registró boleta');
         generarBoleta.reset();
         alert('se registró boleta');
+        
       });
-    } else {
-      updatePage(id, {
-        idWorker: idWorker,
-        nameWorker: nameWorker,
-        year:year,
-        month: month,
-        totalPage: totalPage,
-        urlBoleta: urlBoleta
-      })
-
-      alert('se actualizó boleta');
-      generarBoleta.reset();
-
     }
 
-    editStatus = false;
-    id = '';
-    btnGenerarBoleta.innerHTML = 'Generar'
+  }  else {
+    updatePage(id, {
+      idWorker: idWorker,
+      nameWorker: nameWorker,
+      year:year,
+      month: month,
+      totalPage: totalPage,
+      urlBoleta: urlBoleta
+    })
 
-  } else {
-    alert("Datos incompletos, porfavor verifique")
+    alert('se actualizó boleta');
+    generarBoleta.reset();
+
   }
+
+  editStatus = false;
+  id = '';
+  btnGenerarBoleta.innerHTML = 'Generar'
 
 });
 
