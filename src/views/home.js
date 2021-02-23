@@ -8,10 +8,10 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><img src="./assets/construction-site.jpg"></li>
-            <li><img src="./assets/home-slide-1.jpg"></li>
-            <li><img src="./assets/home-slide-3.jpg"></li>
-            <li><img src="./assets/monitoreo.jpg"></li>
+            <li><img src="./assets/fondo1.png"></li>
+            <li><img src="./assets/fondo2.png"></li>
+            <li><img src="./assets/fondo3.png"></li>
+            <li><img src="./assets/fondo4.png"></li>
         </ul>
     </div>
     </section>
