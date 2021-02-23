@@ -20,34 +20,34 @@
     background:	#71c3db;
 }
 
-#container {
-    // background-image: url(../../assets/imax-background.jpg);
-    // background-repeat: no-repeat;
-    // background-position: bottom;
-    // background-size: cover;
-    padding: 0 8%;
+// #container {
+//     // background-image: url(../../assets/imax-background.jpg);
+//     // background-repeat: no-repeat;
+//     // background-position: bottom;
+//     // background-size: cover;
+//     padding: 0 8%;
     
-}
+// }
 
 .menu-bar {
     display: none;
 }
 
 .header-web {
-    width: 84%;
+    width: 100%;
     position: fixed;
     background: #ffffff;
     /* padding: 0 8%; */
-    margin-left: 8%;
+    // margin-left: 8%;
 
 
     nav {
-        background: #8c8c8b;
+        background: #ffffff;
         // border: 1px solid orange;
         z-index: 1000;
         max-width: 100%;
         width: 100%;
-        height: 55px;
+        height: 85px;
         // margin: 0 20% auto;
 
 
@@ -62,10 +62,11 @@
                 position: relative;
 
                 a {
-                    color: white;
+                    color: rgb(249, 106, 27);;
                     display: block;
                     text-decoration: none;
                     padding: 15px 30px;
+                    margin-top: 20%;
                 }
 
                 .intranet{
@@ -73,7 +74,7 @@
                 }
 
                 :hover {
-                    background: rgb(95, 102, 105);
+                    background: rgb(206, 215, 219);
 
                     .children {
                         display: block;
@@ -84,7 +85,9 @@
 
         .logo {
             margin-left: 5%;
-            width: 14%;
+            margin-top: 1%;
+            width: 12%;
+            height: 60px;
 
         }
     }
