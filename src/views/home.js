@@ -15,12 +15,13 @@ export default () => {
         </ul>
     </div>
     </section>
-    <div class="contenedorVideo">
+    <!--<div class="contenedorVideo">
         <div class="pantallaVideo modal-closeVideo">
           <p class="closeVideo">X</p>
           <iframe src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </div>
+    </div>-->
+   
     <section >
         <div class="lema">
             <p>Nos caracterizamos por ser una empresa que brinda a sus clientes 
@@ -28,6 +29,8 @@ export default () => {
         </div>
         
     </section>
+
+    
 
     <!--<section class="servicios" >
         <p class="title">Nuestras Unidades de Negocio</p>
@@ -133,6 +136,12 @@ export default () => {
         </div>
     </section>
 
+    <div class="contenedorVid">
+        <div class="videoUrl">
+    <iframe  src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
 
     <div class="contenedorSubir" >
         <div class="botonSubir">
@@ -186,29 +195,29 @@ export default () => {
     //     }
     // });
 
-    // Para ver el video
+//     // PARA EL VIDEO
 
-    const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
-    const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
-    const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
-    const video = sectionElem.querySelectorAll(".video")[0];
+//     const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
+//     const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
+//     const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
+//     const video = sectionElem.querySelectorAll(".video")[0];
 
-    cerrarModal.addEventListener("click", () => {
-        modalVideo.classList.toggle("modal-closeVideo");
-          modalCvideo.style.opacity = "0";
-          modalCvideo.style.visibility = "hidden";
-          video.src = "";
-      });
+//     cerrarModal.addEventListener("click", () => {
+//         modalVideo.classList.toggle("modal-closeVideo");
+//           modalCvideo.style.opacity = "0";
+//           modalCvideo.style.visibility = "hidden";
+//           video.src = "";
+//       });
 
-   window.addEventListener("click", (e) => {
-    console.log(e.target)
-    if (e.target == modalCvideo) {
-      modalVideo.classList.toggle("modal-closeVideo");
-        modalCvideo.style.opacity = "0";
-        modalCvideo.style.visibility = "hidden";
-        video.src = "";
-    }
-    });
+//    window.addEventListener("click", (e) => {
+//     console.log(e.target)
+//     if (e.target == modalCvideo) {
+//       modalVideo.classList.toggle("modal-closeVideo");
+//         modalCvideo.style.opacity = "0";
+//         modalCvideo.style.visibility = "hidden";
+//         video.src = "";
+//     }
+//     });
 
 // codigo para el grafico en servicios
 const d = sectionElem.querySelector('#dibujito');

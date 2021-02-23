@@ -185,6 +185,25 @@
     }
 }
 
+// video estatico
+
+.contenedorVid{
+    width: 100%;    
+    height: 580px;
+
+
+
+    .videoUrl{
+        width: 100%;
+        // width: 90%;
+        // margin-left: 5%;
+        iframe{
+        width: 100%;
+        height: 580px;
+        }
+    }
+}
+
 // section servicios -----------------------------------------------------------------------------
 
 .servicios {

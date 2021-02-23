@@ -12,13 +12,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans JP', sans-serif;
+
     
 }
 
-.body-web{
-    background:	#71c3db;
-}
+// .body-web{
+//     background:	#71c3db;
+// }
 
 // #container {
 //     // background-image: url(../../assets/imax-background.jpg);
@@ -28,6 +28,11 @@
 //     padding: 0 8%;
     
 // }
+
+@font-face{
+    font-family: Gui generis Rg;
+    src: url(../../assets/suiGenerisRg.ttf);
+}
 
 .menu-bar {
     display: none;
@@ -48,6 +53,7 @@
         max-width: 100%;
         width: 100%;
         height: 85px;
+      
         // margin: 0 20% auto;
 
 
@@ -67,6 +73,8 @@
                     text-decoration: none;
                     padding: 15px 30px;
                     margin-top: 20%;
+                    font-family: Gui generis Rg;
+                    font-size: 20px;
                 }
 
                 .intranet{
@@ -86,7 +94,7 @@
         .logo {
             margin-left: 5%;
             margin-top: 1%;
-            width: 12%;
+            width: 13%;
             height: 60px;
 
         }
@@ -187,7 +195,7 @@
 .footerPage {
     background:#a5a59e;
     padding-top: 2%;
-    margin: 0 8%;
+    // margin: 0 8%;
 
     .fooFirst {
         display: flex;

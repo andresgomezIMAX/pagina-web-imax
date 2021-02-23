@@ -129,6 +129,20 @@
   font-family: 'Courgette', cursive;
 }
 
+.contenedorVid {
+  width: 100%;
+  height: 580px;
+}
+
+.contenedorVid .videoUrl {
+  width: 100%;
+}
+
+.contenedorVid .videoUrl iframe {
+  width: 100%;
+  height: 580px;
+}
+
 .servicios {
   background: #F1FAFB;
   padding: 2%;
@@ -2684,11 +2698,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Noto Sans JP', sans-serif;
 }
 
-.body-web {
-  background: #71c3db;
+@font-face {
+  font-family: Gui generis Rg;
+  src: url(../../assets/suiGenerisRg.ttf);
 }
 
 .menu-bar {
@@ -2731,6 +2745,8 @@
   text-decoration: none;
   padding: 15px 30px;
   margin-top: 20%;
+  font-family: Gui generis Rg;
+  font-size: 20px;
 }
 
 .header-web nav ul li .intranet {
@@ -2748,7 +2764,7 @@
 .header-web nav .logo {
   margin-left: 5%;
   margin-top: 1%;
-  width: 12%;
+  width: 13%;
   height: 60px;
 }
 
@@ -2861,7 +2877,6 @@
 .footerPage {
   background: #a5a59e;
   padding-top: 2%;
-  margin: 0 8%;
 }
 
 .footerPage .fooFirst {
