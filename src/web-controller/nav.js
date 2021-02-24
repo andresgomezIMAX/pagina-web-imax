@@ -76,6 +76,12 @@ fs.collection('users').onSnapshot((querySnapshot) => {
     if (doc.id === userLogueado.uid) {
         userNew.innerHTML += `
         <p class="userLog"><i class="fas fa-user"></i>${user.name}</p>`;
+        userLogueado.updateProfile({
+          displayName: user.name,
+        }).then(function() {
+         console.log('correcto')
+         console.log(userLogueado)
+        });
 
   
       }
@@ -84,8 +90,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
 
   });
 
-
-
+  
 
 //funcion para cerra sesion
 const logOut = document.querySelector('.logOut');

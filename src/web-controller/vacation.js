@@ -18,12 +18,7 @@ boxNameLeader.innerHTML = '',
             if (useruid === doc.id) {
                 boxNameLeader.innerHTML += `
             <input value="${doc.data().leader}" disabled class="name-leader">`
-            userLogueado.updateProfile({
-                displayName: user.name,
-              }).then(function() {
-               console.log('correcto')
-               console.log(userLogueado)
-              });
+            
             };
 
            
