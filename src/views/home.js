@@ -8,10 +8,10 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><img src="./assets/fondo1.png"></li>
-            <li><img src="./assets/fondo2.png"></li>
-            <li><img src="./assets/fondo3.png"></li>
-            <li><img src="./assets/fondo4.png"></li>
+            <li><img src="./assets/slider1.png"></li>
+            <li><img src="./assets/slider2.png"></li>
+            <li><img src="./assets/slider3.png"></li>
+            <li><img src="./assets/slider4.png"></li>
         </ul>
     </div>
     </section>
@@ -28,6 +28,23 @@ export default () => {
                 un servicio de máxima calidad, íntegro y personalizado.</p>
         </div>
         
+    </section>
+
+    <section  class="servicios">
+        
+        <div class="box-line"><p>Nuestros Servicios</p></div>
+        
+        <div class="box-services">
+            <div class="box-squares">
+                <div class="squares"><div class="space-white"><p>Tasaciones(TAS)</p></div></div>
+                <div class="squares squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
+            </div>
+            <div class="box-squares">
+                <div class="squares squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
+                <div class="squares squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
+                <div class="squares squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
+            </div>
+        </div>
     </section>
 
     
@@ -81,7 +98,7 @@ export default () => {
 
     
 
-    <section class="servicios" >
+    <!--<section class="servicios" >
     <!-- <p class="title">Nuestras Unidades de Negocio</p>
 
         <img class="ruleta" src="./assets/unidadesNegocio.png">-->
@@ -90,10 +107,10 @@ export default () => {
             <canvas width="50" height="50" id="dibujito" class="dibujito"></canvas>
         </div>
 
-    </section>
+    </section>-->
  
 
-    <section class="informacion">
+    <!-- <section class="informacion">
         <p class="title">Datos IMAX</p>
         <p class="text-desc">Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras<p>
       <ul class="slider">
@@ -118,7 +135,7 @@ export default () => {
                 <img src="./assets/info.png">
             </li>
       </ul>
-    </section>
+    </section>-->
 
 
 
@@ -219,40 +236,40 @@ export default () => {
 //     }
 //     });
 
-// codigo para el grafico en servicios
-const d = sectionElem.querySelector('#dibujito');
-const lienzo = d.getContext("2d");
+// // codigo para el grafico en servicios
+// const d = sectionElem.querySelector('#dibujito');
+// const lienzo = d.getContext("2d");
 
-console.log(lienzo);
+// console.log(lienzo);
 
-const myChart = new Chart  (lienzo, {
-    type: 'pie',
-    data: {
-        labels:[
-            "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
-        ],
-        datasets: [{
-            data:[
-                5.94,3,11.82,11.82,11.82,0.06,0.18
-            ],
-            backgroundColor:[
-                '#404040',
-                '#ffc000',
-                '#5b9bd5',
-                '#70ad47',
-                '#ff0000',
-                '#d9d9d9',
-                '#acacac'
+// const myChart = new Chart  (lienzo, {
+//     type: 'pie',
+//     data: {
+//         labels:[
+//             "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
+//         ],
+//         datasets: [{
+//             data:[
+//                 5.94,3,11.82,11.82,11.82,0.06,0.18
+//             ],
+//             backgroundColor:[
+//                 '#404040',
+//                 '#ffc000',
+//                 '#5b9bd5',
+//                 '#70ad47',
+//                 '#ff0000',
+//                 '#d9d9d9',
+//                 '#acacac'
 
-            ],
-        }],
+//             ],
+//         }],
        
        
-    },
-    options: {
-        responsive:true,
-    }
-});
+//     },
+//     options: {
+//         responsive:true,
+//     }
+// });
     
 
     

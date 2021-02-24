@@ -144,95 +144,41 @@
 }
 
 .servicios {
-  background: #F1FAFB;
-  padding: 2%;
-}
-
-.servicios .title {
-  color: #009AD2;
-  font-size: 195%;
-  font-weight: bold;
-}
-
-.servicios .grafico {
-  width: 45%;
-  margin: 2% 0 2% 30%;
-}
-
-.servicios .ruleta {
-  margin-left: 25%;
-}
-
-.servicios .box-services {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  background-image: url(../assets/fondo1.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  border: 2px solid green;
   width: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 5%;
+  height: 570px;
 }
 
-.servicios .box-services .box-btn {
-  width: 22%;
-}
-
-.servicios .box-services .box-btn .div-servicios {
+.servicios .box-line {
+  width: 20%;
+  background-color: #00aeef;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2%;
+  padding-left: 1%;
+  border-radius: 0px 15px 15px 0px;
+  color: white;
+  font-size: 20px;
 }
 
-.servicios .box-services .box-btn .div-servicios :hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 0.5;
-  transition: 0.5;
-}
-
-.servicios .box-services .box-btn .div-servicios .cta {
-  width: 95%;
-}
-
-.servicios .box-services .box-btn .div-servicios .cta .btn-imagen {
-  width: 70%;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  border: 1px solid orange;
-  cursor: pointer;
-  outline: none;
-  -webkit-box-shadow: 3px 10px 17px 3px rgba(0, 0, 0, 0.75);
-          box-shadow: 3px 10px 17px 3px rgba(0, 0, 0, 0.75);
-}
-
-.servicios .box-services .box-btn .div-servicios .cta .btn-imagen :hover {
-  background: #5f6669;
-}
-
-.servicios .modal-container {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  z-index: 1000;
+.servicios .box-services {
+  border: 2px solid green;
   width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  height: 500px;
+}
+
+.servicios .box-services .box-squares {
+  height: 250px;
+  border: 2px solid green;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,53 +190,72 @@
           align-items: center;
 }
 
-.servicios .modal-container .modal {
-  width: 55%;
-  height: 65%;
-  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  text-align: center;
+.servicios .box-services .box-squares .squares {
+  width: 20%;
+  border: 3px solid #00aeef;
+  height: 200px;
+  margin: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  position: relative;
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
-  transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
-  border-radius: 10px;
-  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../assets/servicios1.png);
 }
 
-.servicios .modal-container .modal img {
-  width: 50%;
-  margin-left: 25%;
+.servicios .box-services .box-squares .squares .space-white {
+  width: 100%;
+  height: 130px;
+  background: white;
+  opacity: 0.7;
 }
 
-.servicios .modal-container .modal .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background: cornflowerblue;
-  cursor: pointer;
-  line-height: 25px;
-  border-radius: 50%;
+.servicios .box-services .box-squares .squares1 {
+  background-image: url(../assets/servicios2.png);
 }
 
-.servicios .modal-container .modal-close {
-  -webkit-transform: translateY(-200%);
-          transform: translateY(-200%);
+.servicios .box-services .box-squares .squares1 .space-white {
+  width: 100%;
+  height: 130px;
+  background: white;
+  opacity: 0.7;
+}
+
+.servicios .box-services .box-squares .squares2 {
+  background-image: url(../assets/servicios3.png);
+}
+
+.servicios .box-services .box-squares .squares2 .space-white {
+  width: 100%;
+  height: 130px;
+  background: white;
+  opacity: 0.7;
+}
+
+.servicios .box-services .box-squares .squares3 {
+  background-image: url(../assets/servicios4.png);
+}
+
+.servicios .box-services .box-squares .squares3 .space-white {
+  width: 100%;
+  height: 130px;
+  background: white;
+  opacity: 0.7;
+}
+
+.servicios .box-services .box-squares .squares4 {
+  background-image: url(../assets/servicios5.png);
+}
+
+.servicios .box-services .box-squares .squares4 .space-white {
+  width: 100%;
+  height: 130px;
+  background: white;
+  opacity: 0.7;
 }
 
 .informacion {
