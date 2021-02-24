@@ -38,8 +38,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
               <a href="vacactionsAdmin.html" ><li class="btn-admi-const second-parent" >Solicitud Vacaciones</li></a>
               <a href="workerAdmin.html" ><li class="btn-admi-const second-parent" >Agregar Colaborador</li></a>
           </ul>
-        </a> </li>
-        <li><a href="vacationsLider.html">Lider de Unidad</a></li>`;
+        </a> </li>`;
 
         const menuAdmin = document.querySelector('.admin');
         const navAdmin = document.querySelector('.nav-admin');
@@ -49,7 +48,16 @@ fs.collection('users').onSnapshot((querySnapshot) => {
         })
       }
 
-
+      if (doc.data().checkLider === 'SI') {
+        onlyAdmin.innerHTML += `
+        <li><a href="vacationsLider.html">Lider de Unidad</a></li>`;
+        const menuAdmin = document.querySelector('.admin');
+        const navAdmin = document.querySelector('.nav-admin');
+        menuAdmin.addEventListener('click', () => {
+          navAdmin.classList.toggle('hide');
+          console.log('click');
+        })
+      }
 
 
     }

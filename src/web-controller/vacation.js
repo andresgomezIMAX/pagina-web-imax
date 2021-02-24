@@ -11,11 +11,22 @@ boxNameLeader.innerHTML = '',
         querySnapshot.forEach((doc) => {
             // console.log(`${doc.id} => ${doc.data().leader}`);
             const userLogueado = firebase.auth().currentUser;
+            console.log(userLogueado)
             const useruid = userLogueado.uid;
+            const user = doc.data();
+            console.log(user)
             if (useruid === doc.id) {
                 boxNameLeader.innerHTML += `
-            <label type="text" class="name-leader" > ${doc.data().leader} </label>`
-            }
+            <input value="${doc.data().leader}" disabled class="name-leader">`
+            userLogueado.updateProfile({
+                displayName: user.name,
+              }).then(function() {
+               console.log('correcto')
+               console.log(userLogueado)
+              });
+            };
+
+           
 
         })
     })
@@ -240,7 +251,7 @@ registerVacation.addEventListener('submit', (e) => {
     var fecha = new Date();
     const startOfVacation = document.querySelector('.inicio-Vacation').value;
     const endOfVacation = document.querySelector('.fin-Vacation').value;
-    const bossInmediate = document.querySelector('.name-leader').innerHTML;
+    const bossInmediate = document.querySelector('.name-leader').value;
 
     console.log(useruid, startOfVacation, endOfVacation, bossInmediate)
     if (startOfVacation, endOfVacation) {

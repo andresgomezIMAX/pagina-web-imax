@@ -39,6 +39,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     // console.log(`${doc.id} => ${doc.data().leader}`);
     const userLogueado = firebase.auth().currentUser;
+    console.log(userLogueado)
     const useruid = userLogueado.uid;
     const user = doc.data()
     user.id = doc.id;
@@ -78,20 +79,23 @@ register.addEventListener('submit', (e) => {
         console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
         const cityRef = firebase.firestore().collection('users').doc(docId);
         const res = cityRef.update({
-          name, 
-          checkAdmin,
-          email,
-          dni, 
-          phone, 
-          area,
-          leader,
-          entryDay,
-          salarioAdmin,
-          urlfirmRegister,
-          checkLider
+        name, 
+        checkAdmin,
+        email,
+        dni, 
+        phone, 
+        area,
+        leader,
+        entryDay,
+        salarioAdmin,
+        urlfirmRegister,
+        checkLider
 
        }, { merge: true });
+       register.reset();
        alert('Los datos han sido guardados')
+       window.onload()
+       
       }
     })
   })
