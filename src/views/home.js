@@ -25,20 +25,20 @@ export default () => {
     <section class="background-image">
     <section  class="information-cards">
         <div class="card">
-            <div class="side front"><p>Brindando soluciones desde el 2008</p></div>
-            <div class="side back"></div>
+            <div class="side front"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
+            <div class="side back"><p><strong>IMAX</strong> siempre vamos por + </p></div>
         </div>
         <div class="card">
-            <div class="side front1"><p>Más de xxx tasaciones para el sistema financiero</p></div>
-            <div class="side back1"></div>
+            <div class="side front1"><p>41 proyectos supervisados en el 2020</p></div>
+            <div class="side back1"><p><strong>246,514.84 </strong> metros supervisados</p></div>
         </div>
         <div class="card">
-            <div class="side front"><p>Más de xxx mts2 supervisados</p></div>
-            <div class="side back"></div>
+            <div class="side front"><p><strong>7299</strong> Und tasadas en los últimos tres años</p></div>
+            <div class="side back"><p>2018=<strong>2322un</strong>  2019=<strong>3032un</strong>  2020=<strong>1945un</strong></p></div>
         </div>
         <div class="card">
-            <div class="side front1"><p>Más de xxx tasaciones para el sistema financiero</p></div>
-            <div class="side back1"></div>
+            <div class="side front1"><p>más de <strong>40</strong> proyectos mensuales monitoreados al año</p></div>
+            <div class="side back1"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
         </div>
      </section>
 

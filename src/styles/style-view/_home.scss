@@ -220,18 +220,19 @@
 }
 
 .information-cards{
-    height: 400px;
+    height: 450px;
     width: 100%;
     margin: auto;
     padding: 10px;
     -webkit-perspective: 700;
+    perspective: 500;
     display: flex;
     justify-content: center;
     align-items: center;
   
 
     .card{
-        height: 70%;
+        height: 60%;
         width: 20%;
         position: relative;
         transform-style: preserve-3d;
@@ -253,7 +254,15 @@
             justify-content: center;
             color: white;
             font-family: Gui generis Rg;
+            font-size: 25px;
+
+            strong{
+                font-weight: bold;
+                font-size: 30px;
+            }
         }
+
+       
 
         .front{
             background:rgb(0,174, 239);

@@ -156,13 +156,12 @@ register.addEventListener('submit', (e) => {
 const onGetUsers = (callback) => firebase.firestore().collection('users').onSnapshot(callback);
 const getUsers = () => firebase.firestore().collection('users').get();
 const deleteUserReg = id => firebase.firestore().collection('users').doc(id).delete();
-const editPost = (id, name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin,checkLider) => firebase.firestore().collection('posts').doc(id).update({ 
+const editPost = (id, name, checkAdmin, dni, phone, email, area,leader,entryDay,salarioAdmin,checkLider) => firebase.firestore().collection('posts').doc(id).update({ 
   name, 
   checkAdmin, 
   dni, 
   phone, 
   email, 
-  password, 
   area,
   leader,
   entryDay,
@@ -184,7 +183,6 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                   <td data-id="${user.id}" class="dniUser">${user.dni}</td>
                                   <td data-id="${user.id}" class="phoneUser">${user.phone}</td>
                                   <td data-id="${user.id}" class="emailUser">${user.email}</td>  
-                                  <td data-id="${user.id}" class="passwordUser">********</td>
                                   <td data-id="${user.id}" class="areaUser">${user.area}</td>  
                                   <td data-id="${user.id}" class="leaderUser">${user.leader}</td>
                                   <td data-id="${user.id}" class="fechaUser">${user.entryDay}</td>  
@@ -267,13 +265,12 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                           const dni = row.querySelector('.dniUser').innerHTML;
                           const phone= row.querySelector('.phoneUser').innerHTML;
                           const email = row.querySelector('.emailUser').innerHTML;
-                          const password = row.querySelector('.passwordUser').innerHTML;
                           const area = row.querySelector('.areaUser').innerHTML;
                           const leader = row.querySelector('.leaderUser').innerHTML;
                           const entryDay = row.querySelector('.fechaUser').innerHTML;
                           const salarioAdmin= row.querySelector('.salarioAdminUser').innerHTML;
                           const checkLider = row.querySelector('.checkLider').innerHTML;
-                          console.log(name, checkAdmin, dni, phone, email, password, area,leader,entryDay,salarioAdmin, checkLider)
+                          console.log(name, checkAdmin, dni, phone, email, area,leader,entryDay,salarioAdmin, checkLider)
                           const cityRef = firebase.firestore().collection('users').doc(docId );
                           const res = cityRef.update({
                             name, 
@@ -281,7 +278,6 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                             dni, 
                             phone, 
                             email, 
-                            password, 
                             area,
                             leader,
                             entryDay,

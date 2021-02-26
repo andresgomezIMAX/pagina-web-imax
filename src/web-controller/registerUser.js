@@ -27,8 +27,6 @@ register.addEventListener('submit', (e) => {
     })
 
   } else {
-
-  
         document.querySelector('#reg_error_inner').innerHTML = 'Utilice el correo institucional IMAX o La contraseña es demasiado débil. Utlice letras y números';
       } 
 

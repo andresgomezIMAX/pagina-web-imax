@@ -157,11 +157,12 @@
 }
 
 .information-cards {
-  height: 400px;
+  height: 450px;
   width: 100%;
   margin: auto;
   padding: 10px;
   -webkit-perspective: 700;
+  perspective: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -174,7 +175,7 @@
 }
 
 .information-cards .card {
-  height: 70%;
+  height: 60%;
   width: 20%;
   position: relative;
   -webkit-transform-style: preserve-3d;
@@ -203,6 +204,12 @@
           justify-content: center;
   color: white;
   font-family: Gui generis Rg;
+  font-size: 25px;
+}
+
+.information-cards .card .side strong {
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .information-cards .card .front {
@@ -463,10 +470,8 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-box-shadow: 0 0 0 10px white,
- 0 0 0 12px;
-          box-shadow: 0 0 0 10px white,
- 0 0 0 12px;
+  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 12px;
+          box-shadow: 0 0 0 10px white, 0 0 0 12px;
 }
 
 .slider img {
@@ -599,12 +604,8 @@
   right: 39vw;
   position: absolute;
   z-index: 60;
-  -webkit-box-shadow: 0 0 0 10px white,
- 0 0 0 15px ,
- 0 15px 10px;
-          box-shadow: 0 0 0 10px white,
- 0 0 0 15px ,
- 0 15px 10px;
+  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
+          box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
 }
 
 .course-banner .circle-overlay .gs-banner-content {
@@ -1653,7 +1654,10 @@
   padding: 0 20px;
 }
 
-.container-pagos .header-intranet-pagos .menu li .btn-go-boletas, .container-pagos .header-intranet-pagos .menu li .btn-go-const, .container-pagos .header-intranet-pagos .menu li .btn-admin-boletas, .container-pagos .header-intranet-pagos .menu li .btn-admi-const {
+.container-pagos .header-intranet-pagos .menu li .btn-go-boletas,
+.container-pagos .header-intranet-pagos .menu li .btn-go-const,
+.container-pagos .header-intranet-pagos .menu li .btn-admin-boletas,
+.container-pagos .header-intranet-pagos .menu li .btn-admi-const {
   padding: 0;
 }
 
@@ -1752,7 +1756,8 @@
   overflow: auto;
 }
 
-.box-boletas .container-boletas .box-table table, .box-boletas .container-boletas .box-table td {
+.box-boletas .container-boletas .box-table table,
+.box-boletas .container-boletas .box-table td {
   border: 1px solid black;
   border-collapse: collapse;
   background-color: #ffffff;
@@ -1760,14 +1765,16 @@
   text-align: center;
 }
 
-.box-boletas .container-boletas .box-table table th, .box-boletas .container-boletas .box-table td th {
+.box-boletas .container-boletas .box-table table th,
+.box-boletas .container-boletas .box-table td th {
   background-color: #C4C4C4;
   border-collapse: collapse;
   border: 1px solid black;
   height: 40px;
 }
 
-.box-boletas .container-boletas .box-table table button, .box-boletas .container-boletas .box-table td button {
+.box-boletas .container-boletas .box-table table button,
+.box-boletas .container-boletas .box-table td button {
   border: none;
   outline: none;
   background-color: #ffffff;
@@ -1775,7 +1782,8 @@
   font-weight: bold;
 }
 
-.box-boletas .container-boletas .box-table table button:active, .box-boletas .container-boletas .box-table td button:active {
+.box-boletas .container-boletas .box-table table button:active,
+.box-boletas .container-boletas .box-table td button:active {
   color: black;
 }
 
@@ -1785,12 +1793,14 @@
   padding: 2%;
 }
 
-.box-boletas .container-boletas .box-check-boss p, .box-boletas .container-boletas .box-check-boss label {
+.box-boletas .container-boletas .box-check-boss p,
+.box-boletas .container-boletas .box-check-boss label {
   margin-bottom: 2%;
   font-weight: bold;
 }
 
-.box-boletas .container-boletas .box-check-boss select, .box-boletas .container-boletas .box-check-boss input {
+.box-boletas .container-boletas .box-check-boss select,
+.box-boletas .container-boletas .box-check-boss input {
   border-radius: 5px;
   -webkit-box-shadow: 2px 2px 5px #999;
           box-shadow: 2px 2px 5px #999;
@@ -1830,7 +1840,7 @@
   padding: 5px 0;
   margin: 1%;
   color: white;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 20px;
   font-weight: 700;
   outline: none;
@@ -1865,7 +1875,7 @@
   border: none;
   outline: none;
   background-color: #F3F3F3;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 20px;
   color: red;
   font-weight: bold;
@@ -1881,7 +1891,7 @@
   padding: 5px 0;
   margin: 1%;
   color: white;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 20px;
   font-weight: 700;
   outline: none;
@@ -1930,16 +1940,18 @@
   border-bottom: 1px solid rgba(69, 69, 69, 0.6);
 }
 
-.box-boletas .container-vacations .box-check-boss {
+.box-boletas .container-vacations .box-check-complete .box-check-boss {
   width: 75%;
 }
 
-.box-boletas .container-vacations .box-check-boss p, .box-boletas .container-vacations .box-check-boss label {
+.box-boletas .container-vacations .box-check-complete .box-check-boss p,
+.box-boletas .container-vacations .box-check-complete .box-check-boss label {
   margin-bottom: 2%;
   font-weight: bold;
 }
 
-.box-boletas .container-vacations .box-check-boss select, .box-boletas .container-vacations .box-check-boss input {
+.box-boletas .container-vacations .box-check-complete .box-check-boss select,
+.box-boletas .container-vacations .box-check-complete .box-check-boss input {
   border-radius: 5px;
   -webkit-box-shadow: 2px 2px 5px #999;
           box-shadow: 2px 2px 5px #999;
@@ -1950,7 +1962,7 @@
   font-size: 14px;
 }
 
-.box-boletas .container-vacations .box-check-boss .date-vacations {
+.box-boletas .container-vacations .box-check-complete .box-check-boss .date-vacations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1961,17 +1973,17 @@
   margin-bottom: 2%;
 }
 
-.box-boletas .container-vacations .box-check-boss .box-boss-inmediate {
+.box-boletas .container-vacations .box-check-complete .box-check-boss .box-boss-inmediate {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.box-boletas .container-vacations .box-check-boss .box-boss-inmediate .name-leader {
+.box-boletas .container-vacations .box-check-complete .box-check-boss .box-boss-inmediate .name-leader {
   font-weight: 200;
 }
 
-.box-boletas .container-vacations .box-check-boss .btn-vb {
+.box-boletas .container-vacations .box-check-complete .box-check-boss .btn-vb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1983,13 +1995,13 @@
           align-items: center;
 }
 
-.box-boletas .container-vacations .box-check-boss .btn-vb button {
+.box-boletas .container-vacations .box-check-complete .box-check-boss .btn-vb button {
   border-radius: 9px;
   width: 20%;
   padding: 5px 0;
   margin: 1% 0 1.2% 0;
   color: white;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 20px;
   font-weight: 700;
   outline: none;
@@ -1997,11 +2009,11 @@
   background-color: #00ADEF;
 }
 
-.box-boletas .container-vacations .box-check-boss button:active {
+.box-boletas .container-vacations .box-check-complete .box-check-boss button:active {
   background-color: #8DB9CA !important;
 }
 
-.box-boletas .container-vacations .box-info-date {
+.box-boletas .container-vacations .box-check-complete .box-info-date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2024,12 +2036,6 @@
   width: 100%;
   height: 50%;
   padding: 2%;
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly; */
 }
 
 .box-boletas .container-vacations .box-send-petition-ok p {
@@ -2055,7 +2061,8 @@
   overflow: auto;
 }
 
-.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table, .box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td {
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table,
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td {
   border: 1px solid black;
   border-collapse: collapse;
   background-color: #ffffff;
@@ -2064,7 +2071,8 @@
   font-size: 15px;
 }
 
-.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table th, .box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td th {
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table th,
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td th {
   background-color: #C4C4C4;
   border-collapse: collapse;
   border: 1px solid black;
@@ -2075,7 +2083,7 @@
   border: none;
   outline: none;
   background-color: #F3F3F3;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 16px;
   color: red;
   font-weight: bold;
@@ -2091,7 +2099,7 @@
   padding: 5px 0;
   margin: 1%;
   color: white;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 16px;
   height: 30px;
   font-weight: 300;
@@ -2142,7 +2150,7 @@
   padding: 5px 0;
   margin: 1% 1% 1% 40%;
   color: white;
-  font-family: "Pridi",gitserif;
+  font-family: "Pridi", gitserif;
   font-size: 25px;
   height: 40px;
   font-weight: 700;
@@ -3248,12 +3256,8 @@
   .slider {
     width: 300px;
     height: 160px;
-    -webkit-box-shadow: 0 0 0 1px white,
- 0 0 0 2px ,
- 0 15px 10px;
-            box-shadow: 0 0 0 1px white,
- 0 0 0 2px ,
- 0 15px 10px;
+    -webkit-box-shadow: 0 0 0 1px white, 0 0 0 2px , 0 15px 10px;
+            box-shadow: 0 0 0 1px white, 0 0 0 2px , 0 15px 10px;
   }
   .slider input + label {
     width: 15px;

@@ -24,10 +24,11 @@ menuMobile.addEventListener('click', () => {
 
 const onlyAdmin = document.querySelector('.only-admin')
 fs.collection('users').onSnapshot((querySnapshot) => {
+  onlyAdmin.innerHTML = '';
   querySnapshot.forEach((doc) => {
     // console.log(`${doc.id} => ${doc.data().checkAdmin}`);
     const userLogueado = firebase.auth().currentUser;
-    // console.log(userLogueado)
+
     if (doc.id === userLogueado.uid) {
       if (doc.data().checkAdmin === 'SI') {
         onlyAdmin.innerHTML += `
@@ -68,6 +69,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
 
 
 const userNew = document.querySelector('.user-new')
+userNew.innerHTML = ''; 
 fs.collection('users').onSnapshot((querySnapshot) => {
   querySnapshot.forEach((doc) => {
     // console.log(`${doc.id} => ${doc.data().checkAdmin}`);
