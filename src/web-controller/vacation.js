@@ -285,7 +285,7 @@ const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) =>
 
 const getVacationId = (id) => fs.collection('vacation').doc(id).get();
 const confirVacationLider = document.querySelector('.table-vacation-vb');
-confirVacationLider.innerHTML = '';
+const boxSendRequest = document.querySelector('.box-send-petition-ok');
 const templateDoc = document.querySelector('.templateDoc');
 const totalSection = document.querySelector('.container-vacations');
 templateDoc.innerHTML = '';
@@ -297,9 +297,13 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
         const userLogueado = firebase.auth().currentUser;
         const vacation = doc.data();
         vacation.id = doc.id;
+        
         if (vacation.useruid === userLogueado.uid) {
             console.log(vacation.useruid +'=>' + userLogueado.uid)
+            
+            
             if (doc.data().confirmacion === true) {
+                boxSendRequest.classList.remove('hide')
                 console.log('vacaciones ok')
                 confirVacationLider.innerHTML += `
                 <tr>

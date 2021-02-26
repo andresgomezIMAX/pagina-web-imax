@@ -21,31 +21,45 @@ export default () => {
           <iframe src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>-->
-   
-    <section >
-        <div class="lema">
-            <p>Nos caracterizamos por ser una empresa que brinda a sus clientes 
-                un servicio de máxima calidad, íntegro y personalizado.</p>
+
+    <section class="background-image">
+    <section  class="information-cards">
+        <div class="card">
+            <div class="side front"><p>Brindando soluciones desde el 2008</p></div>
+            <div class="side back"></div>
         </div>
-        
-    </section>
+        <div class="card">
+            <div class="side front1"><p>Más de xxx tasaciones para el sistema financiero</p></div>
+            <div class="side back1"></div>
+        </div>
+        <div class="card">
+            <div class="side front"><p>Más de xxx mts2 supervisados</p></div>
+            <div class="side back"></div>
+        </div>
+        <div class="card">
+            <div class="side front1"><p>Más de xxx tasaciones para el sistema financiero</p></div>
+            <div class="side back1"></div>
+        </div>
+     </section>
 
     <section  class="servicios">
-        
         <div class="box-line"><p>Nuestros Servicios</p></div>
         
         <div class="box-services">
             <div class="box-squares">
-                <div class="squares"><div class="space-white"><p>Tasaciones(TAS)</p></div></div>
-                <div class="squares squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
+                <div class="squares"><div class="space-white"><p>Tasaciones (TAS)</p></div></div>
+                <div class="squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
             </div>
             <div class="box-squares">
-                <div class="squares squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
-                <div class="squares squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
-                <div class="squares squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
+                <div class="squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
+                <div class="squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
+                <div class="squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
             </div>
         </div>
     </section>
+    </section>
+   
+    
 
     
 

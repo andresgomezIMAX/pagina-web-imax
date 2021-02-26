@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Gui generis Rg;
+  src: url(../../assets/suiGenerisRg.ttf);
+}
+
 .slider-fotos {
   width: 100%;
   margin: auto;
@@ -21,11 +26,12 @@
 .slider-fotos li {
   list-style: none;
   width: 100%;
+  height: 700px;
 }
 
 .slider-fotos li img {
   width: 100%;
-  height: 90%;
+  height: 100%;
   padding-top: 5%;
 }
 
@@ -143,12 +149,88 @@
   height: 580px;
 }
 
-.servicios {
+.background-image {
   background-image: url(../assets/fondo1.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  border: 2px solid green;
+}
+
+.information-cards {
+  height: 400px;
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  -webkit-perspective: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.information-cards .card {
+  height: 70%;
+  width: 20%;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 2s;
+  transition: 2s;
+  margin: 10px;
+}
+
+.information-cards .card .side {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  border-radius: 30px;
+  padding: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-family: Gui generis Rg;
+}
+
+.information-cards .card .front {
+  background: #00aeef;
+}
+
+.information-cards .card .front1 {
+  background: #9ea0a7;
+}
+
+.information-cards .card .back {
+  background: #9ea0a7;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.information-cards .card .back1 {
+  background: #00aeef;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.information-cards .card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.servicios {
   width: 100%;
   height: 570px;
 }
@@ -170,14 +252,12 @@
 }
 
 .servicios .box-services {
-  border: 2px solid green;
   width: 100%;
   height: 500px;
 }
 
 .servicios .box-services .box-squares {
   height: 250px;
-  border: 2px solid green;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,9 +292,30 @@
   height: 130px;
   background: white;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 0% 25%;
 }
 
 .servicios .box-services .box-squares .squares1 {
+  width: 20%;
+  border: 3px solid #00aeef;
+  height: 200px;
+  margin: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../assets/servicios2.png);
 }
 
@@ -223,9 +324,30 @@
   height: 130px;
   background: white;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 0% 15%;
 }
 
 .servicios .box-services .box-squares .squares2 {
+  width: 20%;
+  border: 3px solid #00aeef;
+  height: 200px;
+  margin: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../assets/servicios3.png);
 }
 
@@ -234,9 +356,30 @@
   height: 130px;
   background: white;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 0% 15%;
 }
 
 .servicios .box-services .box-squares .squares3 {
+  width: 20%;
+  border: 3px solid #00aeef;
+  height: 200px;
+  margin: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../assets/servicios4.png);
 }
 
@@ -245,9 +388,30 @@
   height: 130px;
   background: white;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 0% 15%;
 }
 
 .servicios .box-services .box-squares .squares4 {
+  width: 20%;
+  border: 3px solid #00aeef;
+  height: 200px;
+  margin: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../assets/servicios5.png);
 }
 
@@ -256,6 +420,14 @@
   height: 130px;
   background: white;
   opacity: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+  padding: 0% 15%;
 }
 
 .informacion {
@@ -291,8 +463,10 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 12px;
-          box-shadow: 0 0 0 10px white, 0 0 0 12px;
+  -webkit-box-shadow: 0 0 0 10px white,
+ 0 0 0 12px;
+          box-shadow: 0 0 0 10px white,
+ 0 0 0 12px;
 }
 
 .slider img {
@@ -425,8 +599,12 @@
   right: 39vw;
   position: absolute;
   z-index: 60;
-  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
-          box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
+  -webkit-box-shadow: 0 0 0 10px white,
+ 0 0 0 15px ,
+ 0 15px 10px;
+          box-shadow: 0 0 0 10px white,
+ 0 0 0 15px ,
+ 0 15px 10px;
 }
 
 .course-banner .circle-overlay .gs-banner-content {
@@ -1842,29 +2020,24 @@
   font-size: 15px;
 }
 
-.box-boletas .container-vacations .box-send-request {
+.box-boletas .container-vacations .box-send-petition-ok {
   width: 100%;
   height: 50%;
   padding: 2%;
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+          justify-content: space-evenly; */
 }
 
-.box-boletas .container-vacations .box-send-request p {
+.box-boletas .container-vacations .box-send-petition-ok p {
   margin-bottom: 2%;
   font-weight: bold;
 }
 
-.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider {
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider {
   padding: 1% 3% 2% 3%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1882,7 +2055,7 @@
   overflow: auto;
 }
 
-.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td {
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table, .box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td {
   border: 1px solid black;
   border-collapse: collapse;
   background-color: #ffffff;
@@ -1891,14 +2064,14 @@
   font-size: 15px;
 }
 
-.box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider table th, .box-boletas .container-vacations .box-send-request .box-table-vacations-confirmLider td th {
+.box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider table th, .box-boletas .container-vacations .box-send-petition-ok .box-table-vacations-confirmLider td th {
   background-color: #C4C4C4;
   border-collapse: collapse;
   border: 1px solid black;
   height: 40px;
 }
 
-.box-boletas .container-vacations .box-send-request .download-format {
+.box-boletas .container-vacations .box-send-petition-ok .download-format {
   border: none;
   outline: none;
   background-color: #F3F3F3;
@@ -1908,11 +2081,11 @@
   font-weight: bold;
 }
 
-.box-boletas .container-vacations .box-send-request .download-format:active {
+.box-boletas .container-vacations .box-send-petition-ok .download-format:active {
   color: black;
 }
 
-.box-boletas .container-vacations .box-send-request .send-format {
+.box-boletas .container-vacations .box-send-petition-ok .send-format {
   border-radius: 9px;
   width: 90%;
   padding: 5px 0;
@@ -1927,7 +2100,7 @@
   background-color: #8abccf;
 }
 
-.box-boletas .container-vacations .box-send-request .send-format:active {
+.box-boletas .container-vacations .box-send-petition-ok .send-format:active {
   background-color: #00ADEF !important;
 }
 
@@ -2342,12 +2515,6 @@
 
 .box-admin-boletas .box-fill-data .fill-input {
   padding: 1% 1% 2% 1%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .box-admin-boletas .box-fill-data .fill-input div {
@@ -3075,8 +3242,12 @@
   .slider {
     width: 300px;
     height: 160px;
-    -webkit-box-shadow: 0 0 0 1px white, 0 0 0 2px , 0 15px 10px;
-            box-shadow: 0 0 0 1px white, 0 0 0 2px , 0 15px 10px;
+    -webkit-box-shadow: 0 0 0 1px white,
+ 0 0 0 2px ,
+ 0 15px 10px;
+            box-shadow: 0 0 0 1px white,
+ 0 0 0 2px ,
+ 0 15px 10px;
   }
   .slider input + label {
     width: 15px;
