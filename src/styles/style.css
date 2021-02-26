@@ -2515,6 +2515,12 @@
 
 .box-admin-boletas .box-fill-data .fill-input {
   padding: 1% 1% 2% 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .box-admin-boletas .box-fill-data .fill-input div {

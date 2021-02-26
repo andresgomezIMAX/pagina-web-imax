@@ -285,6 +285,7 @@ const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) =>
 
 const getVacationId = (id) => fs.collection('vacation').doc(id).get();
 const confirVacationLider = document.querySelector('.table-vacation-vb');
+confirVacationLider.innerHTML = '';
 const boxSendRequest = document.querySelector('.box-send-petition-ok');
 const templateDoc = document.querySelector('.templateDoc');
 const totalSection = document.querySelector('.container-vacations');
