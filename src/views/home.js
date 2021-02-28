@@ -23,40 +23,53 @@ export default () => {
     </div>-->
 
     <section class="background-image">
-    <section  class="information-cards">
-        <div class="card">
-            <div class="side front"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
-            <div class="side back"><p><strong>IMAX</strong> siempre vamos por + </p></div>
-        </div>
-        <div class="card">
-            <div class="side front1"><p>41 proyectos supervisados en el 2020</p></div>
-            <div class="side back1"><p><strong>246,514.84 </strong> metros supervisados</p></div>
-        </div>
-        <div class="card">
-            <div class="side front"><p><strong>7299</strong> Und tasadas en los últimos tres años</p></div>
-            <div class="side back"><p>2018=<strong>2322un</strong>  2019=<strong>3032un</strong>  2020=<strong>1945un</strong></p></div>
-        </div>
-        <div class="card">
-            <div class="side front1"><p>más de <strong>40</strong> proyectos mensuales monitoreados al año</p></div>
-            <div class="side back1"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
-        </div>
-     </section>
+        <section  class="information-cards">
+            <div class="card">
+                <div class="side front"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
+                <div class="side back"><p><strong>IMAX</strong> siempre vamos por + </p></div>
+            </div>
+            <div class="card">
+                <div class="side front1"><p>41 proyectos supervisados en el 2020</p></div>
+                <div class="side back1"><p><strong>246,514.84 </strong> metros supervisados</p></div>
+            </div>
+            <div class="card">
+                <div class="side front"><p><strong>7299</strong> Und tasadas en los últimos tres años</p></div>
+                <div class="side back"><p>2018=<strong>2322un</strong>  2019=<strong>3032un</strong>  2020=<strong>1945un</strong></p></div>
+            </div>
+            <div class="card">
+                <div class="side front1"><p>más de <strong>40</strong> proyectos mensuales monitoreados al año</p></div>
+                <div class="side back1"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
+            </div>
+        </section>
 
-    <section  class="servicios">
-        <div class="box-line"><p>Nuestros Servicios</p></div>
-        
-        <div class="box-services">
-            <div class="box-squares">
-                <div class="squares"><div class="space-white"><p>Tasaciones (TAS)</p></div></div>
-                <div class="squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
+        <section  class="servicios">
+            <div class="box-line"><p>Nuestros Servicios</p></div>
+            
+            <div class="box-services">
+                <div class="box-squares">
+                    <div class="squares"><div class="space-white"><p>Tasaciones (TAS)</p></div></div>
+                    <div class="squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
+                </div>
+                <div class="box-squares">
+                    <div class="squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
+                    <div class="squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
+                    <div class="squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
+                </div>
             </div>
-            <div class="box-squares">
-                <div class="squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
-                <div class="squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
-                <div class="squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
-            </div>
-        </div>
+        </section>
+    
     </section>
+
+    <section class="background-image1">
+        <section class="projects">
+            <div class="box-line">Ultimos Proyectos</div>
+            <div class="box-card-projects">
+                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>Supervisión Altair</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>Tasación Urbana</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>Supervisión Urbalima</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos4.png"> <div><p>Supervisión Parques</p> </div></div>
+            </div>
+        </section>
     </section>
    
     
