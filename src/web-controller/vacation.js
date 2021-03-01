@@ -127,7 +127,7 @@ vacationExpire.innerHTML = '',
 
                     const nameWorker = doc.data().name
 
-                    const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
+                    // const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
                     fs.collection('vacation').onSnapshot((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
@@ -139,7 +139,7 @@ vacationExpire.innerHTML = '',
                                 const cityRef = fs.collection('vacation').doc(doc.id);
                                 const res = cityRef.set({
                                     resDateExpireYear2,
-                                    vacationPending,
+                                    // vacationPending,
                                     nameWorker,
                                     nameWorker,
                                     area,
@@ -157,8 +157,8 @@ vacationExpire.innerHTML = '',
                     })
 
                     vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>
-                <p><strong>Truncas:</strong>${vacationPending} días</p>`
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>`
+              
 
 
                 } else {
@@ -166,8 +166,8 @@ vacationExpire.innerHTML = '',
                     console.log(resDateExpireYear);
 
                     const nameWorker = doc.data().name
-                    const vacationPending = calcVacationTodayYear(fechaItem, currentDate)
-                    console.log(monthDiff(fechaItem, currentDate))
+                    // const vacationPending = calcVacationTodayYear(fechaItem, currentDate)
+                    // console.log(monthDiff(fechaItem, currentDate))
 
                     fs.collection('vacation').onSnapshot((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
@@ -181,7 +181,7 @@ vacationExpire.innerHTML = '',
                                 const cityRef = fs.collection('vacation').doc(doc.id);
                                 const res = cityRef.set({
                                     resDateExpireYear,
-                                    vacationPending,
+                                    // vacationPending,
                                     nameWorker,
                                     area,
                                     dni,
@@ -198,8 +198,7 @@ vacationExpire.innerHTML = '',
                     })
 
                     vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>
-                <p><strong>Truncas:</strong>${vacationPending} días</p>`
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>`
                 }
 
 
