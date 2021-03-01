@@ -11,11 +11,17 @@ boxNameLeader.innerHTML = '',
         querySnapshot.forEach((doc) => {
             // console.log(`${doc.id} => ${doc.data().leader}`);
             const userLogueado = firebase.auth().currentUser;
+            console.log(userLogueado)
             const useruid = userLogueado.uid;
+            const user = doc.data();
+            console.log(user)
             if (useruid === doc.id) {
                 boxNameLeader.innerHTML += `
-            <label type="text" class="name-leader" > ${doc.data().leader} </label>`
-            }
+            <input value="${doc.data().leader}" disabled class="name-leader">`
+            
+            };
+
+           
 
         })
     })
@@ -240,7 +246,7 @@ registerVacation.addEventListener('submit', (e) => {
     var fecha = new Date();
     const startOfVacation = document.querySelector('.inicio-Vacation').value;
     const endOfVacation = document.querySelector('.fin-Vacation').value;
-    const bossInmediate = document.querySelector('.name-leader').innerHTML;
+    const bossInmediate = document.querySelector('.name-leader').value;
 
     console.log(useruid, startOfVacation, endOfVacation, bossInmediate)
     if (startOfVacation, endOfVacation) {
@@ -280,6 +286,7 @@ const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) =>
 const getVacationId = (id) => fs.collection('vacation').doc(id).get();
 const confirVacationLider = document.querySelector('.table-vacation-vb');
 confirVacationLider.innerHTML = '';
+const boxSendRequest = document.querySelector('.box-send-petition-ok');
 const templateDoc = document.querySelector('.templateDoc');
 const totalSection = document.querySelector('.container-vacations');
 templateDoc.innerHTML = '';
@@ -291,16 +298,19 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
         const userLogueado = firebase.auth().currentUser;
         const vacation = doc.data();
         vacation.id = doc.id;
+        
         if (vacation.useruid === userLogueado.uid) {
             console.log(vacation.useruid +'=>' + userLogueado.uid)
+            
+            
             if (doc.data().confirmacion === true) {
+                boxSendRequest.classList.remove('hide')
                 console.log('vacaciones ok')
                 confirVacationLider.innerHTML += `
                 <tr>
                 <td>${vacation.nameWorker}</td>  
                 <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
                 <td> <a class="download-format" data-id="${vacation.id}">DESCARGAR</a></td>
-                <td> <button class="send-format">Enviar Solicitud</button></td>
                 </tr>
             `
      

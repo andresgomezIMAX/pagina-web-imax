@@ -8,26 +8,73 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><img src="./assets/construction-site.jpg"></li>
-            <li><img src="./assets/home-slide-1.jpg"></li>
-            <li><img src="./assets/home-slide-3.jpg"></li>
-            <li><img src="./assets/monitoreo.jpg"></li>
+            <li><img src="./assets/slider1.png"></li>
+            <li><img src="./assets/slider2.png"></li>
+            <li><img src="./assets/slider3.png"></li>
+            <li><img src="./assets/slider4.png"></li>
         </ul>
     </div>
     </section>
-    <div class="contenedorVideo">
+    <!--<div class="contenedorVideo">
         <div class="pantallaVideo modal-closeVideo">
           <p class="closeVideo">X</p>
           <iframe src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-    </div>
-    <section >
-        <div class="lema">
-            <p>Nos caracterizamos por ser una empresa que brinda a sus clientes 
-                un servicio de máxima calidad, íntegro y personalizado.</p>
-        </div>
-        
+    </div>-->
+
+    <section class="background-image">
+        <section  class="information-cards">
+            <div class="card">
+                <div class="side front"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
+                <div class="side back"><p><strong>IMAX</strong> siempre vamos por + </p></div>
+            </div>
+            <div class="card">
+                <div class="side front1"><p>41 proyectos supervisados en el 2020</p></div>
+                <div class="side back1"><p><strong>246,514.84 </strong> metros supervisados</p></div>
+            </div>
+            <div class="card">
+                <div class="side front"><p><strong>7299</strong> Und tasadas en los últimos tres años</p></div>
+                <div class="side back"><p>2018=<strong>2322un</strong>  2019=<strong>3032un</strong>  2020=<strong>1945un</strong></p></div>
+            </div>
+            <div class="card">
+                <div class="side front1"><p>más de <strong>40</strong> proyectos mensuales monitoreados al año</p></div>
+                <div class="side back1"><p>Brindando soluciones desde el <strong>2008</strong></p></div>
+            </div>
+        </section>
+
+        <section  class="servicios">
+            <div class="box-line"><p>Nuestros Servicios</p></div>
+            
+            <div class="box-services">
+                <div class="box-squares">
+                    <div class="squares"><div class="space-white"><p>Tasaciones (TAS)</p></div></div>
+                    <div class="squares1"><div class="space-white"><p>Valuaciones, Peritajes y Consultoría (VPC)</p></div></div>
+                </div>
+                <div class="box-squares">
+                    <div class="squares2"><div class="space-white"><p>Gestios y Desarrollo de Proyectos (GDP)</p></div></div>
+                    <div class="squares3"><div class="space-white"><p>Evaluación y Monitoreo de Proyectos (EMP)</p></div></div>
+                    <div class="squares4"><div class="space-white"><p>Gestión y Supervisión de Obras (GSO)</p></div></div>
+                </div>
+            </div>
+        </section>
+    
     </section>
+
+    <section class="background-image1">
+        <section class="projects">
+            <div class="box-line">Ultimos Proyectos</div>
+            <div class="box-card-projects">
+                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>Supervisión Altair</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>Tasación Urbana</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>Supervisión Urbalima</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos4.png"> <div><p>Supervisión Parques</p> </div></div>
+            </div>
+        </section>
+    </section>
+   
+    
+
+    
 
     <!--<section class="servicios" >
         <p class="title">Nuestras Unidades de Negocio</p>
@@ -78,7 +125,7 @@ export default () => {
 
     
 
-    <section class="servicios" >
+    <!--<section class="servicios" >
     <!-- <p class="title">Nuestras Unidades de Negocio</p>
 
         <img class="ruleta" src="./assets/unidadesNegocio.png">-->
@@ -87,10 +134,10 @@ export default () => {
             <canvas width="50" height="50" id="dibujito" class="dibujito"></canvas>
         </div>
 
-    </section>
+    </section>-->
  
 
-    <section class="informacion">
+    <!-- <section class="informacion">
         <p class="title">Datos IMAX</p>
         <p class="text-desc">Más de 40 proyectos promedio mensuales Monitoreados al año con diferentes entidades financieras<p>
       <ul class="slider">
@@ -115,7 +162,7 @@ export default () => {
                 <img src="./assets/info.png">
             </li>
       </ul>
-    </section>
+    </section>-->
 
 
 
@@ -132,6 +179,12 @@ export default () => {
             <img src="./assets/client4.jpg">
         </div>
     </section>
+
+    <div class="contenedorVid">
+        <div class="videoUrl">
+    <iframe  src="https://www.youtube.com/embed/uK6rxOvwIzA" controls load class="video" frameborder="0" allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 
 
     <div class="contenedorSubir" >
@@ -186,64 +239,64 @@ export default () => {
     //     }
     // });
 
-    // Para ver el video
+//     // PARA EL VIDEO
 
-    const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
-    const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
-    const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
-    const video = sectionElem.querySelectorAll(".video")[0];
+//     const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
+//     const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
+//     const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
+//     const video = sectionElem.querySelectorAll(".video")[0];
 
-    cerrarModal.addEventListener("click", () => {
-        modalVideo.classList.toggle("modal-closeVideo");
-          modalCvideo.style.opacity = "0";
-          modalCvideo.style.visibility = "hidden";
-          video.src = "";
-      });
+//     cerrarModal.addEventListener("click", () => {
+//         modalVideo.classList.toggle("modal-closeVideo");
+//           modalCvideo.style.opacity = "0";
+//           modalCvideo.style.visibility = "hidden";
+//           video.src = "";
+//       });
 
-   window.addEventListener("click", (e) => {
-    console.log(e.target)
-    if (e.target == modalCvideo) {
-      modalVideo.classList.toggle("modal-closeVideo");
-        modalCvideo.style.opacity = "0";
-        modalCvideo.style.visibility = "hidden";
-        video.src = "";
-    }
-    });
+//    window.addEventListener("click", (e) => {
+//     console.log(e.target)
+//     if (e.target == modalCvideo) {
+//       modalVideo.classList.toggle("modal-closeVideo");
+//         modalCvideo.style.opacity = "0";
+//         modalCvideo.style.visibility = "hidden";
+//         video.src = "";
+//     }
+//     });
 
-// codigo para el grafico en servicios
-const d = sectionElem.querySelector('#dibujito');
-const lienzo = d.getContext("2d");
+// // codigo para el grafico en servicios
+// const d = sectionElem.querySelector('#dibujito');
+// const lienzo = d.getContext("2d");
 
-console.log(lienzo);
+// console.log(lienzo);
 
-const myChart = new Chart  (lienzo, {
-    type: 'pie',
-    data: {
-        labels:[
-            "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
-        ],
-        datasets: [{
-            data:[
-                5.94,3,11.82,11.82,11.82,0.06,0.18
-            ],
-            backgroundColor:[
-                '#404040',
-                '#ffc000',
-                '#5b9bd5',
-                '#70ad47',
-                '#ff0000',
-                '#d9d9d9',
-                '#acacac'
+// const myChart = new Chart  (lienzo, {
+//     type: 'pie',
+//     data: {
+//         labels:[
+//             "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
+//         ],
+//         datasets: [{
+//             data:[
+//                 5.94,3,11.82,11.82,11.82,0.06,0.18
+//             ],
+//             backgroundColor:[
+//                 '#404040',
+//                 '#ffc000',
+//                 '#5b9bd5',
+//                 '#70ad47',
+//                 '#ff0000',
+//                 '#d9d9d9',
+//                 '#acacac'
 
-            ],
-        }],
+//             ],
+//         }],
        
        
-    },
-    options: {
-        responsive:true,
-    }
-});
+//     },
+//     options: {
+//         responsive:true,
+//     }
+// });
     
 
     

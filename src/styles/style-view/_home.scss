@@ -1,3 +1,9 @@
+@font-face{
+    font-family: Gui generis Rg;
+    src: url(../../assets/suiGenerisRg.ttf);
+}
+
+
 // galeria de fotos del home -----------------------------------------------------------------------------
 
 .slider-fotos {
@@ -18,10 +24,12 @@
     li {
         list-style: none;
         width: 100%;
+        height: 700px;
 
         img {
             width: 100%;
             height: 100%;
+            padding-top: 5%;
         }
     }
 }
@@ -167,235 +175,277 @@
 
 
 
-// section lema -----------------------------------------------------------------------------
+// video estatico
 
-.lema {
-    width: 100%;
-    // height: 120px;
-    background: #fff;
-    // border-top: 5px solid #676767;
-    // border: 5px solid #676767;
+.contenedorVid{
+    width: 100%;    
+    height: 580px;
 
 
-    p {
-        font-size: 32px;
-        padding: 2% 10%;
-        font-family: 'Courgette', cursive;
+
+    .videoUrl{
+        width: 100%;
+        // width: 90%;
+        // margin-left: 5%;
+        iframe{
+        width: 100%;
+        height: 580px;
+        }
     }
 }
 
-// section servicios -----------------------------------------------------------------------------
+// section card informativas--------------------------------------------------------------.
+.background-image{
+    background-image: url(../assets/fondo1.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.information-cards{
+    height: 450px;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    -webkit-perspective: 700;
+    perspective: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+    .card{
+        height: 60%;
+        width: 20%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: 2s;
+        margin: 10px;
+      
+
+
+
+        .side{
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            border-radius: 30px;
+            padding: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Gui generis Rg;
+            font-size: 25px;
+
+            strong{
+                font-weight: bold;
+                font-size: 30px;
+            }
+        }
+
+       
+
+        .front{
+            background:rgb(0,174, 239);
+        }
+        .front1{
+            background:rgb(158,160, 167);
+        }
+
+        .back{
+            background: rgb(158,160, 167);
+            transform: rotateY(180deg);
+        }
+        .back1{
+            background: rgb(0,174, 239);
+            transform: rotateY(180deg);
+        }
+    }
+
+    .card:hover{
+        transform: rotateY(180deg);
+    }
+}
+
+// section servicios Nuevo-----------------------------------------------------------------------------
+@mixin squareDetail {
+    width: 20%;
+    border: 3px solid rgb(0,174, 239);
+    height: 200px;
+    margin: 0px 30px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+@mixin boxWhite {
+    width: 100%;
+    height: 130px;
+    background: white;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    font-weight: bold
+}
 
 .servicios {
-    background: #F1FAFB;
-    padding: 2%;
+
+    // border: 2px solid green;
+    width: 100%;
+    height: 570px;
+
+  
+
+        .box-line{
+            width: 20%;
+            background-color: rgb(0,174, 239);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-left: 1%;
+            border-radius: 0px 15px 15px 0px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .box-services{
+            // border: 2px solid green;
+            width: 100%;
+            height: 500px;
+
+            .box-squares{
+                height: 250px;
+                // border: 2px solid green;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .squares{
+                    @include squareDetail();
+                    background-image: url(../assets/servicios1.png);
+
+                    .space-white{
+                        @include boxWhite();
+                        padding: 0% 25%;
+                      
+                    }
+                }
+                .squares1{
+                    @include squareDetail();
+                    background-image: url(../assets/servicios2.png);
+                    
+                    .space-white{
+                        @include boxWhite();
+                        padding: 0% 15%;
+                    }
+                }
+                .squares2{
+                    @include squareDetail();
+                    background-image: url(../assets/servicios3.png);
+                    
+                    .space-white{
+                        @include boxWhite();
+                        padding: 0% 15%;
+                       
+                    }
+                }
+                .squares3{
+                    @include squareDetail();
+                    background-image: url(../assets/servicios4.png);
+                    
+                    .space-white{
+                        @include boxWhite();
+                        padding: 0% 15%;
+                    }
+                }
+              
+                .squares4{
+                    @include squareDetail();
+                    background-image: url(../assets/servicios5.png);
+                    
+                    .space-white{
+                        @include boxWhite();
+                        padding: 0% 15%;
+                    }
+                }
+            }
+        }
+    
+  
    
 
 
     
 
-    .title {
-        color: #009AD2;
-        font-size: 195%;
-        font-weight: bold;
+    
+
+}
+
+
+// section PROYECTOS NUEVO -----------------------------------------------------------------------------
+
+.background-image1{
+    background-image: url(../assets/fondo2.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.projects{
+    width: 100%;
+    height: 570px;
+    padding-top: 3%;
+   
+    .box-line{
+        width: 20%;
+        background-color: rgb(158,160,167);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 1%;
+        border-radius: 0px 15px 15px 0px;
+        color: white;
+        font-size: 20px;
+    }
+
+    .box-card-projects{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .card-project{
+            background-color: white;
+            height: 60%;
+            width: 18%;
+
+            .img-project{
+                width: 100%;             
+            }
+
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 18%;
+                font-weight: 600;            
+            }
+        }
+        
+        .card-project:hover {
+            transform: scale(1.1);
+            transition: 0.5;
+        }
     }
 
     
-    .grafico{
-        width: 45%;
-        margin: 2% 0 2% 30%;
-    }
-
-    .ruleta{
-        margin-left: 25%;
-    }
-
-    .box-services {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-around;
-        padding: 5%;
-
-
-        .box-btn {
-            width: 22%;
-
-            .div-servicios {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 2%;
-
-                :hover {
-                    transform: scale(1.1);
-                    transition: 0.5;
-                }
-
-                .cta {
-                    width: 95%;
-
-                    .btn-imagen {
-                        width: 70%;
-                        margin-bottom: 15px;
-                        border-radius: 50%;
-                        border: 1px solid orange;
-                        cursor: pointer;
-                        outline: none;
-                        box-shadow: 3px 10px 17px 3px rgba(0, 0, 0, 0.75);
-
-                        :hover {
-                            background: rgb(95, 102, 105);
-                        }
-                    }
-                }
-
-
-            }
-
-
-        }
-    }
-
-    .modal-container {
-        opacity: 0;
-        visibility: hidden;
-        position: fixed;
-        z-index: 1000;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .modal {
-            width: 55%;
-            height: 65%;
-            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-            // overflow: hidden;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            position: relative;
-            transition: transform 0.8s;
-            transform: translateY(0%);
-            border-radius: 10px;
-            padding: 10px;
-
-            img {
-                width: 50%;
-                margin-left: 25%;
-            }
-
-            .close {
-                position: absolute;
-                top: 5px;
-                right: 5px;
-                display: inline-block;
-                width: 25px;
-                height: 25px;
-                background: cornflowerblue;
-                cursor: pointer;
-                line-height: 25px;
-                border-radius: 50%;
-            }
-        }
-
-        .modal-close {
-            transform: translateY(-200%);
-        }
-
-    }
-
-
-}
-
-
-// section informacion-----------------------------------------------------------------------------
-
-.informacion{
-    background: #d9e3e4;
-    height: 95vh;
-
-        .title {
-            color: #009AD2;
-            font-size: 195%;
-            font-weight: bold;
-            padding: 2% 0 1% 2%;
-        }
-
-        .text-desc{
-            margin-left: 60px;
-        }
-
-}
-.slider{
-    width: 800px;
-    height: 400px;
-    margin: auto;
-    position: relative;
-    list-style: none;
-    padding: 0;
-    display: flex;
-    top: 25px;
-
-    justify-content: center;
-    align-items: flex-end;
-
-    box-shadow: 0 0 0 10px white,
-                0 0 0 12px;
-
-    img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: all 0.7s;
-    }
-
-    p{
-        color: #fff;
-        position: absolute;
-       
-        opacity: 0;
-    }
-
-    input{
-      display: none;
-
-        
-    }
-
-    input:checked ~ img {
-        opacity: 1;
-    }
-
-    input + label{
-        position: relative;
-        z-index: 50;
-        margin: 10px;
-
-        display: block;
-        width: 20px;
-        height: 20px;
-        background: #fff;
-        border-radius: 50%;
-        border: 2px solid black;
-    }
-
-    input:checked + label {
-        background: black;
-        border: 2px solid #fff;
-        cursor: pointer;
-    }
-
 }
 
 

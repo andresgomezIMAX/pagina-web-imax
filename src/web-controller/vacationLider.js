@@ -23,21 +23,23 @@ window.addEventListener('DOMContentLoaded', async (e) => {
     querySnapshot.forEach(doc => {
       const vacation = doc.data();
       console.log(vacation)
+      const userLogueado = firebase.auth().currentUser;
+      console.log(userLogueado)
       vacation.id = doc.id;
-      const user = firebase.auth().currentUser;
-      vacationContainer.innerHTML += `
-                                        <tr class="nameWorker">
-                                        <td>${vacation.nameWorker}</td>  
-                                        <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
-                                        <td>Pendientes: ${vacation.vacationPending} días <br>
-                                            Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
-                                        <td>${vacation.confirmacion === true ? `<input type="checkbox" class="conformidadLider" value= ${vacation.confirmacion}  name="conformidad" data-id="${vacation.id}"  checked >` : 
-                                        `<input type="checkbox" class="conformidad" value= ${vacation.confirmacion}  name="conformidad"  data-id="${vacation.id}" > `} </td>
-                                        </tr> 
-                             `;
-
-
-
+      console.log(userLogueado.displayName)
+      console.log(vacation.bossInmediate)
+      if(userLogueado.displayName === vacation.bossInmediate){
+        vacationContainer.innerHTML += `
+        <tr class="nameWorker">
+        <td>${vacation.nameWorker}</td>  
+        <td>${vacation.startOfVacation} al ${vacation.endOfVacation}</td>
+        <td>Pendientes: ${vacation.vacationPending} días <br>
+            Vencen: ${(vacation.resDateExpireYear) ? vacation.resDateExpireYear : vacation.resDateExpireYear2} </td>
+        <td>${vacation.confirmacion === true ? `<input type="checkbox" class="conformidadLider" value= ${vacation.confirmacion}  name="conformidad" data-id="${vacation.id}"  checked >` : 
+        `<input type="checkbox" class="conformidad" value= ${vacation.confirmacion}  name="conformidad"  data-id="${vacation.id}" > `} </td>
+        </tr> 
+`;
+      }
 
     });
 

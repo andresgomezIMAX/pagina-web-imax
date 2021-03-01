@@ -52,7 +52,7 @@
                         <div class="search-name">
                             <div>
                                 <label for="nameWorkerCts">Nombre del Colaborador:</label>
-                                <select name="name" class="nameWorkerCts select-modal" required >
+                                <select name="name" class="nameWorkersCts select-modal" required >
                                     <option value="Pepito Castillo Luna">Pepito Castillo Luna</option>
                                     <option value="Laura Catillo Luna">Laura Catillo Luna </option>
                                     <option value="Pepito Castillo Luna">Pepito Castillo Luna</option>
@@ -85,7 +85,7 @@
                             </div>
                             <div>
                                 <label for="page-cts">Total s/.: </label>
-                                <input type="number" name="page-cts"  class="page-cts" >
+                                <input type="number" name="page-cts"  class="page-cts" required>
                             </div>
                             <div>
                                 <label for="addImgCts">Adjuntar Constancia <i class="fas fa-paperclip"></i></label>
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn-generar-cts">Generar</button>
+                    <button type="submit" class="btn-generar-cts">Generar</button>
                 </form>   
             </div>
 
@@ -103,11 +103,11 @@
                 <div class="search-filter">
                     <p>Filtro de Búsqueda</p>
                     <div class="detailed-search">
-                        <label for="search">Por Colaborador:</label>
-                        <input type="text" name="search" >
+                        <label for="searchNameCts">Por Colaborador:</label>
+                        <input type="text" name="searchNameCts" class="searchNameCts">
                     
-                        <label for="search">Por Mes:</label>
-                        <input type="text" name="search" >   
+                        <label for="searchMonthCts">Por Mes:</label>
+                        <input type="text" name="searchMonthCts" class="searchMonthCts">   
                     </div>
                 </div>
             </div>
