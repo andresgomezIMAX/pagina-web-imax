@@ -1,5 +1,3 @@
-
-
 const registerVacation = document.querySelector('.box-check-boss');
 const user = () => firebase.auth().currentUser;
 
@@ -127,7 +125,7 @@ vacationExpire.innerHTML = '',
 
                     const nameWorker = doc.data().name
 
-                    // const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
+                    const vacationPending = calcVacationTodayYear(newDateExpire, currentDate)
 
                     fs.collection('vacation').onSnapshot((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
@@ -139,7 +137,7 @@ vacationExpire.innerHTML = '',
                                 const cityRef = fs.collection('vacation').doc(doc.id);
                                 const res = cityRef.set({
                                     resDateExpireYear2,
-                                    // vacationPending,
+                                    vacationPending,
                                     nameWorker,
                                     nameWorker,
                                     area,
@@ -157,8 +155,8 @@ vacationExpire.innerHTML = '',
                     })
 
                     vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>`
-              
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear2} </p>
+                <p><strong>Truncas:</strong>${vacationPending} días</p>`
 
 
                 } else {
@@ -166,8 +164,8 @@ vacationExpire.innerHTML = '',
                     console.log(resDateExpireYear);
 
                     const nameWorker = doc.data().name
-                    // const vacationPending = calcVacationTodayYear(fechaItem, currentDate)
-                    // console.log(monthDiff(fechaItem, currentDate))
+                    const vacationPending = calcVacationTodayYear(fechaItem, currentDate)
+                    console.log(monthDiff(fechaItem, currentDate))
 
                     fs.collection('vacation').onSnapshot((querySnapshot) => {
                         querySnapshot.forEach((doc) => {
@@ -181,7 +179,7 @@ vacationExpire.innerHTML = '',
                                 const cityRef = fs.collection('vacation').doc(doc.id);
                                 const res = cityRef.set({
                                     resDateExpireYear,
-                                    // vacationPending,
+                                    vacationPending,
                                     nameWorker,
                                     area,
                                     dni,
@@ -198,7 +196,8 @@ vacationExpire.innerHTML = '',
                     })
 
                     vacationExpire.innerHTML += `
-                <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>`
+                <p><strong>Vencimiento:</strong> ${resDateExpireYear} </p>
+                <p><strong>Truncas:</strong>${vacationPending} días</p>`
                 }
 
 
@@ -261,7 +260,7 @@ registerVacation.addEventListener('submit', (e) => {
 });
 
 
-//funcion para guaradr vacaciones en firestore  
+//funcion para guaradr vacacones en firestore  
 const saveVacation = (useruid, startOfVacation, endOfVacation, bossInmediate) => {
     const firestore = fs;
     const userLogueado = firebase.auth().currentUser;
@@ -331,10 +330,8 @@ fs.collection('vacation').onSnapshot((querySnapshot) => {
                                 con anticipacion los días de vacaciones correspondientes a este año, desde ${vacation.startOfVacation} 
                                 al ${vacation.endOfVacation}
                                 por ser mi derecho </p>
-
                                 <p class="body-doc"> Agradeciendo su atencion y esperando que no exista inconveniente por 
                                 su parte, quedo a la espera de su contestacion </p>
-
                                 <p class="body-doc"> Le saluda atentamente ${vacation.nameWorker}</p>
                                 
                                 <img class="firma-pdf" src="${vacation.urlfirmRegister} ">

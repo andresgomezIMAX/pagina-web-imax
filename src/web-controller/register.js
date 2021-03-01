@@ -1,4 +1,3 @@
-
 //CAPTURANDO EL URL DE LA FIRMA ELECTRONICA
 let file;
 const currentUser = () => firebase.auth().currentUser;
@@ -48,48 +47,7 @@ fs.collection('users').onSnapshot((querySnapshot) => {
   })
 })
 
-//Obteniendo fecha actual
-var dateToday = new Date();
-console.log(dateToday);
 
-function formatDate(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2)
-        month = '0' + month;
-    if (day.length < 2)
-        day = '0' + day;
-
-    return [year, month, day].join('-');
-}
-
-const currentDate = formatDate(dateToday);
-console.log(currentDate);
-
-//funcion para sacar meses de diferencia
-const monthDiff = (date1, date2) => {
-  const vec1 = date1.split('-');
-  var d1 = new Date(vec1[0], vec1[1] - 1, vec1[2]);
-  const vec2 = date2.split('-');
-  var d2 = new Date(vec2[0], vec2[1] - 1, vec2[2]);
-  var months;
-  months = (d2.getFullYear() - d1.getFullYear()) * 12;
-  months -= d1.getMonth() + 1;
-  months += d2.getMonth();
-  if (d2.getDate() >= d1.getDate()) months++
-  return months <= 0 ? 0 : months;
-}
-
-//multiplicar meses por 2.5 dias de vacaciones
-const calcVacationTodayYear = (fecha1, fecha2) => {
-  console.log(monthDiff(fecha1, fecha2))
-  const resFechas = monthDiff(fecha1, fecha2)
-  const vacationPending = resFechas * 2.5;
-  return vacationPending;
-}
 
 // REGISTRANDO USUARIOS 
 const register = document.querySelector('.box-fill-data');
@@ -117,11 +75,9 @@ register.addEventListener('submit', (e) => {
         const salarioAdmin= document.querySelector('.salarioAdmin-register').value;
         const urlfirmRegister = sessionStorage.getItem('firmRegister');
         const checkLider = document.querySelector('.checkLider').value;
-        const vacationPending = calcVacationTodayYear(entryDay, currentDate)
-
-        console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider,vacationPending)
+        console.log(name, checkAdmin, dni, phone, area,leader,entryDay,salarioAdmin,urlfirmRegister,checkLider)
         const cityRef = firebase.firestore().collection('users').doc(docId);
-        const res = cityRef.set({
+        const res = cityRef.update({
         name, 
         checkAdmin,
         email,
@@ -235,7 +191,6 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                                   <td data-id="${user.id}" class="checkLider">${user.checkLider}</td>
                                   <td><i data-id="${user.id}" class="btn-editUser fas fa-edit"></i> <button data-id="${user.id}" class="btnSaveFile" id="btnSaveFile">💾</button> <i class="btn-delUser fas fa-trash-alt" data-id="${user.id}" data-name="${user.name}"></i></td>
                                 </tr>  
-
                                 
                              `;
 
@@ -361,6 +316,3 @@ const addworker = document.querySelector('.container-add-worker');
   addworker.classList.toggle('show');
   console.log('click');
 });
-
-
-
