@@ -8,8 +8,8 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><img src="./assets/slider1.png"></li>
-            <li><img src="./assets/slider2.png"></li>
+            <li><div class="slid1"><div class="space-logo"><img src="./assets/logo-imax.png"></div></div></li>
+            <li><div class="slid2"><div class="space-with"><p class="line-black">LO ASESORAMOS MEJOR</p><div><p>PORQUE CONOCEMOS EL SECTOR</p><p>INMOBILIARIO DESDE ADENTRO</p></div></div></div></li>
             <li><img src="./assets/slider3.png"></li>
             <li><img src="./assets/slider4.png"></li>
         </ul>
