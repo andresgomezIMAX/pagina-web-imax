@@ -7,7 +7,6 @@
   width: 100%;
   margin: auto;
   overflow: hidden;
-  border: 2px solid green;
 }
 
 .slider-fotos ul {
@@ -93,6 +92,7 @@
   font-weight: 700;
   margin-left: 15%;
   font-size: 38px;
+  color: black;
 }
 
 .slider-fotos li .slid2 .space-with div {
