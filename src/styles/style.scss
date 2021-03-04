@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
@@ -30,8 +30,8 @@
 // }
 
 @font-face{
-    font-family: Gui generis Rg;
-    src: url(../../assets/suiGenerisRg.ttf);
+    font-family: 'Gui generis Rg';
+    src: url(../../assets/SuiGenerisRegular.otf);
 }
 
 .menu-bar {
@@ -73,8 +73,9 @@
                     text-decoration: none;
                     padding: 15px 30px;
                     margin-top: 20%;
-                    font-family: 'Noto Sans JP', sans-serif;
-                    font-size: 15px;
+                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 17px;
+                    font-weight:500;
                 }
 
                 .intranet{

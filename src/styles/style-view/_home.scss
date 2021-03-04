@@ -1,10 +1,25 @@
 @font-face{
     font-family: Gui generis Rg;
-    src: url(../../assets/suiGenerisRg.ttf);
+    src: url(../../assets/SuiGenerisRegular.otf);
+}
+// galeria de fotos del home -----------------------------------------------------------------------------
+@mixin photoSlid {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: center;
 }
 
+@mixin columCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-// galeria de fotos del home -----------------------------------------------------------------------------
 
 .slider-fotos {
     width: 100%;
@@ -27,74 +42,96 @@
     li {
         list-style: none;
         width: 100%;
-        height: 660px;
+        height: 580px;
 
         .slid1 {
-            width: 100%;
-            height: 100%;
             background-image: url(../assets/slide1.png);
-            background-repeat: no-repeat;
-            background-position: bottom;
-            background-size: cover;
-            display: flex;
+            @include photoSlid();
             justify-content: center;
-            align-items: center;
-
 
             .space-logo{
-                margin-top: 3%;
+         
                 width: 52%;
-                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
               
             }
         }
         .slid2 {
-            width: 100%;
-            height: 100%;
-            background-image: url(../assets/slide3.png);
-            background-repeat: no-repeat;
-            background-position: bottom;
-            background-size: cover;
-            display: flex;
+            background-image: url(../assets/slide2.png);
+            @include photoSlid();
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
 
+            .space-white1{
+             
+                font-size: 40px;
+                font-weight: 610;
+                @include columCenter();
+                margin: 1% 0 2% 0;
+            }
 
-            .space-with{
-                margin-top: 5%;
-                background-color: white;
-                opacity: 0.7;
-                width: 48%;
+            .space-white2{
+               
+                font-size: 25px;
+                font-weight: 500;
+                @include columCenter();
+              
+            }
+
+        }
+
+        .slid3 {
+            background-image: url(../assets/slide4.png);
+            @include photoSlid();
+            justify-content: flex-end;
+  
+            .space-lema{
+                width: 52%;
                 height: 60%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
+                padding: 3% 10%;
+             
 
-                .line-black{
-                    font-weight: 700;
-                    margin-left: 15%;
-                    font-size: 38px;
-                    color: black;
+                .box-lema1{
+                    font-size: 40px;
+                    margin-bottom: 7%;
+                    font-weight: 610;
                 }
-                div{
-                    display: flex;
-                   flex-direction: column;
-                   justify-content: center;
-                   align-items: center;
-                }
-                p{
-                    font-size: 22px;
+
+                .box-lema2{
+                    font-size: 35px;
                 }
               
             }
         }
+        .slid4 {
+            background-image: url(../assets/slide5.png);
+            @include photoSlid();
+            justify-content: flex-end;
+           height: 110%;
 
-        
-        img {
-            width: 100%;
-            height: 100%;
-            padding-top: 5%;
+            .space-lema{
+                width: 52%;
+                height: 60%;
+                padding: 0 10%;
+             
+
+                .box-lema1{
+                    font-size: 40px;
+                    margin-bottom: 7%;
+                    font-weight: 610;
+                }
+
+                .box-lema2{
+                    font-size: 35px;
+                }
+              
+            }
         }
+        
+        
     }
 }
 
@@ -300,7 +337,7 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-family: Gui generis Rg;
+            font-family: 'Gui generis Rg';
             font-size: 25px;
 
             strong{

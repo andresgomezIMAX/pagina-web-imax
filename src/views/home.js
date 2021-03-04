@@ -8,10 +8,44 @@ export default () => {
     
     <div class="slider-fotos">
         <ul>
-            <li><div class="slid1"><div class="space-logo"><img src="./assets/logo-imax.png"></div></div></li>
-            <li><div class="slid2"><div class="space-with"><p class="line-black">LO ASESORAMOS MEJOR</p><div><p>PORQUE CONOCEMOS EL SECTOR</p><p>INMOBILIARIO DESDE ADENTRO</p></div></div></div></li>
-            <li><img src="./assets/slider3.png"></li>
-            <li><img src="./assets/slider4.png"></li>
+            <li>
+                <div class="slid1">
+                    <div class="space-logo">   
+                        <img src="./assets/logo-imax.png">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="slid2">
+        
+                    <div class="space-white1">
+                        <p>LO ASESORAMOS MEJOR</p>
+                    </div>
+                    <div class="space-white2">
+                        <p>PORQUE CONOCEMOS EL</p>
+                        <p>SECTOR INMOBILIARIO DESDE</p>
+                        <p>DENTRO</p>
+                    </div>
+             
+                  
+                </div>
+            </li>
+            <li>
+                <div class="slid3">
+                    <div class="space-lema">
+                        <div class="box-lema1"> <p>NOS ADECUAMOS</p> <p>A SUS NECESIDADES</p> </div>
+                        <div class="box-lema2"> <p>PARA ENTREGARLE</p> <p>SOLUCIONES DE LA</p> <p>MÁS ALTA CALIDAD</p> </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="slid4">
+                    <div class="space-lema">
+                        <div class="box-lema1"> <p>NOS</p> <p>COMPROMETEMOS</p> </div>
+                        <div class="box-lema2"> <p>TRABAJAMOS</p> <p>CADA PROYECTO CON</p>  <p>PROFESIONALISMO Y</p> <p>DEDICACIÓN</p></div>
+                    </div>
+                 </div>
+            </li>
         </ul>
     </div>
     </section>
