@@ -3,9 +3,6 @@ export default () => {
     const viewHome = `
    
     <section>
-
-    
-    
     <div class="slider-fotos">
         <ul>
             <li>
@@ -98,11 +95,13 @@ export default () => {
         <section class="projects">
             <div class="box-line">Ultimos Proyectos</div>
             <div class="box-card-projects">
-                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>Supervisión Altair</p> </div></div>
-                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>Tasación Urbana</p> </div></div>
-                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>Supervisión Urbalima</p> </div></div>
-                <div class="card-project"><img class="img-project" src="./assets/proyectos4.png"> <div><p>Supervisión Parques</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>SUPERVISIÓN ALTAIR</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>TASACION URBANIA</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>SUPERVISIÓN URBALIMA</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos4.png"> <div><p>SUPERVISIÓN PARQUES</p> </div></div>
+           
             </div>
+            <div class="box-link-projects"> <a href="#/proyectos">VER MÁS PROYECTOS </a></div>
         </section>
     </section>
    

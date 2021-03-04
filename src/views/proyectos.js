@@ -1,7 +1,19 @@
 export default () => {
     const viewProyectos = `
+    <section class="background-image1">
+        <section class="projects">
+            <div class="box-line">Ultimos Proyectos</div>
+            <div class="box-card-projects">
+                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>SUPERVISIÓN ALTAIR</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>TASACION URBANIA</p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>SUPERVISIÓN URBALIMA</p> </div></div>
+               
+           
+            </div>
+        </section>
+    </section>
 
-    <section class="container-proyectos">
+    <!--<section class="container-proyectos">
         <h2 class="title">Conoce nuestros proyectos</h2>
         <div class="box-proyectos"> 
             <div class="card-proyecto">
@@ -48,7 +60,7 @@ export default () => {
             </div>
         </div>
       
-    </section>
+    </section>-->
 
     
     <section class="container-mapa">
