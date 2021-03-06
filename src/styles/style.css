@@ -1112,6 +1112,98 @@
   background-position: center;
 }
 
+.projects-galery {
+  width: 100%;
+  height: 600px;
+  padding-top: 3%;
+}
+
+.projects-galery .box-line {
+  width: 20%;
+  background-color: #9ea0a7;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 1%;
+  border-radius: 0px 15px 15px 0px;
+  color: white;
+  font-size: 20px;
+}
+
+.projects-galery .box-card-projects {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.projects-galery .box-card-projects .card-project {
+  background-color: white;
+  height: 80%;
+  width: 22%;
+}
+
+.projects-galery .box-card-projects .card-project .img-project {
+  width: 100%;
+}
+
+.projects-galery .box-card-projects .card-project .name-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 18%;
+  font-weight: 600;
+}
+
+.projects-galery .box-card-projects .card-project .description {
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.projects-galery .box-card-projects .card-project:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.projects-galery .box-link-projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.projects-galery .box-link-projects a {
+  color: #f96a1b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .container-proyectos {
   background: #F1FAFB;
   padding-top: 5%;

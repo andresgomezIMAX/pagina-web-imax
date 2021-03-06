@@ -159,9 +159,9 @@ export default () => {
     
 
     <!--<section class="servicios" >
-    <!-- <p class="title">Nuestras Unidades de Negocio</p>
+    <p class="title">Nuestras Unidades de Negocio</p>
 
-        <img class="ruleta" src="./assets/unidadesNegocio.png">-->
+        <img class="ruleta" src="./assets/unidadesNegocio.png">
         <h1 class="title" >Nuestras Unidades de Negocio</h1>
         <div class="grafico"> 
             <canvas width="50" height="50" id="dibujito" class="dibujito"></canvas>

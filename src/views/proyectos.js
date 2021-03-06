@@ -1,13 +1,18 @@
 export default () => {
     const viewProyectos = `
     <section class="background-image1">
-        <section class="projects">
+        <section class="projects-galery">
             <div class="box-line">Ultimos Proyectos</div>
             <div class="box-card-projects">
-                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div><p>SUPERVISIÓN ALTAIR</p> </div></div>
-                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div><p>TASACION URBANIA</p> </div></div>
-                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div><p>SUPERVISIÓN URBALIMA</p> </div></div>
-               
+                <div class="card-project"><img class="img-project" src="./assets/proyectos1.png"> <div class="name-project"><p>SUPERVISIÓN ALTAIR</p> </div>
+                <div class="description"><p>SUPERVISIÓN DE OBRA DEL PROYECTO ALTAIR UBICADO EN EL DISTRITO DE ABCDEFGH – 1,0032 M2 EN EL AÑO 2019 
+                </p> </div></div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos2.png"> <div class="name-project" ><p>TASACION URBANIA</p> </div> 
+                <div class="description"><p>SUPERVISIÓN DE OBRA DEL PROYECTO ALTAIR UBICADO EN EL DISTRITO DE ABCDEFGH – 1,0032 M2 EN EL AÑO 2019 
+                </p> </div> </div>
+                <div class="card-project"><img class="img-project" src="./assets/proyectos3.png"> <div class="name-project"><p>SUPERVISIÓN URBALIMA</p> </div> 
+                <div class="description"><p>SUPERVISIÓN DE OBRA DEL PROYECTO ALTAIR UBICADO EN EL DISTRITO DE ABCDEFGH – 1,0032 M2 EN EL AÑO 2019 
+                </p> </div></div> 
            
             </div>
         </section>
