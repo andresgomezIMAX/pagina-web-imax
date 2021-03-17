@@ -1,4 +1,3 @@
-
 export default () => {
     const viewHome = `
    
@@ -251,7 +250,7 @@ export default () => {
     //         modal.classList.toggle("modal-close");
     //     });
     // });
-    
+
     // cerrar.addEventListener("click", () => {
     //     modal.classList.toggle("modal-close");
     //     setTimeout(() => {
@@ -272,83 +271,83 @@ export default () => {
     //     }
     // });
 
-//     // PARA EL VIDEO
+    //     // PARA EL VIDEO
 
-//     const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
-//     const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
-//     const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
-//     const video = sectionElem.querySelectorAll(".video")[0];
+    //     const cerrarModal = sectionElem.querySelectorAll(".closeVideo")[0];
+    //     const modalVideo = sectionElem.querySelectorAll(".pantallaVideo")[0];
+    //     const modalCvideo = sectionElem.querySelectorAll(".contenedorVideo")[0];
+    //     const video = sectionElem.querySelectorAll(".video")[0];
 
-//     cerrarModal.addEventListener("click", () => {
-//         modalVideo.classList.toggle("modal-closeVideo");
-//           modalCvideo.style.opacity = "0";
-//           modalCvideo.style.visibility = "hidden";
-//           video.src = "";
-//       });
+    //     cerrarModal.addEventListener("click", () => {
+    //         modalVideo.classList.toggle("modal-closeVideo");
+    //           modalCvideo.style.opacity = "0";
+    //           modalCvideo.style.visibility = "hidden";
+    //           video.src = "";
+    //       });
 
-//    window.addEventListener("click", (e) => {
-//     console.log(e.target)
-//     if (e.target == modalCvideo) {
-//       modalVideo.classList.toggle("modal-closeVideo");
-//         modalCvideo.style.opacity = "0";
-//         modalCvideo.style.visibility = "hidden";
-//         video.src = "";
-//     }
-//     });
+    //    window.addEventListener("click", (e) => {
+    //     console.log(e.target)
+    //     if (e.target == modalCvideo) {
+    //       modalVideo.classList.toggle("modal-closeVideo");
+    //         modalCvideo.style.opacity = "0";
+    //         modalCvideo.style.visibility = "hidden";
+    //         video.src = "";
+    //     }
+    //     });
 
-// // codigo para el grafico en servicios
-// const d = sectionElem.querySelector('#dibujito');
-// const lienzo = d.getContext("2d");
+    // // codigo para el grafico en servicios
+    // const d = sectionElem.querySelector('#dibujito');
+    // const lienzo = d.getContext("2d");
 
-// console.log(lienzo);
+    // console.log(lienzo);
 
-// const myChart = new Chart  (lienzo, {
-//     type: 'pie',
-//     data: {
-//         labels:[
-//             "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
-//         ],
-//         datasets: [{
-//             data:[
-//                 5.94,3,11.82,11.82,11.82,0.06,0.18
-//             ],
-//             backgroundColor:[
-//                 '#404040',
-//                 '#ffc000',
-//                 '#5b9bd5',
-//                 '#70ad47',
-//                 '#ff0000',
-//                 '#d9d9d9',
-//                 '#acacac'
+    // const myChart = new Chart  (lienzo, {
+    //     type: 'pie',
+    //     data: {
+    //         labels:[
+    //             "Innovación", "Marketing", "Proyectos", "Supervisión", "Tasaciones","Finanzas", "Industria y Seguridad"
+    //         ],
+    //         datasets: [{
+    //             data:[
+    //                 5.94,3,11.82,11.82,11.82,0.06,0.18
+    //             ],
+    //             backgroundColor:[
+    //                 '#404040',
+    //                 '#ffc000',
+    //                 '#5b9bd5',
+    //                 '#70ad47',
+    //                 '#ff0000',
+    //                 '#d9d9d9',
+    //                 '#acacac'
 
-//             ],
-//         }],
-       
-       
-//     },
-//     options: {
-//         responsive:true,
-//     }
-// });
-    
+    //             ],
+    //         }],
 
-    
+
+    //     },
+    //     options: {
+    //         responsive:true,
+    //     }
+    // });
+
+
+
 
 
     window.onscroll = () => {
         // console.log(document.documentElement.scrollTop);
         if (document.documentElement.scrollTop > 100) {
-          sectionElem.querySelector('.contenedorSubir').classList.add('show');
+            sectionElem.querySelector('.contenedorSubir').classList.add('show');
         } else {
-          sectionElem.querySelector('.contenedorSubir').classList.remove('show');
+            sectionElem.querySelector('.contenedorSubir').classList.remove('show');
         }
-      };
-      sectionElem.querySelector('.contenedorSubir').addEventListener('click', () => {
+    };
+    sectionElem.querySelector('.contenedorSubir').addEventListener('click', () => {
         window.scrollTo({
-          top: 0, // para que suba - inicio
-          behavior: 'smooth', // para que le de un efecto suave al subir
+            top: 0, // para que suba - inicio
+            behavior: 'smooth', // para que le de un efecto suave al subir
         });
-      });
+    });
 
     return sectionElem;
 };

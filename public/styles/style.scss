@@ -8,6 +8,14 @@
 @import "./style-view/pagos";
 @import "./style-view/admin";
 
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -190,6 +198,138 @@
     }
 }
 
+//section slider nuevo nuevo
+
+
+
+.flexslider{
+    width: 95%;
+    // max-width: 1000px;
+    height: 600px;
+    margin: 50px auto;
+
+    border: 5px solid #cf2c2c;
+    display: flex;
+    flex-direction: column;
+ 
+
+    ul img{
+            width: 100%;
+            height: 590px;
+        
+        }
+    
+//paginacion del slider
+    .flex-control-nav.flex-control-paging{
+        width: 120px;
+        padding: 20px 0px;
+        // background-color: #1A89DF;
+        // border: 2px solid rgba(255,255,255,.3);
+
+
+
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        list-style: none;
+        position: absolute;
+        bottom: -3700px;
+        z-index: 3;
+
+        li{
+            display: inline-block;
+            margin: 0 5px;
+
+            a {
+                display: block;
+                width: 30px;
+                height: 8px;
+                background: #ffffff;
+                text-indent: -9999px;
+            }
+        }
+     
+
+    }
+
+    .flex-control-nav li a.flex-active{
+        background: #009AD2;
+
+    }
+    
+}
+
+//navegacion del slider
+.flex-direction-nav{
+
+    z-index: 3;
+    list-style: none;
+
+    a{
+        width: 60px;
+        height: 60px;
+        background: #1A89DF;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+
+        transition: all 0.3s ease-in-out;
+    }
+
+}
+
+
+.flex-direction-nav a.flex-next::before {
+    content: "\f105";
+}
+
+.flex-direction-nav .flex-prev{
+    left: 0px;
+    opacity: 0;
+}
+
+.flex-direction-nav .flex-next{
+    right: 0px;
+    opacity: 0;
+}
+
+.flexslider :hover .flex-direction-nav .flex-prev{
+    opacity: 1;
+    left: 15px;
+
+}
+
+.flexslider :hover .flex-direction-nav .flex-next{
+    opacity: 1;
+    right: 15px;
+
+}
+
+.flex-direction-nav a::before {
+   content: "\f104";
+
+  font: normal normal normal 14px/1 FontAwesome;
+
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 50px;
+  color: #ffffff;
+
+}
+
+//caption
+.caption{
+    position: absolute;
+    top: 50%;
+    z-index:2 ;
+}
 
 
 // section footer -----------------------------------------------------------------------------
