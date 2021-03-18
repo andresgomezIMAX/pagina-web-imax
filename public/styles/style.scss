@@ -37,10 +37,10 @@
     
 // }
 
-@font-face{
-    font-family: 'Gui generis Rg';
-    src: url(../../assets/SuiGenerisRegular.otf);
-}
+// @font-face{
+//     font-family: 'Gui generis Rg';
+//     src: url(../../assets/SuiGenerisRegular.otf);
+// }
 
 .menu-bar {
     display: none;
@@ -48,18 +48,16 @@
 
 .header-web {
     width: 100%;
-    // position: fixed;
-    background: #ffffff;
-    /* padding: 0 8%; */
-    // margin-left: 8%;
-
+    z-index: 3;
+    position: absolute;
+    top: 0%;
 
     nav {
-        background: #ffffff;
+        // background: #ffffff;
         // border: 1px solid orange;
         z-index: 1000;
         max-width: 100%;
-        width: 100%;
+        width: 98%;
         height: 85px;
       
         // margin: 0 20% auto;
@@ -76,22 +74,30 @@
                 position: relative;
 
                 a {
-                    color: rgb(249, 106, 27);;
+                    color: #ffffff;
                     display: block;
                     text-decoration: none;
                     padding: 15px 30px;
                     margin-top: 20%;
-                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     font-size: 17px;
                     font-weight:500;
                 }
 
                 .intranet{
-                    width: 80%;
+                   background-color: #009AD2;
+                   height: 25px;
+                   width: 95px;
+                   border-radius: 25px;
+                   
+                   i{
+                       margin: 0 0 0 5px;
+                   }
+                  
                 }
 
                 :hover {
-                    background: rgb(206, 215, 219);
+                    background: rgba(255, 255, 255, .4);
 
                     .children {
                         display: block;
@@ -203,19 +209,17 @@
 
 
 .flexslider{
-    width: 95%;
+    width: 100%;
     // max-width: 1000px;
-    height: 600px;
-    margin: 50px auto;
+    height: 660px;
 
-    border: 5px solid #cf2c2c;
     display: flex;
     flex-direction: column;
  
 
     ul img{
             width: 100%;
-            height: 590px;
+            height: 660px;
         
         }
     
@@ -233,7 +237,7 @@
         align-self: center;
         list-style: none;
         position: absolute;
-        bottom: -3700px;
+        bottom: 40px;
         z-index: 3;
 
         li{
@@ -268,7 +272,7 @@
     a{
         width: 60px;
         height: 60px;
-        background: #1A89DF;
+        // background: #1A89DF;
 
         display: flex;
         justify-content: center;
@@ -299,13 +303,13 @@
     opacity: 0;
 }
 
-.flexslider :hover .flex-direction-nav .flex-prev{
+.flexslider:hover .flex-direction-nav .flex-prev{
     opacity: 1;
     left: 15px;
 
 }
 
-.flexslider :hover .flex-direction-nav .flex-next{
+.flexslider:hover .flex-direction-nav .flex-next{
     opacity: 1;
     right: 15px;
 
@@ -325,11 +329,11 @@
 }
 
 //caption
-.caption{
-    position: absolute;
-    top: 50%;
-    z-index:2 ;
-}
+// .caption{
+//     position: absolute;
+//     top: 50%;
+//     z-index:2 ;
+// }
 
 
 // section footer -----------------------------------------------------------------------------
