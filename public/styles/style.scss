@@ -53,11 +53,11 @@
     top: 0%;
 
     nav {
-        // background: #ffffff;
+        // background: #be1e1e;
         // border: 1px solid orange;
         z-index: 1000;
         max-width: 100%;
-        width: 98%;
+        width: 100%;
         height: 85px;
       
         // margin: 0 20% auto;
@@ -108,7 +108,7 @@
 
         .logo {
             margin-left: 5%;
-            margin-top: 1%;
+            margin-top: 3%;
             width: 13%;
             height: 60px;
 
@@ -206,7 +206,7 @@
 
 //section slider nuevo nuevo
 
-
+// SECCION SLIDER - NUEVA VERSION -------------------------------------------------
 
 .flexslider{
     width: 100%;
@@ -335,6 +335,111 @@
 //     z-index:2 ;
 // }
 
+// SECCION DATOS INFORMATIVOS - NUEVA VERSION -------------------------------------------------
+
+.informative-data{
+    background: rgb(234, 234, 234);
+    display: flex;
+    justify-content: center;
+
+    .detailed-information, .detailed-information-on{
+        margin: 4% 0% 4% 2%;
+        display: flex;
+
+        .image-detailed{
+            width: 40%;
+            img{
+                width: 80%;
+            }
+        }
+        .detailed {
+            color: #4d4e52;
+            h2{
+                font-size: 30px;
+            }
+        }
+    }
+    .detailed-information-on{
+ 
+        margin: 4% 2% 4% 8%;
+        display: flex;
+    }
+  
+}
+
+
+
+// SECCION DATOS INFORMATIVOS - NUEVA VERSION -------------------------------------------------
+.services-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0;
+
+    .service-title{
+        h1{
+            color: #009AD2;
+            font-size: 30px;
+        }
+        p,img{
+            color: #4d4e52;
+            margin-left: 25%;
+        }
+    };
+
+    .service-list{
+        display: flex;
+        margin-bottom: 2%;
+        width: 70%;
+        color: #4c4c4c;
+
+        .service-img{
+            width:50%;
+            padding: 0 2%;
+            img{
+                width: 100%;
+            }
+        }
+
+        .service-detailed{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width:50%;
+            padding: 0 2%;
+            .detailed{
+                width: 80%;
+                text-align: left;
+            p{
+                margin-top: 4%;
+                margin-right: 10%;
+                text-align: justify;
+                line-height: 1.2;
+            }
+        }
+        }
+        .service-detailed1{
+            display: flex;
+            justify-content: flex-end;
+            width:50%;
+            padding: 0 2%;
+
+            .detailed{
+                width: 90%;
+                text-align: right;
+                   p{
+                margin-top: 4%;
+                margin-left: 20%;
+                text-align: justify;
+                line-height: 1.2;
+            }
+            }
+
+         
+        }
+       
+    }
+}
 
 // section footer -----------------------------------------------------------------------------
 .footerPage {
