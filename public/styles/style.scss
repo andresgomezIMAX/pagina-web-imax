@@ -1,12 +1,12 @@
-@import "./style-view/home";
-@import "./style-view/nosotros";
-@import "./style-view/staff";
-@import "./style-view/contacto";
-@import "./style-view/proyectos";
-@import "./style-view/login";
-@import "./style-view/noticias";
-@import "./style-view/pagos";
-@import "./style-view/admin";
+// @import "./style-view/home";
+// @import "./style-view/nosotros";
+// @import "./style-view/staff";
+// @import "./style-view/contacto";
+// @import "./style-view/proyectos";
+// @import "./style-view/login";
+// @import "./style-view/noticias";
+// @import "./style-view/pagos";
+// @import "./style-view/admin";
 
 @font-face {
     font-family: 'FontAwesome';
@@ -369,7 +369,7 @@
 
 
 
-// SECCION DATOS INFORMATIVOS - NUEVA VERSION -------------------------------------------------
+// SECCION SERVICIOS - NUEVA VERSION -------------------------------------------------
 .services-container{
     display: flex;
     flex-direction: column;
@@ -440,6 +440,75 @@
        
     }
 }
+
+
+
+// SECCION REEL ULTIMOS PROYECTOS - NUEVA VERSION -------------------------------------------------
+
+.projects-container{
+    background: rgb(234, 234, 234);
+    padding: 2% 5%;
+    
+
+    .projects-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1{
+            color: #009AD2;
+            font-size: 30px;
+        }
+        p,img{
+            color: #4d4e52;
+            // margin-left: 25%;
+        }
+    };
+
+    .carousel-contenedor{
+        position: relative;
+
+        .anterior-carousel, .siguiente-carousel{
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 30px;
+            border: none;
+            top: calc(50% - 65px);
+            cursor: pointer;
+            line-height: 30px;
+            text-align: center;
+            background: none;
+            color: #0c0c0c;
+            opacity: 20%;
+            outline: none;
+        }
+
+        .anterior-carousel:hover, .siguiente-carousel:hover{
+            opacity: 100%;
+        }
+
+        .anterior-carousel{
+            left: -50px;
+        }
+
+        
+        .siguiente-carousel{
+            right: -50px;
+        }
+
+        .carousel-element{
+            text-align: center;
+        }
+       
+    }
+
+    .carousel-indicadores .glider-dot{
+        display: none;
+    }
+ 
+}
+
+
 
 // section footer -----------------------------------------------------------------------------
 .footerPage {
