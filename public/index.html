@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,12 +13,13 @@
     <script src="menu.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="jquery.flexslider.js"></script>
-    <script src="slider.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script> -->
     <title>IMAX</title>
 </head>
 
@@ -40,7 +38,7 @@
                 </li>
 
                 <li><a href="#/">Servicios</a></li>
-                <li><a href="#/proyectos">Últimos Proyectos</a></li>
+                <li><a href="#/proyectos">Proyectos</a></li>
                 <li><a href="#/contacto">Contáctanos</a></li>
                 <li><a href="intranet.html" ><div class="intranet"> <i class="fas fa-user-circle"></i> Intranet</div></a></li>
             </ul>
@@ -182,6 +180,86 @@
                 </div>
             </div>
         </section>
+        <section class="projects-container">
+            <div class="projects-title">
+                <h1>ÚLTIMOS PROYECTOS</h1>
+                <p>subtítulo (max 1 linea)</p>
+                <img src="./assets/sliders/linea.png" alt="">
+            </div>
+            <div class="carousel">
+                <div class="carousel-contenedor">
+
+                    <button aria-label="Anterior" class="anterior-carousel">
+                        <img src="./assets/sliders/flechaD.png" alt="">
+                    </button>
+
+                    <div class="carousel-lista">
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 1.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del </p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 2.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del</p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 3.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del</p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 1.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del</p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                      
+                        </div>
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 2.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del</p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <img src="./assets/proyectos/proyectos 3.png" alt="">
+                            <div>
+                                <h1>BrysonHills</h1>
+                                <p>Ubicación del proyecto o nombre del</p>
+                                <p>cliente (máximo 2 líneas)</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button aria-label="Siguiente" class="siguiente-carousel">
+                        <img src="./assets/sliders/flechaI.png" alt="">
+                    </button>
+
+                  
+                    
+                 
+                </div>
+
+                <div role="tablist" class="carousel-indicadores"></div>
+
+            </div>
+
+        </section>
     </main>
 
 
@@ -218,7 +296,9 @@
         </div>
 
     </footer>
-    <script type="module" src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+    <script src="slider.js"></script>
+    <script src="menu.js"></script>
 
 
 </body>
