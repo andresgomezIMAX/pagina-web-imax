@@ -57,6 +57,10 @@
   font-weight: 500;
 }
 
+.header-web nav ul li :hover {
+  color: #fc7617;
+}
+
 .header-web nav ul li .intranet {
   background-color: #009AD2;
   height: 25px;
@@ -68,19 +72,11 @@
   margin: 0 0 0 5px;
 }
 
-.header-web nav ul li :hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.header-web nav ul li :hover .children {
-  display: block;
-}
-
 .header-web nav .logo {
   margin-left: 5%;
   margin-top: 3%;
   width: 13%;
-  height: 60px;
+  height: 55px;
 }
 
 .header-web nav ul li:hover .children {
@@ -433,7 +429,7 @@
 
 .projects-container {
   background: #eaeaea;
-  padding: 2% 5%;
+  padding: 4% 5%;
 }
 
 .projects-container .projects-title {
@@ -478,6 +474,13 @@
   outline: none;
 }
 
+.projects-container .carousel-contenedor .carousel-lista {
+  margin-top: 2%;
+  width: 100%;
+  height: 400px;
+  color: #4c4c4c;
+}
+
 .projects-container .carousel-contenedor .anterior-carousel:hover, .projects-container .carousel-contenedor .siguiente-carousel:hover {
   opacity: 100%;
 }
@@ -492,6 +495,55 @@
 
 .projects-container .carousel-contenedor .carousel-element {
   text-align: center;
+  color: #4c4c4c;
+}
+
+.projects-container .carousel-contenedor .carousel-element figure {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+.projects-container .carousel-contenedor .carousel-element figure img {
+  width: 90%;
+  height: 100%;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+.projects-container .carousel-contenedor .carousel-element figure .capa {
+  position: absolute;
+  top: 0;
+  margin-left: 5%;
+  width: 90%;
+  height: 100%;
+  background: rgba(14, 139, 211, 0.659);
+  opacity: 0;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+
+.projects-container .carousel-contenedor .carousel-element figure .capa .boton_mas {
+  margin-top: 45%;
+  width: 22%;
+  height: 20%;
+  color: white;
+}
+
+.projects-container .carousel-contenedor .carousel-element :hover > .capa {
+  opacity: 1;
+  visibility: visible;
+}
+
+.projects-container .carousel-contenedor .carousel-element div h1 {
+  font-size: 16px;
+}
+
+.projects-container .carousel-contenedor .carousel-element div p {
+  font-size: 13px;
 }
 
 .projects-container .carousel-indicadores .glider-dot {

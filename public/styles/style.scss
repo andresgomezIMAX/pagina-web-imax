@@ -83,6 +83,9 @@
                     font-size: 17px;
                     font-weight:500;
                 }
+                :hover {
+                    color: #fc7617;
+                }
 
                 .intranet{
                    background-color: #009AD2;
@@ -96,13 +99,13 @@
                   
                 }
 
-                :hover {
-                    background: rgba(255, 255, 255, .4);
+                // :hover {
+                //     background: rgba(255, 255, 255, .4);
 
-                    .children {
-                        display: block;
-                    }
-                }
+                //     .children {
+                //         display: block;
+                //     }
+                // }
             }
         }
 
@@ -110,7 +113,7 @@
             margin-left: 5%;
             margin-top: 3%;
             width: 13%;
-            height: 60px;
+            height: 55px;
 
         }
     }
@@ -447,7 +450,7 @@
 
 .projects-container{
     background: rgb(234, 234, 234);
-    padding: 2% 5%;
+    padding: 4% 5%;
     
 
     .projects-title{
@@ -483,6 +486,14 @@
             outline: none;
         }
 
+        .carousel-lista{
+            margin-top: 2%;
+            width: 100%;
+            height: 400px;
+        
+            color: #4c4c4c;
+        }
+
         .anterior-carousel:hover, .siguiente-carousel:hover{
             opacity: 100%;
         }
@@ -498,7 +509,61 @@
 
         .carousel-element{
             text-align: center;
+            color: #4c4c4c;
+
+            figure{
+                position: relative;
+                width:100%;
+                height: 90%;
+
+                img{
+                    width: 90%;
+                    height: 100%;
+                    transition: all 500ms ease-out;
+                }
+
+                .capa{
+                    position: absolute;
+                    top: 0;
+                    margin-left: 5%;
+                    width: 90%;
+                    height: 100%;
+                    background: rgba(14, 139, 211, 0.659);
+                    opacity: 0;
+                    transition: all 500ms ease-out;
+                    opacity: 0;
+                    visibility: hidden;
+                    text-align: center;
+
+                    .boton_mas{
+                        margin-top: 45%;
+                        width: 22%;
+                        height: 20%;
+                        color: white;
+                    }
+
+                }
+               
+            }
+
+            :hover > .capa{
+                opacity: 1;
+                visibility: visible;
+
+            }
+           
+
+           
+
+            div h1{
+                font-size: 16px;
+            }
+            div p{
+                font-size: 13px;
+            }
         }
+
+        
        
     }
 
