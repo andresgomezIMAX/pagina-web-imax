@@ -5,6 +5,10 @@ $(document).ready(function(){
     });
 })
 
+$(document).ready(function () {
+  $(".sliderComments").flexslider();
+});
+
 
 
 
