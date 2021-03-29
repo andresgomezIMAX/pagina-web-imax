@@ -677,6 +677,25 @@
   font-weight: 500;
 }
 
+.contenedorVid {
+  width: 100%;
+  height: 442px;
+}
+
+.contenedorVid .videoUrl {
+  width: 100%;
+}
+
+.contenedorVid .videoUrl iframe {
+  width: 100%;
+  height: 580px;
+}
+
+.contenedorVid .videoUrl video {
+  width: 100%;
+  height: 442px;
+}
+
 .footerPage {
   background: #a5a59e;
   padding-top: 2%;

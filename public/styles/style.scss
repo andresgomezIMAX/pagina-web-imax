@@ -740,7 +740,30 @@
 
 }
 
+//video statico
 
+.contenedorVid{
+    width: 100%;    
+    // height: 580px;
+    height: 442px;
+
+
+
+    .videoUrl{
+        width: 100%;
+        // width: 90%;
+        // margin-left: 5%;
+        iframe{
+        width: 100%;
+        height: 580px;
+        }
+
+        video{
+        width: 100%;
+        height: 442px;
+        }
+    }
+}
 // section footer -----------------------------------------------------------------------------
 .footerPage {
     background: #a5a59e;
