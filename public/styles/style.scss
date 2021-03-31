@@ -744,8 +744,8 @@
 
 .contenedorVid{
     width: 100%;    
-    // height: 580px;
-    height: 442px;
+    height: 520px;
+    // height: 442px;
 
 
 
@@ -755,20 +755,51 @@
         // margin-left: 5%;
         iframe{
         width: 100%;
-        height: 580px;
+        height: 520px;
+
+        .ytp-large-play-button svg {
+            display: none;
+        }
+
+        .ytp-large-play-button {
+            background-image: url(../assets/iconos/video.png);
+        }
         }
 
         video{
         width: 100%;
         height: 442px;
         }
+      
+    }
+
+    .descriptionVideo{
+            position: absolute;
+            top: 660%;
+            z-index:2 ;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            right: 25%;
     }
 }
 // section footer -----------------------------------------------------------------------------
+
+
+
 .footerPage {
     background: #a5a59e;
-    padding-top: 2%;
     // margin: 0 8%;
+
+    .footer-first{
+        display: flex;
+        flex-direction:row;
+
+        img{
+            width: 50%;
+        }
+    }
 
     .fooFirst {
         display: flex;
