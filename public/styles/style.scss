@@ -1,5 +1,5 @@
 // @import "./style-view/home";
-// @import "./style-view/nosotros";
+@import "./style-view/nosotros";
 // @import "./style-view/staff";
 // @import "./style-view/contacto";
 // @import "./style-view/proyectos";
@@ -78,7 +78,7 @@
                     display: block;
                     text-decoration: none;
                     padding: 15px 30px;
-                    margin-top: 20%;
+                    margin-top: 15%;
                     // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     font-size: 17px;
                     font-weight: 500;
@@ -111,8 +111,8 @@
         }
 
         .logo {
-            margin-left: 5%;
-            margin-top: 3%;
+              margin-left: 5%;
+            margin-top: 2%;
             width: 13%;
             height: 55px;
 
@@ -208,7 +208,6 @@
     }
 }
 
-//section slider nuevo nuevo
 
 // SECCION SLIDER - NUEVA VERSION -------------------------------------------------
 
@@ -970,7 +969,13 @@ strong{
         }
     }
 
+
+}
+
+// section footer -----------------------------------------------------------------------------
+
     .contact-box-second {
+            background: #1e2023;
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -1058,11 +1063,6 @@ strong{
 
         }
     }
-}
-
-// section footer -----------------------------------------------------------------------------
-
-
 
 .footerPage {
   background: white;
@@ -1078,6 +1078,9 @@ strong{
         }
 
 }
+
+
+
 
 
 
