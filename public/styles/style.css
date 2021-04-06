@@ -424,6 +424,53 @@
   color: #ffffff;
 }
 
+.caption-slider {
+  position: absolute;
+  top: 20%;
+  z-index: 2;
+  color: white;
+  width: 50%;
+  margin: 10% 0 0 26%;
+  text-align: center;
+}
+
+.caption-slider h1 {
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+
+strong {
+  color: #fc7617;
+}
+
+.caption-slider-beige {
+  position: absolute;
+  top: 20%;
+  z-index: 2;
+  color: #4c4c4c;
+  width: 50%;
+  margin: 10% 0 0 40%;
+  text-align: center;
+}
+
+.caption-slider-beige h1 {
+  font-size: 50px;
+  margin-bottom: 3%;
+}
+
+.caption-slider-img {
+  position: absolute;
+  top: 35%;
+  z-index: 2;
+}
+
+.caption-slider-img .img-slider {
+  top: 0;
+  width: 45%;
+  height: 40%;
+  margin-left: 30%;
+}
+
 .informative-data {
   background: #eaeaea;
   display: -webkit-box;
@@ -539,6 +586,22 @@
   line-height: 1.2;
 }
 
+.services-container .service-list .service-detailed .detailed .view-more {
+  background-color: #009AD2;
+  height: 25px;
+  width: 95px;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  margin-top: 6%;
+}
+
+.services-container .service-list .service-detailed .detailed .view-more:hover {
+  -webkit-box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 3px 5px;
+          box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 3px 5px;
+}
+
 .services-container .service-list .service-detailed1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,6 +623,22 @@
   margin-left: 20%;
   text-align: justify;
   line-height: 1.2;
+}
+
+.services-container .service-list .service-detailed1 .detailed .view-more {
+  background-color: #009AD2;
+  height: 25px;
+  width: 95px;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  margin-top: 6%;
+}
+
+.services-container .service-list .service-detailed1 .detailed .view-more:hover {
+  -webkit-box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 3px 5px;
+          box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 3px 5px;
 }
 
 .projects-container {
@@ -957,9 +1036,8 @@
 }
 
 .section-contact .contact-box-first .form-contact .send-email:hover {
-  border: 2px solid #fc7617;
-  background: #ffffff;
-  color: #7e7975;
+  -webkit-box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 2px 3px;
+          box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 2px 3px;
 }
 
 .section-contact .contact-box-second {

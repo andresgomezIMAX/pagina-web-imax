@@ -332,12 +332,58 @@
 
 }
 
-//caption
-// .caption{
-//     position: absolute;
-//     top: 50%;
-//     z-index:2 ;
-// }
+.caption-slider{
+    position: absolute;
+    top: 20%;
+    z-index:2 ;
+    color: white;
+    width: 50%;
+     margin: 10% 0 0 26%;
+     text-align: center;
+ 
+
+    h1{
+        font-size:50px;
+        margin-bottom: 3%;
+    }
+
+
+    
+}
+
+strong{
+    color: #fc7617;
+}
+
+.caption-slider-beige{
+    position: absolute;
+    top: 20%;
+    z-index:2 ;
+    color: #4c4c4c;
+    width: 50%;
+     margin: 10% 0 0 40%;
+     text-align: center;
+ 
+
+    h1{
+        font-size:50px;
+        margin-bottom: 3%;
+    }
+
+}
+
+.caption-slider-img{
+    position: absolute;
+    top: 35%;
+    z-index:2 ;
+
+    .img-slider{
+        top: 0;
+        width: 45%;
+        height: 40%;
+        margin-left: 30%;
+    }
+}
 
 // SECCION DATOS INFORMATIVOS - NUEVA VERSION -------------------------------------------------
 
@@ -432,6 +478,27 @@
                     text-align: justify;
                     line-height: 1.2;
                 }
+
+                .view-more{
+                    background-color: #009AD2;
+                    height: 25px;
+                    width: 95px;
+                    border-radius: 25px;
+                    outline: none;
+                    border: 0;
+                    cursor: pointer;
+                    margin-top: 6%;
+                }
+
+                .view-more:hover{
+                    //   border: 2px solid #009AD2;
+                    //   background: #ffffff;
+                    //   color: #7e7975;
+                        box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 3px 5px;
+                      
+                }
             }
         }
 
@@ -450,6 +517,26 @@
                     margin-left: 20%;
                     text-align: justify;
                     line-height: 1.2;
+                }
+
+                .view-more{
+                    background-color: #009AD2;
+                    height: 25px;
+                    width: 95px;
+                    border-radius: 25px;
+                    outline: none;
+                    border: 0;
+                    cursor: pointer;
+                    margin-top: 6%;
+                }
+
+                .view-more:hover{
+                    //   border: 2px solid #009AD2;
+                    //     background: #ffffff;
+                    //     color: #7e7975;
+                         box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 3px 5px;
                 }
             }
 
@@ -873,9 +960,12 @@
             }
 
             .send-email:hover {
-                border: 2px solid #fc7617;
-                background: #ffffff;
-                color: #7e7975;
+                // border: 2px solid #fc7617;
+                // background: #ffffff;
+                // color: #7e7975;
+                           box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 2px 3px;
             }
         }
     }

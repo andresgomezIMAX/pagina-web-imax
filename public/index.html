@@ -38,11 +38,10 @@
                 </li>
 
                 <li><a href="#/">Servicios</a></li>
+                <li><a href="#/proyectos">Noticias</a></li>
                 <li><a href="#/proyectos">Proyectos</a></li>
                 <li><a href="#/contacto">Contáctanos</a></li>
-                <li><a href="intranet.html">
-                        <div class="intranet"> <i class="fas fa-user-circle"></i> Intranet</div>
-                    </a></li>
+                
             </ul>
         </nav>
     </header>
@@ -52,20 +51,34 @@
                 <ul class="slides">
 
                     <li>
-                        <img src="assets/sliders/slide-01-muestra.jpg" alt="">
-                        <!-- <section class="caption">
-                            <h2>prueba para el nav</h2>
-                        </section> -->
+                        <img src="assets/sliders/slide-01.jpg" alt="">
+                          <section class="caption-slider">
+                            <h1>LO ASESORAMOS <br> MEJOR <strong>.</strong></h1>
+                            <p>PORQUE CONOCEMOS EL SISTEMA <br> INMOBILIARIO DESDE DENTRO </p>
+                          </section>
                     </li>
                     <li>
-                        <img src="assets/sliders/slide-02-muestra.jpg" alt="">
+                        <img src="assets/sliders/slide-02.jpg" alt="">
+                           <section class="caption-slider">
+                            <h1>NOS COMPROMETEMOS <strong>.</strong></h1>
+                            <p>TRABAJAMOS CADA PROYECTO CON <br> PROFESIONALISMO Y DEDICACIÓN </p>
+                          </section>
                     </li>
                     <li>
-                        <img src="assets/sliders/slide-03-muestra.jpg" alt="">
+                        <img src="assets/sliders/slide-03.jpg" alt="">
+                        <section class="caption-slider-beige">
+                            <h1>NOS ADECUAMOS <br> A SUS NECESIDADES  <strong>.</strong></h1>
+                            <p>PARA ENTREGARLE SOLUCIONES DE <br> LA MÁS ALTA CALIDAD </p>
+                          </section>
                     </li>
                     <li>
                         <img src="assets/sliders/slide-04.jpg" alt="">
+                        
+                          <section class="caption-slider-img">
+                            <img class="img-slider" src="assets/sliders/logo-imax.png" alt="">
+                          </section>
                     </li>
+                   
 
                 </ul>
 
@@ -122,6 +135,7 @@
                             quo cum praesentium consectetur modi consequatur esse ab
                             dicta sit accusantium quasi, sunt, inventore id
                             Aspernatur cumque provident vitae.</p>
+                        <button class="view-more">Ver más</button>
                     </div>
                 </div>
             </div>
@@ -134,6 +148,7 @@
                                 Aspernatur cumque provident vitae, saepe ullam distinctio
                                 quo cum praesentium consectetur modi consequatur esse ab
                                 dicta sit accusantium quasi, sunt, inventore id.</p>
+                                <button class="view-more">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -149,6 +164,7 @@
                                 Aspernatur cumque provident vitae, saepe ullam distinctio
                                 quo cum praesentium consectetur modi consequatur esse ab
                                 dicta sit accusantium quasi, sunt, inventore id.</p>
+                                <button class="view-more">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -162,6 +178,7 @@
                                 Aspernatur cumque provident vitae, saepe ullam distinctio
                                 quo cum praesentium consectetur modi consequatur esse ab
                                 dicta sit accusantium quasi, sunt, inventore id.</p>
+                                <button class="view-more">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -177,6 +194,7 @@
                                 Aspernatur cumque provident vitae, saepe ullam distinctio
                                 quo cum praesentium consectetur modi consequatur esse ab
                                 dicta sit accusantium quasi, sunt, inventore id.</p>
+                                <button class="view-more">Ver más</button>
                         </div>
                     </div>
                 </div>
@@ -369,24 +387,24 @@
         <section class="section-contact">
             <div class="contact-box-first">
                 <img src="./assets/contacto/mujer.jpg" alt="">
-                <div class="form-contact">
+                <form action="/send-email" method="POST" class="form-contact">
                     <h1>ESCRÍBENOS</h1>
                     <p>Estamos listos para resolver sus requerimientos con prontitud y con </p>
                     <p class="space-box"> el mejor servicio</p>
                     <div class="box-tex-form">
-                        <input type="text" placeholder="Nombre y Apellidos:">
-                        <input type="text" placeholder="Empresa:">
+                        <input type="text" placeholder="Nombre y Apellidos:" name="name">
+                        <input type="text" placeholder="Empresa:" name="company">
                     </div>
                     <div class="box-tex-form">
-                        <input type="text" placeholder="Teléfonos:">
-                        <input type="text" placeholder="Email:">
+                        <input type="text" placeholder="Teléfonos:" name="phone">
+                        <input type="text" placeholder="Email:" name="email">
                     </div>
 
-                    <textarea name="comentario" id="" cols="30" rows="10"
+                    <textarea name="message" id="" cols="30" rows="10"
                         placeholder="Escriba aquí su mensaje:"></textarea>
 
                     <button class="send-email">Enviar mensaje</button>
-                </div>
+                </form>
             </div>
             <div class="contact-box-second">
                 <div class="abstract">
