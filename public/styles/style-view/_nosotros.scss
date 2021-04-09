@@ -84,6 +84,13 @@
 .nosotros-container{
     display: flex;
     flex-direction: column;
+
+    .intro-nosotros{
+        font-weight: 400;
+        padding: 4% 2%;
+        background-color: #eaeaea;
+    }
+
     .box-par{
         display: flex;
         flex-direction: row;
