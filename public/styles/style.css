@@ -81,8 +81,10 @@
 
 .nosotros-container .intro-nosotros {
   font-weight: 400;
-  padding: 4% 2%;
+  padding: 3% 1%;
+  margin: 1%;
   background-color: #eaeaea;
+  border-radius: 10px;
 }
 
 .nosotros-container .box-par {
@@ -111,6 +113,7 @@
 .nosotros-container .box-par .square figure {
   position: relative;
   width: 100%;
+  height: 100%;
   overflow: hidden;
   cursor: pointer;
 }
@@ -133,6 +136,43 @@
   opacity: 0;
   visibility: hidden;
   text-align: center;
+}
+
+.nosotros-container .box-par .square figure .capa-detailed .capa1 {
+  margin-top: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nosotros-container .box-par .square figure .capa-detailed .capa1 .capa-icon {
+  background-color: white;
+  width: 11%;
+  height: 33px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15px;
+}
+
+.nosotros-container .box-par .square figure .capa-detailed .capa1 .capa-icon i {
+  color: #A1A39E;
+  padding-top: 20%;
+}
+
+.nosotros-container .box-par .square figure .capa-detailed .capa2 {
+  margin-top: 25%;
+  padding-left: 5%;
+}
+
+.nosotros-container .box-par .square figure .capa-detailed .capa2 .title-project {
+  color: #009AD2;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .nosotros-container .box-par .square figure .capa-detailed h3 {

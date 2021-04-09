@@ -87,8 +87,10 @@
 
     .intro-nosotros{
         font-weight: 400;
-        padding: 4% 2%;
+        padding: 3% 1%;
+        margin: 1%;
         background-color: #eaeaea;
+        border-radius: 10px;
     }
 
     .box-par{
@@ -104,6 +106,7 @@
             figure{
                 position: relative;
                 width: 100%;
+                height: 100%;
                 overflow: hidden;
                 cursor: pointer;
 
@@ -123,6 +126,38 @@
                     opacity: 0;
                     visibility: hidden;
                     text-align: center;
+
+                    .capa1{
+                   
+                        margin-top:45%;
+                        display: flex;
+                        justify-content: center;
+                        .capa-icon{
+                            background-color: white;
+                            width: 11%;
+                            height: 33px;
+                            border-radius: 50%;
+                            align-items: center;
+                            margin-right: 15px;
+
+                            i{
+                                color: #A1A39E;
+                                padding-top: 20%;
+                            }
+                        }
+                    }
+                    .capa2{
+           
+                        margin-top:25%;
+                      
+                        padding-left: 5%;
+
+                      .title-project{
+                          color: #009AD2;
+                          font-weight: bold;
+                          font-size: 18px;
+                      }
+                    }
 
                     h3{
                         color: #009AD2;
