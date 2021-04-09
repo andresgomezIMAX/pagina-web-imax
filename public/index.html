@@ -1,112 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" ></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap" rel="stylesheet">
-    <script src="menu.js"></script>   
-    <script src="jquery-3.6.0.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap"
+        rel="stylesheet">
+    <script src="menu.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script src="jquery.flexslider.js"></script>
-    <script src="slider.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script> -->
     <title>IMAX</title>
 </head>
+
 <body class="body-web">
     <header class="header-web">
-   
+
         <div class="menu-bar">
             <a href="#" class="bt-menu"><i class="iconMenu fas fa-bars"></i>Menú</label></a>
-        </div>    
+        </div>
         <nav class="menu">
-            <img class="logo" src="./assets/logo.png">
+            <img class="logo" src="./assets/LOGO IMAX PNG ALTA.png">
             <ul>
-                <li><a href="#/">Inicio</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li class="submenu">
-                    <!-- <a href="#/">Nosotros  <i class="fas fa-angle-down"></i></a> -->
-                    <a href="#/nosotros">Nosotros </a>
-                    <!-- <ul class="children">
-                        <li><a  href="#/nosotros">¿Quienes somos?</a></li>
-                        <li><a href="#/staff">Nuestro Staff</a></li>     
-                    </ul> -->
+                    <a href="./nosotros.html">Nosotros </a>
                 </li>
-                
-                <li><a href="#/">Servicios</a></li>
-                <li><a href="#/proyectos">Proyectos</a></li>
+
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="#/proyectos">Noticias</a></li>
+
                 <li><a href="#/contacto">Contáctanos</a></li>
-                <li><a href="intranet.html"><img class="intranet" src="./assets/intranet.png"></a></li>
+
             </ul>
         </nav>
-        
-        
-
-</header>
+    </header>
     <main id="container">
+        <section>
+            <div class="flexslider">
+                <ul class="slides">
 
+                    <li>
+                        <img src="assets/sliders/slide-01.jpg" alt="">
+                        <section class="caption-slider">
+                            <h1>LO ASESORAMOS <br> MEJOR<strong>.</strong></h1>
+                            <p>PORQUE CONOCEMOS EL SISTEMA <br> INMOBILIARIO DESDE DENTRO </p>
+                        </section>
+                    </li>
+                    <li>
+                        <img src="assets/sliders/slide-02.jpg" alt="">
+                        <section class="caption-slider">
+                            <h1>NOS COMPROMETEMOS<strong>.</strong></h1>
+                            <p>TRABAJAMOS CADA PROYECTO CON <br> PROFESIONALISMO Y DEDICACIÓN </p>
+                        </section>
+                    </li>
+                    <li>
+                        <img src="assets/sliders/slide-03.jpg" alt="">
+                        <section class="caption-slider-beige">
+                            <h1>NOS ADECUAMOS  A SUS NECESIDADES<strong>.</strong></h1>
+                            <p>PARA ENTREGARLE SOLUCIONES DE <br> LA MÁS ALTA CALIDAD </p>
+                        </section>
+                    </li>
+                    <li>
+                        <img src="assets/sliders/slide-04.jpg" alt="">
+
+                        <section class="caption-slider-img">
+                            <img class="img-slider" src="assets/sliders/logo-imax.png" alt="">
+                        </section>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <section class="informative-data">
+            <div class="detailed-information">
+                <div class="image-detailed">
+                    <img src="assets/sliders/foco.png" alt="">
+                </div>
+                <div class="detailed">
+                    <h2>13</h2>
+                    <p>Años brindando <br>
+                    soluciones confiables y <br>
+                de la más alta calidad</p>
+                </div>
+            </div>
+            <div class="detailed-information-on">
+                <div class="image-detailed">
+                    <img src="assets/sliders/manos.png" alt="">
+                </div>
+                <div class="detailed">
+                    <h2>+28 000</h2>
+                    <p>Informes de Tasaciones <br>
+                        realizados a la fecha.</p>
+                </div>
+            </div>
+            <div class="detailed-information">
+                <div class="image-detailed">
+                    <img src="assets/sliders/lupa.png" alt="">
+                </div>
+                <div class="detailed">
+                    <h2>258 000</h2>
+                    <p>Metros cuadrados</p>
+                    <p>supervisados</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-container">
+            <div class="service-title">
+                <h1>NUESTROS SERVICIOS</h1>
+                <p>5 Unidades de Negocio de gran valor</p>
+                <img src="./assets/iconos/linea.png" alt="">
+            </div>
+            <div class="service-list">
+                <div class="service-img"><img src="./assets/servicios/servicio-01.jpg" alt=""></div>
+                <div class="service-detailed">
+                    <div class="detailed">
+                        <h2>Tasaciones (TAS)</h2>
+                        <p>Somos un referente en el mercado en la elaboración 
+                            de informes de Tasación, los cuales están hechos 
+                            bajo estándares de calidad internacional por parte 
+                            de nuestros expertos peritos quienes aportan su invaluable 
+                            experiencia de la realidad local.</p>
+                        <button class="view-more">Ver más</button>
+                    </div>
+                </div>
+            </div>
+            <div class="service-list">
+                <div class="service-detailed1">
+                    <div class="detailed">
+                        <h2>Valuaciones, peritajes y consultoria (VPC)</h2>
+                        <div>
+                            <p>Realizamos tasaciones especializadas de todo 
+                                tipo de bienes para ayudarlo a tomar decisiones 
+                                informadas. Asimismo, contamos con la experiencia 
+                                deseada para brindarles soluciones puntuales a 
+                                través de Consultorías en el sector inmobiliario, 
+                                industrial y de la construcción.</p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-img"><img src="./assets/servicios/servicio-02.jpg" alt=""></div>
+            </div>
+            <div class="service-list">
+                <div class="service-img"><img src="./assets/servicios/servicio-03.jpg" alt=""></div>
+                <div class="service-detailed">
+                    <div class="detailed">
+                        <h2>Gestión y desarrollo de proyectos (GDP)</h2>
+                        <div>
+                            <p>Asesoramos a promotores inmobiliarios, 
+                                inversionistas, empresas e instituciones 
+                                financieras en la gestión integral de proyectos 
+                                inmobiliarios, eligiendo y analizando oportunidades 
+                                de inversión, y ayudándolo en el desarrollo 
+                                mismo del proyecto. </p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-list">
+                <div class="service-detailed1">
+                    <div class="detailed">
+                        <h2>Evaluacion y Monitoreo de Poyectos (EMP)</h2>
+                        <div>
+                            <p>Evaluamos y Monitoreamos proyectos para asesorar
+                                 a promotores inmobiliarios, inversionistas, 
+                                 empresas e instituciones financieras, brindando 
+                                 herramientas de análisis y seguimiento que permiten 
+                                 invertir o financiar de forma segura. </p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-img"><img src="./assets/servicios/servicio-04.jpg" alt=""></div>
+            </div>
+            <div class="service-list">
+                <div class="service-img"><img src="./assets/servicios/servicio-05.jpg" alt=""></div>
+                <div class="service-detailed">
+                    <div class="detailed">
+                        <h2>Gestión y supervisión de obras (GSO)</h2>
+                        <div>
+                            <p>Gestionamos y acompañamos de manera total o 
+                                parcial el proceso de ejecución de obras, 
+                                desde la Planificación, Contratación, Pre-construcción 
+                                (Preliminares), Supervisión Permanente y Conformidad. 
+                                El servicio se adapta a los requerimientos que nuestros 
+                                clientes deseen controlar. </p>
+                            <button class="view-more">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects-container">
+            <div class="projects-title">
+                <h1>ÚLTIMOS PROYECTOS</h1>
+                <p>Conozca algunos de nuestros proyectos recientes más destacados:</p>
+                <img src="./assets/iconos/linea.png" alt="">
+            </div>
+            <div class="carousel">
+                <div class="carousel-contenedor">
+
+                    <button aria-label="Anterior" class="anterior-carousel">
+                        <img src="./assets/iconos/flechaD.png" alt="">
+                    </button>
+
+                    <div class="carousel-lista">
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/brysonhills.jpg" alt="">
+                                <!-- <a href="aaa"></a> -->
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>Brysonhills: Fideicomiso de  <br>
+                                    Flujos y Garantía</h1>
+                                <p>Supervisión financiera de flujos y <br>
+                                    garantía de este mega-proyecto</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/fundo.png" alt="">
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>Tasaciones: Fundos Agrícolas</h1>
+                                <p>Valuaciones Especiales de fundos agrícolas <br>
+                                    ubicados en la provincia de Ica</p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/tasacion-grupo-lider-comas.jpg" alt="">
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>Tasación: Terrenos con proyección</h1>
+                                <p>Valuación de suelo para desarrollo <br>
+                                    inmobiliario de  gran proyecto en Comas </p>
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/tempo-exterior-01.jpg" alt="">
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>Proyecto Tempo: Monitoreo Técnico-Financiero</h1>
+                                <p>Supervisión financiera del que será el <br>
+                                    edificio más alto del país</p>
+                            </div>
+
+                        </div>
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/thecorner.png" alt="">
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>The Corner: Supervisión de obra</h1>
+                                <p>Supervisión permanente de este proyecto <br>
+                                     ubicado en el corazón de San Isidro </p>
+
+                            </div>
+                        </div>
+                        <div class="carousel-element">
+                            <figure>
+                                <img src="./assets/proyectos/brysonhills.jpg" alt="">
+                                <div class="capa">
+                                    <img class="boton_mas" src="./assets/iconos/image.png" alt="">
+                                </div>
+                            </figure>
+
+                            <div>
+                                <h1>Villa Marina: Supervisión Permanente</h1>
+                                <p>Supervisión de este mega-proyecto en Trujillo por encargo de importante banco 
+</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button aria-label="Siguiente" class="siguiente-carousel">
+                        <img src="./assets/iconos/flechaI.png" alt="">
+                    </button>
+
+
+
+
+                </div>
+
+                <div role="tablist" class="carousel-indicadores"></div>
+
+            </div>
+
+        </section>
+        <section>
+            <div class="sliderComments">
+                <ul class="slides">
+
+                    <li>
+                        <section class="caption">
+
+                            <div class="comment-text">
+                                <p> “...la verdad, que es muy fácil trabajar con ellos. 
+                                    Tienen mucha predisposición y disponibilidad para 
+                                    las coordinaciones, tanto en obra como a nivel de gestión.. 
+                                    Sus informes son muy completos y a la vez muy fáciles de leer,
+                                     lo que permite un mejor seguimiento de la obra. Del tiempo 
+                                     que venimos trabajando y coordinando juntos, <strong class="negrita">  trato y 
+                                     la información recibida es muy profesional </strong> ”.</p>
+                            </div>
+                            <div class="comment-marca">
+                                <img src="assets/testimonios/c&j.png" alt="">
+                                <div class="marca-detail">
+                                    <h1>Sandra Ascenzo</h1>
+                                    <p>Gerente de Proyectos Inmobiliarios <br>
+                                         C&J Constructores </p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </li>
+                    <li>
+                        <section class="caption">
+
+                            <div class="comment-text">
+                                <p>“<strong class="negrita"> Considero que IMAX es la empresa de 
+                                    supervisión de obras más seria que hay en el país.  </strong> 
+                                    Hacer el trabajo que ellos realizan es muy complicado,
+                                    y exigente, pero me han demostrado cada vez que los 
+                                    hemos requerido, la transparencia en sus gestiones al 
+                                    informar cada detalle con veracidad. Sin duda el equipo
+                                    profesional de IMAX es de muy buena calidad y sus informes
+                                    nos ayudan mucho en la toma de decisiones que podamos necesitar.
+                                    Creo que han sabido conjugar orden, calidad, conocimiento 
+                                    y el deseo de servir con la verdad”.
+
+                                </p>
+                            </div>
+                            <div class="comment-marca">
+                                <img src="assets/testimonios/ditrenzzo.png" alt="">
+                                <div class="marca-detail">
+                                    <h1>Alejandro Manzanares</h1>
+                                    <p>Ditrenzzo</p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </li>
+                    <li>
+                        <section class="caption">
+
+                            <div class="comment-text">
+                                <p>“IMAX se constituye en una aliada muy importante 
+                                    para nuestra organización inmobiliaria... <strong class="negrita">  Confiamos 
+                                    plenamente en los estudios de factibilidad de 
+                                    negocios para los cuales los contratamos </strong> por encargo 
+                                    de los diversos clientes de nuestra organización, 
+                                    de modo tal de obtener conclusiones valederas 
+                                    respecto de esos probables negocios y poder tomar 
+                                    las mejores decisiones... En síntesis, nos sentimos 
+                                    muy bien acompañados con IMAX y esperamos seguir 
+                                    contando con su valioso apoyo para el corto, mediano 
+                                    y largo plazo”.</p>
+                            </div>
+                            <div class="comment-marca">
+                                <img src="assets/testimonios/octavio.png" alt="">
+                                <div class="marca-detail">
+                                    <h1>Octavio Pedraza Grupo Inmobiliario</h1>
+                                    <p>Gerente General</p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </li>
+
+                    <li>
+                        <section class="caption">
+
+                            <div class="comment-text">
+                                <p> “IMAX no sólo se encarga de supervisar y emitir 
+                                    informes de avance de obra en nuestros diferentes
+                                     proyectos, sino que van más allá. Nos ayudan a 
+                                     mejorar el día a día en nuestros procesos constructivos, 
+                                     seguridad en la obra, así como a mejorar nuestro 
+                                     control de calidad. Es por este motivo que una empresa 
+                                     como IMAX, no la consideramos una supervisora, sino más 
+                                     bien una socia, que <strong class="negrita"> nos ayuda a mejorar en cada proyecto 
+                                     que realizamos”.</strong></p>
+                            </div>
+                            <div class="comment-marca">
+                                <img src="assets/testimonios/real.png" alt="">
+                                <div class="marca-detail">
+                                    <h1>Martín Díaz</h1>
+                                    <p>Director Asociado Real Edificaciones </p>
+                                </div>
+                            </div>
+
+                        </section>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+        <section class="contenedorVid">
+            <div class="videoUrl">
+                <iframe src="https://www.youtube.com/embed/xzf30rE-w1g" controls load class="video" frameborder="0"
+                    allow="autoplay; accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+                <!-- <video controls poster="./assets/video/background.jpg">
+                    <source src="./assets/video/video.mov" type="video/mp4">
+                </video> -->
+            </div>
+            <!-- <div class="descriptionVideo">
+                <h1>Tasaciones en el nuevo sistema financiero</h1>
+                <p>Subtítulo (max 2 líneas)</p>
+            </div> -->
+
+        </section>
+
+        <section class="section-contact">
+            <div class="contact-box-first">
+                <img src="./assets/contacto/mujer.jpg" alt="">
+                <form action="/send-email" method="POST" class="form-contact">
+                    <h1>ESCRÍBENOS</h1>
+                    <p>Estamos listos para resolver sus requerimientos con prontitud y con </p>
+                    <p class="space-box"> el mejor servicio</p>
+                    <div class="box-tex-form">
+                        <input type="text" placeholder="Nombre y Apellidos:" name="name">
+                        <input type="text" placeholder="Empresa:" name="company">
+                    </div>
+                    <div class="box-tex-form">
+                        <input type="text" placeholder="Teléfonos:" name="phone">
+                        <input type="text" placeholder="Email:" name="email">
+                    </div>
+
+                    <textarea name="message" id="" cols="30" rows="10"
+                        placeholder="Escriba aquí su mensaje:"></textarea>
+
+                    <button class="send-email">Enviar mensaje</button>
+                </form>
+            </div>
+
+
+
+
+        </section>
     </main>
 
-    <!-- <section>
-        <div class="flexslider">
-            <ul class="slides">
-                <i class="fas fa-angle-left"></i>
-                <li>
-                    <img src="assets/sliders/slide-01-muestra.jpg" alt="">
-                    <section class="caption">
-                        <h2>prueba para el nav</h2>
-                    </section>
-                </li>
-                <li>
-                    <img src="assets/sliders/slide-02-muestra.jpg" alt="">
-                </li>
-                <li>
-                    <img src="assets/sliders/slide-03-muestra.jpg" alt="">
-                </li>
-                <i class="fas fa-angle-left"></i>
-            </ul>
-  
-        </div>
-
-    </section> -->
 
 
 
-    <footer class="footerPage">
-        <div class="fooFirst">
-            <div class="boxLogo">
-                <img class="logo" src="./assets/logo.png">
+
+    <footer>
+        <div class="contact-box-second">
+            <div class="abstract">
+                <p>Una visión integral del negocio nos permite conocer 
+                    mejor sus necesidades y ofrecerles soluciones más precisas</p>
             </div>
-            <div class="boxContacto">
-                <h3>Contactanos en:</h3>
-                <p>◼️Dirección: Calle Aldabas 559, 
-                    Oficina 802, <br>Surco, Lima, Perú
-                </p>
-                <p>◼️Central: +51 1 713 1326
-                </p>
-                <p>◼️Email: tasaciones@imax.com.pe <br> 
-                    proyectos@imax.com.pe <br>  
-                    supervisiones@imax.com.pe</p>
+
+            <div class="box-contac-date">
+                <div>
+                    <img src="./assets/iconos/phone.png" alt="">
+                    <p>(51) – 713 1326</p>
+                </div>
+                <div>
+                    <img class="address-icon" src="./assets/iconos/ubicacion.png" alt="">
+                    <p>Dirección: Calle Aldabas 559,
+                        Oficina 802, Surco, Lima, Perú
+                    </p>
+                </div>
+                <div>
+                    <img src="./assets/iconos/correo.png" alt="">
+                    <p>contacto@imax.com.pe </p>
+                </div>
             </div>
-            <div class="boxRedes">
-                <h3>Encuéntranos en:</h3>
-                <a href="https://www.facebook.com/imax.ingenieriamaxima"><img src="./assets/facebook.png"></a>
-                <a href="https://www.linkedin.com/company/ingenier%C3%ADa-m%C3%A1xima-eirl---imax/?originalSubdomain=pe"><img src="./assets/linkedin.png"></a>
-                <a href="https://www.instagram.com/imax_ingenieria_maxima/"><img src="./assets/instagram.png"></a>
+            <div class="box-contac-redes">
+                <div class="redes-icons">
+                    <a
+                        href="https://www.linkedin.com/company/ingenier%C3%ADa-m%C3%A1xima-eirl---imax/?originalSubdomain=pe"><img
+                            src="./assets/iconos/linkedin.png" alt=""></a>
+                    <a href="https://www.facebook.com/imax.ingenieriamaxima"><img src="./assets/iconos/twitter.png"
+                            alt=""></a>
+                    <a href="https://www.facebook.com/imax.ingenieriamaxima"><img src="./assets/iconos/facebook.png"
+                            alt=""></a>
+                    <a href="https://www.instagram.com/imax_ingenieria_maxima/"><img src="./assets/iconos/instagram.png"
+                            alt=""></a>
+                </div>
+                <a class="link-intranet" href="intranet.html">
+                    <div class="intranet"> <i class="fas fa-user-circle"></i> Intranet</div>
+                </a>
             </div>
         </div>
-        <div class="fooSecond">
-            <p class="copy">IMAX-Ingenieria Maxima ©2020 - Todos los derechos reservados </p>
+        <div class="footerPage">
+            <p class="copy"> IMAX Ingeniería Máxima ® - REPEV 15687 – 2009 </p>
         </div>
-        
+
     </footer>
-<script type="module" src="./main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+    <script src="slider.js"></script>
+    <script src="menu.js"></script>
 
 
 </body>

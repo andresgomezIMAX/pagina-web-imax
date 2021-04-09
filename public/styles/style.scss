@@ -1,8 +1,8 @@
-@import "./style-view/home";
+// @import "./style-view/home";
 @import "./style-view/nosotros";
-@import "./style-view/staff";
-@import "./style-view/contacto";
-@import "./style-view/proyectos";
+// @import "./style-view/staff";
+// @import "./style-view/contacto";
+// @import "./style-view/proyectos";
 @import "./style-view/login";
 @import "./style-view/noticias";
 @import "./style-view/pagos";
@@ -14,14 +14,14 @@
     src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+    font-family: 'SEGOE UI EMOJI';
+
 }
 
 // .body-web{
@@ -34,12 +34,17 @@
 //     background-position: bottom;
 //     background-size: cover;
 //     // padding: 0 8%;
-    
+
 // }
 
 @font-face{
     font-family: 'Gui generis Rg';
-    src: url(../../assets/SuiGenerisRegular.otf);
+    src: url(../assets/sui_generis_rg.ttf);
+}
+
+@font-face{
+    font-family: 'SEGOE UI EMOJI';
+    src: url(../assets/seguiemj.ttf);
 }
 
 .menu-bar {
@@ -48,20 +53,18 @@
 
 .header-web {
     width: 100%;
-    // position: fixed;
-    background: #ffffff;
-    /* padding: 0 8%; */
-    // margin-left: 8%;
-
+    z-index: 3;
+    position: absolute;
+    top: 0%;
 
     nav {
-        background: #ffffff;
+        // background: #be1e1e;
         // border: 1px solid orange;
         z-index: 1000;
         max-width: 100%;
         width: 100%;
         height: 85px;
-      
+
         // margin: 0 20% auto;
 
 
@@ -76,35 +79,47 @@
                 position: relative;
 
                 a {
-                    color: rgb(249, 106, 27);;
+                    color: #ffffff;
                     display: block;
                     text-decoration: none;
                     padding: 15px 30px;
-                    margin-top: 20%;
-                    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    margin-top: 15%;
+                    // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     font-size: 17px;
-                    font-weight:500;
-                }
-
-                .intranet{
-                    width: 80%;
+                    font-weight: 500;
                 }
 
                 :hover {
-                    background: rgb(206, 215, 219);
-
-                    .children {
-                        display: block;
-                    }
+                    color: #fc7617;
                 }
+
+                .intranet {
+                    background-color: #009AD2;
+                    height: 25px;
+                    width: 95px;
+                    border-radius: 25px;
+
+                    i {
+                        margin: 0 0 0 5px;
+                    }
+
+                }
+
+                // :hover {
+                //     background: rgba(255, 255, 255, .4);
+
+                //     .children {
+                //         display: block;
+                //     }
+                // }
             }
         }
 
         .logo {
-            margin-left: 5%;
-            margin-top: 1%;
+              margin-left: 5%;
+            margin-top: 2%;
             width: 13%;
-            height: 60px;
+            height: 55px;
 
         }
     }
@@ -198,29 +213,26 @@
     }
 }
 
-//section slider nuevo nuevo
 
+// SECCION SLIDER - NUEVA VERSION -------------------------------------------------
 
-
-.flexslider{
-    width: 95%;
+.flexslider {
+    width: 100%;
     // max-width: 1000px;
-    height: 600px;
-    margin: 50px auto;
+    height: 660px;
 
-    border: 5px solid #cf2c2c;
     display: flex;
     flex-direction: column;
- 
 
-    ul img{
-            width: 100%;
-            height: 590px;
-        
-        }
-    
-//paginacion del slider
-    .flex-control-nav.flex-control-paging{
+
+    ul img {
+        width: 100%;
+        height: 660px;
+
+    }
+
+    //paginacion del slider
+    .flex-control-nav.flex-control-paging {
         width: 120px;
         padding: 20px 0px;
         // background-color: #1A89DF;
@@ -233,10 +245,10 @@
         align-self: center;
         list-style: none;
         position: absolute;
-        bottom: -3700px;
+        bottom: 40px;
         z-index: 3;
 
-        li{
+        li {
             display: inline-block;
             margin: 0 5px;
 
@@ -248,27 +260,27 @@
                 text-indent: -9999px;
             }
         }
-     
+
 
     }
 
-    .flex-control-nav li a.flex-active{
+    .flex-control-nav li a.flex-active {
         background: #009AD2;
 
     }
-    
+
 }
 
 //navegacion del slider
-.flex-direction-nav{
+.flex-direction-nav {
 
     z-index: 3;
     list-style: none;
 
-    a{
+    a {
         width: 60px;
         height: 60px;
-        background: #1A89DF;
+        // background: #1A89DF;
 
         display: flex;
         justify-content: center;
@@ -289,92 +301,825 @@
     content: "\f105";
 }
 
-.flex-direction-nav .flex-prev{
+.flex-direction-nav .flex-prev {
     left: 0px;
     opacity: 0;
 }
 
-.flex-direction-nav .flex-next{
+.flex-direction-nav .flex-next {
     right: 0px;
     opacity: 0;
 }
 
-.flexslider :hover .flex-direction-nav .flex-prev{
+.flexslider:hover .flex-direction-nav .flex-prev {
     opacity: 1;
     left: 15px;
 
 }
 
-.flexslider :hover .flex-direction-nav .flex-next{
+.flexslider:hover .flex-direction-nav .flex-next {
     opacity: 1;
     right: 15px;
 
 }
 
 .flex-direction-nav a::before {
-   content: "\f104";
+    content: "\f104";
 
-  font: normal normal normal 14px/1 FontAwesome;
+    font: normal normal normal 14px/1 FontAwesome;
 
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 50px;
-  color: #ffffff;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 50px;
+    color: #ffffff;
 
 }
 
-//caption
-.caption{
+.caption-slider{
     position: absolute;
-    top: 50%;
+    top: 20%;
     z-index:2 ;
+    color: white;
+    width: 50%;
+     margin: 10% 0 0 26%;
+     text-align: center;
+ 
+
+    h1, strong{
+        font-size:50px;
+        margin-bottom: 3%;
+         font-family: 'Gui generis Rg';
+         font-weight: 300;
+    }
+
+    p{
+        font-size: 20px;
+    }
+
+
+    
 }
 
+strong{
+    color: #fc7617;
+}
 
-// section footer -----------------------------------------------------------------------------
-.footerPage {
-    background:#a5a59e;
-    padding-top: 2%;
-    // margin: 0 8%;
+.caption-slider-beige{
+    position: absolute;
+    top: 20%;
+    z-index:2 ;
+    color: #4c4c4c;
+    width: 50%;
+     margin: 10% 0 0 40%;
+     text-align: center;
+ 
 
-    .fooFirst {
+    h1, strong{
+        font-size:50px;
+        margin-bottom: 3%;
+         font-family: 'Gui generis Rg';
+         font-weight: 300;
+    }
+     p{
+        font-size: 20px;
+    }
+
+
+}
+
+.caption-slider-img{
+    position: absolute;
+    top: 35%;
+    z-index:2 ;
+
+    .img-slider{
+        top: 0;
+        width: 45%;
+        height: 40%;
+        margin-left: 30%;
+    }
+}
+
+// SECCION DATOS INFORMATIVOS - NUEVA VERSION -------------------------------------------------
+
+.informative-data {
+    background: rgb(234, 234, 234);
+    display: flex;
+    justify-content: center;
+
+    .detailed-information,
+    .detailed-information-on {
+        margin: 4% 0% 4% 2%;
         display: flex;
-        flex-direction: row;
 
-        .boxLogo {
-            width: 35%;
-            padding: 5% 6%;
-        }
-
-        .boxContacto {
+        .image-detailed {
             width: 40%;
+
+            img {
+                width: 80%;
+            }
         }
 
-        .boxRedes {
-            width: 25%;
-         
+        .detailed {
+            color: #4d4e52;
 
-            img{
-               padding: 9px;
+            h2 {
+                font-size: 30px;
             }
         }
     }
 
-    .fooSecond {
-        background: #a5a59e;
+    .detailed-information-on {
 
-        .copy {
-            margin-left: 35%;
-            font-weight: bold;
-            font-size: 12px;
-            background: #a5a59e;
+        margin: 4% 2% 4% 8%;
+        display: flex;
+    }
+
+}
+
+
+
+// SECCION SERVICIOS - NUEVA VERSION -------------------------------------------------
+.services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5% 0;
+
+    .service-title {
+        h1 {
+            color: #009AD2;
+            font-size: 30px;
+        }
+
+        p {
+            margin-left: 10%;
+          
+        }
+        img {
+            color: #4d4e52;
+            margin-left: 25%;
+           
+        }
+    }
+
+    ;
+
+    .service-list {
+        display: flex;
+        margin-bottom: 2%;
+        width: 70%;
+        color: #4c4c4c;
+
+        .service-img {
+            width: 50%;
+            padding: 0 2%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .service-detailed {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 50%;
+            padding: 0 2%;
+
+            .detailed {
+                width: 80%;
+                text-align: left;
+
+                p {
+                    margin-top: 4%;
+                    margin-right: 10%;
+                    text-align: justify;
+                    line-height: 1.2;
+                    font-size: 15px;
+                }
+                h2{
+                    font-weight: bold;
+                    color: #2e2d2d;
+                    font-size: 25px;
+                }
+
+                .view-more{
+                    background-color: #009AD2;
+                    height: 25px;
+                    width: 95px;
+                    border-radius: 25px;
+                    outline: none;
+                    border: 0;
+                    cursor: pointer;
+                    margin-top: 6%;
+                }
+
+                .view-more:hover{
+                    //   border: 2px solid #009AD2;
+                    //   background: #ffffff;
+                    //   color: #7e7975;
+                        box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 3px 5px;
+                      
+                }
+            }
+        }
+
+        .service-detailed1 {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+            padding: 0 2%;
+
+            .detailed {
+                width: 90%;
+                text-align: right;
+
+                h2{
+                    font-weight: bold;
+                      color: #2e2d2d;
+                       font-size: 25px;
+                }
+
+                p {
+                    margin-top: 4%;
+                    margin-left: 20%;
+                    text-align: justify;
+                    line-height: 1.2;
+                    font-size: 15px;
+                }
+
+                .view-more{
+                    background-color: #009AD2;
+                    height: 25px;
+                    width: 95px;
+                    border-radius: 25px;
+                    outline: none;
+                    border: 0;
+                    cursor: pointer;
+                    margin-top: 6%;
+                }
+
+                .view-more:hover{
+                    //   border: 2px solid #009AD2;
+                    //     background: #ffffff;
+                    //     color: #7e7975;
+                         box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 3px 5px;
+                }
+            }
+
+
+        }
+
+    }
+}
+
+
+
+// SECCION REEL ULTIMOS PROYECTOS - NUEVA VERSION -------------------------------------------------
+
+.projects-container {
+    background: rgb(234, 234, 234);
+    padding: 4% 5%;
+
+
+    .projects-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            color: #009AD2;
+            font-size: 30px;
+        }
+
+        p,
+        img {
+            color: #4d4e52;
+            // margin-left: 25%;
+        }
+    }
+
+    ;
+
+    .carousel-contenedor {
+        position: relative;
+
+        .anterior-carousel,
+        .siguiente-carousel {
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 30px;
+            border: none;
+            top: calc(50% - 65px);
+            cursor: pointer;
+            line-height: 30px;
+            text-align: center;
+            background: none;
+            color: #0c0c0c;
+            opacity: 20%;
+            outline: none;
+        }
+
+        .carousel-lista {
+            margin-top: 2%;
+            width: 100%;
+            height: 400px;
+
+            color: #4c4c4c;
+        }
+
+        .anterior-carousel:hover,
+        .siguiente-carousel:hover {
+            opacity: 100%;
+        }
+
+        .anterior-carousel {
+            left: -50px;
+        }
+
+
+        .siguiente-carousel {
+            right: -50px;
+        }
+
+        .carousel-element {
+            text-align: center;
+            color: #4c4c4c;
+
+            figure {
+                position: relative;
+                width: 100%;
+                height: 90%;
+
+                img {
+                    width: 90%;
+                    height: 100%;
+                    transition: all 500ms ease-out;
+                }
+
+                .capa {
+                    position: absolute;
+                    top: 0;
+                    margin-left: 5%;
+                    width: 90%;
+                    height: 100%;
+                    background: rgba(14, 139, 211, 0.659);
+                    opacity: 0;
+                    transition: all 500ms ease-out;
+                    opacity: 0;
+                    visibility: hidden;
+                    text-align: center;
+
+                    .boton_mas {
+                        margin-top: 45%;
+                        width: 22%;
+                        height: 20%;
+                        color: white;
+                    }
+
+                }
+
+            }
+
+            :hover>.capa {
+                opacity: 1;
+                visibility: visible;
+
+            }
+
+
+
+
+            div h1 {
+                font-size: 16px;
+                padding: 0 16px;
+                color: #2e2d2d;
+            }
+
+            div p {
+                font-size: 13px;
+                 padding: 0 16px;
+            }
+        }
+
+
+
+    }
+
+    .carousel-indicadores .glider-dot {
+        display: none;
+    }
+
+}
+
+// SECCION REEL ULTIMOS PROYECTOS - NUEVA VERSION -------------------------------------------------
+
+.sliderComments {
+    width: 100%;
+    // max-width: 1000px;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    background-image: url(../assets/testimonios/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    // ul img {
+    //     width: 7%;
+    //     height: 90px;
+    //     border-radius: 50%;
+
+    // }
+
+    //paginacion del slider
+    .flex-control-nav.flex-control-paging {
+        width: 120px;
+        padding: 20px 0px;
+        // background-color: #1A89DF;
+        // border: 2px solid rgba(255,255,255,.3);
+
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        list-style: none;
+        position: absolute;
+        bottom: -3333px;
+        z-index: 3;
+
+        li {
+            display: inline-block;
+            margin: 0 5px;
+
+            a {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background: #ffffff;
+                text-indent: -9999px;
+                border-radius: 50%;
+            }
+        }
+
+
+    }
+
+    .flex-control-nav li a.flex-active {
+        background: #2b2c2c;
+
+    }
+
+
+    .flex-direction-nav {
+
+        z-index: 3;
+        list-style: none;
+
+        a {
+            display: none;
+        }
+
+    }
+}
+
+//navegacion del slider
+
+.caption {
+    width: 35%;
+    height: 400px;
+    position: absolute;
+    z-index: 2;
+    margin: 12% 0 0 33%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    .comment-text {
+
+        background: rgba(255, 255, 255, 0.859);
+
+        display: flex;
+        text-align: center;
+
+        position: relative;
+
+        width: 100%;
+        // height: 180px;
+        background-color: rgba(255, 255, 255, 0.859);
+        padding: 5%;
+        border-radius: 10px;
+
+
+    }
+
+    .negrita{
+        color: black;
+    }
+
+
+    .comment-text::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 40px;
+        width: 0px;
+        height: 0px;
+        border-top: 20px solid rgba(255, 255, 255, 0.859);
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        transform: rotate(0deg);
+    }
+
+    .comment-marca {
+
+        margin: 8% 0 0 5%;
+
+        display: flex;
+
+        img {
+            width: 15%;
+            height: 65px;
+            border-radius: 50%;
+
+        }
+
+        .marca-detail {
+            margin-left: 5%;
+
+            p {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+}
+
+//video statico
+
+.contenedorVid {
+    width: 100%;
+    height: 520px;
+    // height: 442px;
+
+
+
+    .videoUrl {
+        width: 100%;
+
+        // width: 90%;
+        // margin-left: 5%;
+        iframe {
+            width: 100%;
+            height: 520px;
+
+            .ytp-large-play-button svg {
+                display: none;
+            }
+
+            .ytp-large-play-button {
+                background-image: url(../assets/iconos/video.png);
+            }
+        }
+
+        video {
+            width: 100%;
+            height: 442px;
+        }
+
+    }
+
+    .descriptionVideo {
+        position: absolute;
+        top: 660%;
+        z-index: 2;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        right: 25%;
+    }
+}
+
+//SESION CONTACTO ----------------------------------------------------------------------------
+
+.section-contact {
+    background: #1e2023;
+
+    .contact-box-first {
+        display: flex;
+        flex-direction: row;
+
+        img {
+            width: 50%;
+        }
+
+        .form-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            padding: 4% 0%;
+
+            h1 {
+                color: white;
+                font-size: 38px;
+                padding-bottom: 2%;
+            }
+
+            p {
+                color: #0285d1;
+                font-size: 18px;
+                padding-bottom: 1%;
+            }
+
+            .space-box {
+                padding-bottom: 3%;
+            }
+
+            .box-tex-form {
+                width: 85%;
+                height: 9%;
+                margin-top: 3%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                input {
+                    width: 49%;
+                    height: 100%;
+                    background-color: transparent;
+                    border: 1.5px solid #828283;
+                    border-radius: 8px;
+                    padding-left: 10px;
+                    align-items: center;
+                    color: white;
+                }
+
+
+            }
+
+            textarea {
+                background-color: transparent;
+                border: 1.5px solid #828283;
+                border-radius: 8px;
+                margin-top: 7%;
+                width: 85%;
+                height: 50%;
+                padding-left: 20px;
+                align-items: center;
+                color: white;
+            }
+
+            .send-email {
+                color: white;
+                background: #fc7617;
+                width: 22%;
+                height: 6%;
+                border-radius: 15px;
+                text-align: center;
+                border: 0;
+                padding-bottom: 3px;
+                margin-top: 5%;
+                outline: none;
+                cursor: pointer;
+
+            }
+
+            .send-email:hover {
+                // border: 2px solid #fc7617;
+                // background: #ffffff;
+                // color: #7e7975;
+                           box-shadow: 0 0 0 1px white,
+                        0 0 0 0px,
+                        0 2px 3px;
+            }
         }
     }
 
 
+}
+
+// section footer -----------------------------------------------------------------------------
+
+    .contact-box-second {
+            background: #1e2023;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-top: 1%;
+
+        .abstract {
+            width: 40%;
+            padding: 3%;
+
+
+            p {
+                color: white;
+                text-align: justify;
+                line-height: 1.2;
+                font-size: 20px;
+            }
+        }
+
+        .box-contac-date {
+            width: 50%;
+            padding: 3%;
+            color: white;
+
+            div {
+                display: flex;
+                margin-bottom: 2%;
+
+                img {
+                    width: 7%;
+                    height: 3%;
+                    margin-right: 3%;
+                }
+
+
+            }
+
+
+
+        }
+
+        .box-contac-redes {
+            width: 40%;
+            padding-top: 3%;
+            padding-left: 5%;
+            color: white;
+
+            .redes-icons {
+                display: flex;
+
+                a {
+                   
+                    width: 10%;
+                    height: 30px;
+                    margin-left: 1%;
+
+                    img {
+                        width: 90%;
+
+                    }
+                }
+
+
+
+
+            }
+
+            .link-intranet {
+                color: #ffffff;
+                display: block;
+                text-decoration: none;
+                padding-top: 7%;
+
+                font-size: 15px;
+
+
+                .intranet {
+                    background-color: #009AD2;
+                    height: 20px;
+                    width: 85px;
+                    border-radius: 25px;
+                    padding-left: 2%;
+                }
+            }
+
+
+        }
+    }
+
+.footerPage {
+  background: white;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+        .copy {
+            font-size: 12px;
+         color: #4d4e52;
+         font-weight: 500;
+        }
 
 }
+
+
+
 
 
 
@@ -384,7 +1129,7 @@
 // style mobile -----------------------------------------------------------------------------
 @media screen and (max-width: 800px) {
 
-    .body-web    {
+    .body-web {
         padding-top: 60px;
 
         .title {
@@ -392,7 +1137,7 @@
         }
     }
 
-    #container{
+    #container {
         padding: 0;
     }
 
@@ -427,7 +1172,7 @@
         margin-left: 0;
     }
 
-    .header-web  nav {
+    .header-web nav {
         width: 80%;
         height: calc(100% - 60px);
         position: fixed;
@@ -495,7 +1240,7 @@
         img {
             width: 100%;
             height: 250px;
-            padding-top: 0%; 
+            padding-top: 0%;
         }
 
         .circle-overlay {
@@ -504,46 +1249,47 @@
             height: 50vw;
             right: 29vw;
 
-    
-                .gs-banner-content {
+
+            .gs-banner-content {
 
                 left: 11%;
-                
-                    p {
-                        font-size: 10px;
-                    }
 
+                p {
+                    font-size: 10px;
                 }
 
-                .play-button-container {
-                 
-                    top: 45%;
-        
-                    .circle-play-button {
-                     
-        
-                        .circle {
-                            width: 44px;
-                            height: 44px;
-                        }
-        
-                        i {
-                            font-size: 18px;
-                            margin-top: 15px;
-                            margin-left: 15px;
-                        }
+            }
+
+            .play-button-container {
+
+                top: 45%;
+
+                .circle-play-button {
+
+
+                    .circle {
+                        width: 44px;
+                        height: 44px;
+                    }
+
+                    i {
+                        font-size: 18px;
+                        margin-top: 15px;
+                        margin-left: 15px;
                     }
                 }
-            
+            }
+
         }
-        
+
     }
+
     .box-clientes {
         flex-direction: column;
         height: 50%;
     }
 
-    .footerPage{
+    .footerPage {
         margin: 0;
 
         .fooFirst {
@@ -551,12 +1297,12 @@
             align-items: center;
             font-size: 15px;
             padding: 5% 12%;
-    
+
             .boxContacto {
                 width: 100%;
                 margin-bottom: 15px;
             }
-    
+
             .boxRedes {
                 width: 100%;
             }
@@ -574,6 +1320,7 @@
             margin-left: 30px;
         }
     }
+
     .servicios .modal-container .modal {
         width: 80%;
         height: 80%;
@@ -605,25 +1352,25 @@
             display: none;
         }
     }
-    
-    .informacion{
+
+    .informacion {
         height: 60vh;
 
-        .title{
-           font-size: 135%; 
+        .title {
+            font-size: 135%;
         }
-    
+
     }
 
-    .slider{
+    .slider {
         width: 300px;
         height: 160px;
         box-shadow: 0 0 0 1px white,
-                    0 0 0 2px ,
-                    0 15px 10px;
+            0 0 0 2px,
+            0 15px 10px;
 
-       
-        input + label{
+
+        input+label {
             width: 15px;
             height: 15px;
             border: 1px solid black;
