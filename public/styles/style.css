@@ -210,6 +210,142 @@
   margin-bottom: 15px;
 }
 
+.servicios-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.servicios-container .box-par {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 2px solid red;
+}
+
+.servicios-container .box-par .square {
+  width: 100%;
+  height: 120vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid blue;
+}
+
+.servicios-container .box-par .square figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.servicios-container .box-par .square figure img {
+  width: 190%;
+  height: 100%;
+  -webkit-transition: all 500ms  ease-out;
+  transition: all 500ms  ease-out;
+}
+
+.servicios-container .box-par .square figure .capa-detailed {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+
+.servicios-container .box-par .square figure .capa-detailed .capa1 {
+  margin-top: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon {
+  background-color: white;
+  width: 11%;
+  height: 33px;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 15px;
+}
+
+.servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon i {
+  color: #A1A39E;
+  padding-top: 20%;
+}
+
+.servicios-container .box-par .square figure .capa-detailed .capa2 {
+  margin-top: 25%;
+  padding-left: 5%;
+}
+
+.servicios-container .box-par .square figure .capa-detailed .capa2 .title-project {
+  color: #009AD2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.servicios-container .box-par .square figure .capa-detailed h3 {
+  color: #009AD2;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 300px;
+  -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
+  margin-top: 30px;
+}
+
+.servicios-container .box-par .square figure .capa-detailed p {
+  color: white;
+  font-size: 15px;
+  line-height: 1.2;
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  text-align: justify;
+}
+
+.servicios-container .box-par .square figure:hover > .capa-detailed {
+  opacity: 1;
+  visibility: visible;
+}
+
+.servicios-container .box-par .square figure:hover > img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.servicios-container .box-par .square figure:hover > .capa-detailed h3 {
+  margin-top: 150px;
+  margin-bottom: 15px;
+}
+
 .nosotros {
   padding: 1% 0;
   background: #f1f1f1;
