@@ -12,13 +12,13 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
 </head>
-<body class="container-noticias">
+<body class="container-pagos">
 
-    <header class="header-intranet">   
+    <header class="header-intranet-pagos">   
         <nav class="menu">
             <img class="logo" src="../assets/logo.png">
             <ul>
-                <li><a href="#/">Noticias</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
                 <li><a href="#/" class="pagos">Mis Pagos
                         <ul class="nav-home hide">
                             <a href="boletas.html" ><li class="btn-go-boletas second-parent" >Mis Boletas de Pago</li></a>
@@ -26,10 +26,10 @@
                         </ul>
                </a> </li>
                <li><a href="vacations.html">Mis Vacaciones</a></li>
-               
-               <div class="only-admin"></div>
-               <li><a href="projectsWeb.html">Herramientas IMAX</a></li>
-               <a class="logOut"><li>Cerrar sesión</li></a>
+              
+                <div class="only-admin"></div>
+                <li><a href="#/contacto">Herramientas IMAX</a></li>
+                <a class="logOut"><li>Cerrar sesión</li></a>
                
             </ul>
         </nav>
@@ -37,23 +37,25 @@
 
     </header>
 
-    <main class="box-noticias">
-        <div class="column-noticias">
-
-            <div class="title-noticias">
+    <main >
+        <div class="title-noticias">
                 <p class="big-title">Noticias IMAX</p>
                 <div class="user-new">
                    
                 </div>
             </div>
-    
-            <section class="create-post">
-            
-                <div class="writePost">
-                    <textarea id="newPublication" class="textarea" rows="10" cols="50" placeholder="¿Qué quisieras compartir?"></textarea>
-                </div>
-                <div class="box-publicar">
-                    <div class="progress">
+        <section>
+            <h1>Agregar proyecto a la web</h1>
+            <form action="">
+                <label for="nameProject">Nombre del proyecto: </label>
+                <input type="text" name="nameProject" id="nameProject" class="nameProject">
+                <label for="typeService">Tipo de Servicio</label>
+                <input type="text" name="typeService" id="typeService" class="typeService">
+                <label for="descriptionProject">Descripción del proyecto: </label>
+                <input type="text" name="descriptionProject" id="descriptionProject" class="descriptionProject">
+             
+                <div class="progress">
+                     <label for="">Agregar imagen: </label>
                         <div class="containerProgress hide">
                             <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
                             <div class="progressline"></div>
@@ -67,25 +69,13 @@
                             <img class="picPost"/>
                         </div>
                     </div>
-                    
-                    <button id="btnNewPublication" class="btnNewPost">Publicar</button>
+                    <div class="writePost">
+                       
+                    <textarea id="newPublication" class="textarea" rows="10" cols="50" placeholder="Contenido del proyecto"></textarea>
                 </div>
-                
-                
-            </section>
-    
-    
-            <section class="container-post">
-                    <!-- <ul class="posts">
-                      
-                    </ul> -->
-            </section>
-
-        </div>
-        
-
-
-
+                <button id="btnNewPublication" class="btnNewPost">Guardar</button>
+            </form>
+        </section>
 
     </main>
     
@@ -107,10 +97,8 @@
     firebase.analytics();
     </script>
 
-    <script  type="module" src="../web-controller/posts.js"></script>  
-    <script type="module" src="../web-controller/nav.js"></script>  
-
-    
-   
+  
+    <script src="../web-controller/nav.js"></script>  
+    <script src="../web-controller/projectsWeb.js"> </script>
 </body>
 </html>

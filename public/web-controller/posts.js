@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
 
   
 
-  const  btnNewPost = document.querySelector('.btnNewPost');
+  const  btnNewPost = document.querySelector('.btnNewPost');  
   const inputTextArea = document.querySelector ('.textarea');
   const progress = document.querySelector('.progressline');
   const f = new Date();
