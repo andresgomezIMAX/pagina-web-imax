@@ -5,7 +5,7 @@
     z-index: 3;
     // position: absolute;
     top: 0%;
-            // background: #1ebeb1;
+    // background: #1ebeb1;
 
     nav {
 
@@ -43,7 +43,7 @@
                     color: #fc7617;
                 }
 
-                
+
             }
         }
 
@@ -81,58 +81,60 @@
 
 // SECCION CONTAINER NUEVA VERSION -----------------------------------------------------------------------------
 
-.nosotros-container{
+.nosotros-container {
     display: flex;
     flex-direction: column;
 
-    .intro-nosotros{
+    .intro-nosotros {
         font-weight: 400;
-        padding: 3% 1%;
+        padding: 3% 5%;
         margin: 1%;
-        background-color: #eaeaea;
         border-radius: 10px;
+        text-align: justify;
+        line-height: 1.5;
     }
 
-    .box-par{
+    .box-par {
         display: flex;
         flex-direction: row;
 
-        .square{
+        .square {
             width: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
 
-            figure{
+            figure {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 cursor: pointer;
 
-                img{
+                img {
                     width: 100%;
                     height: 100%;
-                    transition: all 500ms  ease-out;
+                    transition: all 500ms ease-out;
                 }
 
-                .capa-detailed{
+                .capa-detailed {
                     position: absolute;
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0,0,0,0.8);
+                    background: rgba(0, 0, 0, 0.8);
                     transition: all 500ms ease-out;
                     opacity: 0;
                     visibility: hidden;
                     text-align: center;
 
-                    .capa1{
-                   
-                        margin-top:45%;
+                    .capa1 {
+
+                        margin-top: 45%;
                         display: flex;
                         justify-content: center;
-                        .capa-icon{
+
+                        .capa-icon {
                             background-color: white;
                             width: 11%;
                             height: 33px;
@@ -140,35 +142,36 @@
                             align-items: center;
                             margin-right: 15px;
 
-                            i{
+                            i {
                                 color: #A1A39E;
                                 padding-top: 20%;
                             }
                         }
                     }
-                    .capa2{
-           
-                        margin-top:25%;
-                      
+
+                    .capa2 {
+
+                        margin-top: 25%;
+
                         padding-left: 5%;
 
-                      .title-project{
-                          color: #009AD2;
-                          font-weight: bold;
-                          font-size: 18px;
-                      }
+                        .title-project {
+                            color: #009AD2;
+                            font-weight: bold;
+                            font-size: 18px;
+                        }
                     }
 
-                    h3{
+                    h3 {
                         color: #009AD2;
-                        font-weight:700;
+                        font-weight: 700;
                         font-size: 25px;
                         margin-bottom: 300px;
                         transition: all 1000ms ease-out;
                         margin-top: 30px;
                     }
 
-                    p{
+                    p {
                         color: white;
                         font-size: 15px;
                         line-height: 1.2;
@@ -180,24 +183,24 @@
                 }
             }
 
-            figure:hover > .capa-detailed{
+            figure:hover>.capa-detailed {
                 opacity: 1;
                 visibility: visible;
 
             }
 
-            figure:hover > img {
+            figure:hover>img {
                 transform: scale(1.1);
             }
 
 
-            figure:hover > .capa-detailed h3{
+            figure:hover>.capa-detailed h3 {
                 margin-top: 150px;
                 margin-bottom: 15px;
 
             }
         }
-       
+
 
         // img{
         //     width: 100%;
@@ -206,58 +209,59 @@
 }
 
 /// esta es una prueba 
-.servicios-container{
+.servicios-container {
     display: flex;
     flex-direction: column;
 
 
-    .box-par{
+    .box-par {
         display: flex;
         flex-direction: row;
-        border: 2px solid red ;
+        border: 2px solid red;
 
-        .square{
+        .square {
             width: 100%;
             height: 120vh;
             display: flex;
             justify-content: center;
             align-items: center;
 
-                border: 2px solid blue ;
+            border: 2px solid blue;
 
-           
 
-            figure{
+
+            figure {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
                 cursor: pointer;
-                mask-repeat:unset;
+                mask-repeat: unset;
 
-                img{
+                img {
                     width: 100%;
                     height: 100%;
-                    transition: all 500ms  ease-out;
+                    transition: all 500ms ease-out;
                 }
 
-                .capa-detailed{
+                .capa-detailed {
                     position: absolute;
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0,0,0,0.8);
+                    background: rgba(0, 0, 0, 0.8);
                     transition: all 500ms ease-out;
                     opacity: 0;
                     visibility: hidden;
                     text-align: center;
 
-                    .capa1{
-                   
-                        margin-top:45%;
+                    .capa1 {
+
+                        margin-top: 45%;
                         display: flex;
                         justify-content: center;
-                        .capa-icon{
+
+                        .capa-icon {
                             background-color: white;
                             width: 11%;
                             height: 33px;
@@ -265,35 +269,36 @@
                             align-items: center;
                             margin-right: 15px;
 
-                            i{
+                            i {
                                 color: #A1A39E;
                                 padding-top: 20%;
                             }
                         }
                     }
-                    .capa2{
-           
-                        margin-top:25%;
-                      
+
+                    .capa2 {
+
+                        margin-top: 25%;
+
                         padding-left: 5%;
 
-                      .title-project{
-                          color: #009AD2;
-                          font-weight: bold;
-                          font-size: 18px;
-                      }
+                        .title-project {
+                            color: #009AD2;
+                            font-weight: bold;
+                            font-size: 18px;
+                        }
                     }
 
-                    h3{
+                    h3 {
                         color: #009AD2;
-                        font-weight:700;
+                        font-weight: 700;
                         font-size: 25px;
                         margin-bottom: 300px;
                         transition: all 1000ms ease-out;
                         margin-top: 30px;
                     }
 
-                    p{
+                    p {
                         color: white;
                         font-size: 15px;
                         line-height: 1.2;
@@ -305,37 +310,38 @@
                 }
             }
 
-            figure:hover > .capa-detailed{
+            figure:hover>.capa-detailed {
                 opacity: 1;
                 visibility: visible;
 
             }
 
-            figure:hover > img {
+            figure:hover>img {
                 transform: scale(1.1);
             }
 
 
-            figure:hover > .capa-detailed h3{
+            figure:hover>.capa-detailed h3 {
                 margin-top: 150px;
                 margin-bottom: 15px;
 
             }
         }
-       
+
 
         // img{
         //     width: 100%;
         // }
     }
 }
+
 // section nosotros -----------------------------------------------------------------------------
 
 .nosotros {
     padding: 1% 0;
     background: #f1f1f1;
 
-    .box-nosotros{
+    .box-nosotros {
         display: flex;
         flex-direction: row;
         padding: 4% 4% 0% 2%;
@@ -365,7 +371,7 @@
         }
     }
 
-   
+
 }
 
 
@@ -389,8 +395,8 @@
         position: absolute;
         z-index: 60;
         box-shadow: 0 0 0 10px white,
-                     0 0 0 15px ,
-                    0 15px 10px;
+            0 0 0 15px,
+            0 15px 10px;
 
 
 
@@ -504,5 +510,3 @@
 
 
 }
-
-

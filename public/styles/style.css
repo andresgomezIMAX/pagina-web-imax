@@ -81,10 +81,11 @@
 
 .nosotros-container .intro-nosotros {
   font-weight: 400;
-  padding: 3% 1%;
+  padding: 3% 5%;
   margin: 1%;
-  background-color: #eaeaea;
   border-radius: 10px;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 .nosotros-container .box-par {
@@ -121,8 +122,8 @@
 .nosotros-container .box-par .square figure img {
   width: 100%;
   height: 100%;
-  -webkit-transition: all 500ms  ease-out;
-  transition: all 500ms  ease-out;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .nosotros-container .box-par .square figure .capa-detailed {
@@ -259,8 +260,8 @@
 .servicios-container .box-par .square figure img {
   width: 100%;
   height: 100%;
-  -webkit-transition: all 500ms  ease-out;
-  transition: all 500ms  ease-out;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .servicios-container .box-par .square figure .capa-detailed {
@@ -410,8 +411,8 @@
   right: 39vw;
   position: absolute;
   z-index: 60;
-  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
-          box-shadow: 0 0 0 10px white, 0 0 0 15px , 0 15px 10px;
+  -webkit-box-shadow: 0 0 0 10px white, 0 0 0 15px, 0 15px 10px;
+          box-shadow: 0 0 0 10px white, 0 0 0 15px, 0 15px 10px;
 }
 
 .course-banner .circle-overlay .gs-banner-content {
@@ -2680,7 +2681,8 @@
   text-align: center;
 }
 
-.caption-slider h1, .caption-slider strong {
+.caption-slider h1,
+.caption-slider strong {
   font-size: 50px;
   margin-bottom: 3%;
   font-family: 'Gui generis Rg';
@@ -2705,7 +2707,8 @@ strong {
   text-align: center;
 }
 
-.caption-slider-beige h1, .caption-slider-beige strong {
+.caption-slider-beige h1,
+.caption-slider-beige strong {
   font-size: 50px;
   margin-bottom: 3%;
   font-family: 'Gui generis Rg';
@@ -3062,6 +3065,26 @@ strong {
   background-size: cover;
 }
 
+.sliderComments .comment-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #161616;
+  margin-top: 4%;
+}
+
+.sliderComments .comment-title h1 {
+  font-weight: bold;
+  font-size: 35px;
+}
+
 .sliderComments .flex-control-nav.flex-control-paging {
   width: 120px;
   padding: 20px 0px;
@@ -3075,7 +3098,7 @@ strong {
       align-self: center;
   list-style: none;
   position: absolute;
-  bottom: -3333px;
+  bottom: -3342px;
   z-index: 3;
 }
 
@@ -3107,11 +3130,11 @@ strong {
 }
 
 .caption {
-  width: 35%;
+  width: 40%;
   height: 400px;
   position: absolute;
   z-index: 2;
-  margin: 12% 0 0 33%;
+  margin: 5% 0 0 33%;
 }
 
 .caption .comment-text {
