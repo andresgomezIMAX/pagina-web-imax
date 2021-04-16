@@ -217,7 +217,6 @@
     .box-par {
         display: flex;
         flex-direction: row;
-        border: 2px solid red;
 
         .square {
             width: 100%;
@@ -226,7 +225,6 @@
             justify-content: center;
             align-items: center;
 
-            border: 2px solid blue;
 
 
 
@@ -249,7 +247,7 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    background: rgba(0, 0, 0, 0.8);
+                    background: rgba(29, 123, 211, 0.659);
                     transition: all 500ms ease-out;
                     opacity: 0;
                     visibility: hidden;
@@ -257,56 +255,39 @@
 
                     .capa1 {
 
-                        margin-top: 45%;
+                        margin-top: 240%;
                         display: flex;
+                        flex-direction: column;
                         justify-content: center;
 
-                        .capa-icon {
-                            background-color: white;
-                            width: 11%;
-                            height: 33px;
-                            border-radius: 50%;
-                            align-items: center;
-                            margin-right: 15px;
+                        h2 {
+                            color: white;
+                            font-size: 130%;
+                            margin-bottom: 3px;
+                        }
 
-                            i {
-                                color: #A1A39E;
-                                padding-top: 20%;
+                        a {
+                            color: #ffffff;
+                            display: block;
+                            text-decoration: none;
+                            padding-top: 7%;
+                            font-size: 15px;
+                            display: flex;
+                            justify-content: center;
+
+                            .quotationService {
+                                background-color: #009AD2;
+                                height: 20px;
+                                width: 50%;
+                                border-radius: 25px;
+                                padding-left: 2%;
                             }
                         }
                     }
 
-                    .capa2 {
 
-                        margin-top: 25%;
 
-                        padding-left: 5%;
 
-                        .title-project {
-                            color: #009AD2;
-                            font-weight: bold;
-                            font-size: 18px;
-                        }
-                    }
-
-                    h3 {
-                        color: #009AD2;
-                        font-weight: 700;
-                        font-size: 25px;
-                        margin-bottom: 300px;
-                        transition: all 1000ms ease-out;
-                        margin-top: 30px;
-                    }
-
-                    p {
-                        color: white;
-                        font-size: 15px;
-                        line-height: 1.2;
-                        width: 100%;
-                        max-width: 350px;
-                        margin: auto;
-                        text-align: justify;
-                    }
                 }
             }
 
@@ -316,16 +297,12 @@
 
             }
 
-            figure:hover>img {
-                transform: scale(1.1);
-            }
+            // figure:hover>img {
+            //     transform: scale(1.1);
+            // }
 
 
-            figure:hover>.capa-detailed h3 {
-                margin-top: 150px;
-                margin-bottom: 15px;
 
-            }
         }
 
 

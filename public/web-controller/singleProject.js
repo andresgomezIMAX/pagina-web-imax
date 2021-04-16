@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       projectContainer.innerHTML += `
 
       <div class="head-project">
-                <h1>${project.nombre}</h1>
+                <h1>${project.nombre} (${project.servicio})</h1>
                 <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./proyectos.html">Volver</a></div>
             </div>
             <img src="${project.url}" alt="">
