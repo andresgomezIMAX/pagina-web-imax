@@ -142,11 +142,15 @@
                             align-items: center;
                             margin-right: 15px;
 
+                            
+
                             i {
                                 color: #A1A39E;
                                 padding-top: 20%;
                             }
                         }
+
+                        
                     }
 
                     .capa2 {
@@ -259,6 +263,44 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
+                        .capa-icon {
+                            border: 2px solid red;
+                            background-color: white;
+                            width: 11%;
+                            height: 33px;
+                            border-radius: 50%;
+                            align-items: center;
+                            margin-right: 15px;
+                        h2 {
+                            color: white;
+                            font-size: 130%;
+                            margin-bottom: 3px;
+                        }
+
+                            i {
+                                color: #A1A39E;
+                                padding-top: 20%;
+                        a {
+                            color: #ffffff;
+                            display: block;
+                            text-decoration: none;
+                            padding-top: 7%;
+                            font-size: 15px;
+                            display: flex;
+                            justify-content: center;
+
+                            .quotationService {
+                                background-color: #009AD2;
+                                height: 20px;
+                                width: 50%;
+                                border-radius: 25px;
+                                padding-left: 2%;
+                            }
+                        }
+                    }
+                }
+
+
 
                         h2 {
                             color: white;
@@ -283,6 +325,7 @@
                                 padding-left: 2%;
                             }
                         }
+                        
                     }
 
 
