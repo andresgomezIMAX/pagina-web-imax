@@ -215,6 +215,7 @@ window.addEventListener('DOMContentLoaded', async(e) => {
                   });
 
                   const btnEditRow = document.querySelectorAll('.btn-editUser');
+               
                   const btnUpdateRow = document.querySelectorAll('.btnSaveFile');
                   const editableRow = document.querySelectorAll('.row-users');
                   
