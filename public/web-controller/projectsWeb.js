@@ -1,50 +1,91 @@
-const saveProjects = (nombre, servicio, description, url, content, useruid) => {
+const saveProjects = (nombre, servicio, description, urlCarrusel, urlProject, checkProjectHome,  content, useruid) => {
   return fs.collection("projects").add({
     nombre,
     servicio,
     description,
-    url,
+    urlCarrusel,
+    urlProject, 
+    checkProjectHome,
     content,
     useruid,
   });
 };
 
-let file;
+let dataFile;
   const currentUser = () => firebase.auth().currentUser;
-  const btnAddImage = document.querySelector('#addImage');
-  if(btnAddImage){
-    btnAddImage.addEventListener('change', (e) => {
+  const btnImgCarrusel = document.querySelector('#addImgCarrusel');
+  if(btnImgCarrusel){
+    btnImgCarrusel.addEventListener('change', (e) => {
+      console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
+      // Get file
+      dataFile = e.target.files[0];
+      if (dataFile) {
+        const storageRef = firebase.storage().ref(`projectCarrusel/${currentUser().email}/${dataFile.name}`);
+        // Upload data
+        const task = storageRef.put(dataFile);
+        console.log(task)
+        // Update progress bar
+        let urlCarrusel= '';
+        task.on(
+          "state_changed",
+          (snapshot) => {
+            const percent =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            const progressCarrusel = document.querySelector(
+              ".progresslineCarrusel"
+            );
+            progressCarrusel.parentNode.classList.add("show");
+            progressCarrusel.innerText = `${percent.toFixed(0)}%`;
+            progressCarrusel.style.width = `${percent}%`;
+          },
+          () => {},
+          () => {
+            task.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              console.log("File available at", downloadURL);
+              urlCarrusel = downloadURL;
+              sessionStorage.setItem("imgCarrusel", urlCarrusel);
+            });
+          }
+        );
+      }
+    });
+  };
+
+  let file;
+  const btnImgLarge = document.querySelector("#addImgLarge");
+  if(btnImgLarge){
+    btnImgLarge.addEventListener('change', (e) => {
       console.log('CLICK SUBIR IMAGEN', e.target.files[0]);
       // Get file
       file = e.target.files[0];
       if (file) {
-        const storageRef = firebase.storage().ref(`postImage/${currentUser().email}/${file.name}`);
-        // Upload file
+        const storageRef = firebase.storage().ref(`projectLarge/${currentUser().email}/${file.name}`);
+        // Upload data
         const task = storageRef.put(file);
         console.log(task)
         // Update progress bar
-        let url = '';
-        task.on('state_changed', (snapshot) => {
-          const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          const progress = document.querySelector('.progressline');
-          progress.parentNode.classList.add('show');
-          progress.innerText = `${percent.toFixed(0)}%`;
-          progress.style.width = `${percent}%`;
-        }, () => {
-        }, () => {
-          task.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            console.log('File available at', downloadURL);
-            url = downloadURL;
-            sessionStorage.setItem('imgNewPost', url);
-            const pic = document.querySelector('.picPost');
-            pic.parentNode.classList.remove('hide');
-            pic.setAttribute('src', url)
-          })
-          setTimeout(() => {
-            const progress = document.querySelector('.progressline');
-            progress.parentNode.classList.remove('show');
-          }, 2500);
-        });
+        let urlProjectLarge= '';
+        task.on(
+          "state_changed",
+          (snapshot) => {
+            const percent =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            const progressCarrusel = document.querySelector(
+              ".progresslineCarrusel"
+            );
+            progressCarrusel.parentNode.classList.add("show");
+            progressCarrusel.innerText = `${percent.toFixed(0)}%`;
+            progressCarrusel.style.width = `${percent}%`;
+          },
+          () => {},
+          () => {
+            task.snapshot.ref.getDownloadURL().then((downloadURL) => {
+              console.log("File available at", downloadURL);
+              urlProjectLarge = downloadURL;
+              sessionStorage.setItem("imgProjectLarge", urlProjectLarge);
+            });
+          }
+        );
       }
     });
   };
@@ -63,7 +104,7 @@ let file;
       });
     }
 
- const btnNewPost = document.querySelector(".btnNewPost");
+ const generateProject = document.querySelector(".generate-project");
 
 //  const progress = document.querySelector(".progressline");
 
@@ -71,49 +112,48 @@ let file;
 
 
  //boton publicar nuevo post
- btnNewPost.addEventListener("click", (event) => {
+ generateProject.addEventListener("submit", (event) => {
    event.preventDefault();
    const userLogueado = firebase.auth().currentUser;
    console.log(userLogueado);
    const useruid = userLogueado.uid;
-   const url = sessionStorage.getItem("imgNewPost");
-    const nombre = document.querySelector(".nameProject").value;
-    console.log(nombre);
-    const servicio = document.querySelector(".typeService").value;
-    console.log(servicio);
-    const description = document.querySelector(".descriptionProject").value;
-    console.log(description);
-    const content = document.querySelector(".textarea").value;
-    console.log(content);
-   if (url) {
-
-       saveProjects(nombre, servicio, description, url, content, useruid).then(
-         () => {
-           // if (userLogueado !== null) {
-           //   loadPostHome();
-           // }
-           sessionStorage.removeItem("imgNewPost");
-           const pic = document.querySelector(".picPost");
-           pic.parentNode.classList.add("hide");
-           console.log("con foto");
-         }
-       );
-   
+   const urlCarrusel = sessionStorage.getItem("imgCarrusel");
+   const urlProject = sessionStorage.getItem("imgProjectLarge");
+   const nombre = document.querySelector(".nameProject").value;
+   console.log(nombre);
+   const servicio = document.querySelector(".typeService").value;
+   console.log(servicio);
+   const description = document.querySelector(".descriptionProject").value;
+   console.log(description);
+    const checkProjectHome = document.querySelector(".checkProjectHome").value;
+    console.log(checkProjectHome);
+   const content = document.querySelector(".textarea").value;
+   console.log(content);
+   if (urlProject && urlCarrusel) {
+     saveProjects(
+       nombre,
+       servicio,
+       description,
+       urlCarrusel,
+       urlProject,
+       checkProjectHome,
+       content,
+       useruid
+     ).then(() => {
+       // if (userLogueado !== null) {
+       //   loadPostHome();
+       // }
+       sessionStorage.removeItem("imgCarrusel");
+       sessionStorage.removeItem("imgProjectLarge");
+       //  const pic = document.querySelector(".picPost");
+       //  pic.parentNode.classList.add("hide");
+       console.log("con foto");
+       generateProject.reset();
+       alert("Se guardó proyecto nuevo");
+     });
    } else {
-    
-       saveProjects(nombre, servicio, description, url, content, useruid).then(
-         () => {
-           // if (userLogueado !== null) {
-           // //   loadPostHome();
-
-           console.log("se publicó post");
-           // }
-         }
-       );
-     
-     
+     alert("Por favor ingrese todos los datos");
    }
-//    getPosts();
-   content.value = "";
-   btnAddImage.value = "";
+ 
  });
+
