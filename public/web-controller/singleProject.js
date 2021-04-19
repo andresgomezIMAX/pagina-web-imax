@@ -14,12 +14,13 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       <div class="head-project">
                 <h1>${project.nombre} (${project.servicio})</h1>
                 <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./proyectos.html">Volver</a></div>
-            </div>
-            <img src="${project.url}" alt="">
-            <div class="text-project">
-                <p>${project.content}
-                </p>
-            </div>`;
+      </div>
+      <div class="box-img"><img src="${project.urlProject}" alt=""></div>
+            
+      <div class="text-project">
+          <p>${project.content}
+          </p>
+      </div>`;
 
       const btnsRemove = document.querySelectorAll(".btnRemove");
       btnsRemove.forEach((btn) => {
