@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,96 +10,131 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link rel="stylesheet" href="../styles/style.css">
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>noticias</title>
 </head>
+
 <body class="container-pagos">
 
-    <header class="header-intranet-pagos">   
+    <header class="header-intranet-pagos">
         <nav class="menu">
             <img class="logo" src="../assets/logo.png">
             <ul>
                 <li><a href="noticias.html">Noticias</a></li>
                 <li><a href="#/" class="pagos">Mis Pagos
                         <ul class="nav-home hide">
-                            <a href="boletas.html" ><li class="btn-go-boletas second-parent" >Mis Boletas de Pago</li></a>
-                            <a href="cts.html" ><li class="btn-go-const second-parent" >Mis Constancias CTS</li></a>
+                            <a href="boletas.html">
+                                <li class="btn-go-boletas second-parent">Mis Boletas de Pago</li>
+                            </a>
+                            <a href="cts.html">
+                                <li class="btn-go-const second-parent">Mis Constancias CTS</li>
+                            </a>
                         </ul>
-               </a> </li>
-               <li><a href="vacations.html">Mis Vacaciones</a></li>
-              
+                    </a> </li>
+                <li><a href="vacations.html">Mis Vacaciones</a></li>
+
                 <div class="only-admin"></div>
                 <li><a href="#/contacto">Herramientas IMAX</a></li>
-                <a class="logOut"><li>Cerrar sesión</li></a>
-               
+                <a class="logOut">
+                    <li>Cerrar sesión</li>
+                </a>
+
             </ul>
         </nav>
-        
+
 
     </header>
 
-    <main >
+    <main>
         <div class="title-noticias">
-                <p class="big-title">Noticias IMAX</p>
-                <div class="user-new">
-                   
-                </div>
+            <p class="big-title">Noticias IMAX</p>
+            <div class="user-new">
+
             </div>
+        </div>
         <section>
             <h1>Agregar proyecto a la web</h1>
-            <form action="">
+            <form class="generate-project">
                 <label for="nameProject">Nombre del proyecto: </label>
                 <input type="text" name="nameProject" id="nameProject" class="nameProject">
                 <label for="typeService">Tipo de Servicio</label>
                 <input type="text" name="typeService" id="typeService" class="typeService">
                 <label for="descriptionProject">Descripción del proyecto: </label>
                 <input type="text" name="descriptionProject" id="descriptionProject" class="descriptionProject">
-             
-                <div class="progress">
-                     <label for="">Agregar imagen: </label>
-                        <div class="containerProgress hide">
-                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
-                            <div class="progressline"></div>
-                        </div>
-                        <input type="file" id="addImage" accept ="image/*" class= "addImg"> 
-                        <label for= "addImage" style= 'font-size: 20px'>
-                            <i class="fas fa-camera"></i>
-                        </label> <br>
-                        <div class="hide divImg">
-                            <span class="deleteImg">❌</span>
-                            <img class="picPost"/>
-                        </div>
+
+                <div class="aaaaa">
+                    <label for="">Agregar imagen para el Carrusel de proyectos: </label>
+                    <div class="containerProgress hide">
+                        <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                        <div class="progresslineCarrusel"></div>
                     </div>
-                    <div class="writePost">
-                       
-                    <textarea id="newPublication" class="textarea" rows="10" cols="50" placeholder="Contenido del proyecto"></textarea>
+                    <label for="">Asegurese que las dimensiones de la imagen sean de 800 x 800</label>
+                    <input type="file" id="addImgCarrusel" accept="image/*" class="addImgCarrusel">
+                    <label for="addImgCarrusel" style='font-size: 20px'>
+                        <i class="fas fa-camera"></i>
+                    </label> <br>
+                    <!-- <div class="hide divImg">
+                        <span class="deleteImg">❌</span>
+                        <img class="picPost" />
+                    </div> -->
                 </div>
-                <button id="btnNewPublication" class="btnNewPost">Guardar</button>
+
+                <div class="progress">
+                    <label for="">Agregar imagen principal: </label>
+                    <div class="containerProgress hide">
+                        <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                        <div class="progressline"></div>
+                    </div>
+                    <label for="">Por favor ingrese una imagen de 1000 x 400 </label>
+                    <input type="file" id="addImgLarge" accept="image/*" class="addImgLarge">
+                    <label for="addImgLarge" style='font-size: 20px'>
+                        <i class="fas fa-camera"></i>
+                    </label> <br>
+                    <!-- <div class="hide divImg">
+                        <span class="deleteImg">❌</span>
+                        <img class="picPost" />
+                    </div> -->
+                </div>
+                <div class="box-file">
+                    <label for="checkProjectHome">Proyecto-home : </label>
+                    <select name="checkProjectHome" class="checkProjectHome" required>
+                        <option value="NO">NO</option>
+                        <option value="SI">SI</option>
+                    </select>
+                </div>
+                <div class="writePost">
+
+                    <textarea id="newPublication" class="textarea" rows="10" cols="50"
+                        placeholder="Contenido del proyecto"></textarea>
+                </div>
+                <button type="submit" id="btnNewPublication" class="btnNewPost">Guardar</button>
             </form>
         </section>
 
     </main>
-    
+
     <script>
         const firebaseConfig = {
-        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
-        authDomain: "web-imax.firebaseapp.com",
-        projectId: "web-imax",
-        storageBucket: "web-imax.appspot.com",
-        messagingSenderId: "114819498377",
-        appId: "1:114819498377:web:02e7671a7255f711cf6158",
-        measurementId: "G-P8W33C2X62"
-    };
-    firebase.initializeApp(firebaseConfig);
-    console.log(firebase.name)
-    const auth = firebase.auth();
-    const fs = firebase.firestore();
-    firebase.storage();
-    firebase.analytics();
+            apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+            authDomain: "web-imax.firebaseapp.com",
+            projectId: "web-imax",
+            storageBucket: "web-imax.appspot.com",
+            messagingSenderId: "114819498377",
+            appId: "1:114819498377:web:02e7671a7255f711cf6158",
+            measurementId: "G-P8W33C2X62"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log(firebase.name)
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        firebase.storage();
+        firebase.analytics();
     </script>
 
-  
-    <script src="../web-controller/nav.js"></script>  
+
+    <script src="../web-controller/nav.js"></script>
     <script src="../web-controller/projectsWeb.js"> </script>
 </body>
+
 </html>
