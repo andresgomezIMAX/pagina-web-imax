@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
             
       <div class="square">
                     <figure>
-                        <img src=${project.urlCarrusel} alt="">
+                        <img class="img-carrusel" src=${project.urlCarrusel} alt="">
                         <div class="capa-detailed">
                             <div class="capa1">
                                 <div class="capa-icon"><button ><i data-id="${project.id}"class="link-project fas fa-link"></i></button></div>

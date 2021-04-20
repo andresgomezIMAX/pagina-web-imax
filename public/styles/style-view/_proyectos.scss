@@ -24,7 +24,7 @@
                 overflow: hidden;
                 cursor: pointer;
 
-                img {
+                .img-carrusel {
                     width: 100%;
                     height: 100%;
                     transition: all 500ms ease-out;
@@ -129,13 +129,13 @@
 
 // Nueva version de vista proyectos - individual
 .single-project {
-    background: #f4f4f4;
 
     .head-project {
         width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 3% 5%;
+        background: #f4f4f4;
 
         h1 {
             color: #fc7617;
@@ -172,6 +172,18 @@
 
     }
 
+    .box-img-service {
+
+        width: 100%;
+        height: 80vh;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
 
     .text-project {
         background: white;
@@ -179,6 +191,97 @@
         font-size: 14px;
         color: #5f5f5f;
         font-weight: 600;
+    }
+
+    .service-container{
+        background: white;
+          font-size: 14px;
+                     color: #5f5f5f;
+                        font-weight: 600;
+        
+        .content-service{
+            display: flex;
+            justify-content: space-around;
+            margin: 6% 10% 3% 10%;
+
+            .column-first{
+                 width: 55%;
+                 padding: 0% 8%;
+
+                 p{
+                     text-align: justify;
+                        line-height: 1.2; 
+                        margin-bottom: 15%;
+                 }
+
+                  h3{
+                     background:   #fc7617;
+                     color: white;
+                     padding-left: 2%;
+                     margin-bottom: 3%;
+                      font-weight: 300;
+                 }
+
+                 .box-list{
+                     display: flex;
+                     justify-content: space-between;
+
+                     ul{
+                         padding-left: 4%;
+                     }
+                 }
+            } 
+            .column-second{
+                 width: 45%;
+                 padding: 0% 5%;
+
+                 p{
+                     background: #eaeaea;
+                     border-radius: 5%;
+                  
+                     width: 100%;
+                 
+                     padding: 6%;
+                     text-align: justify;
+                        line-height: 1.2;
+                   
+                 }
+
+                
+
+                 .img-small{
+                     margin-top: 15%;
+                     width: 100%;
+                     img{
+                         width: 100%;
+                     }
+                 }
+            }
+        }
+
+        .box-btn-service{
+            
+            display: flex;
+            justify-content: center;
+
+            .btn-service{
+                background-color: #009AD2;
+                height: 25px;
+                width: 140px;
+                border-radius: 15px;
+                outline: none;
+                border: 0;
+                cursor: pointer;
+                color: white;
+                font-size: 18px;
+                margin-bottom: 5%;
+            }
+
+            .btn-service:hover {
+                    box-shadow: 1px 5px #888888
+
+                }
+        }
     }
 }
 
