@@ -211,7 +211,7 @@
                  p{
                      text-align: justify;
                         line-height: 1.2; 
-                        margin-bottom: 15%;
+                        margin-bottom: 12%;
                  }
 
                   h3{
@@ -220,6 +220,13 @@
                      padding-left: 2%;
                      margin-bottom: 3%;
                       font-weight: 300;
+                 }
+
+                 .colored-p{
+                     color: #fc7617;
+                     text-align: justify;
+                        line-height: 1.2; 
+                            margin-bottom: 5%;
                  }
 
                  .box-list{
@@ -251,6 +258,13 @@
 
                  .img-small{
                      margin-top: 15%;
+                     width: 100%;
+                     img{
+                         width: 100%;
+                     }
+                 }
+
+                 .img-small-a{
                      width: 100%;
                      img{
                          width: 100%;

@@ -782,7 +782,7 @@
 .single-project .service-container .content-service .column-first p {
   text-align: justify;
   line-height: 1.2;
-  margin-bottom: 15%;
+  margin-bottom: 12%;
 }
 
 .single-project .service-container .content-service .column-first h3 {
@@ -791,6 +791,13 @@
   padding-left: 2%;
   margin-bottom: 3%;
   font-weight: 300;
+}
+
+.single-project .service-container .content-service .column-first .colored-p {
+  color: #fc7617;
+  text-align: justify;
+  line-height: 1.2;
+  margin-bottom: 5%;
 }
 
 .single-project .service-container .content-service .column-first .box-list {
@@ -826,6 +833,14 @@
 }
 
 .single-project .service-container .content-service .column-second .img-small img {
+  width: 100%;
+}
+
+.single-project .service-container .content-service .column-second .img-small-a {
+  width: 100%;
+}
+
+.single-project .service-container .content-service .column-second .img-small-a img {
   width: 100%;
 }
 
@@ -3036,6 +3051,7 @@ strong {
   text-align: justify;
   line-height: 1.2;
   font-size: 15px;
+  margin-bottom: 6%;
 }
 
 .services-container .service-list .service-detailed .detailed h2 {
@@ -3051,8 +3067,13 @@ strong {
   border-radius: 25px;
   outline: none;
   border: 0;
+  margin-top: 6%;
+  padding: 3px 20px;
   cursor: pointer;
   margin-top: 6%;
+  text-decoration: none;
+  font-size: 14px;
+  color: #181818;
 }
 
 .services-container .service-list .service-detailed .detailed .view-more:hover {
@@ -3085,6 +3106,7 @@ strong {
 .services-container .service-list .service-detailed1 .detailed p {
   margin-top: 4%;
   margin-left: 20%;
+  margin-bottom: 6%;
   text-align: justify;
   line-height: 1.2;
   font-size: 15px;
@@ -3097,8 +3119,13 @@ strong {
   border-radius: 25px;
   outline: none;
   border: 0;
+  margin-top: 6%;
+  padding: 3px 20px;
   cursor: pointer;
   margin-top: 6%;
+  text-decoration: none;
+  font-size: 14px;
+  color: #181818;
 }
 
 .services-container .service-list .service-detailed1 .detailed .view-more:hover {
