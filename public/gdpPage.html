@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap"
         rel="stylesheet">
     <script src="menu.js"></script>
@@ -41,7 +36,7 @@
                 <li><a href="./proyectos.html">Proyectos</a></li>
                 <li><a href="#/proyectos">Noticias</a></li>
 
-                <li><a href="#/contacto">Contáctanos</a></li>
+                <li><a href="./contact.html">Contáctanos</a></li>
 
             </ul>
         </nav>
@@ -49,51 +44,54 @@
     <main>
 
         <section class="single-project ">
-             <div class="head-project">
-                        <h1>Gestión y Desarrollo de Proyectos (GDP)</h1>
-                        <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./servicios.html">Volver</a></div>
-              </div>
-              <div class="box-img-service"><img src="./assets/servicios/gestion-y-desarrollo-de-proyectos/img-principal.jpg" alt=""></div>
+            <div class="head-project">
+                <h1>Gestión y Desarrollo de Proyectos (GDP)</h1>
+                <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./servicios.html">Volver</a></div>
+            </div>
+            <div class="box-img-service"><img
+                    src="./assets/servicios/gestion-y-desarrollo-de-proyectos/img-principal.jpg" alt=""></div>
 
-              <div class="service-container">
-                  <div class="content-service">
-                      <div class="column-first">
-                        
+            <div class="service-container">
+                <div class="content-service">
+                    <div class="column-first">
+
                         <p>Asesoramos a promotores inmobiliarios, inversionistas,
-                            empresas e instituciones financieras en la gestión del proyecto, desde la elección del terreno, analizando oportunidades de inversiones inmobiliarias. Gestionamos el desarrollo
+                            empresas e instituciones financieras en la gestión del proyecto, desde la elección del
+                            terreno, analizando oportunidades de inversiones inmobiliarias. Gestionamos el desarrollo
                             de las distintas especialidades, coordinando y supervisando
-                            la compatibilización del proyecto integral desde su concepción hasta la obtención de la licencia de edificación. Asimismo, gestionamos la formalización de la propiedad desde la
+                            la compatibilización del proyecto integral desde su concepción hasta la obtención de la
+                            licencia de edificación. Asimismo, gestionamos la formalización de la propiedad desde la
                             conformidad de obra hasta el registro oficial del inmueble o
                             inmuebles.</p>
 
-                          <p class="colored-p">Servicios:</p>
-                         
+                        <p class="colored-p">Servicios:</p>
+
                         <div class="box-list">
-                            
-                                    <ul>
-                                    <li>Gestión de superficie – análisis de factibilidad económica
-en base a cabida arquitectónica.</li>
-                                    <li>Diseño y desarrollo (arquitectura, Indeci, estructuras,
-instalaciones: eléctricas, mecánicas, sanitarias, gas).</li>
-                                    <li>Gestión documentaria: Trámite licencias (Edificación,
-demolición, etc.), Saneamiento legal.</li>
-                                    
-                                    </ul>
-                            
+
+                            <ul>
+                                <li>Gestión de superficie – análisis de factibilidad económica
+                                    en base a cabida arquitectónica.</li>
+                                <li>Diseño y desarrollo (arquitectura, Indeci, estructuras,
+                                    instalaciones: eléctricas, mecánicas, sanitarias, gas).</li>
+                                <li>Gestión documentaria: Trámite licencias (Edificación,
+                                    demolición, etc.), Saneamiento legal.</li>
+
+                            </ul>
+
                         </div>
-                      </div>
-                      <div class="column-second" >
-                          <div class="img-small-a"> 
-                              <img src="./assets/servicios/tasaciones/img-secundaria.jpg" alt="">
-                          </div>
-                      </div>
+                    </div>
+                    <div class="column-second">
+                        <div class="img-small-a">
+                            <img src="./assets/servicios/tasaciones/img-secundaria.jpg" alt="">
+                        </div>
+                    </div>
 
-                  </div>
+                </div>
 
-                  <div class="box-btn-service">
-                      <button class="btn-service">Cotizar Servicio</button>
-                  </div>
-              </div>
+                <div class="box-btn-service">
+                    <button class="btn-service">Cotizar Servicio</button>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -146,25 +144,8 @@ demolición, etc.), Saneamiento legal.</li>
         </div>
 
     </footer>
-    <script>
-        const firebaseConfig = {
-        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
-        authDomain: "web-imax.firebaseapp.com",
-        projectId: "web-imax",
-        storageBucket: "web-imax.appspot.com",
-        messagingSenderId: "114819498377",
-        appId: "1:114819498377:web:02e7671a7255f711cf6158",
-        measurementId: "G-P8W33C2X62"
-    };
-    firebase.initializeApp(firebaseConfig);
-    console.log(firebase.name)
-    const auth = firebase.auth();
-    const fs = firebase.firestore();
-    firebase.storage();
-    firebase.analytics();
-    </script>
-     <!-- <script src="./web-controller/galleryProjects.js"> </script> -->
-     
+
+
 </body>
 
 </html>

@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap"
         rel="stylesheet">
     <script src="menu.js"></script>
@@ -41,7 +36,7 @@
                 <li><a href="./proyectos.html">Proyectos</a></li>
                 <li><a href="#/proyectos">Noticias</a></li>
 
-                <li><a href="#/contacto">Contáctanos</a></li>
+                <li><a href="./contact.html">Contáctanos</a></li>
 
             </ul>
         </nav>
@@ -49,16 +44,16 @@
     <main>
 
         <section class="single-project ">
-             <div class="head-project">
-                        <h1>Tasaciones (TAS)</h1>
-                        <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./servicios.html">Volver</a></div>
-              </div>
-              <div class="box-img-service"><img src="./assets/servicios/tasaciones/img-principal.jpg" alt=""></div>
+            <div class="head-project">
+                <h1>Tasaciones (TAS)</h1>
+                <div><i class="fas fa-long-arrow-alt-left"></i> <a href="./servicios.html">Volver</a></div>
+            </div>
+            <div class="box-img-service"><img src="./assets/servicios/tasaciones/img-principal.jpg" alt=""></div>
 
-              <div class="service-container">
-                  <div class="content-service">
-                      <div class="column-first">
-                        
+            <div class="service-container">
+                <div class="content-service">
+                    <div class="column-first">
+
                         <p>Desde sus inicios, IMAX ha establecido altos estándares en
                             la elaboración de Tasaciones para el sector financiero,
                             comercial e inmobiliario. Hoy somos un referente en el
@@ -66,33 +61,33 @@
                             importantes bancos como el BCP, Interbank, BBVA, Scotiabank y Banco Pichincha.</p>
 
                         <p class="colored-p">Nuestras Tasaciones son la mejor herramienta para el sector
-financiero en situaciones como:</p>
-                         
+                            financiero en situaciones como:</p>
+
                         <div class="box-list">
-                                    <ul>
-                                    <li>Otorgamiento de Crédito Hipotecario</li>
-                                    <li>Constitución de Garantía para financiamiento</li>
-                                    <li>Créditos judiciales y recuperación de bienes</li>
-                                    </ul>
+                            <ul>
+                                <li>Otorgamiento de Crédito Hipotecario</li>
+                                <li>Constitución de Garantía para financiamiento</li>
+                                <li>Créditos judiciales y recuperación de bienes</li>
+                            </ul>
                         </div>
-                      </div>
-                      <div class="column-second" >
-                          
-                              <p>Nos caracterizamos por atender de manera ágil y
-                                confiable los requerimientos de nuestros clientes,
-                                respondiendo en tiempos óptimos a sus necesidades puntuales.</p>
-                       
-                          <div class="img-small"> 
-                              <img src="./assets/servicios/tasaciones/img-secundaria.jpg" alt="">
-                          </div>
-                      </div>
+                    </div>
+                    <div class="column-second">
 
-                  </div>
+                        <p>Nos caracterizamos por atender de manera ágil y
+                            confiable los requerimientos de nuestros clientes,
+                            respondiendo en tiempos óptimos a sus necesidades puntuales.</p>
 
-                  <div class="box-btn-service">
-                      <button class="btn-service">Cotizar Servicio</button>
-                  </div>
-              </div>
+                        <div class="img-small">
+                            <img src="./assets/servicios/tasaciones/img-secundaria.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box-btn-service">
+                    <button class="btn-service">Cotizar Servicio</button>
+                </div>
+            </div>
         </section>
 
     </main>
@@ -145,25 +140,7 @@ financiero en situaciones como:</p>
         </div>
 
     </footer>
-    <script>
-        const firebaseConfig = {
-        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
-        authDomain: "web-imax.firebaseapp.com",
-        projectId: "web-imax",
-        storageBucket: "web-imax.appspot.com",
-        messagingSenderId: "114819498377",
-        appId: "1:114819498377:web:02e7671a7255f711cf6158",
-        measurementId: "G-P8W33C2X62"
-    };
-    firebase.initializeApp(firebaseConfig);
-    console.log(firebase.name)
-    const auth = firebase.auth();
-    const fs = firebase.firestore();
-    firebase.storage();
-    firebase.analytics();
-    </script>
-     <!-- <script src="./web-controller/galleryProjects.js"> </script> -->
-     
+
 </body>
 
 </html>
