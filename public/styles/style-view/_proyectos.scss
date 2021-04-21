@@ -1,4 +1,11 @@
 // Nueva version de vista proyectos - GALERIA
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
 
 .projects-gallery-container {
     display: flex;
@@ -55,7 +62,11 @@
                             align-items: center;
                             margin-right: 15px;
 
-
+                            button {
+                                border: 0;
+                                background: white;
+                                margin-top: 20%;
+                            }
 
                             i {
                                 color: #A1A39E;
@@ -193,92 +204,95 @@
         font-weight: 600;
     }
 
-    .service-container{
+    .service-container {
         background: white;
-          font-size: 14px;
-                     color: #5f5f5f;
-                        font-weight: 600;
-        
-        .content-service{
+        font-size: 14px;
+        color: #5f5f5f;
+        font-weight: 600;
+
+        .content-service {
             display: flex;
             justify-content: space-around;
             margin: 6% 10% 3% 10%;
 
-            .column-first{
-                 width: 55%;
-                 padding: 0% 8%;
+            .column-first {
+                width: 55%;
+                padding: 0% 8%;
 
-                 p{
-                     text-align: justify;
-                        line-height: 1.2; 
-                        margin-bottom: 12%;
-                 }
+                p {
+                    text-align: justify;
+                    line-height: 1.2;
+                    margin-bottom: 12%;
+                }
 
-                  h3{
-                     background:   #fc7617;
-                     color: white;
-                     padding-left: 2%;
-                     margin-bottom: 3%;
-                      font-weight: 300;
-                 }
+                h3 {
+                    background: #fc7617;
+                    color: white;
+                    padding-left: 2%;
+                    margin-bottom: 3%;
+                    font-weight: 300;
+                }
 
-                 .colored-p{
-                     color: #fc7617;
-                     text-align: justify;
-                        line-height: 1.2; 
-                            margin-bottom: 5%;
-                 }
+                .colored-p {
+                    color: #fc7617;
+                    text-align: justify;
+                    line-height: 1.2;
+                    margin-bottom: 5%;
+                }
 
-                 .box-list{
-                     display: flex;
-                     justify-content: space-between;
+                .box-list {
+                    display: flex;
+                    justify-content: space-between;
 
-                     ul{
-                         padding-left: 4%;
-                     }
-                 }
-            } 
-            .column-second{
-                 width: 45%;
-                 padding: 0% 5%;
+                    ul {
+                        padding-left: 4%;
+                    }
+                }
+            }
 
-                 p{
-                     background: #eaeaea;
-                     border-radius: 5%;
-                  
-                     width: 100%;
-                 
-                     padding: 6%;
-                     text-align: justify;
-                        line-height: 1.2;
-                   
-                 }
+            .column-second {
+                width: 45%;
+                padding: 0% 5%;
 
-                
+                p {
+                    background: #eaeaea;
+                    border-radius: 5%;
 
-                 .img-small{
-                     margin-top: 15%;
-                     width: 100%;
-                     img{
-                         width: 100%;
-                     }
-                 }
+                    width: 100%;
 
-                 .img-small-a{
-                     width: 100%;
-                     img{
-                         width: 100%;
-                     }
-                 }
+                    padding: 6%;
+                    text-align: justify;
+                    line-height: 1.2;
+
+                }
+
+
+
+                .img-small {
+                    margin-top: 15%;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .img-small-a {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
             }
         }
 
-        .box-btn-service{
-            
+        .box-btn-service {
+
             display: flex;
             justify-content: center;
 
-            .btn-service{
+            .btn-service {
                 background-color: #009AD2;
                 height: 25px;
                 width: 140px;
@@ -292,9 +306,8 @@
             }
 
             .btn-service:hover {
-                    box-shadow: 1px 5px #888888
-
-                }
+                box-shadow: 1px 5px #888888
+            }
         }
     }
 }

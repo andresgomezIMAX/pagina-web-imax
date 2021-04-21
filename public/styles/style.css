@@ -250,7 +250,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  cursor: pointer;
   -webkit-mask-repeat: unset;
           mask-repeat: unset;
 }
@@ -324,6 +323,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
 }
 
 .servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon i a .quotationService {
@@ -735,6 +735,14 @@
           box-shadow: 0 0 0 1px black, 0 0 0 0px, 0 2px 3px;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .projects-gallery-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -823,6 +831,12 @@
       -ms-flex-align: center;
           align-items: center;
   margin-right: 15px;
+}
+
+.projects-gallery-container .box-par .square figure .capa-detailed .capa1 .capa-icon button {
+  border: 0;
+  background: white;
+  margin-top: 20%;
 }
 
 .projects-gallery-container .box-par .square figure .capa-detailed .capa1 .capa-icon i {
