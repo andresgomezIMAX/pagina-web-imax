@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap"
         rel="stylesheet">
     <script src="menu.js"></script>
@@ -77,21 +72,22 @@
                 </div>
 
             </div>
-            <form class="form-contact-single">
+            <form class="form-contact-single" >
                 <h3>Estamos listos para resolver sus requerimientos con prontitud y con el mejor servicio.</h3>
                 <div class="box-tex-form">
-                    <input type="text" placeholder="Nombre y Apellidos:" name="name">
-                    <input type="text" placeholder="Empresa:" name="company">
+                    <input type="text" placeholder="Nombre y Apellidos:" name="name" class="name" required>
+                    <input type="text" placeholder="Empresa:" name="company" class="company" required>
                 </div>
                 <div class="box-tex-form">
-                    <input type="text" placeholder="Teléfonos:" name="phone">
-                    <input type="text" placeholder="Email:" name="email">
+                    <input type="number" placeholder="Teléfonos:" name="phone" class="phone" required>
+                    <input type="text" placeholder="Email:" name="email" class="email" required>
                 </div>
 
-                <textarea name="message" id="" cols="30" rows="10" placeholder="Escriba aquí su mensaje:"></textarea>
-
-                <button class="send-email">Enviar mensaje</button>
+                <textarea name="message" id="message" class="message" cols="30" rows="10" placeholder="Escriba aquí su mensaje:" required></textarea>
+                <div class="success" id="success"></div>
+                <button class="send-email" type="submit">Enviar mensaje</button>
             </form>
+             
         </div>
 
 
@@ -146,24 +142,11 @@
         </div>
 
     </footer>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
-            authDomain: "web-imax.firebaseapp.com",
-            projectId: "web-imax",
-            storageBucket: "web-imax.appspot.com",
-            messagingSenderId: "114819498377",
-            appId: "1:114819498377:web:02e7671a7255f711cf6158",
-            measurementId: "G-P8W33C2X62"
-        };
-        firebase.initializeApp(firebaseConfig);
-        console.log(firebase.name)
-        const auth = firebase.auth();
-        const fs = firebase.firestore();
-        firebase.storage();
-        firebase.analytics();
-    </script>
-    <!-- <script src="./web-controller/galleryProjects.js"> </script> -->
+    
+    <script type="module" src="./index.js"> </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
 
 </body>
 
