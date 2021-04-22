@@ -3657,7 +3657,7 @@ strong {
   width: 50%;
 }
 
-.section-contact .contact-box-first .form-contact {
+.section-contact .contact-box-first .form-contact-single {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3672,23 +3672,23 @@ strong {
   padding: 4% 0%;
 }
 
-.section-contact .contact-box-first .form-contact h1 {
+.section-contact .contact-box-first .form-contact-single h1 {
   color: white;
   font-size: 38px;
   padding-bottom: 2%;
 }
 
-.section-contact .contact-box-first .form-contact p {
+.section-contact .contact-box-first .form-contact-single p {
   color: #0285d1;
   font-size: 18px;
   padding-bottom: 1%;
 }
 
-.section-contact .contact-box-first .form-contact .space-box {
+.section-contact .contact-box-first .form-contact-single .space-box {
   padding-bottom: 3%;
 }
 
-.section-contact .contact-box-first .form-contact .box-tex-form {
+.section-contact .contact-box-first .form-contact-single .box-tex-form {
   width: 85%;
   height: 9%;
   margin-top: 3%;
@@ -3703,7 +3703,7 @@ strong {
           align-items: center;
 }
 
-.section-contact .contact-box-first .form-contact .box-tex-form input {
+.section-contact .contact-box-first .form-contact-single .box-tex-form input {
   width: 49%;
   height: 100%;
   background-color: transparent;
@@ -3716,7 +3716,7 @@ strong {
   color: white;
 }
 
-.section-contact .contact-box-first .form-contact textarea {
+.section-contact .contact-box-first .form-contact-single textarea {
   background-color: transparent;
   border: 1.5px solid #828283;
   border-radius: 8px;
@@ -3730,7 +3730,7 @@ strong {
   color: white;
 }
 
-.section-contact .contact-box-first .form-contact .send-email {
+.section-contact .contact-box-first .form-contact-single .send-email {
   color: white;
   background: #fc7617;
   width: 22%;
@@ -3744,9 +3744,35 @@ strong {
   cursor: pointer;
 }
 
-.section-contact .contact-box-first .form-contact .send-email:hover {
+.section-contact .contact-box-first .form-contact-single .send-email:hover {
   -webkit-box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 2px 3px;
           box-shadow: 0 0 0 1px white, 0 0 0 0px, 0 2px 3px;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  -webkit-box-shadow: 2px 2px 3px #999;
+          box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.float:hover {
+  text-decoration: none;
+  color: #25d366;
+  background-color: #fff;
+}
+
+.my-float {
+  margin-top: 16px;
 }
 
 .contact-box-second {
