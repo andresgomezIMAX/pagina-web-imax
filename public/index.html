@@ -15,11 +15,11 @@
     <script src="jquery.flexslider.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
     <title>IMAX</title>
 </head>
 
@@ -545,7 +545,23 @@
         </div>
 
     </footer>
-
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+            authDomain: "web-imax.firebaseapp.com",
+            projectId: "web-imax",
+            storageBucket: "web-imax.appspot.com",
+            messagingSenderId: "114819498377",
+            appId: "1:114819498377:web:02e7671a7255f711cf6158",
+            measurementId: "G-P8W33C2X62"
+        };
+        firebase.initializeApp(firebaseConfig);
+        console.log(firebase.name)
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        firebase.storage();
+        firebase.analytics();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
     <script src="slider.js"></script>
     <script src="menu.js"></script>
