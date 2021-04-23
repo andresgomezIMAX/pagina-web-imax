@@ -43,7 +43,11 @@
     </header>
     <main>
 
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <a href="https://api.whatsapp.com/send?phone=+51999120425&text=Hola,%20bienvenidos%20a%20IMAX-Ingenier%C3%ADa%20M%C3%A1xima"
+            class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
         <div class="box-img-contact"><img src="./assets/contacto/img-contacto.jpg" alt=""></div>
         <div class="box-contact-form-date">
             <div class="box-number-contact">
@@ -72,7 +76,7 @@
                 </div>
 
             </div>
-            <form class="form-contact-single" >
+            <form class="form-contact-single">
                 <h3>Estamos listos para resolver sus requerimientos con prontitud y con el mejor servicio.</h3>
                 <div class="box-tex-form">
                     <input type="text" placeholder="Nombre y Apellidos:" name="name" class="name" required>
@@ -83,11 +87,12 @@
                     <input type="text" placeholder="Email:" name="email" class="email" required>
                 </div>
 
-                <textarea name="message" id="message" class="message" cols="30" rows="10" placeholder="Escriba aquí su mensaje:" required></textarea>
+                <textarea name="message" id="message" class="message" cols="30" rows="10"
+                    placeholder="Escriba aquí su mensaje:" required></textarea>
                 <div class="success" id="success"></div>
                 <button class="send-email" type="submit">Enviar mensaje</button>
             </form>
-             
+
         </div>
 
 
@@ -142,11 +147,10 @@
         </div>
 
     </footer>
-    
+
     <script type="module" src="./index.js"> </script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+    </script>
 
 </body>
 
