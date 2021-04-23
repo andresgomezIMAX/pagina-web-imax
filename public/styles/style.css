@@ -289,7 +289,6 @@
 }
 
 .servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon {
-  border: 2px solid red;
   background-color: white;
   width: 11%;
   height: 33px;
@@ -309,29 +308,6 @@
 .servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon i {
   color: #A1A39E;
   padding-top: 20%;
-}
-
-.servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon i a {
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
-  padding-top: 7%;
-  font-size: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.servicios-container .box-par .square figure .capa-detailed .capa1 .capa-icon i a .quotationService {
-  background-color: #009AD2;
-  height: 20px;
-  width: 50%;
-  border-radius: 25px;
-  padding-left: 2%;
 }
 
 .servicios-container .box-par .square figure .capa-detailed .capa1 h2 {
@@ -357,7 +333,7 @@
 .servicios-container .box-par .square figure .capa-detailed .capa1 a .quotationService {
   background-color: #009AD2;
   height: 20px;
-  width: 50%;
+  width: 40%;
   border-radius: 25px;
   padding-left: 2%;
 }
@@ -1055,6 +1031,8 @@
   color: white;
   font-size: 18px;
   margin-bottom: 5%;
+  padding-left: 10px;
+  text-decoration: none;
 }
 
 .single-project .service-container .box-btn-service .btn-service:hover {

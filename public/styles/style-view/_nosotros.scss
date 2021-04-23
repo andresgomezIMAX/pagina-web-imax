@@ -142,7 +142,7 @@
                             align-items: center;
                             margin-right: 15px;
 
-                            
+
 
                             i {
                                 color: #A1A39E;
@@ -150,7 +150,7 @@
                             }
                         }
 
-                        
+
                     }
 
                     .capa2 {
@@ -237,7 +237,7 @@
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
-              
+
                 mask-repeat: unset;
 
                 img {
@@ -263,44 +263,29 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
+
                         .capa-icon {
-                            border: 2px solid red;
+
                             background-color: white;
                             width: 11%;
                             height: 33px;
                             border-radius: 50%;
                             align-items: center;
                             margin-right: 15px;
-                        h2 {
-                            color: white;
-                            font-size: 130%;
-                            margin-bottom: 3px;
-                        }
-                       
+
+                            h2 {
+                                color: white;
+                                font-size: 130%;
+                                margin-bottom: 3px;
+                            }
+
 
                             i {
                                 color: #A1A39E;
                                 padding-top: 20%;
-                        a {
-                            color: #ffffff;
-                            display: block;
-                            text-decoration: none;
-                            padding-top: 7%;
-                            font-size: 15px;
-                            display: flex;
-                            justify-content: center;
-                              cursor: pointer;
 
-                            .quotationService {
-                                background-color: #009AD2;
-                                height: 20px;
-                                width: 50%;
-                                border-radius: 25px;
-                                padding-left: 2%;
                             }
                         }
-                    }
-                }
 
 
 
@@ -322,12 +307,12 @@
                             .quotationService {
                                 background-color: #009AD2;
                                 height: 20px;
-                                width: 50%;
+                                width: 40%;
                                 border-radius: 25px;
                                 padding-left: 2%;
                             }
                         }
-                        
+
                     }
 
 
