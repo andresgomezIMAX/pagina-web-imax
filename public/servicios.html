@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Sans+JP:wght@100;400;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="menu.js"></script>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="jquery.flexslider.js"></script>
@@ -42,11 +44,34 @@
         </nav>
     </header>
     <main>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <a href="https://api.whatsapp.com/send?phone=+51999120425&text=Hola,%20me%20gustar%C3%ADa%20contactarme%20con%20ustedes"
-            class="float" target="_blank">
-            <i class="fa fa-whatsapp my-float"></i>
-        </a>
+        <div class="nav-bottom">
+            
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top"><button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button>
+
+                    <p> <i class="fas fa-user"></i> Hola, ¿en que podemos ayudarle? </p>
+
+                </div>
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+
+
+
+
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+
+                </div>
+            </div>
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i></div>
+            </button>
+            <div class="circle-anime"></div>
+        </div>
         <section class="servicios-container">
             <div class="box-par">
                 <div class="square">
@@ -169,6 +194,7 @@
         </div>
 
     </footer>
+      <script src="script2.js"></script>
 </body>
 
 </html>
