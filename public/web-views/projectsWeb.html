@@ -15,9 +15,9 @@
     <title>noticias</title>
 </head>
 
-<body class="container-pagos">
+<body class="container-noticias">
 
-    <header class="header-intranet-pagos">
+    <header class="header-intranet">
         <nav class="menu">
             <img class="logo" src="../assets/logo.png">
             <ul>
@@ -46,71 +46,80 @@
 
     </header>
 
-    <main>
-        <div class="title-noticias">
-            <p class="big-title">Noticias IMAX</p>
-            <div class="user-new">
+    <main class="box-noticias">
+        <div class="tools-container">
+            <div class="title-tools">
+                <p class="big-title">Herramientas IMAX</p>
+                <div class="user-new">
 
+                </div>
             </div>
+            <section class="add-proyect-container">
+                <h1>Agregar proyecto a la web</h1>
+                <form class="generate-project">
+                    <div>
+                        <label for="nameProject">Nombre del proyecto: </label>
+                        <input type="text" name="nameProject" id="nameProject" class="nameProject">
+                        <label for="typeService">Tipo de Servicio</label>
+                        <input type="text" name="typeService" id="typeService" class="typeService">
+                    </div>
+                    <div>
+                        <label for="descriptionProject">Descripción del proyecto: </label>
+                        <input type="text" name="descriptionProject" id="descriptionProject" class="descriptionProject">
+                    </div>
+
+
+
+                    <div class="aaaaa">
+                        <label for="">Agregar imagen para el Carrusel de proyectos: </label>
+                        <div class="containerProgress hide">
+                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                            <div class="progresslineCarrusel"></div>
+                        </div>
+                        <label for="">Asegurese que las dimensiones de la imagen sean de 800 x 800</label>
+                        <input type="file" id="addImgCarrusel" accept="image/*" class="addImgCarrusel">
+                        <label for="addImgCarrusel" style='font-size: 20px'>
+                            <i class="fas fa-camera"></i>
+                        </label> <br>
+                        <!-- <div class="hide divImg">
+                        <span class="deleteImg">❌</span>
+                        <img class="picPost" />
+                    </div> -->
+                    </div>
+
+                    <div class="progress">
+                        <label for="">Agregar imagen principal: </label>
+                        <div class="containerProgress hide">
+                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                            <div class="progressline"></div>
+                        </div>
+                        <label for="">Por favor ingrese una imagen de 1000 x 400 </label>
+                        <input type="file" id="addImgLarge" accept="image/*" class="addImgLarge">
+                        <label for="addImgLarge" style='font-size: 20px'>
+                            <i class="fas fa-camera"></i>
+                        </label> <br>
+                        <!-- <div class="hide divImg">
+                        <span class="deleteImg">❌</span>
+                        <img class="picPost" />
+                    </div> -->
+                    </div>
+                    <div class="box-file">
+                        <label for="checkProjectHome">Proyecto-home : </label>
+                        <select name="checkProjectHome" class="checkProjectHome" required>
+                            <option value="NO">NO</option>
+                            <option value="SI">SI</option>
+                        </select>
+                    </div>
+                    <div class="writePost">
+
+                        <textarea id="newPublication" class="textarea" rows="10" cols="50"
+                            placeholder="Contenido del proyecto"></textarea>
+                    </div>
+                    <button type="submit" id="btnNewPublication" class="btnNewPost">Guardar</button>
+                </form>
+            </section>
         </div>
-        <section>
-            <h1>Agregar proyecto a la web</h1>
-            <form class="generate-project">
-                <label for="nameProject">Nombre del proyecto: </label>
-                <input type="text" name="nameProject" id="nameProject" class="nameProject">
-                <label for="typeService">Tipo de Servicio</label>
-                <input type="text" name="typeService" id="typeService" class="typeService">
-                <label for="descriptionProject">Descripción del proyecto: </label>
-                <input type="text" name="descriptionProject" id="descriptionProject" class="descriptionProject">
 
-                <div class="aaaaa">
-                    <label for="">Agregar imagen para el Carrusel de proyectos: </label>
-                    <div class="containerProgress hide">
-                        <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
-                        <div class="progresslineCarrusel"></div>
-                    </div>
-                    <label for="">Asegurese que las dimensiones de la imagen sean de 800 x 800</label>
-                    <input type="file" id="addImgCarrusel" accept="image/*" class="addImgCarrusel">
-                    <label for="addImgCarrusel" style='font-size: 20px'>
-                        <i class="fas fa-camera"></i>
-                    </label> <br>
-                    <!-- <div class="hide divImg">
-                        <span class="deleteImg">❌</span>
-                        <img class="picPost" />
-                    </div> -->
-                </div>
-
-                <div class="progress">
-                    <label for="">Agregar imagen principal: </label>
-                    <div class="containerProgress hide">
-                        <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
-                        <div class="progressline"></div>
-                    </div>
-                    <label for="">Por favor ingrese una imagen de 1000 x 400 </label>
-                    <input type="file" id="addImgLarge" accept="image/*" class="addImgLarge">
-                    <label for="addImgLarge" style='font-size: 20px'>
-                        <i class="fas fa-camera"></i>
-                    </label> <br>
-                    <!-- <div class="hide divImg">
-                        <span class="deleteImg">❌</span>
-                        <img class="picPost" />
-                    </div> -->
-                </div>
-                <div class="box-file">
-                    <label for="checkProjectHome">Proyecto-home : </label>
-                    <select name="checkProjectHome" class="checkProjectHome" required>
-                        <option value="NO">NO</option>
-                        <option value="SI">SI</option>
-                    </select>
-                </div>
-                <div class="writePost">
-
-                    <textarea id="newPublication" class="textarea" rows="10" cols="50"
-                        placeholder="Contenido del proyecto"></textarea>
-                </div>
-                <button type="submit" id="btnNewPublication" class="btnNewPost">Guardar</button>
-            </form>
-        </section>
 
     </main>
 

@@ -1,0 +1,67 @@
+.tools-container {
+    display: flex;
+    flex-direction: column;
+    background: #F3F3F3;
+    width: 90%;
+
+
+    .title-tools {
+        background: rgba(140, 140, 140, .8);
+        margin: 20px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .big-title {
+            font-weight: 700;
+            font-size: 1.9rem;
+            padding: 15px;
+            margin-left: 40px;
+
+
+        }
+
+        .userLog {
+            font-weight: 700;
+            font-size: 15px;
+            padding: 15px;
+        }
+    }
+
+    .add-proyect-container {
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .generate-project {
+            display: flex;
+            flex-direction: column;
+            padding: 1% 4%;
+
+            label {
+                margin: 10px 0;
+
+            }
+
+            input,
+            select {
+                border-radius: 7px;
+
+                box-shadow: 2px 2px 5px #999;
+                height: 27px;
+                outline: none;
+                border: none;
+                background-color: #ffffff;
+                font-size: 14px;
+                width: 30%;
+                margin-bottom: 15px;
+            }
+
+            .descriptionProject {
+                width: 68%;
+            }
+        }
+    }
+}
