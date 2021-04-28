@@ -28,14 +28,19 @@
         }
     }
 
-    .add-proyect-container {
-        border: 2px solid red;
+    .add-proyect-container,
+    .add-article-container {
+        border: 1px solid rgb(151, 151, 151);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        background: white;
+        margin: 4% 2%;
+        border-radius: 9px;
 
-        .generate-project {
+        .generate-project,
+        .generate-article {
             display: flex;
             flex-direction: column;
             padding: 1% 4%;
@@ -59,9 +64,270 @@
                 margin-bottom: 15px;
             }
 
-            .descriptionProject {
+            .descriptionProject,
+            .descriptionArticle {
                 width: 68%;
             }
+
+            .writePost {
+                width: 100%;
+
+                textarea {
+                    width: 100%;
+                    box-shadow: 2px 2px 5px #999;
+                    background-color: #ffffff;
+                    border-radius: 15px;
+                    padding: 0.8em;
+                    outline: none;
+                }
+            }
+
+            .btnNewPost,
+            .btnNewArticle {
+                border-radius: 9px;
+                width: 30%;
+                padding: 5px 0;
+                color: white;
+                font-family: "Pridi", gitserif;
+                font-size: 20px;
+                height: 35px;
+                font-weight: 700;
+                outline: none;
+                border: none;
+                background-color: #00ADEF;
+                margin: 2% 0 1% 35%;
+            }
         }
+    }
+}
+
+
+// estilos vista NOTICIAS WEB
+.notice-web-container {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 15%;
+
+    .box-notice {
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background: #eaeaea;
+        margin: 1%;
+        transition: all 1000ms ease-out;
+
+
+
+        figure {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            transition: all 500ms ease-out;
+            // overflow: hidden;
+            // cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 72%;
+                transition: all 500ms ease-out;
+            }
+
+            .capa-notice {
+                position: absolute;
+                top: 70%;
+
+
+
+                .detail-notice {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5% 5% 0 5%;
+
+                    .title-notice {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        text-align: justify;
+                        line-height: 1.2;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: #fc7617;
+                        opacity: 0;
+                        visibility: hidden;
+
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+
+    .box-notice:hover {
+        width: 40%;
+        transition: all 1000ms ease-out;
+    }
+
+    .box-notice:hover>figure {
+        height: 100%;
+        transition: all 500ms ease-out;
+    }
+
+    .box-notice:hover>figure img {
+        height: 100%;
+        transition: all 500ms ease-out;
+
+    }
+
+    figure:hover>.capa-notice {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: rgba(11, 63, 123, 0.6);
+    }
+
+    figure:hover>.capa-notice .detail-notice {
+        margin-top: 56%;
+        transition: all 1000ms ease-out;
+    }
+
+    figure:hover>.capa-notice .detail-notice a {
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+
+}
+
+// vista noticia web individual
+.container-single-notice {
+    display: flex;
+    padding: 2% 10%;
+
+    .box-noticia-content {
+        width: 80%;
+
+        figure {
+            position: relative;
+            width: 100%;
+            // height: 60%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title-single-notice {
+                position: absolute;
+                top: 85%;
+                color: white;
+                padding: 3% 5%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+
+        .news-content {
+            margin: 3% 1%;
+            font-size: 14px;
+            color: #5f5f5f;
+            font-weight: 600;
+            text-align: justify;
+            line-height: 1.5;
+        }
+    }
+
+    .minibox-gallery-notice {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        .box-notice {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background: #eaeaea;
+        margin: 1%;
+        transition: all 1000ms ease-out;
+
+
+
+        figure {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            transition: all 500ms ease-out;
+            // overflow: hidden;
+            // cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 65%;
+                transition: all 500ms ease-out;
+            }
+
+            .capa-notice {
+                position: absolute;
+                top: 63%;
+
+
+
+                .detail-notice {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5% 5% 0 5%;
+
+                    .title-notice {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        font-size: 11px;
+                        text-align: justify;
+                        line-height: 1.2;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: #fc7617;
+                       
+
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+
     }
 }
