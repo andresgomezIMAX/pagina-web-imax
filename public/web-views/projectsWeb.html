@@ -71,16 +71,18 @@
 
 
                     <div class="aaaaa">
-                        <label for="">Agregar imagen para el Carrusel de proyectos: </label>
-                        <div class="containerProgress hide">
-                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
-                            <div class="progresslineCarrusel"></div>
-                        </div>
-                        <label for="">Asegurese que las dimensiones de la imagen sean de 800 x 800</label>
+                        <label for="">Agregar imagen para el Carrusel de proyectos: (Dimensiones 800 x 800) </label>
+                        
+                    
                         <input type="file" id="addImgCarrusel" accept="image/*" class="addImgCarrusel">
                         <label for="addImgCarrusel" style='font-size: 20px'>
                             <i class="fas fa-camera"></i>
                         </label> <br>
+                        <div class="containerProgress hide">
+                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                            <div class="progresslineCarrusel"></div>
+                        </div>
+
                         <!-- <div class="hide divImg">
                         <span class="deleteImg">❌</span>
                         <img class="picPost" />
@@ -88,16 +90,17 @@
                     </div>
 
                     <div class="progress">
-                        <label for="">Agregar imagen principal: </label>
-                        <div class="containerProgress hide">
-                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
-                            <div class="progressline"></div>
-                        </div>
-                        <label for="">Por favor ingrese una imagen de 1000 x 400 </label>
+                        <label for="">Agregar imagen principal: (Dimensiones 1000 x 400) </label>
+                       
+                        
                         <input type="file" id="addImgLarge" accept="image/*" class="addImgLarge">
                         <label for="addImgLarge" style='font-size: 20px'>
                             <i class="fas fa-camera"></i>
                         </label> <br>
+                         <div class="containerProgress hide">
+                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                            <div class="progressline"></div>
+                        </div>
                         <!-- <div class="hide divImg">
                         <span class="deleteImg">❌</span>
                         <img class="picPost" />
@@ -110,12 +113,54 @@
                             <option value="SI">SI</option>
                         </select>
                     </div>
-                    <div class="writePost">
+                    <div class="writePost">   
 
-                        <textarea id="newPublication" class="textarea" rows="10" cols="50"
+                        <textarea id="newPublication" class="newPublication" rows="10" cols="50"
                             placeholder="Contenido del proyecto"></textarea>
                     </div>
                     <button type="submit" id="btnNewPublication" class="btnNewPost">Guardar</button>
+                </form>
+            </section>
+
+            <section class="add-article-container">
+                <h1>Agregar Noticia a la web</h1>
+                <form class="generate-article">
+                    <div>
+                        <label for="nameArticle">Titular de la Noticia : </label>
+                        <input type="text" name="nameArticle" id="nameArticle" class="nameArticle">
+
+                        <label for="entryDay">Fecha: </label>
+                        <input type="date" name="entryDay" class="fechaAdmin" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" >
+                
+                    </div>
+                    <div>
+                        <label for="descriptionArticle">Descripción de la noticia: </label>
+                        <input type="text" name="descriptionArticle" id="descriptionArticle" class="descriptionArticle">
+                    </div>
+
+                    <div class="progress">
+                        <label for="">Agregar imagen principal de la noticia (Dimensiones 1000 x 400) </label>
+                        
+                        <input type="file" id="addImgArticle" accept="image/*" class="addImgArticle">
+                        <label for="addImgArticle" style='font-size: 20px'>
+                            <i class="fas fa-camera"></i>
+                        </label> <br>
+                        <div class="containerProgress hide">
+                            <!-- <progress value= "0" max= "100" id="uploader">0%</progress> -->
+                            <div class="progresslineArticle"></div>
+                        </div>
+                        <!-- <div class="hide divImg">
+                        <span class="deleteImg">❌</span>
+                        <img class="picPost" />
+                    </div> -->
+                    </div>
+
+                    <div class="writePost">   
+
+                        <textarea id="newArticle" class="newArticle" rows="10" cols="50"
+                            placeholder="Contenido de la noticia"></textarea>
+                    </div>
+                    <button type="submit" id="btnNewArticle" class="btnNewArticle">Guardar</button>
                 </form>
             </section>
         </div>
