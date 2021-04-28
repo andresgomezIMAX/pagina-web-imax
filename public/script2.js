@@ -18,13 +18,13 @@ popupWhatsApp = () => {
   let msg = document.getElementById('whats-in').value;
   let relmsg = msg.replace(/ /g,"%20");
      
-   window.open('https://wa.me/+51999120425?text='+relmsg, '_blank'); 
+   window.open("https://web.whatsapp.com/send?phone=51999120425&text=" +relmsg,"_blank"); 
   
   });
 
-  setTimeout(() => {
-    popup.classList.toggle('is-active-whatsapp-popup');
-  }, 3000);
+  // setTimeout(() => {
+  //   popup.classList.toggle('is-active-whatsapp-popup');
+  // }, 3000);
 }
 
 popupWhatsApp();
