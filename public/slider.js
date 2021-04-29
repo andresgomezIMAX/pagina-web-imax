@@ -6,7 +6,9 @@ $(document).ready(function(){
 })
 
 $(document).ready(function () {
-  $(".sliderComments").flexslider();
+  $(".sliderComments").flexslider({
+    slideshowSpeed: 15000,
+  });
 });
 
 
