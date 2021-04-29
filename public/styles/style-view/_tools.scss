@@ -160,13 +160,17 @@
                         line-height: 1.2;
                     }
 
-                    a {
+                    .view-more {
                         text-decoration: none;
                         font-size: 15px;
                         font-weight: bold;
                         color: #fc7617;
                         opacity: 0;
                         visibility: hidden;
+                        width: 20%;
+                        border: none;
+                        background: transparent;
+                        cursor: pointer;
 
                     }
                 }
@@ -207,7 +211,7 @@
         transition: all 1000ms ease-out;
     }
 
-    figure:hover>.capa-notice .detail-notice a {
+    figure:hover>.capa-notice .detail-notice .view-more {
         opacity: 1;
         visibility: visible;
 
@@ -217,6 +221,38 @@
 }
 
 // vista noticia web individual
+.single-article {
+
+    .head-article {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 3% 5%;
+        background: #f4f4f4;
+
+        h1 {
+            color: #fc7617;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        div {
+            margin-top: 1%;
+
+            i {
+                color: #fc7617;
+            }
+
+            a {
+                text-decoration: none;
+                color: #4c4c4c;
+
+            }
+        }
+
+
+    }
+}
 .container-single-notice {
     display: flex;
     padding: 2% 10%;

@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
             let linkIndicador = "";
             const galleryProjectsContainer = document.querySelector(".projects-gallery-container");
-            console.log(galleryProjectsContainer + " aaaaaaaaaaaaaaaaaa");
+
             const projectContainerSingle = document.querySelector(".single-project");
             console.log(projectContainerSingle);
             const linksProject = document.querySelectorAll(".link-project");
