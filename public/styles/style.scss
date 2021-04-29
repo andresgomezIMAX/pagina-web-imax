@@ -757,12 +757,22 @@ strong {
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: rgb(22, 22, 22);
+        color: rgb(240, 240, 240);
+     
         margin-top: 4%;
+     
 
         h1 {
             font-weight: bold;
-            font-size: 35px;
+            font-size: 40px;
+            text-shadow: 3px 2px 1px #000;
+            margin-bottom: 1%;
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 1px 1px 1px #000;
         }
     }
 
@@ -830,7 +840,7 @@ strong {
     height: 400px;
     position: absolute;
     z-index: 2;
-    margin: 5% 0 0 33%;
+    margin: 4% 0 0 33%;
     // display: flex;
     // flex-direction: column;
     // justify-content: center;

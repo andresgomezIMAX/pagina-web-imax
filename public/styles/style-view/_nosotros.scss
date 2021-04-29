@@ -125,9 +125,10 @@
                         position: absolute;
                         top: 45%;
                         left: 20%;
-                        color: rgb(34, 34, 34);
+                        color:#009AD2;
+                        text-shadow: 3px 2px 1px #000;
                         font-weight: bold;
-                        font-size: 40px;
+                        font-size: 45px;
                         transition: all 200ms ease-out;
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                      
@@ -150,7 +151,7 @@
                     text-align: center;
 
 
-                    p {
+                    p, ul {
                         color: white;
                         font-size: 20px;
                         line-height: 1.2;
@@ -178,6 +179,12 @@
 
 
             figure:hover>.capa-detailed p {
+                margin-top: 150px;
+                margin-bottom: 15px;
+
+            }
+
+            figure:hover>.capa-detailed ul {
                 margin-top: 150px;
                 margin-bottom: 15px;
 
@@ -242,7 +249,7 @@
 
                     .capa1 {
 
-                        margin-top: 240%;
+                        margin-top: 150%;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -274,7 +281,7 @@
 
                         h2 {
                             color: white;
-                            font-size: 130%;
+                            font-size: 150%;
                             margin-bottom: 3px;
                         }
 
