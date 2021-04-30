@@ -3089,8 +3089,50 @@
   src: url(../assets/seguiemj.ttf);
 }
 
-.menu-bar {
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-bar {
   display: none;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 5%;
+  margin-top: 2%;
+  width: 13%;
+  height: 55px;
+  display: block;
+}
+
+.menu-list {
+  margin-left: 0%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: transparent;
+  margin-right: 20px;
+  width: 100%;
+  list-style: none;
+}
+
+.menu-list a {
+  padding: 45px 28px;
+  font-size: 17px;
+  font-weight: 500;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-list :hover {
+  color: #fc7617;
 }
 
 .header-web {
@@ -3098,82 +3140,6 @@
   z-index: 3;
   position: absolute;
   top: 0%;
-}
-
-.header-web nav {
-  z-index: 1000;
-  max-width: 100%;
-  width: 100%;
-  height: 85px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.header-web nav ul {
-  list-style: none;
-}
-
-.header-web nav ul li {
-  display: inline-block;
-  position: relative;
-}
-
-.header-web nav ul li a {
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
-  padding: 15px 30px;
-  margin-top: 15%;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.header-web nav ul li :hover {
-  color: #fc7617;
-}
-
-.header-web nav ul li .intranet {
-  background-color: #009AD2;
-  height: 25px;
-  width: 95px;
-  border-radius: 25px;
-}
-
-.header-web nav ul li .intranet i {
-  margin: 0 0 0 5px;
-}
-
-.header-web nav .logo {
-  margin-left: 5%;
-  margin-top: 2%;
-  width: 13%;
-  height: 55px;
-}
-
-.header-web nav ul li:hover .children {
-  display: block;
-}
-
-.header-web nav ul li .children {
-  display: none;
-  background: #A1A39E;
-  position: absolute;
-  width: 140%;
-  z-index: 1000;
-}
-
-.header-web nav ul li .children li {
-  display: block;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.header-web nav ul li .children li a {
-  display: block;
 }
 
 .flexslider {
@@ -4427,69 +4393,52 @@ input.whats-input[type=text]:focus {
 }
 
 @media screen and (max-width: 800px) {
-  .body-web {
-    padding-top: 60px;
-  }
-  .body-web .title {
-    font-size: 135%;
-  }
   #container {
     padding: 0;
+    margin-top: 5%;
   }
-  .menu-bar {
-    display: block;
-    width: 100%;
-    position: fixed;
-    top: 0;
+  .nav-bar {
     background: #5cbcdf;
-  }
-  .menu-bar .bt-menu {
+    padding: 15px;
     display: block;
-    padding: 12px;
     color: white;
-    overflow: hidden;
-    font-size: 25px;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  .menu-bar .iconMenu {
-    float: right;
-    font-size: 30px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%;
   }
   .header-web {
     margin: 0;
     margin-left: 0;
   }
-  .header-web nav {
-    width: 80%;
-    height: calc(100% - 60px);
-    position: fixed;
-    right: 100%;
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    display: block;
     margin: 0;
-    overflow: scroll;
-  }
-  .header-web nav ul {
+    background: #555;
     width: 100%;
+    margin-left: -100%;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
   }
-  .header-web nav ul li {
+  .menu-list a {
     display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  }
-  .header-web nav ul li a {
-    display: block;
-  }
-  .header-web nav ul li .children {
-    width: 100%;
-    position: relative;
-  }
-  .header-web nav ul li .children li a {
-    margin-left: 20px;
-  }
-  .header-web nav li:hover .children {
-    display: none;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
   }
   .logo {
     display: none;
+  }
+  .mostrar {
+    margin-left: 0;
+  }
+  .header-web {
+    width: 100%;
+    z-index: 3;
+    position: absolute;
+    top: 0%;
   }
   .lema p {
     font-size: 18px;
