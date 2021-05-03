@@ -269,15 +269,16 @@
 .flexslider {
     width: 100%;
     // max-width: 1000px;
-    height: 660px;
+    height: 41.25rem;
 
     display: flex;
     flex-direction: column;
 
 
+
     ul img {
         width: 100%;
-        height: 660px;
+        height: 41.25rem;
 
     }
 
@@ -287,9 +288,6 @@
         padding: 20px 0px;
         // background-color: #1A89DF;
         // border: 2px solid rgba(255,255,255,.3);
-
-
-
         display: flex;
         justify-content: center;
         align-self: center;
@@ -844,7 +842,7 @@ strong {
         align-self: center;
         list-style: none;
         position: absolute;
-        bottom: -3342px;
+        bottom: -550%;
         z-index: 3;
 
         li {
@@ -939,7 +937,7 @@ strong {
 
         img {
             width: 15%;
-            height: 65px;
+            height: 65%;
             border-radius: 50%;
 
         }
@@ -1033,11 +1031,12 @@ strong {
                 color: #0285d1;
                 font-size: 18px;
                 padding-bottom: 1%;
+                text-align: center;
             }
 
-            .space-box {
-                padding-bottom: 3%;
-            }
+            // .space-box {
+            //     padding-bottom: 3%;
+            // }
 
             .box-tex-form {
                 width: 85%;
@@ -1476,11 +1475,13 @@ input.whats-input[type=text]:focus {
 
 // style mobile -----------------------------------------------------------------------------
 @media screen and (max-width: 800px) {
-    #container{
+    #container {
         padding: 0;
-        margin-top: 5%;
+        // margin-top: 5%;
     }
 
+
+    //menu de navegacion
     .header-web {
         width: 100%;
         z-index: 3;
@@ -1495,7 +1496,7 @@ input.whats-input[type=text]:focus {
             display: block;
             color: white;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             width: 100%;
         }
 
@@ -1508,6 +1509,7 @@ input.whats-input[type=text]:focus {
             width: 100%;
             margin-left: -100%;
             transition: all 0.5s;
+
             a {
                 display: block;
                 padding: 20px;
@@ -1528,176 +1530,289 @@ input.whats-input[type=text]:focus {
 
     }
 
+    // flexslider principal
 
-
-
-
-
-
-
-    .lema p {
-        font-size: 18px;
-
+    .flexslider {
+        height: 20.25rem;
     }
 
-    .servicios .title {
-        font-size: 135%;
+    .flexslider ul img {
+        height: 20.25rem;
     }
 
-    .servicios .box-services {
+    .flexslider .flex-control-nav.flex-control-paging {
+        bottom: 170px;
+    }
+
+    .caption-slider {
+        margin: 0 0 0 25%;
+
+        h1,
+        strong {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 15px;
+
+        }
+    }
+
+    .caption-slider-beige {
+        margin: 0 0 0 40%;
+
+        h1,
+        strong {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 15px;
+
+        }
+    }
+
+    // mini seccion informativa 
+    .informative-data {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        .box-btn {
-            width: 80%;
-            margin: 2% 0;
+        .detailed-information,
+        .detailed-information-on {
+            margin: 5% 0% 5% 20%;
 
-            .div-servicios .btn-imagen {
-                width: 60%;
+            .detailed h2 {
+                font-size: 18px;
+            }
+
+            .detailed p {
+                font-size: 13px;
+            }
+
+            .image-detailed {
+                width: 30%;
             }
         }
     }
 
-    .course-banner {
-        img {
-            width: 100%;
-            height: 250px;
-            padding-top: 0%;
+    // seccion de servicios
+    .services-container {
+        .service-list {
+            width: 90%;
+            margin-bottom: 10%;
+
         }
 
-        .circle-overlay {
-            bottom: calc((10vw - (110vh - 2px)) / 2 * -1);
-            width: 50vw;
-            height: 50vw;
-            right: 29vw;
+        .service-title {
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
 
+            p {
+                margin-left: 0%;
+                font-size: 15px;
+            }
+        }
 
-            .gs-banner-content {
+        .service-list {
+            .service-img {
+                width: 70%;
+            }
 
-                left: 11%;
+            .service-detailed .detailed {
+                width: 100%;
 
                 p {
+                    display: none;
+                }
+
+                h2 {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+
+                .view-more {
+
+                    height: 12px;
+                    width: 15px;
                     font-size: 10px;
-                }
 
+
+                }
             }
 
-            .play-button-container {
+            .service-detailed1 .detailed {
+                width: 100%;
 
-                top: 45%;
-
-                .circle-play-button {
-
-
-                    .circle {
-                        width: 44px;
-                        height: 44px;
-                    }
-
-                    i {
-                        font-size: 18px;
-                        margin-top: 15px;
-                        margin-left: 15px;
-                    }
+                p {
+                    display: none;
                 }
+
+                h2 {
+                    font-size: 14px;
+                    margin-bottom: 10px;
+                }
+
+                .view-more {
+
+                    height: 12px;
+                    width: 15px;
+                    font-size: 10px;
+
+                }
+            }
+        }
+    }
+
+    // sección ultimos proyectos
+
+    .projects-container {
+        padding: 4% 20%;
+
+        .projects-title {
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            p {
+                margin-left: 0%;
+                font-size: 15px;
+            }
+        }
+
+        .carousel-contenedor {
+            .anterior-carousel,
+            .siguiente-carousel {
+
+                width: 10px;
+                height: 10px;
+                top: calc(50% - 125px);
+                line-height: 10px;
+
+
+                img {
+                    width: 20px;
+                }
+            }
+
+            .carousel-lista {
+                height: 500px;
+            }
+
+            .carousel-element figure {
+                height: 80%;
             }
 
         }
-
     }
 
-    .box-clientes {
-        flex-direction: column;
-        height: 50%;
-    }
+    // sección testimonios
 
-    .footerPage {
-        margin: 0;
+    .sliderComments .comment-title {
 
-        .fooFirst {
-            flex-direction: column;
-            align-items: center;
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
             font-size: 15px;
-            padding: 5% 12%;
-
-            .boxContacto {
-                width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .boxRedes {
-                width: 100%;
-            }
+            padding: 0 10px;
+            text-align: center;
         }
 
-        .fooSecond .copy {
-            margin-left: 12%;
-        }
+
     }
 
-    .servicios .box-services .box-btn .div-servicios .cta {
-        width: 85%;
-
-        .btn-imagen {
-            margin-left: 30px;
-        }
+    .sliderComments .flex-control-nav.flex-control-paging {
+        bottom: -450%;
     }
 
-    .servicios .modal-container .modal {
-        width: 80%;
-        height: 80%;
-        padding: 20px;
+    .caption {
+        width: 90%;
+        height: 90%;
+        margin: 5% 0 0 5%;
+
+    }
+
+    //seccion contactanos
+
+    .section-contact .contact-box-first {
+        flex-direction: column;
 
         img {
-            width: 100%;
-            margin-left: 0;
-        }
-
-        .modal-textos {
-            font-size: 15px;
-        }
-    }
-
-    .nosotros .box-nosotros {
-        flex-direction: column;
-
-        .descripcion {
-            font-size: 15px;
-        }
-
-        .img-nosotros,
-        .img-nosotros2 {
-            width: 100%;
-        }
-
-        .img-nosotros1 {
             display: none;
         }
+
+        .form-contact-single {
+            width: 100%;
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+                padding: 0 3% 8% 3%;
+            }
+
+            .box-tex-form {
+                flex-direction: column;
+                height: 90px;
+                margin-top: 0%;
+
+                input {
+                    width: 100%;
+                    margin-bottom: 4%;
+                }
+            }
+
+            textarea {
+                margin-top: 1%;
+            }
+
+            .send-email {
+                width: 35%;
+
+            }
+        }
     }
 
-    .informacion {
-        height: 60vh;
+    // seccion del footer
+    .contact-box-second {
+        flex-direction: column;
+        align-items: center;
 
-        .title {
-            font-size: 135%;
+        .abstract p {
+            font-size: 15px;
         }
 
-    }
+        .abstract,
+        .box-contac-date,
+        .box-contac-redes {
+            width: 80%;
 
-    .slider {
-        width: 300px;
-        height: 160px;
-        box-shadow: 0 0 0 1px white,
-            0 0 0 2px,
-            0 15px 10px;
+            .redes-icons a {
+                width: 18%;
 
+            }
 
-        input+label {
-            width: 15px;
-            height: 15px;
-            border: 1px solid black;
+            .link-intranet {
+                margin: 30px 0;
+
+            }
         }
     }
+
+    // .whatsapp-button {
+    // border: 2px solid red;
+    // // margin: 0;
+    // }
+
+
+
+
+
+
 
 }

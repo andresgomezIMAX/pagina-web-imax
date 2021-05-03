@@ -1,10 +1,10 @@
 // Nueva version de vista proyectos - GALERIA
 .hide {
-  display: none;
+    display: none;
 }
 
 .show {
-  display: block;
+    display: block;
 }
 
 .projects-gallery-container {
@@ -315,7 +315,34 @@
 }
 
 
+@media screen and (max-width: 800px) {
+    .single-project {
+        .box-img-service {
+            width: 100%;
+            height: 40vh;
+        }
 
+        .service-container .content-service {
+            flex-direction: column;
+
+            .column-first,
+            .column-second {
+                width: 100%;
+            }
+
+            .column-second p {
+                margin-top: 10px;
+            }
+        }
+
+        .box-img{
+            height: 60vh;
+        }
+    }
+    .projects-gallery-container .box-par .square {
+        width: 100%;
+    }
+}
 
 
 

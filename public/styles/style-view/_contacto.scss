@@ -151,7 +151,42 @@
     }
 }
 
+@media screen and (max-width: 800px) {
+    .box-contact-form-date {
+        flex-direction: column;
+        .box-number-contact{
+             width: 100%;
+.mini-date {
+            margin-bottom: 175%;
+           
+        }
+        } 
+        .form-contact-single{
+            width: 90%;
+                top: 95%;
+    left: 5%;
+    .box-tex-form {
+                flex-direction: column;
+                height: 120px;
+                margin-top: 0%;
 
+                input {
+                    width: 100%;
+                    margin-bottom: 4%;
+                }
+            }
+
+            textarea {
+                margin-top: 1%;
+            }
+
+            .send-email {
+                width: 45%;
+
+            }
+        }
+    }
+}
 
 
 

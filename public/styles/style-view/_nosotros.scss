@@ -44,7 +44,7 @@
 
             display: block;
 
-          color: #4c4c4c;
+            color: #4c4c4c;
             text-decoration: none;
         }
 
@@ -53,144 +53,9 @@
         }
     }
 }
-// .header-nosotros {
-//     width: 100%;
-//     z-index: 3;
-//     // position: absolute;
-//     top: 0%;
-//     // background: #1ebeb1;
-
-//     .nav-bar {
-//         display: none;
-//         width: 100%;
-//     }
-
-//     nav {
-
-//         // border: 1px solid orange;
-//         z-index: 1000;
-//         max-width: 100%;
-//         width: 100%;
-//         height: 95px;
-
-//         // margin: 0 20% auto;
 
 
-//         display: flex;
-//         justify-content: space-between;
 
-//         ul {
-//             list-style: none;
-
-//             li {
-//                 display: inline-block;
-//                 position: relative;
-
-//                 a {
-//                     color: #4c4c4c;
-//                     display: block;
-//                     text-decoration: none;
-//                     padding: 15px 30px;
-//                     margin-top: 15%;
-//                     // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-//                     font-size: 17px;
-//                     font-weight: 500;
-//                 }
-
-//                 :hover {
-//                     color: #fc7617;
-//                 }
-
-
-//             }
-//         }
-
-//         .logo {
-//             margin-left: 5%;
-//             margin-top: 2%;
-//             width: 13%;
-//             height: 55px;
-
-//         }
-//     }
-
-//     nav ul li:hover .children {
-//         display: block;
-//     }
-
-//     nav ul li .children {
-//         display: none;
-//         background: #A1A39E;
-//         position: absolute;
-//         width: 140%;
-//         z-index: 1000;
-
-//         li {
-//             display: block;
-//             overflow: hidden;
-//             border-bottom: 1px solid rgba(255, 255, 255, .5);
-//         }
-
-//         li a {
-//             display: block;
-//         }
-//     }
-// }
-
-@media screen and (max-width: 800px) {
-    main{
-        padding: 0;
-        margin-top: 15%;
-    }
-
-    .header-nosotros {
-        width: 100%;
-        z-index: 3;
-        position: absolute;
-        top: 0%;
-        margin: 0;
-        margin-left: 0;
-
-        .nav-bar {
-            background: #5cbcdf;
-            padding: 15px;
-            display: block;
-            color: white;
-            cursor: pointer;
-            font-size: 1.5rem;
-            width: 100%;
-        }
-
-        .menu-list {
-            list-style: none;
-            padding: 0;
-            display: block;
-            margin: 0;
-            background: #555;
-            width: 100%;
-            margin-left: -100%;
-            transition: all 0.5s;
-            a {
-                display: block;
-                padding: 20px;
-                color: white;
-                text-decoration: none;
-                font-size: 20px;
-            }
-        }
-
-        .logo {
-            display: none;
-        }
-
-        .mostrar {
-            margin-left: 0;
-        }
-
-
-    }
-
-}
 
 // SECCION CONTAINER NUEVA VERSION -----------------------------------------------------------------------------
 
@@ -229,25 +94,25 @@
                     height: 100%;
                     transition: all 500ms ease-out;
 
-                    img{
+                    img {
                         width: 100%;
                         height: 100%;
                     }
-                    
-                    h3{
+
+                    h3 {
                         position: absolute;
                         top: 45%;
                         left: 20%;
-                        color:#009AD2;
+                        color: #009AD2;
                         text-shadow: 3px 2px 1px #000;
                         font-weight: bold;
                         font-size: 45px;
                         transition: all 200ms ease-out;
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                     
+
                     }
 
-                    .title-small{
+                    .title-small {
                         left: 28%;
                     }
                 }
@@ -264,7 +129,8 @@
                     text-align: center;
 
 
-                    p, ul {
+                    p,
+                    ul {
                         color: white;
                         font-size: 20px;
                         line-height: 1.2;
@@ -274,8 +140,9 @@
                         text-align: justify;
                         transition: all 1000ms ease-out;
                     }
-                    .detailed-small{
-                         margin-left: 25%;
+
+                    .detailed-small {
+                        margin-left: 25%;
                     }
                 }
             }
@@ -302,8 +169,9 @@
                 margin-bottom: 15px;
 
             }
+
             figure:hover>.capa-title h3 {
-                 opacity: 0;
+                opacity: 0;
                 // visibility: visible;
 
             }
@@ -316,7 +184,7 @@
     }
 }
 
-/// esta es una prueba 
+/// estilos de servicios
 .servicios-container {
     display: flex;
     flex-direction: column;
@@ -445,178 +313,124 @@
     }
 }
 
-// section nosotros -----------------------------------------------------------------------------
+@media screen and (max-width: 800px) {
+    main {
+        padding: 0;
+        margin-top: 20%;
+    }
 
-// .nosotros {
-//     padding: 1% 0;
-//     background: #f1f1f1;
+    .header-nosotros {
+        width: 100%;
+        z-index: 3;
+        position: absolute;
+        top: 0%;
+        margin: 0;
+        margin-left: 0;
 
-//     .box-nosotros {
-//         display: flex;
-//         flex-direction: row;
-//         padding: 4% 4% 0% 2%;
+        .nav-bar {
+            background: #5cbcdf;
+            padding: 15px;
+            display: block;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            width: 100%;
+        }
 
-//         .img-nosotros,
-//         .img-nosotros1 {
-//             width: 50%;
-//             padding-left: 2%;
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            display: block;
+            margin: 0;
+            background: #555;
+            width: 100%;
+            margin-left: -100%;
+            transition: all 0.5s;
 
-//         }
+            a {
+                display: block;
+                padding: 20px;
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+            }
+        }
 
-//         .img-nosotros2 {
-//             display: none;
+        .logo {
+            display: none;
+        }
 
-//         }
-
-//         .descripcion {
-//             padding: 2%;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: flex-start;
-//             align-items: center;
-
-//             h2 {
-//                 color: #009AD2;
-//             }
-//         }
-//     }
-
-
-// }
-
-
-
-// // section video-----------------------------------------------------------------------------
-// .course-banner {
-
-//     img {
-//         width: 100%;
-//         height: 550px;
-//         padding-top: 4%;
-//     }
-
-//     .circle-overlay {
-//         background-color: #aad7ec;
-//         border-radius: 50%;
-//         bottom: calc((10vw - (100vh - 72px)) / 2 * -1);
-//         width: 20vw;
-//         height: 20vw;
-//         right: 39vw;
-//         position: absolute;
-//         z-index: 60;
-//         box-shadow: 0 0 0 10px white,
-//             0 0 0 15px,
-//             0 15px 10px;
+        .mostrar {
+            margin-left: 0;
+        }
 
 
+    }
 
-//         .gs-banner-content {
-//             position: relative;
-//             z-index: 70;
-//             height: 20%;
-//             display: flex;
-//             flex-direction: column;
-//             margin-left: unset;
-//             right: calc(-18vw + 160px);
-//             top: 25%;
-//             left: 15%;
+    .nosotros-container .box-par {
+        flex-direction: column;
 
-//             p {
-//                 font-size: 15px;
-//             }
-//         }
+        .square {
+            width: 100%;
 
-//         .play-button-container {
-//             position: relative;
-//             top: 35%;
+            figure {
+                .capa-title {
 
-//             .circle-play-button {
-//                 display: block;
-//                 left: 50%;
-//                 position: relative;
-//                 width: 64px;
-//                 z-index: 100;
+                    h3,
+                    .title-small {
+                        top: 25%;
+                        left: 20%;
+                    }
+                }
 
-//                 .circle {
-//                     width: 64px;
-//                     height: 64px;
-//                     background-color: #407ef1;
-//                     border-radius: 100%;
-//                     -webkit-transition: 0.5s;
-//                     transition: 0.5s;
-//                 }
+                .capa-detailed {
 
-//                 i {
-//                     font-size: 21px;
-//                     color: #fff;
-//                     margin-top: 23px;
-//                     margin-left: 24px;
-//                 }
-//             }
-//         }
+                    p,
+                    ul {
+                        margin: 5% 10%;
+                        font-size: 15px;
+                        width: 80%;
+                    }
+
+                    .detailed-small {
+                        margin-left: 10%;
+                    }
+                }
+            }
+
+            figure:hover>.capa-detailed p {
+                margin-top: 70px;
+                margin-bottom: 15px;
 
 
+            }
 
-//     }
+            figure:hover>.capa-detailed ul {
+                margin-top: 70px;
+                margin-bottom: 15px;
+            }
 
-//     .modal-container-video {
-//         opacity: 0;
-//         visibility: hidden;
-//         position: fixed;
-//         z-index: 1000;
-//         width: 100%;
-//         height: 100vh;
-//         top: 0;
-//         left: 0;
-//         background: rgba(0, 0, 0, 0.5);
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
+        }
+    }
 
-//         .modalVideo {
-//             width: 70%;
-//             height: 80%;
-//             background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-//             // overflow: hidden;
-//             text-align: center;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: space-evenly;
-//             position: relative;
-//             transition: transform 0.8s;
-//             transform: translateY(0%);
-//             border-radius: 10px;
-//             padding: 10px;
+    // seccion de servicios
+    .servicios-container{ 
+        .box-par {
+        flex-direction: column;
+        align-items: center;
 
-//             iframe,
-//             object,
-//             embed {
-//                 position: absolute;
-//                 top: 30px;
-//                 left: 4%;
-//                 width: 93%;
-//                 height: 90%;
-//             }
-
-//             .closeVideo {
-//                 position: absolute;
-//                 top: 5px;
-//                 right: 5px;
-//                 display: inline-block;
-//                 width: 25px;
-//                 height: 25px;
-//                 background: cornflowerblue;
-//                 cursor: pointer;
-//                 line-height: 25px;
-//                 border-radius: 50%;
-//             }
-//         }
-
-//         .modal-closeVideo {
-//             transform: translateY(-200%);
-//         }
-
-//     }
+         .square {
+             height: 90vh;
+             width: 90%;
+             margin-bottom: 15px;
+             figure .capa-detailed .capa1{
+                 margin-top: 50%;
+             }
+         }
+    }
+}
 
 
-// }
+
+
+}
