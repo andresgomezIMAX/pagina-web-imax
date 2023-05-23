@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Agregar Colaboradores IMAX</title>
+</head>
+<body class="container-admin">
+
+    <header class="header-intranet-admin">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo-imax.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas second-parent" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const second-parent" >Mis Constancias CTS</li></a>
+                            <a href="documents.html">
+                                <li class="btn-go-const second-parent">Mis Documentos</li>
+                            </a>
+                        </ul>
+               </a> </li>
+               <li><a href="vacations.html">Mis Vacaciones</a></li>
+          
+               <div class="only-admin"></div>
+               <div class="only-marketing"></div>
+               <div class="only-lider"></div>
+   
+                <a class="logOut"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-admin-boletas ">
+        <section class="container-add-worker show">
+            <div class="title-new">
+                <p>Agregar Colaboradores IMAX</p>
+                <p><i class="fas fa-user"></i>Administrador</p>
+            </div>
+            <a class="list-worker"  target="_blank" href="./listWorker.html"> Ver Lista de Colaboradores </a>
+
+            <form class="box-fill-data">
+                <div class="fill-input">
+                    <div class="box-name">
+                        <label for="name">Nombres: </label>
+                        <input type="text" name="name" class="name-register" required>
+                       
+                    </div>
+                    <div class="box-file">
+                        <label for="admin">Administrador(a): </label>
+                        <select name="leader"  class="checkAdmin" required >
+                            <option value="NO">NO</option>
+                            <option value="SI">SI</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
+                        <label for="dni">DNI: </label>
+                        <input type="number" name="dni" class="dni-register" required>
+                    </div>
+                    <div class="space">
+                        <label for="phone">Celular: </label>
+                        <input type="number" name="phone" class="phone-register" required>
+                    </div>
+                </div>
+                <div class="fill-input">
+                    <div class="space">
+                        <label for="email">Email: </label>
+                        <select name="email" class="email-register select-modal" required >
+                            <!-- <option value="Pepito Castillo Luna">Pepito Castillo Luna</option>
+                            <option value="Laura Catillo Luna">Laura Catillo Luna </option>
+                            <option value="Pepito Castillo Luna">Pepito Castillo Luna</option> -->
+                        </select>
+                    </div>
+                    <!-- <div class="space">
+                        <label for="password">Contraseña: </label>
+                       <input type="password" name="password" class="password-register" required> 
+                    </div> -->
+                    <div >
+                        <label for="area">Área: </label>
+                        <select name="area" class="area-register" required >
+                            <option value="GG">Gerencia General</option>
+                            <option value="ADH">Administración y Recuso Humano</option>
+                            <option value="GEC">Gestión Comercial </option>
+                            <option value="TAS">Tasaciones</option>
+                            <option value="EVP">Informes Especiales, Valuaciones y Peritajes</option>
+                            <option value="EMP">Evaluación y Monitoreo de Proyectos</option>
+                            <option value="GSO">Gerencia y Supervisión de Obras</option>
+                            <option value="GDP">Gestión y Desarrollo de Proyectos</option>
+                            <option value="IAD">Innovación y Análisis de Data</option>
+                            <option value="SDS">Streno Design Studio</option>
+                            <option value="GMM">Gestión Marketing y Medio</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="fill-input">     
+                    <div >
+                        <label for="leader">Jefe Inmediato: </label>
+                        <select name="leader"  class="leader-register" required >
+                            <!-- <option value="Gerencia">-</option>
+                            <option value="MAX FRANCISCO ALFARO RAMIREZ">Max Alfaro</option>
+                            <option value="ELENA ROSARIO ALFARO RAMIREZ">Elena Alfaro</option>
+                            <option value="MANUEL MARTIN FARJE ECHEVERRIA">Manuel Farje</option>
+                            <option value="CLAUDIA ANTONIETA CORONEL NÚÑEZ">Claudia Coronel</option>
+                            <option value="MAURICE CALMET WILLIAMS">Maurice Calmet</option>
+                            <option value="PATRICIA DEL CARMEN VALDIVIA VERASTEGUI">Patricia Valdivia</option>
+                            <option value="ANDRES ERNESTO GOMEZ GARCES">Andrés Gómez</option>
+                            <option value="Marcela Mendoza">Marcela Mendoza</option>
+                            <option value="Veronica Bustamante">Verónica Bustamante</option>
+                            <option value="ENRIQUE ALABA BANCES">Enrique Alaba</option> -->
+                            
+                        </select>
+                    </div>
+                    <div class="space">
+                        <label for="entryDay">Fecha de Ingreso: </label>
+                        <input type="date" name="entryDay" class="fechaAdmin" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" >
+                    </div>
+                
+                </div>
+                <div class="fill-input">
+
+                    <div class="space">
+                        <label for="salary">Salario Bruto: </label>
+                        <input type="number" name="salary" class="salarioAdmin-register" step="any" required >
+                    </div>
+                    <div>
+                        <label for="firm">Firma electrónica: <i class="fas fa-paperclip"></i></label>
+                        <input type="file" id="addImage" accept ="image/*" class= "firm-register" name="firm" required>
+                    </div>
+                    
+                 
+                </div>
+                <div class="fill-input">
+                   
+                    <div>
+                        <label for="admin">Lider de Area: </label>
+                        <select name="leader"  class="checkLider" required >
+                            <option value="NO">NO</option>
+                            <option value="SI">SI</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box-button-add">
+                    <div class="reg_error_inner" id="reg_error_inner"></div>
+                    <button type="submit" class="add-worker">Agregar Colaborador</button>
+                   
+                </div>
+              
+            </form>
+            
+        </section>
+
+        <!-- <section class="container-boletas hide ">
+            <div class="title-new">
+                <p>Colaboradores IMAX</p>
+                <p><i class="fas fa-user"></i>Administrador</p>
+            </div>
+
+            <div class="box-search-filter-worker">
+                <p class="title-filter">Listas de Colaboradores IMAX</p>
+            </div>
+
+            <div class="box-table-list-worker">
+             
+                    <table style="width:1400px">
+                        <tr>
+                          <th>Colaborador</th>
+                          <th>DNI</th>
+                          <th>Celular</th>
+                          <th>Email</th>
+                          <th>Area</th>
+                          <th>Jefe inmediato</th>
+                          <th>Fecha de Ingreso</th>
+                          <th>Salario Bruto</th>
+                          <th>Firma Electronica</th>
+                          <th>Administrador</th>
+                          <th>Lider de Área</th>
+                          <th>Vacaciones</th>
+                          <th>Fecha expiración</th>
+                          <th>Opciones</th>
+                          <th>Activo</th>
+                        </tr> 
+                        <tbody class="table-users">
+
+                        </tbody>  
+                      </table>
+                   
+                
+            </div>
+            <button  class="back-worker"> <i class="fas fa-arrow-alt-circle-left"> Atrás</i></button>
+            
+        </section> -->
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.storage();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="../controller-intranet/nav.js"></script>  
+    <script src="../controller-intranet/register.js"></script>  
+</body>
+</html>

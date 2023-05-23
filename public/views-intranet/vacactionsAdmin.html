@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../controller-intranet/filesaver.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.22.2/docxtemplater.js"></script>
+    <script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <script src="https://unpkg.com/pizzip@3.0.6/dist/pizzip-utils.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Vacaciones Admin</title>
+</head>
+
+<body class="container-admin">
+
+    <header class="header-intranet-admin">
+        <nav class="menu">
+            <img class="logo" src="../assets/logo-imax.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html">
+                                <li class="btn-go-boletas second-parent">Mis Boletas de Pago</li>
+                            </a>
+                            <a href="cts.html">
+                                <li class="btn-go-const second-parent">Mis Constancias CTS</li>
+                            </a>
+                            <a href="documents.html">
+                                <li class="btn-go-const second-parent">Mis Documentos</li>
+                            </a>
+                        </ul>
+                    </a> </li>
+                <li><a href="vacations.html">Mis Vacaciones</a></li>
+
+                <div class="only-admin"></div>
+                <div class="only-marketing"></div>
+                <div class="only-lider"></div>
+
+                <a class="logOut">
+                    <li>Cerrar sesión</li>
+                </a>
+
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <main class="box-admin-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Solicitudes de Vacaciones</p>
+                <div class="user-new">
+
+                </div>
+            </div>
+            <div class="box-filter-vacation">
+                <p class="title-filter">Lista de Solicitudes de Vacaciones</p>
+                <div class="search-filter">
+                    <p>Filtro de Búsqueda</p>
+                    <div class="detailed-search">
+                        <label for="search">Por Colaborador:</label>
+                        <input type="text" name="search" class="search">
+                        <label for="searchMonth">Por Mes:</label>
+                        <!-- <input type="text" name="searchMonth"  id="myInput" class="searchMonth"> -->
+                        <select name="searchMonth" class="searchMonth select-modal " required>
+                            <option value="">-</option>
+                            <option value="01">Enero</option>
+                            <option value="02">Febrero</option>
+                            <option value="03">Marzo</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Mayo</option>
+                            <option value="06">Junio</option>
+                            <option value="07">Julio</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setiembre</option>
+                            <option value="10">Octubre</option>
+                            <option value="11">Noviembre</option>
+                            <option value="12">Diciembre</option>
+                        </select>
+
+                        <label for="searchYear">Por Año:</label>
+                        <select name="searchYear" class="searchYear select-modal " required>
+                            <option value="">-</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select>
+
+                        
+                    </div>
+                    <div class="detailed-downoload"><button title="Descargar Data" onclick="downoloadAsExcel()">
+                          <img src="../assets/iconos/excel.png" alt="Descargar">
+                    </button></div>
+                </div>
+            </div>
+            <div class="box-table-vacations">
+                <table class="tabla-vacation-admin">
+                    <thead>
+                    <tr>
+                        <th>Colaborador</th>
+                        <th>Desde</th>
+                        <th>Hasta</th>
+                        <th>Area</th>
+                        <th>Detalles</th>
+                        <th>V°B° Lider</th>
+                        <th>Solicitud</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    </thead>
+                    <tbody class="table-vacation-lider">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </section>
+
+    </main>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+            authDomain: "web-imax.firebaseapp.com",
+            projectId: "web-imax",
+            storageBucket: "web-imax.appspot.com",
+            messagingSenderId: "114819498377",
+            appId: "1:114819498377:web:02e7671a7255f711cf6158",
+            measurementId: "G-P8W33C2X62"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        firebase.analytics();
+    </script>
+
+
+    <script src="../controller-intranet/nav.js"></script>
+    <script src="../controller-intranet/vacationAdmin.js"></script>
+</body>
+
+</html>

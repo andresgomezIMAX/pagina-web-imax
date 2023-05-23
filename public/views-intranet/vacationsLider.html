@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-storage.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Vacaciones Lider</title>
+</head>
+<body class="container-admin">
+
+    <header class="header-intranet-admin">   
+        <nav class="menu">
+            <img class="logo" src="../assets/logo-imax.png">
+            <ul>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="#/" class="pagos">Mis Pagos
+                        <ul class="nav-home hide">
+                            <a href="boletas.html" ><li class="btn-go-boletas second-parent" >Mis Boletas de Pago</li></a>
+                            <a href="cts.html" ><li class="btn-go-const second-parent" >Mis Constancias CTS</li></a>
+                            <a href="documents.html">
+                                <li class="btn-go-const second-parent">Mis Documentos</li>
+                            </a>
+                        </ul>
+               </a> </li>
+               <li><a href="vacations.html">Mis Vacaciones</a></li>
+              
+               <div class="only-admin"></div>
+               <div class="only-marketing"></div>
+               <div class="only-lider"></div>
+         
+                <a class="logOut"><li>Cerrar sesión</li></a>
+               
+            </ul>
+        </nav>
+        
+
+    </header>
+
+    <main class="box-admin-boletas">
+        <section class="container-boletas">
+            <div class="title-new">
+                <p>Solicitudes de Vacaciones</p>
+                <div class="user-new">
+                   
+                </div>
+            </div>
+            <div class="box-filter-vacation">
+                <p class="title-filter">Lista de Solicitudes de Vacaciones</p>
+                <div class="search-filter">
+                    <p>Filtro de Búsqueda</p>
+                    <div class="detailed-search">
+                        <label for="search">Por Colaborador:</label>
+                        <input type="text" name="search" class="search"> 
+                    </div>
+                </div>
+            </div>
+            <div class="box-table-vacations-leader">
+                <table class="tabla-vacation-leader">
+                    <thead>
+  <tr>
+                      <th>Colaborador</th>
+                      <th>Fecha</th>
+                      <th>Detalles</th>
+                      <th>Conformidad</th>
+                    </tr>
+                    </thead>
+                  
+                    <tbody class="table-vacation" >
+
+                    </tbody>
+                    <!-- <tr>
+                      <td>Pepito Castillo Luna</td>  
+                      <td>10/10/2020 al 20/10/2020</td>
+                      <td>Pendientes: 15 días <br>
+                          Vencen: 31/12/2021</td>
+                      <td><input type="checkbox" id="cbox2" value="conformidad">  </td>
+                    </tr>      -->
+                  </table>
+            </div>
+
+        
+            
+        </section>
+
+    </main>
+    
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAPvuYSkfkOfaRObLXvtDiZjVoQGYDIacc",
+        authDomain: "web-imax.firebaseapp.com",
+        projectId: "web-imax",
+        storageBucket: "web-imax.appspot.com",
+        messagingSenderId: "114819498377",
+        appId: "1:114819498377:web:02e7671a7255f711cf6158",
+        measurementId: "G-P8W33C2X62"
+    };
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.name)
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+    firebase.storage();
+    firebase.analytics();
+    </script>
+
+  
+    <script src="../controller-intranet/nav.js"></script>  
+    <script src="../controller-intranet/vacationLider.js"></script>  
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+</body>
+</html>

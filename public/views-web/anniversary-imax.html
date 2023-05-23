@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="keywords"
+        content="ingeniería, tasaciones, supervisiones, proyectos, monitoreos, obras,fideicomisos, viabilidades">
+    <!-- link -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>14 Aniversario IMAX</title>
+    <link rel="short icon" href="../assets/icono-imax.png">
+
+    <style>
+        @font-face {
+            font-family: SUI;
+            src: url('seguiemj.ttf');
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: SUI;
+        }
+
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px 45px 10px 0px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .imgPortada {
+            width: 100%;
+        }
+
+        .img {
+            width: 100%;
+        }
+
+        p {
+            font-size: 25px;
+            padding: 15px 0px;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 28px;
+            padding: 15px 0px;
+            text-align: justify;
+        }
+
+        .maintxt {
+            background: url("../assets/img-anniversary/fondo_civil.jpg");
+            background-size: cover;
+            padding: 5px;
+
+        }
+
+        h2 {
+            font-size: 25px;
+            font-style: italic;
+            padding: 15px 0px;
+            text-align: justify;
+        }
+
+        .especial {
+            font-size: 35px;
+            text-align: center;
+            margin: 1px 0px 0px 0px;
+            padding: 5px;
+            font-style: italic;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .contact {
+            text-align: right;
+            margin: 0px;
+            font-size: 20px;
+            padding: 0px;
+        }
+
+        .main {
+            background-color: white;
+            margin: auto;
+            width: 1000px;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.493);
+            padding: 30px;
+        }
+
+        hr {
+            border: 3px solid rgba(0, 0, 0, 0.493);
+        }
+
+        @media screen and (max-width: 800px) {
+            .main{
+                width: 320px;
+                padding: 20px;
+            }
+            /* .imgPortada{
+                width: 80%;
+            } */
+
+            .maintxt, h1{
+                /* width: 28%; */
+                font-size: 20px;
+            }
+
+            .row{
+                display: flex;
+                flex-direction: column;
+            }
+            .column{
+                float: left;
+                width: 100%;
+                padding: 0;
+            }
+
+            h2{
+                 font-size: 19px;
+            }
+              p{
+                 font-size: 17px;
+            }
+
+            .especial {
+            font-size: 25px;
+            padding: 3px;
+      
+        }
+
+            .contact{
+                 font-size: 17px;
+            }
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <header class="header-nosotros">
+        <span class="nav-bar" id="btn-menu"><img src="../assets/iconos/burger.png" alt=""> Menú</span>
+        <nav class="menu">
+            <div class="box-logo"><a href="../index.html"><img class="logo" src="../assets/logo-imax.png"
+                        alt="logo-imax"> </a></div>
+            <ul class="menu-list" id="menu-list">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./servicios.html">Servicios</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="./galleryNews.html">Noticias</a></li>
+                <li><a href="./contact.html">Contáctanos</a></li>
+                <li><a href="https://forms.gle/hjTqZfQnfiZvfRma6" target="_blank">Línea Ética</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="main">
+            <div>
+                <div>
+                    <img class="imgPortada" src="../assets/img-anniversary/1_portada_tasaciones.png">
+                    <div class="maintxt">
+                        <h1>
+                            Con motivo del aniversario de IMAX - Ingeniería Máxima, conversamos con el ingeniero Max
+                            Alfaro Ramírez,
+                            líder y fundador de la empresa, quien hace un recuento de estos más de 10 años de
+                            trayectoria, nos comenta
+                            sobre los inicios de la organización como un emprendimiento personal, sus motivaciones,
+                            principales hitos,
+                            y planes a un futuro inmediato y a largo plazo.
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <h2>
+                            Max, cuéntanos un poco, ¿cuando surgió la idea de
+                            crear IMAX, por qué quisiste crearla, y cómo se materializó
+                            este deseo hasta convertirse en una realidad?
+                        </h2>
+                        <p>
+                            Desde muy chico, inclusive antes de la época universitaria ya tenía este anhelo y esta
+                            mentalidad emprendedora. Por ciertas vivencias que pude tener desde muy chico yo había
+                            encontrado formas de generarme ingresos. Lo primero que hacía, por ejemplo, era cambiarle
+                            las cuerdas a las raquetas de tenis, porque en mi casa mis hermanos mayores jugaban bastante
+                            y rompían tantas cuerdas que nosotros en la casa teníamos una máquina. Entonces yo aprendí a
+                            encordar y lo hacía para las raquetas de los amigos, de los señores del club. Luego, antes
+                            inclusive de estudiar la carrera aprendí a dibujar planos arquitectónicos, porque mi papá
+                            era arquitecto, y también ganaba dinero extra dibujando planos para él y para algunos de sus
+                            colegas arquitectos. Entonces así como jugando yo ya había entrado en el tema de ser
+                            independiente desde una corta edad.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img class="img" src="../assets/img-anniversary/2_max_proyectos.png">
+                        <p>
+                            Por suerte, por gustos, preferencias, incluso por situaciones de la vida misma llegué a
+                            estudiar una carrera, vinculada al negocio que tenía mi padre.
+                        </p>
+                        <h2>
+                            ¿Qué estudiaste?
+                        </h2>
+                        <p>
+                            Ingeniería Civil. Mi papá y uno de mis hermanos son arquitectos. Entonces, yo veía que tenía
+                            alguien a quien ofrecerle un servicio, no como ingeniero estructural que era mi meta
+                            principal, sino de una manera paralela.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <img>
+                <div>
+                    <p>
+                        Al poco tiempo inicié la carrera universitaria, que realmente la desarrollé de una forma
+                        bastante orgánica, acabé la carrera en cinco años, porque tenía justamente la facilidad de que
+                        todos los veranos tenía en casa un taller donde podía aplicar todo lo que aprendía durante los
+                        dos ciclos regulares. Al terminar la carrera, producto de esta situación, ya tenía una red de
+                        contactos y comencé a hacer análisis de costos unitarios, presupuestos y programaciones de obra,
+                        todo esto de manera independiente.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <p>
+                            Posteriormente, con el dinamismo de los programas de vivienda social, junto con mi hermano
+                            empecé a desarrollar proyectos para este sector Luego llegó la oportunidad de ser convocado
+                            por Interbank para liderar su área de Tasaciones, producto de una especialización que
+                            estudié. Estuve ahí un poco más de 05 años.
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img class="img" src="../assets/img-anniversary/3_supervisiones.png">
+                    </div>
+                </div>
+                <h2>
+                    ¿Por qué decidiste dejar este empleo estable en una de las empresas más sólidas del
+                    medio?
+                </h2>
+                <p>
+                    En el banco conocí a profundidad la especialidad, me relacioné con mucha gente, aprendí de
+                    diferentes industrias, el sistema financiero, la minería, el agro, la pesca, etc., lo cual agradezco
+                    mucho. Pero, aparentemente, mi espíritu emprendedor era muy fuerte y me llevó a tomar otro rumbo,
+                    esta vez con la firme intención de establecerme definitivamente en esa senda.
+                </p>
+                <h2>
+                    ¿Y es ahí donde nace IMAX?
+                </h2>
+                <p>
+                    Exacto, empecé a brindar el servicio de tasaciones de manera particular, trabajando en un inicio yo
+                    solo desde la sala de mi departamento. Felizmente el volumen de encargos creció no mucho tiempo
+                    después, lo cual me dio la oportunidad de contratar a nuestra primera colaboradora, Gina, quien
+                    hasta ahora nos acompaña en la empresa luego de 12 años.
+                </p>
+                <div class="row">
+                    <div class="column">
+                        <img class="img" src="../assets/img-anniversary/4_financieras.png">
+                    </div>
+                    <div class="column">
+                        <p>
+                            En ese momento logramos convertirnos en tasadores para el BCP, lo cual hizo que nuestro
+                            volumen se incremente drásticamente. Entonces convoco a otro de mis hermanos, Sergio, quien
+                            en ese momento trabajaba como perito para otras empresas. Esto nos permitió empezar a sonar
+                            más en el mercado y empezar a manejar una operación más sólida.
+                        </p>
+                        <h2>
+                            ¿Y es lo que les permitió crecer con
+                            otro tipo de servicios?
+                        </h2>
+                        <p>
+                            Correcto, con la intención de “no poner todos los huevos en una sola canasta”. Así nació
+                            otra unidad de negocios también vinculada al sector financiero, que son los monitoreos de
+                            obra (hoy EMP: Evaluación y Monitoreo de Proyectos).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="row">
+                    <div class="column">
+                        <h2>
+                            ¿Actualmente con qué bancos trabajan con
+                            estos monitoreos de obras?
+                        </h2>
+                        <p>
+                            Tenemos la satisfacción de decir que en la actualidad trabajamos con los principales bancos
+                            del medio. Hemos logrado avanzar como lo teníamos proyectado en ese sentido. Esto
+                            principalmente gracias a las recomendaciones de los funcionarios de las diferentes entidades
+                            del sistema financiero.
+                        </p>
+                        <h2>
+                            ¿Con qué otras unidades de negocio cuenta
+                            la empresa?
+                        </h2>
+                        <p>
+                            Después de haber establecido EMP, nos llegó una oportunidad a pedido de un cliente, quien
+                            estaba interesado en que nos encarguemos de una supervisión permanente de obra.
+                        </p>
+                        <p>
+                            Así nació una nueva área que hoy la llamamos GSO (Gestión y Supervisión de Obras), con la
+                            cual también hemos recibido encargos de mediana y gran envergadura a lo largo de los años.
+                            Promovimos a algunas personas internamente, incorporamos más profesionales al equipo, y nos
+                            organizamos de manera que estuvimos en la capacidad de seguir ofreciendo un servicio de
+                            calidad. Esto me permitió también empezar a gestionar de mejor manera y retomar un anhelo
+                            inicial que es el desarrollar proyectos desde cero; así nació nuestra cuarta unidad de
+                            negocio, GDP (Gestión y Desarrollo de Proyectos), hace aproximadamente 03 años. Finalmente,
+                            en el último año hemos creado dos unidades de negocio más.
+                        </p>
+                        <h2>
+                            Es poco usual que una empresa decida
+                            expandirse durante la pandemia, siendo
+                            que la mayoría más bien se ha reducido o
+                            pasado por dificultades...
+                        </h2>
+                        <p>
+                            Nosotros vimos que en esa situación más bien podían aparecer nuevas oportunidades, y luego
+                            de una evaluación a fondo, no dudamos en tomar el riesgo. Lo hicimos con la intención de
+                            organizarnos mejor y responder a nuevas necesidades que aparecían en el mercado en este
+                            contexto. La unidad de negocio de Tasaciones la sub-dividimos y creamos una nueva para
+                            atender casos de mediana o gran complejidad, VPC (Valuaciones, Peritajes y Consultoría),
+                            mientras que el área de Tasaciones se dedicaría exclusivamente a casos más comerciales o
+                            cotidianos. También, producto de nuestras buenas conexiones con el sector inmobiliario, y
+                            conocedores de las nuevas
+                        </p>
+                    </div>
+                    <div class="column">
+                        <img class="img" src="../assets/img-anniversary/5_gerencia.png">
+                        <br>
+                        <br>
+                        <img class="img" src="../assets/img-anniversary/6_obras.png">
+                        <p>
+                            necesidades de las personas en esta nueva normalidad, lanzamos nuestra área de diseño de
+                            interiores, bajo la marca Streno Design Studio.
+                        </p>
+                        <h2>
+                            ¿Y dentro de esos proyectos de gran complejidad
+                            que mencionas, cuáles serían los que
+                            podrías destacar a lo largo de la trayectoria de
+                            IMAX?
+                        </h2>
+                        <p>
+                            Puntualmente en el sector de valuaciones, hemos tasado fundos agrícolas, por ejemplo, de una
+                            inversión muy importante. Hemos tasado hidroeléctricas, termoeléctricas también, que son
+                            activos de alto valor. También hemos intervenido en concesiones mineras, embarcaciones
+                            pesqueras que tienen un enfoque, una metodología diferenciada.
+                        </p>
+                        <h2>
+                            ¿Y en relación a las otras unidades de negocio,
+                            ¿cuáles proyectos podrías mencionar?
+                        </h2>
+                        <p>
+                            A mí me gusta enfocar la magnitud de un proyecto en términos de complejidad porque significa
+                            un reto, nos desafía, y finalmente saca lo mejor de nosotros. O sea, cuando estamos
+                            hablando, por ejemplo, de proyectos de 3,000 a 5,000 viviendas, que hemos tenido varios
+                            casos. O por ejemplo edificios de gran altura como el proyecto Tempo en Santa Catalina, que
+                            es uno de los proyectos de vivienda más alto del país, el cual hemos podido atender de forma
+                            exitosa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="row">
+                    <div class="column">
+                        <img class="img" src="../assets/img-anniversary/7_gestion.png">
+                        <br>
+                        <br>
+                        <img class="img" src="../assets/img-anniversary/8_fundo.png">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="especial">
+                            “Tenemos la
+                        </p>
+                        <p class="especial">
+                            satisfacción de decir
+                        </p>
+                        <p class="especial">
+                            que en la actualidad
+                        </p>
+                        <p class="especial">
+                            trabajamos con
+                        </p>
+                        <p class="especial">
+                            todos los bancos del
+                        </p>
+                        <p class="especial">
+                            medio. Hemos logrado
+                        </p>
+                        <p class="especial">
+                            avanzar
+                        </p>
+                        <p class="especial">
+                            como lo teníamos
+                        </p>
+                        <p class="especial">
+                            proyectado en ese
+                        </p>
+                        <p class="especial">
+                            sentido”
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p>
+                            Era un reto al que enfrentarse; este proyecto resolvió problemas de resistencia de
+                            materiales, sistema de circulación vertical (ascensores) y el sistema contra incendios .
+                            Todo eso hace que ese proyecto sea interesante.
+                        </p>
+                        <h2>
+                            ¿Qué consideras que aporta IMAX a sus
+                            clientes? ¿Qué los diferencia de otras empresas
+                            del sector?
+                        </h2>
+                        <p>
+                            Nosotros somos una empresa que apunta a la calidad, y eso afortunadamente el mercado lo
+                            reconoce. Y no sólo en relación al fondo, es decir a la parte técnica de la información e
+                            informes que entregamos, sino inclusive en relación a la forma, es decir a la manera en la
+                            que presentamos esta información. Porque el hacerlo de una forma más organizada, les permite
+                            a nuestros clientes entender los informes de manera más rápida, y eso significa ganar
+                            productividad en el día a día. También podemos decir que, al estar involucrados no sólo en
+                            una parte del sector financiero e inmobiliario sino en varios ámbitos, entendemos el
+                            panorama de manera más amplia y profunda; eso nos permite ponernos en los zapatos de los
+                            clientes y desarrollar soluciones que realmente aportan y los ayudan.
+                        </p>
+                        <h2>
+                            Eso de cara al mercado, y de cara al interior
+                            de la organización, ¿cuál es su visión?
+                        </h2>
+                        <p>
+                            Sí, mira, lo que yo tengo como como visión de empresa es crecer a partir justamente de las
+                            personas. Entonces yo veo a IMAX como una plataforma para profesionales con ganas de
+                            innovar, con ganas de hacer algo por ellos mismos o por el país. Bajo esa premisa, buscamos
+                            colaboradores que compren esa idea y reconocemos a quienes demuestren esas ganas y
+                            capacidad. Por ejemplo, cuando en el pasado hemos abierto nuevas unidades de negocio como
+                            EMP y GSO, ha sido nuestro propio personal quien ha sido promovido para gerenciar esas
+                            nuevas áreas, como ha sido el
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="row">
+                    <div class="column">
+                        <p>
+                            caso del ingeniero Andrés Gómez y de la arquitecta Patricia Valdivia, actualmente líderes de
+                            esas unidades de negocio.
+                        </p>
+                        <h2>
+                            Ya para terminar, quería preguntarte
+                            sobre los planes a futuro y qué evaluación
+                            haces de la trayectoria de la empresa
+                            durante estos 12 años que se están
+                            cumpliendo...
+                        </h2>
+                        <p>
+                            En cuanto al tema del crecimiento, nosotros estamos en constante búsqueda de innovación.
+                            Entonces, bajo este esquema, nosotros hemos diseñado una matriz de crecimiento que nos
+                            permita desarrollarnos en varios campos de la ingeniería,
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p>
+                            como por ejemplo en obras viales, en geotecnia, logística, etc. Y otra forma de proyectar el
+                            crecimiento es de manera geográfica; es así que este año abrimos la oficina de la zona norte
+                            del país, y estamos próximos a abrir una oficina en la zona sur para atender a ciudades como
+                            Arequipa, Cusco, Puno, Tacna y Moquegua. Para ello también hemos promovido a profesionales
+                            de nuestro equipo como la Ing. Celia Niño en el norte, y a otra líder de nuestro equipo -
+                            que anunciaremos en las próximas semanas - para la zona sur.
+                        </p>
+                        <p>
+                            Eso a nivel Perú, porque también hemos empezado ya a formular un plan
+                        </p>
+                    </div>
+                </div>
+                <img class="imgPortada" src="../assets/img-anniversary/9_fideicomiso.png">
+                <div class="row">
+                    <div class="column">
+                        <p>
+                            de expansión hacia otros países de la región, para lo cual estamos desde ya estableciendo
+                            contactos comerciales, técnicos, y estudiando a profundidad la realidad de esos mercados...
+                        </p>
+                        <p>
+                            Y en relación a tu otra pregunta, mira, yo veo el camino con grandes enseñanzas. O sea, me
+                            produce satisfacción y felicidad haber tomado esa decisión en su momento hace 12 años. Fue
+                            una decisión para concretar un sueño que tenía desde bastante joven. En el camino me
+                            encontré también con cierta resistencia o comentarios que me decían “tienes un trabajo
+                            seguro, tienes un hijo chiquito...” Pero yo confiaba en lo que podía lograr, contando
+                            siempre con el apoyo de mi esposa Patty. Los primeros años son difíciles, pero yo creo que
+                            trabajar con mucha convicción, y el valioso
+                        </p>
+                    </div>
+                    <div class="column">
+                        <p>
+                            aporte de mi equipo, es lo que nos ha permitido crecer de una operación que comenzó en casa,
+                            a una empresa que tiene al momento cerca de 60 profesionales involucrados en la operación. Y
+                            nos proyectamos a conseguir mayores logros en un futuro cercano.
+                        </p>
+                    </div>
+                </div>
+                <p class="contact"><a href="www.imax.com.pe">www.imax.com.pe</a></p>
+                <p class="contact"><a href="contacto@imax.com.pe">contacto@imax.com.pe</a></p>
+                <p class="contact">Calle Aldabas 559, oficina 802 - Surco</p>
+            </div>
+
+        </div>
+        <section class="section-contact">
+            <div class="contact-box-first">
+                <img src="../assets/contacto/contacto-imax.jpg" alt="">
+                <form class="form-contact-single">
+                    <h1>CONTÁCTANOS</h1>
+                    <p>Estamos listos para resolver sus requerimientos con prontitud y con <br> el mejor servicio</p>
+                    <!-- <p class="space-box"> el mejor servicio</p> -->
+                    <div class="box-tex-form">
+                        <input type="text" placeholder="Nombre y Apellidos:" name="name" class="name">
+                        <input type="text" placeholder="Empresa:" name="company" class="company">
+                    </div>
+                    <div class="box-tex-form">
+                        <input type="number" placeholder="Teléfono:" name="phone" class="phone">
+                        <input type="text" placeholder="Email:" name="email" class="email">
+                    </div>
+
+                    <textarea name="message" id="message" class="message" cols="30" rows="10"
+                        placeholder="Escriba aquí su mensaje:" required></textarea>
+                    <div class="success" id="success"></div>
+                    <button type="submit" class="send-email">Enviar mensaje</button>
+                </form>
+            </div>
+
+
+
+
+        </section>
+    </main>
+    <footer>
+
+        <div class="footerPage">
+            <p class="copy"> IMAX Ingeniería Máxima ® - REPEV N° J000062 </p>
+        </div>
+
+    </footer>
+    <script src="../menu.js"></script>
+</body>
+
+</html>
