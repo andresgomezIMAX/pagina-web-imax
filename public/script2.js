@@ -23,7 +23,7 @@ popupWhatsApp = () => {
   let msg = document.getElementById('whats-in').value;
   let relmsg = msg.replace(/ /g,"%20");
      
-   window.open("https://api.whatsapp.com/send?phone=51945185339&text=" +relmsg,"_blank"); 
+   window.open("https://api.whatsapp.com/send?phone=51970423665&text=" +relmsg,"_blank"); 
     
   });
 
